@@ -1,0 +1,11 @@
+# Future plans with project
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Things to do 
+
++ Finalize items 
++ Get survey into Qualtrics for pilot testing
++ Work on feedback report 
+
+

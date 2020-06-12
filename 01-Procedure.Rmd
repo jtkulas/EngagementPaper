@@ -1,0 +1,10 @@
+# Introduction {#intro}
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). 
+Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from Schaufeli et al, (2002), and we are trying to find where Fulfillment came from. 
+We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain. 
+
+@eagly_psychology_1993
+@simpson_engagement_2009
+[@harter_business_2002; @kahn_psychological_1990; @leiter_areas_2003; @R-base; @R-rmarkdown; @rothbard_enriching_2001; @saks_antecedents_2006; @schaufeli_measurement_2002; @simpson_engagement_2009]
+
