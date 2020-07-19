@@ -1,0 +1,208 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Engagement Survey Technical Report},
+  pdfauthor={Eagle I.O},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Engagement Survey Technical Report}
+\author{Eagle I.O}
+\date{Most recently updated 2020-07-19}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{Homepage}{%
+\chapter*{Homepage}\label{Homepage}}
+\addcontentsline{toc}{chapter}{Homepage}
+
+\includegraphics{EE.jpeg}
+
+This is a technical report that contains the development of the Eagle IO Engagement survey.
+
+\hypertarget{summary}{%
+\chapter{Summary}\label{summary}}
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020).
+Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from Schaufeli et al, (2002), and we are trying to find where Fulfillment came from.
+We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain.
+
+\citet{eagly_psychology_1993}
+\citeauthor{simpson_engagement_2009} \citetext{\citeyear{simpson_engagement_2009}; \citealp{harter_business_2002}; \citealp{kahn_psychological_1990}; \citealp{leiter_areas_2003}; \citealp{R-base}; \citealp{R-rmarkdown}; \citealp{rothbard_enriching_2001}; \citealp{saks_antecedents_2006}; \citealp{schaufeli_measurement_2002}; \citealp{simpson_engagement_2009}}
+
+\hypertarget{engagement---notes}{%
+\chapter{Engagement - NOTES}\label{engagement---notes}}
+
+Here is Eagle IO's definition of engagement:
+
+A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
+
+This definition was created by Eagle IO on Spring 2019, and modified by Dr.~Kulas and Renata on Fall 2019 to include the four dimensions of Fulfillment, Absorbtion, Dedication, and Vigor.
+
+\hypertarget{feb-20.2020}{%
+\section{Feb 20.2020}\label{feb-20.2020}}
+
+Decided to operationalize fullfillment as an outcome of engagement rather than a definitional element
+Considering removing fulfillment
+
+Reconceptualized as an OUTCOME of engagement (2/20)
+
+Fulfillment: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. {[}Satisfaction(?){]}
+
+\hypertarget{definitions-as-of-02.20.2020}{%
+\section{Definitions as of 02.20.2020}\label{definitions-as-of-02.20.2020}}
+
+Absorption:\\
+being fully concentrated and happily immersed in ones work (time passes quickly and has difficulty detaching from ones work; Schaufeli et al., 2002)
+
+02.24.2020
+changind fedinition to:
+being fully immersed in ones work (time passes quickly and has difficulty detaching from ones work)
+
+Dedication/Commitment:
+being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. (Schaufeli et al., 2002) Identifying as an organizational member/ambassador
+
+include identification with the organization, a sense of ``oneness''
+seeking continuous leanring and improvement
+getting rid of challenge altogether
+moving inspiration and pride to other categories
+
+2.24.2020
+definition of dedication changing to:
+seeking continous imporvement and demonstrating initiative
+
+Vigor:
+investing consistent effort, persistence, energy, and mental resilience while working (Schaufeli et al., 2002)
+maybe add enthusiasm here as well
+
+2.24.2020
+chaning definition of Vigor:
+Experiencing persistent levels of energy and enthusiasm while working
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+potential to change from affective, cognitive, and behavioral to whether their engagement comes from content/satisfaction with the organization or the people they work with.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+After completing individual Q-sorts (Kulas and Renata) we decided to revisit the definitions and build them up a little to make the diference between them more noticible.
+
+\hypertarget{definitions-as-of-5192020}{%
+\section{Definitions as of 5/19/2020}\label{definitions-as-of-5192020}}
+
+Absorption: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
+
+Vigor: Experiencing persistent levels of energy, effort, and enthusiasm while working
+
+Dedication: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+
+With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories.
+
+Next steps:
+Place items in the DAV categories into the ABC categories
+
+\hypertarget{add-ons-to-the-enagement-survey}{%
+\chapter{Add ons to the Enagement Survey}\label{add-ons-to-the-enagement-survey}}
+
+\begin{itemize}
+\tightlist
+\item
+  Demographic Information
+\end{itemize}
+
+\hypertarget{future-plans-with-project}{%
+\chapter{Future plans with project}\label{future-plans-with-project}}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\hypertarget{things-to-do}{%
+\section{Things to do}\label{things-to-do}}
+
+\begin{itemize}
+\tightlist
+\item
+  Finalize items
+\item
+  Get survey into Qualtrics for pilot testing
+\item
+  Work on feedback report
+\end{itemize}
+
+\hypertarget{final-words}{%
+\chapter{Final Words}\label{final-words}}
+
+We have finished a nice book.
+
+  \bibliography{book.bib,engage.bib,packages.bib}
+
+\end{document}
