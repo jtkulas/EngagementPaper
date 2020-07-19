@@ -1,4 +1,63 @@
-# Add ons to the Enagement Survey
+# Instrument creation
 
 + Demographic Information
+
+
+## Content Validation
+
+```{r contentvalidation, echo=FALSE, warning=FALSE, message=FALSE}
+
+cvalid <- read.csv("Engagement Survey Content Validity.csv")
+
+items <- nrow(cvalid)
+
+```
+
+7 Eagle I.O consultants were twice instructed to place each of `r items` items into one of three categories: Absorption, Dedication, or Vigor, and Cognitive, Affective, or Behavioral. Instructions asked each rater to:
+
+> INSTRUCTIONS: Place an "X" in the column that you feel is the best fit for each item (only one "X" per row please)
+
+The substantive scale definitions provided for ratings were: 
+
++ *Absorption*: Being fully immersed in one’s work, where time passes quickly and one has difficulty detaching from work tasks
++ *Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
++ *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+
+The attitudinal scale definitions were:
+
++ *Cognitive*: Pertaining to thoughts or general mental processes (for example what someone thinks)
++ *Affective*: Pertaining to feelings or emotions (for example, how someone feels)
++ *Behavioral*: Pertaining to acts or actions (for example, what someone does) 
+
+The goal was to identify item(s) that were equally and heavily implicated with one substantive and one attitudinal scale.
+
+Initial rating convergence for Absorption:
+
+```{r absorption, echo=FALSE, warning=FALSE, message=FALSE}
+## Absorption
+
+table(cvalid[,c(6,2)])
+table(cvalid[,c(6,3)])
+table(cvalid[,c(6,4)])
+```
+
+Initial rating convergence for Vigor:
+
+```{r vigor, echo=FALSE, warning=FALSE, message=FALSE}
+## Vigor
+
+table(cvalid[,c(7,2)])
+table(cvalid[,c(7,3)])
+table(cvalid[,c(7,4)])
+```
+
+Initial rating convergence for Dedication:
+
+```{r dedication, echo=FALSE, warning=FALSE, message=FALSE}
+## Dedication
+
+table(cvalid[,c(8,2)])
+table(cvalid[,c(8,3)])
+table(cvalid[,c(8,4)])
+```
 

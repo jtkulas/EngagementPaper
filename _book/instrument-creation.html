@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Summary | Engagement Survey Technical Report</title>
+  <title>3 Instrument creation | Engagement Survey Technical Report</title>
   <meta name="description" content="This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Summary | Engagement Survey Technical Report" />
+  <meta property="og:title" content="3 Instrument creation | Engagement Survey Technical Report" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="EE.jpeg" />
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Summary | Engagement Survey Technical Report" />
+  <meta name="twitter:title" content="3 Instrument creation | Engagement Survey Technical Report" />
   
   <meta name="twitter:description" content="This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook." />
   <meta name="twitter:image" content="EE.jpeg" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="engagement-notes.html"/>
+<link rel="prev" href="engagement-notes.html"/>
+<link rel="next" href="future-plans-with-project.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -104,46 +104,106 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="summary" class="section level1">
-<h1><span class="header-section-number">1</span> Summary</h1>
-<p>We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020).
-Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from Schaufeli et al, (2002), and we are trying to find where Fulfillment came from.
-We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain.</p>
-<p><span class="citation">Eagly and Chaiken (<a href="#ref-eagly_psychology_1993" role="doc-biblioref">1993</a>)</span>
-<span class="citation">Simpson (<a href="#ref-simpson_engagement_2009" role="doc-biblioref">2009</a>, <a href="#ref-simpson_engagement_2009" role="doc-biblioref">2009</a>; Harter, Schmidt, and Hayes <a href="#ref-harter_business_2002" role="doc-biblioref">2002</a>; Kahn <a href="#ref-kahn_psychological_1990" role="doc-biblioref">1990</a>; Leiter and Maslach <a href="#ref-leiter_areas_2003" role="doc-biblioref">2003</a>; R Core Team <a href="#ref-R-base" role="doc-biblioref">2020</a>; Allaire et al. <a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>; Rothbard <a href="#ref-rothbard_enriching_2001" role="doc-biblioref">2001</a>; Saks <a href="#ref-saks_antecedents_2006" role="doc-biblioref">2006</a>; Schaufeli et al. <a href="#ref-schaufeli_measurement_2002" role="doc-biblioref">2002</a>)</span></p>
+<div id="instrument-creation" class="section level1">
+<h1><span class="header-section-number">3</span> Instrument creation</h1>
+<ul>
+<li>Demographic Information</li>
+</ul>
+<div id="content-validation" class="section level2">
+<h2><span class="header-section-number">3.1</span> Content Validation</h2>
+<p>7 Eagle I.O consultants were twice instructed to place each of 34 items into one of three categories: Absorption, Dedication, or Vigor, and Cognitive, Affective, or Behavioral. Instructions asked each rater to:</p>
+<blockquote>
+<p>INSTRUCTIONS: Place an “X” in the column that you feel is the best fit for each item (only one “X” per row please)</p>
+</blockquote>
+<p>The substantive scale definitions provided for ratings were:</p>
+<ul>
+<li><em>Absorption</em>: Being fully immersed in one’s work, where time passes quickly and one has difficulty detaching from work tasks</li>
+<li><em>Vigor</em>: Experiencing persistent levels of energy, effort, and enthusiasm while working</li>
+<li><em>Dedication</em>: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization</li>
+</ul>
+<p>The attitudinal scale definitions were:</p>
+<ul>
+<li><em>Cognitive</em>: Pertaining to thoughts or general mental processes (for example what someone thinks)</li>
+<li><em>Affective</em>: Pertaining to feelings or emotions (for example, how someone feels)</li>
+<li><em>Behavioral</em>: Pertaining to acts or actions (for example, what someone does)</li>
+</ul>
+<p>The goal was to identify item(s) that were equally and heavily implicated with one substantive and one attitudinal scale.</p>
+<p>Initial rating convergence for Absorption:</p>
+<pre><code>## 
+## 1 2 4 5 6 7 
+## 4 1 3 2 1 3</code></pre>
+<pre><code>##           Cognitive
+## Absorption 1 2 4 5 6 7
+##          1 2 1 0 1 0 0
+##          2 0 0 0 0 0 0
+##          4 1 1 0 0 0 0
+##          5 0 1 0 0 0 0
+##          6 0 0 0 0 0 0
+##          7 0 2 0 0 0 0</code></pre>
+<pre><code>##           Affective
+## Absorption 1 2 3 4 5 6 7
+##          1 0 1 0 0 1 1 0
+##          2 0 0 0 0 0 0 0
+##          4 0 0 0 0 1 0 0
+##          5 0 0 0 0 0 0 0
+##          6 0 0 0 0 0 0 0
+##          7 0 2 0 0 0 0 0</code></pre>
+<pre><code>##           Behavioral
+## Absorption 1 2 3 5 6 7
+##          1 1 0 0 1 0 0
+##          2 0 0 0 0 0 1
+##          4 0 0 0 0 2 0
+##          5 0 0 0 1 1 0
+##          6 0 0 0 0 0 1
+##          7 0 0 2 0 0 1</code></pre>
+<p>Initial rating convergence for Vigor:</p>
+<pre><code>##      Cognitive
+## Vigor 1 2 4 5 6 7
+##     1 0 0 1 0 0 1
+##     2 1 1 0 0 0 0
+##     3 0 1 0 1 0 0
+##     5 0 0 0 0 0 0
+##     6 2 1 0 0 0 0
+##     7 2 0 0 0 0 0</code></pre>
+<pre><code>##      Affective
+## Vigor 1 2 3 4 5 6 7
+##     1 0 0 1 0 0 0 0
+##     2 0 0 0 0 0 0 0
+##     3 0 1 0 0 1 0 0
+##     5 0 0 0 0 0 1 0
+##     6 0 0 0 0 1 1 1
+##     7 0 0 0 1 0 3 1</code></pre>
+<pre><code>##      Behavioral
+## Vigor 1 2 3 5 6 7
+##     1 0 0 0 0 1 1
+##     2 0 0 0 1 1 0
+##     3 0 0 0 0 1 0
+##     5 1 0 0 0 0 1
+##     6 1 0 0 1 0 0
+##     7 2 1 0 0 0 1</code></pre>
+<p>Initial rating convergence for Dedication:</p>
+<pre><code>##           Cognitive
+## Dedication 1 2 4 5 6 7
+##          1 1 0 0 0 0 0
+##          2 0 0 0 0 0 0
+##          3 0 0 0 1 0 0
+##          6 0 0 1 0 0 1
+##          7 0 2 0 4 1 1</code></pre>
+<pre><code>##           Affective
+## Dedication 1 2 3 4 5 6 7
+##          1 0 0 0 0 0 0 1
+##          2 0 0 0 0 0 1 0
+##          3 0 1 0 0 0 0 0
+##          6 0 0 1 0 0 0 0
+##          7 1 3 0 0 1 0 1</code></pre>
+<pre><code>##           Behavioral
+## Dedication 1 2 3 5 6 7
+##          1 0 0 0 0 2 0
+##          2 1 0 0 0 0 0
+##          3 0 0 0 0 0 0
+##          6 0 0 0 0 0 0
+##          7 1 2 0 2 0 0</code></pre>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-R-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
-</div>
-<div id="ref-eagly_psychology_1993">
-<p>Eagly, Alice H., and Shelly Chaiken. 1993. <em>The Psychology of Attitudes</em>. Harcourt Brace Jovanovich College Publishers.</p>
-</div>
-<div id="ref-harter_business_2002">
-<p>Harter, James K., Frank L. Schmidt, and Theodore L. Hayes. 2002. “Business-Unit-Level Relationship Between Employee Satisfaction, Employee Engagement, and Business Outcomes: A Meta-Analysis.” <em>Journal of Applied Psychology</em> 87 (2): 268.</p>
-</div>
-<div id="ref-kahn_psychological_1990">
-<p>Kahn, William A. 1990. “Psychological Conditions of Personal Engagement and Disengagement at Work.” <em>Academy of Management Journal</em> 33 (4): 692–724.</p>
-</div>
-<div id="ref-leiter_areas_2003">
-<p>Leiter, Michael P., and Christina Maslach. 2003. “Areas of Worklife: A Structured Approach to Organizational Predictors of Job Burnout.” <em>Research in Occupational Stress and Well Being</em> 3 (1): 91–134.</p>
-</div>
-<div id="ref-R-base">
-<p>R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
-</div>
-<div id="ref-rothbard_enriching_2001">
-<p>Rothbard, Nancy P. 2001. “Enriching or Depleting? The Dynamics of Engagement in Work and Family Roles.” <em>Administrative Science Quarterly</em> 46 (4): 655–84.</p>
-</div>
-<div id="ref-saks_antecedents_2006">
-<p>Saks, Alan M. 2006. “Antecedents and Consequences of Employee Engagement.” <em>Journal of Managerial Psychology</em>.</p>
-</div>
-<div id="ref-schaufeli_measurement_2002">
-<p>Schaufeli, Wilmar B., Marisa Salanova, Vicente González-Romá, and Arnold B. Bakker. 2002. “The Measurement of Engagement and Burnout: A Two Sample Confirmatory Factor Analytic Approach.” <em>Journal of Happiness Studies</em> 3 (1): 71–92.</p>
-</div>
-<div id="ref-simpson_engagement_2009">
-<p>Simpson, Michelle R. 2009. “Engagement at Work: A Review of the Literature.” <em>International Journal of Nursing Studies</em> 46 (7): 1012–24.</p>
 </div>
 </div>
             </section>
@@ -151,8 +211,8 @@ We are also trying to improve the definition of each domain by looking at the cu
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="engagement-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="engagement-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="future-plans-with-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
