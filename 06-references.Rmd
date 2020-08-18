@@ -1,4 +1,7 @@
 `r if (knitr::is_html_output()) '
-# References {-}
+# References
 '`
 
+@eagly_psychology_1993
+@simpson_engagement_2009
+[@harter_business_2002; @kahn_psychological_1990; @leiter_areas_2003; @R-base; @R-rmarkdown; @rothbard_enriching_2001; @saks_antecedents_2006; @schaufeli_measurement_2002; @simpson_engagement_2009]
