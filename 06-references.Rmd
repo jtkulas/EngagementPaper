@@ -1,6 +1,4 @@
-`r if (knitr::is_html_output()) '
 # References
-'`
 
 @eagly_psychology_1993
 @simpson_engagement_2009
