@@ -7,7 +7,7 @@ documentclass: book
 cover-image: "EE.jpeg"
 bibliography: [book.bib, engage.bib, packages.bib]
 #biblio-style: "apalike"
-link-citations: yes
+link-citations: no
 description: "This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook."
 ---
 # Homepage {-#Homepage}
@@ -17,4 +17,14 @@ description: "This is a technical report that contains the development of the Ea
 </center>  
 
 This is a technical report that contains the development of the Eagle IO Engagement survey.
+
+This survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions: 
+
+| Substantive    | Attitudinal   |
+|----------------|---------------|
+| Dedication     | Affective     |
+| Absorption     | Behavioral    |
+| Vigor          | Cognitive     |
+
+The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition [see, for example, @eagly_psychology_1993].
 
