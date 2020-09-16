@@ -6,6 +6,7 @@ site: bookdown::bookdown_site
 documentclass: book
 cover-image: "EE.jpeg"
 bibliography: [book.bib, engage.bib, packages.bib]
+csl: apa.csl
 #biblio-style: "apalike"
 link-citations: no
 description: "This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook."
