@@ -1,6 +1,10 @@
-# Future plans with project
+# Future plans 
 
-Some _significant_ applications are demonstrated in this chapter.
+Development of the feedback report will occur in stages:
+
+1. Static .pdf
+2. Dynamic dashboard
+3. Optimize interpretation (invite contributions of cognitive psychologists and/or graphic designers)
 
 ## Things to do 
 

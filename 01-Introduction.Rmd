@@ -1,0 +1,18 @@
+# Introduction {#intro}
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). 
+Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from Schaufeli et al, (2002), and we are trying to find where Fulfillment came from. 
+We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain. 
+
+## Intended Structure {#ABCDAV}
+
+At some point we decided to attempt an *a priori* bi-factor structure, whereby each of the substantive dimensions (Dedication, Vigor, and Absorption)[^1] could further be deconstructed into the attitudinal elements of Cognition, Affect, and Behavior. Through item-writing and revision, it began to dawn on us that the substantive elements may already reflect the Cognition (Vigor), Affect (Absorption), and Behavioral (Dedication) dimensions. 
+
+As of August, 2012, we could not locate a source article that made this alignment explicit, so we persisted through crafting items that reflected Cognitive, Affective, and Behavioral indicators of each substantive dimension.
+
+The most relevant acknowledgement of this potential confound was made by @schaufeli_measurement_2002 (p. ??):
+
+>Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one’s work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one’s work or one’s job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification.
+
+[^1]: We also discovered at this point that some contagious agent has infiltrated the minds of people working on this project, such that the word, "absorption" confounds our spelling abilities, and roughly 50% of the time ends up being spelled (misspelled?), "absorbtion"...
+
