@@ -11,15 +11,16 @@ csl: apa.csl
 link-citations: no
 description: "This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook."
 ---
-# Homepage {-#Homepage}
+
+# Home {#homepage}
 
 <center>
 ![](EE.jpeg)
 </center>  
 
-This is a technical report that contains the development of the Eagle IO Engagement survey.
+This is a technical report that presents the most germane details regarding the development of the Eagle IO Engagement survey.
 
-This survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions: 
+The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings fully exhaust the 3 x 3 conditions: 
 
 | Substantive    | Attitudinal   |
 |----------------|---------------|
