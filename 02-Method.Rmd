@@ -2,6 +2,28 @@
 
 The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped), 2) within attitudinal dimension (substantively grouped), 3) within substantive dimension (sequentially distributed by attitude), and 4) within attitudinal dimension (sequentially presented by substance).
 
+We chose to control the order of item administration because of our *a priori* specification of a bi-factor structure, with the expectation that item ordering would serve as a response cue, yeilding stronger factor structural support based on the organization scheme. 
+
+Our four item orderings were:
+
+```{r cond1, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+cond1 <- read.csv("cond1.csv")
+cond2 <- read.csv("cond2.csv")
+cond3 <- read.csv("cond3.csv")
+cond4 <- read.csv("cond4.csv")
+
+library(kableExtra)
+
+
+kable(cond1) 
+kable(cond2) 
+kable(cond3) 
+kable(cond4) 
+
+```
+
 + Demographic Information
 
 
