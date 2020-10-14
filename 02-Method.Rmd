@@ -1,6 +1,6 @@
 # Instrument creation
 
-The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped), 2) within attitudinal dimension (substantively grouped), 3) within substantive dimension (sequentially distributed by attitude), and 4) within attitudinal dimension (sequentially presented by substance).[^footie]
+The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped), 2) within attitudinal dimension (substantively grouped), 3) within substantive dimension (sequentially **"change to randomly?"** distributed by attitude), and 4) within attitudinal dimension (sequentially presented by substance).[^footie]
 
 [^footie]: Decision was made on 10/13 to have the order of presentation *randomized* within each of the broader organization blocks (for example, Condition 3: all Absorption items were randomly administered, then all Dedication items, etc [Although DAC was also randomized by block such that not every respondent had the same DAC ordering])
 
