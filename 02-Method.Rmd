@@ -1,8 +1,10 @@
 # Instrument creation
 
-The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped), 2) within attitudinal dimension (substantively grouped), 3) within substantive dimension (sequentially **"change to randomly?"** distributed by attitude), and 4) within attitudinal dimension (sequentially presented by substance).[^footie]
+The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped [but randomized within blocks of 4]), 2) within attitudinal dimension (substantively grouped [but randomized within blocks of 4]), 3) within substantive dimension (randomly distributed by attitude), and 4) within attitudinal dimension (randomly presented by substance).[^footie]
 
-[^footie]: Decision was made on 10/13 to have the order of presentation *randomized* within each of the broader organization blocks (for example, Condition 3: all Absorption items were randomly administered, then all Dedication items, etc [Although DAC was also randomized by block such that not every respondent had the same DAC ordering])
+The four "experimental" conditions therefore prioritized and reflected the 3x3 groupings *or* one of the organization schemes (cognitive, affective, and behavioral *or* dedication, absorption, and vigor).
+ 
+[^footie]: Decision was made on 10/13 to have the order of presentation *randomized* within each of the broader organization blocks (for example, Condition 3: all Affective, Cognitive, and Behavioral Absorption items were randomly administered, then all ABC Dedication items, etc [although DAC was also randomized by block such that not every respondent had the same DAC ordering])
 
 We chose to control the order of item administration because of our *a priori* specification of a bi-factor structure, with the expectation that item ordering would serve as a response cue, yeilding stronger factor structural support based on the organization scheme. 
 
