@@ -2,7 +2,7 @@
 
 ## Pilot
 
-Snowball sampling to reduce final instrument
+Snowball sampling to reduce final instrument from 36 candidate items (4 per "cell")
 
 ## Construct and Criterion-related Validation
 
