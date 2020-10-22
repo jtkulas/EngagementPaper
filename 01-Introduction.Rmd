@@ -1,5 +1,13 @@
 # Introduction {#intro}
 
+The tripartite model of employee engagement is partially informed by the definitions provided with the Utrecht Work Engagement Scale [@schaufeli_utrecht_2003]. Definitions offered within @bakker_job_2017 are:
+
+Work engagement is the mental state where employees...  
+
++ **Vigor**: ...feel full with physical energy
++ **Dedication**: ...are enthusiastic about the content of their work and the things they do
++ **Absorption**: ...are so immersed in their work activities that time seems to fly
+
 We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). 
 Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from Schaufeli et al, (2002), and we are trying to find where Fulfillment came from. 
 We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain. 
