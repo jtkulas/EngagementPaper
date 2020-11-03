@@ -60,3 +60,26 @@ With these definitions we ordered all the items according to the ones we individ
 # Items
 
 After content validation, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items [located here](https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing) (Montclair State University e-mail needed to access)
+
+# Pilot conditions {#pilot2}
+
+Our four item orderings were:
+
+```{r cond1, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+cond1 <- read.csv("cond1.csv")
+cond2 <- read.csv("cond2.csv")
+cond3 <- read.csv("cond3.csv")
+cond4 <- read.csv("cond4.csv")
+
+library(kableExtra)
+
+
+kable(cond1) 
+kable(cond2) 
+kable(cond3) 
+kable(cond4) 
+
+```
+

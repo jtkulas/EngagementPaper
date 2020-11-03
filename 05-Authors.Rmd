@@ -1,4 +1,4 @@
-# Author Bios
+# Author bios
 
 ```{r authors, echo=FALSE}
 
