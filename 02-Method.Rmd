@@ -1,5 +1,7 @@
 # Instrument creation
 
+![](develop.jpg)
+
 The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings: 1) within substantive dimension (attitudinally grouped [but randomized within blocks of 4]), 2) within attitudinal dimension (substantively grouped [but randomized within blocks of 4]), 3) within substantive dimension (randomly distributed by attitude), and 4) within attitudinal dimension (randomly presented by substance).[^footie]
 
 The four "experimental" conditions therefore prioritized and reflected the 3x3 groupings *or* one of the organization schemes (cognitive, affective, and behavioral *or* dedication, absorption, and vigor).

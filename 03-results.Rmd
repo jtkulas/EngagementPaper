@@ -1,5 +1,7 @@
 # Results
 
+![](results.jpg)
+
 ## Pilot
 
 Snowball sampling to reduce final instrument from 36 candidate items (4 per "cell")

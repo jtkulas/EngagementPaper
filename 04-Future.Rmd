@@ -1,5 +1,7 @@
 # Future plans 
 
+![](future.jpg)
+
 Development of the feedback report will occur in stages:
 
 1. Static .pdf

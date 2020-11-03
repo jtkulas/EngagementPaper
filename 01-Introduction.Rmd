@@ -1,5 +1,7 @@
 # Introduction {#intro}
 
+![](research.jpg)
+
 The tripartite model of employee engagement is partially informed by the definitions provided with the Utrecht Work Engagement Scale [@schaufeli_utrecht_2003]. Definitions offered within @bakker_job_2017 are:
 
 Work engagement is the mental state where employees...  
