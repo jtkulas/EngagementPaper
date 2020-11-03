@@ -22,5 +22,16 @@ The most relevant acknowledgement of this potential confound was made by @schauf
 
 >Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one’s work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one’s work or one’s job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification.
 
+The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings are intended to fully exhaust the 3 x 3 conditions (e.g., each item loads on one substantive and one attitudinal dimension): 
+
+| Substantive    | Attitudinal   |
+|----------------|---------------|
+| Dedication     | Affective     |
+| Absorption     | Behavioral    |
+| Vigor          | Cognitive     |
+
+The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition [see, for example, @eagly_psychology_1993].
+
+
 [^1]: We also discovered at this point that some contagious agent has infiltrated the minds of people working on this project, such that the word, "absorption" confounds our spelling abilities, and roughly 50% of the time ends up being spelled (misspelled?), "absorbtion"...
 

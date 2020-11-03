@@ -1,0 +1,12 @@
+# Author Bios
+
+```{r authors, echo=FALSE}
+
+library(kableExtra)
+
+authors <- read.csv("authors.csv")
+kable(authors, col.names=NULL)
+
+```
+
+

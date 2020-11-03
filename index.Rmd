@@ -3,12 +3,14 @@ title: "Engagement Survey Technical Report"
 author: "Eagle I.O"
 date: "Most recently updated `r Sys.Date()`"
 site: bookdown::bookdown_site
+always_allow_html: yes
 documentclass: book
 cover-image: "EE.jpeg"
 bibliography: [book.bib, engage.bib, packages.bib]
 csl: apa.csl
 #biblio-style: "apalike"
-link-citations: no
+link-citations: yes
+toc-depth: 4
 description: "This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook."
 ---
 
@@ -18,15 +20,6 @@ description: "This is a technical report that contains the development of the Ea
 ![](EE.jpeg)
 </center>  
 
-This is a technical report that presents the most germane details regarding the development of the Eagle IO Engagement survey.
+This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
 
-The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings fully exhaust the 3 x 3 conditions: 
-
-| Substantive    | Attitudinal   |
-|----------------|---------------|
-| Dedication     | Affective     |
-| Absorption     | Behavioral    |
-| Vigor          | Cognitive     |
-
-The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition [see, for example, @eagly_psychology_1993].
 
