@@ -2,22 +2,9 @@
 
 ![](develop.jpg)
 
-The pilot administrations consisted of 36 [items](https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing) that were presented in one of four administration groupings (see Appendix \@ref(pilot2)): 1) within substantive dimension (attitudinally grouped [but randomized within blocks of 4]), 2) within attitudinal dimension (substantively grouped [but randomized within blocks of 4]), 3) within substantive dimension (randomly distributed by attitude), and 4) within attitudinal dimension (randomly presented by substance).[^footie]
+## Item generation
 
-
-
-The four "experimental" conditions therefore prioritized and reflected the 3x3 groupings *or* one of the organization schemes (cognitive, affective, and behavioral *or* dedication, absorption, and vigor).
- 
-[^footie]: Decision was made on 10/13 to have the order of presentation *randomized* within each of the broader organization blocks (for example, Condition 3: all Affective, Cognitive, and Behavioral Absorption items were randomly administered, then all ABC Dedication items, etc [although DAC was also randomized by block such that not every respondent had the same DAC ordering])
-
-We chose to control the order of item administration because of our *a priori* specification of a bi-factor structure, with the expectation that item ordering would serve as a response cue, yeilding stronger factor structural support based on the organization scheme. 
-
-
-+ Demographic Information
-
-I was thinking of another way to slice the engagement survey data. It could be sliced by employees who work overtime vs. those who do not, vs. the employees who get paid for overtime vs. those who don't receive compensation for extra hours worked. So there would be four categories.
-
-I was thinking about this because at my job I have been working 12+ hours some days yet I do not get overtime pay. Not sure if this would work for what we are doing and I know my work experiences are not universal (nor should they be) haha!
+After content validation but prior to settling on 4 candidate items per 3x3 condition, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items [located here](https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing) (Montclair State University e-mail needed to access). It was from this larger list of (reduced) candidate items that the 36 pilot candidates were identified (and in some cases modified, edited, or otherwise further crafted)
 
 
 ## Content Validation

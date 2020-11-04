@@ -1,37 +1,37 @@
-Condition4,Substantive,Attitudinal
-I知 able to concentrate on my work without distractions,Absorption,Cognitive
-I devote my full attention to my work tasks throughout the day,Vigor,Cognitive
-I plan my future with this company.,Dedication,Cognitive
-I have a hard time detaching mentally from my work,Absorption,Cognitive
-Thinking about work saps my energy (r),Vigor,Cognitive
-I believe this company cares about my career goals,Dedication,Cognitive
-Time passes quickly while I知 working,Absorption,Cognitive
-I would rather direct my focus toward a work task than a personal task,Vigor,Cognitive
-I often think about finding another job (r),Dedication,Cognitive
-I find it difficult to mentally disconnect from work,Absorption,Cognitive
-I知 able to maintain good levels of energy throughout the workday,Vigor,Cognitive
-This organization challenges me to work at my full potential,Dedication,Cognitive
-I enjoy thinking about work even when I知 not at work,Absorption,Affective
-I enjoy spending time completing my job tasks.,Vigor,Affective
-I am proud to be a member of this organization.,Dedication,Affective
-"Most days, I feel happiest when the workday is soon to be complete (r)",Absorption,Affective
-Most days I feel enthusiastic about starting my work day.,Vigor,Affective
-I feel supported by my supervisor when I fail at a task,Dedication,Affective
-I am happiest when I am immersed in a project,Absorption,Affective
-I feel motivated to go beyond what is asked of me,Vigor,Affective
-I feel proud of my accomplishments within this organization,Dedication,Affective
-I love starting my workday.,Absorption,Affective
-This job drains my energy (r),Vigor,Affective
-My job makes me feel like I知 part of something meaningful,Dedication,Affective
-I devote more time than is expected of me.,Absorption,Behavioral
-When work is slow I find ways to be productive.,Vigor,Behavioral
-I make valued contributions to the organization,Dedication,Behavioral
-I have to be reminded to take breaks while I知 at work,Absorption,Behavioral
-I express enthusiasm for my job while at work,Vigor,Behavioral
-I embrace challenging situations at work.,Dedication,Behavioral
-I never miss a work deadline.,Absorption,Behavioral
-I try my best to perform well at work,Vigor,Behavioral
-I speak positively about this organization to others.,Dedication,Behavioral
-I never allow distractions to interfere with my work,Absorption,Behavioral
-"If I notice my energy level is low, I take corrective steps to re-energize.",Vigor,Behavioral
-This organization provides the resources necessary for me to successfully perform my job,Dedication,Behavioral
+Condition4,Substantive,Attitudinal,Dimension,Item
+I知 able to concentrate on my work without distractions,Absorption,Cognitive,A,A
+I devote my full attention to my work tasks throughout the day,Vigor,Cognitive,A,B
+I plan my future with this company.,Dedication,Cognitive,A,C
+I have a hard time detaching mentally from my work,Absorption,Cognitive,A,D
+Thinking about work saps my energy (r),Vigor,Cognitive,A,E
+I believe this company cares about my career goals,Dedication,Cognitive,A,F
+Time passes quickly while I知 working,Absorption,Cognitive,A,G
+I would rather direct my focus toward a work task than a personal task,Vigor,Cognitive,A,H
+I often think about finding another job (r),Dedication,Cognitive,A,I
+I find it difficult to mentally disconnect from work,Absorption,Cognitive,A,J
+I知 able to maintain good levels of energy throughout the workday,Vigor,Cognitive,A,K
+This organization challenges me to work at my full potential,Dedication,Cognitive,A,L
+I enjoy thinking about work even when I知 not at work,Absorption,Affective,B,A
+I enjoy spending time completing my job tasks.,Vigor,Affective,B,B
+I am proud to be a member of this organization.,Dedication,Affective,B,C
+"Most days, I feel happiest when the workday is soon to be complete (r)",Absorption,Affective,B,D
+Most days I feel enthusiastic about starting my work day.,Vigor,Affective,B,E
+I feel supported by my supervisor when I fail at a task,Dedication,Affective,B,F
+I am happiest when I am immersed in a project,Absorption,Affective,B,G
+I feel motivated to go beyond what is asked of me,Vigor,Affective,B,H
+I feel proud of my accomplishments within this organization,Dedication,Affective,B,I
+I love starting my workday.,Absorption,Affective,B,J
+This job drains my energy (r),Vigor,Affective,B,K
+My job makes me feel like I知 part of something meaningful,Dedication,Affective,B,L
+I devote more time than is expected of me.,Absorption,Behavioral,C,A
+When work is slow I find ways to be productive.,Vigor,Behavioral,C,B
+I make valued contributions to the organization,Dedication,Behavioral,C,C
+I have to be reminded to take breaks while I知 at work,Absorption,Behavioral,C,D
+I express enthusiasm for my job while at work,Vigor,Behavioral,C,E
+I embrace challenging situations at work.,Dedication,Behavioral,C,F
+I never miss a work deadline.,Absorption,Behavioral,C,G
+I try my best to perform well at work,Vigor,Behavioral,C,H
+I speak positively about this organization to others.,Dedication,Behavioral,C,I
+I never allow distractions to interfere with my work,Absorption,Behavioral,C,J
+"If I notice my energy level is low, I take corrective steps to re-energize.",Vigor,Behavioral,C,K
+This organization provides the resources necessary for me to successfully perform my job,Dedication,Behavioral,C,L

@@ -6,7 +6,7 @@
 
 <div id="refs"></div>
 
-# (APPENDIX) Appendix {-} 
+# (APPENDIX) Appendices {-} 
 
 # Timeline of events
 
@@ -57,13 +57,9 @@ After completing individual Q-sorts (Kulas and Renata) we decided to revisit the
 
 With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
 
-# Items
-
-After content validation, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items [located here](https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing) (Montclair State University e-mail needed to access)
-
 # Pilot conditions {#pilot2}
 
-Our four item orderings were:
+Our four orderings of items were randomized within dimension (Affective, Behavioral, Cognitive or Dedication, Absorption, Vigor), "block" (Qualtrics designation for groupings of items), and item. The elements that were randomized are identified in the following tables by randomized element (A, B, C, or D):
 
 ```{r cond1, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -75,11 +71,72 @@ cond4 <- read.csv("cond4.csv")
 
 library(kableExtra)
 
-
-kable(cond1) 
-kable(cond2) 
-kable(cond3) 
-kable(cond4) 
+kable(cond1, caption = "Pilot administration ordering Condition 1") 
+kable(cond2, caption = "Pilot administration ordering Condition 2") 
+kable(cond3, caption = "Pilot administration ordering Condition 3") 
+kable(cond4, caption = "Pilot administration ordering Condition 4") 
 
 ```
 
+# Qualitative item characteristics
+
+Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. "Dale.Chall" reflects *N~wd~*
+
+```{r quanteda, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(quanteda)
+
+data2 <- corpus(cond1, docid_field = "Condition1",
+  text_field = "Condition1")
+
+tab2 <- textstat_readability(data2,
+                     measure = c("Flesch.Kincaid", "Dale.Chall"))
+
+temp <- cbind(tab2,cond1)
+
+temp$combo <- paste(temp$Substantive,temp$Attitudinal)
+
+```
+
+## Frequency distributions by dimension
+
+```{r scale, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
+
+library(ggplot2)
+
+ggplot(temp, aes(x = Dale.Chall, fill = combo)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Att/Engage\nInteraction") 
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = combo)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Att/Engage\nInteraction") 
+
+ggplot(temp, aes(x = Dale.Chall, fill = Substantive)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Engagement\nDimension") 
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = Substantive)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Engagement\nDimension") 
+
+ggplot(temp, aes(x = Dale.Chall, fill = Attitudinal)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Attitudinal\nDimension") 
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = Attitudinal)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Attitudinal\nDimension") 
+
+```
+
+## Table of qualitative indices
+
+```{r freqtable, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
+
+temp2 <- temp[,c(1,5,6,2:3)]
+
+tab3 <- temp2[order(-temp2$Flesch.Kincaid),]
+knitr::kable(tab3, digits=2)
+
+```
