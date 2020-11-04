@@ -80,7 +80,7 @@ kable(cond4, caption = "Pilot administration ordering Condition 4")
 
 # Qualitative item characteristics
 
-Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. "Dale.Chall" reflects *N~wd~*
+Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975]. "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995].  [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. 
 
 ```{r quanteda, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -137,6 +137,9 @@ ggplot(temp, aes(x = Flesch.Kincaid, fill = Attitudinal)) +
 temp2 <- temp[,c(1,5,6,2:3)]
 
 tab3 <- temp2[order(-temp2$Flesch.Kincaid),]
-knitr::kable(tab3, digits=2)
+knitr::kable(tab3, digits=2, caption = "Organized by Flesch-Kincaid aka Reading Level")
+
+tab4 <- temp2[order(-temp2$Dale.Chall),]
+knitr::kable(tab4, digits=2, caption = "Organized by Dale Chall aka includes Difficult Words")
 
 ```

@@ -37,6 +37,5 @@ The survey is intentionally complex in terms of item and scale associations. The
 
 The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition [see, for example, @eagly_psychology_1993].
 
-
 [^1]: We also discovered at this point that some contagious agent has infiltrated the minds of people working on this project, such that the word, "absorption" confounds our spelling abilities, and roughly 50% of the time ends up being spelled (misspelled?), "absorbtion"...
 
