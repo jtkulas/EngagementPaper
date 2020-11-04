@@ -96,7 +96,14 @@ temp <- cbind(tab2,cond1)
 
 temp$combo <- paste(temp$Substantive,temp$Attitudinal)
 
+meanfk <- mean(tab2$Flesch.Kincaid, na.rm=TRUE)
+meandc <- mean(tab2$Dale.Chall, na.rm=TRUE)
+sdfk <- sd(tab2$Flesch.Kincaid, na.rm=TRUE)
+sddc <- sd(tab2$Dale.Chall, na.rm=TRUE)
+
 ```
+
+The average Flesch-Kincaied (e.g., reading grade) was `r round(meanfk,2)` (*sd* = `r round(sdfk,2)`). The average Dale-Chall index was `r round(meandc,2)` (*sd* = `r round(sddc,2)`).
 
 ## Frequency distributions by dimension
 
