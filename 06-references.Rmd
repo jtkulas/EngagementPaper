@@ -61,7 +61,7 @@ With these definitions we ordered all the items according to the ones we individ
 
 Our four orderings of items were randomized within dimension (Affective, Behavioral, Cognitive or Dedication, Absorption, Vigor), "block" (Qualtrics designation for groupings of items), and item. The elements that were randomized are identified in the following tables by randomized element (A, B, C, or D):
 
-```{r cond1, echo=FALSE, warning=FALSE, message=FALSE}
+```{r conditions, echo=FALSE, warning=FALSE, message=FALSE}
 
 
 cond1 <- read.csv("cond1.csv")
@@ -107,39 +107,45 @@ The average Flesch-Kincaied (e.g., reading grade) was `r round(meanfk,2)` (*sd* 
 
 ## Frequency distributions by dimension
 
-```{r scale, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
+```{r scale, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(ggplot2)
 
 ggplot(temp, aes(x = Dale.Chall, fill = combo)) +
   geom_density(alpha = .5) +
-  xlab("Dale Chall Index") + labs(fill = "Att/Engage\nInteraction") 
-
-ggplot(temp, aes(x = Flesch.Kincaid, fill = combo)) +
-  geom_density(alpha = .5) +
-  xlab("Flesch-Kincaid Index") + labs(fill = "Att/Engage\nInteraction") 
+  xlab("Dale Chall Index") + labs(fill = "Att/Engage\nInteraction") +
+  ggtitle("Infrequent word incidence across substantive/attitudinal dimension combinations")
 
 ggplot(temp, aes(x = Dale.Chall, fill = Substantive)) +
   geom_density(alpha = .5) +
-  xlab("Dale Chall Index") + labs(fill = "Engagement\nDimension") 
-
-ggplot(temp, aes(x = Flesch.Kincaid, fill = Substantive)) +
-  geom_density(alpha = .5) +
-  xlab("Flesch-Kincaid Index") + labs(fill = "Engagement\nDimension") 
+  xlab("Dale Chall Index") + labs(fill = "Engagement\nDimension") +
+  ggtitle("Infrequent word incidence across substantive dimensions")
 
 ggplot(temp, aes(x = Dale.Chall, fill = Attitudinal)) +
   geom_density(alpha = .5) +
-  xlab("Dale Chall Index") + labs(fill = "Attitudinal\nDimension") 
+  xlab("Dale Chall Index") + labs(fill = "Attitudinal\nDimension") +
+  ggtitle("Infrequent word incidence across attitudinal dimensions")
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = combo)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Att/Engage\nInteraction") +
+  ggtitle("Item reading level estimates across substantive/attitudinal dimension combinations")
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = Substantive)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Engagement\nDimension") +
+  ggtitle("Item reading level estimates across substantive dimensions")
 
 ggplot(temp, aes(x = Flesch.Kincaid, fill = Attitudinal)) +
   geom_density(alpha = .5) +
-  xlab("Flesch-Kincaid Index") + labs(fill = "Attitudinal\nDimension") 
+  xlab("Flesch-Kincaid Index") + labs(fill = "Attitudinal\nDimension") +
+  ggtitle("Item reading level estimates across attitudinal dimensions")
 
 ```
 
-## Table of qualitative indices
+## Tables of qualitative indices
 
-```{r freqtable, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
+```{r freqtables, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
 
 temp2 <- temp[,c(1,5,6,2:3)]
 
@@ -150,3 +156,4 @@ tab4 <- temp2[order(temp2$Dale.Chall),]
 knitr::kable(tab4, digits=2, caption = "Organized by Dale Chall aka includes Difficult Words")
 
 ```
+
