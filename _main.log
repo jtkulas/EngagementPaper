@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.3)  4 NOV 2020 16:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.3)  5 NOV 2020 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,16 +485,16 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count297
 ) (./_main.aux
 
-LaTeX Warning: Label `tab:cond1' multiply defined.
+LaTeX Warning: Label `tab:conditions' multiply defined.
 
 
-LaTeX Warning: Label `tab:cond1' multiply defined.
+LaTeX Warning: Label `tab:conditions' multiply defined.
 
 
-LaTeX Warning: Label `tab:cond1' multiply defined.
+LaTeX Warning: Label `tab:conditions' multiply defined.
 
 
-LaTeX Warning: Label `tab:freqtable' multiply defined.
+LaTeX Warning: Label `tab:freqtables' multiply defined.
 
 )
 \openout1 = `_main.aux'.
@@ -976,23 +976,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
-(./_main.bbl [72] [73
+[56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) [74] (./_main.aux)
+[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
+(./_main.bbl [73] [74
+
+] [75]) [76] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 9D1F597F12AE1AED7CD0457E333884AA;3839.
+(rerunfilecheck)             Checksum: 8A298A91C9E6277C2C52E1A1DFB35F4F;3844.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  16690 strings out of 479426
- 294361 string characters out of 5879235
- 739715 words of memory out of 5000000
+ 294368 string characters out of 5879235
+ 739717 words of memory out of 5000000
  35805 multiletter control sequences out of 15000+600000
  541587 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,8n,118p,1120b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (74 pages).
+Output written on _main.pdf (76 pages).
