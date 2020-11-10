@@ -14,7 +14,7 @@ We chose to control the order of item administration because of our *a priori* s
 
 ### Sampling strategy (pilot)
 
-The sampling strategy will consist of Snowball or Referral Sampling to reduce the final instrument from 36 items (4 per "cell") to 18 items (2 per "cell"). Our aim is to obtain about 250 total responses viable for analysis. A Confirmatory Bi-Factor Analysis will be performed to determine the best candidate items for the final assessment. 
+The sampling strategy will consist of Snowball or Referral Sampling to reduce the final instrument from 36 items (4 per "cell") to 18 items (2 per "cell"). Our aim is to obtain about 250 total responses viable for analysis. A Confirmatory Bi-Factor Analysis will be performed to determine the best candidate items for the final assessment. The launch was informed by research looking at different "days of the week" and their effectiveness regarding response rate. This was both [commercial](https://blog.hubspot.com/service/best-time-send-survey) as well as academic [e.g., @stone_dayweek_2012].
 
 Sampling plan:
 Eagle I.O members will be in charge of the distribution of the Engagement survey.An email will be drafted asking participants to take the survey and forward it to family and friends who qualify as participants.They will reach out to other students, alumni, friends, and family through the following:
