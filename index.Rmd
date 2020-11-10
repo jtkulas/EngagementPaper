@@ -20,9 +20,11 @@ description: "This is a technical report that contains the development of the Ea
 
 ## new machines in DH 226 were slow - the following accesses all available processor cores
 
+## run this code in the console prior to building book:
+
 library(parallel)
 numCores <- detectCores()
-mc.cores <- numCores
+mc.cores = numCores
 
 ```
 
