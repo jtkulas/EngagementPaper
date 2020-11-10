@@ -16,6 +16,16 @@ description: "This is a technical report that contains the development of the Ea
 
 # Home {#homepage}
 
+```{r quicker, message=FALSE, warning=FALSE, echo=FALSE}
+
+## new machines in DH 226 were slow - the following accesses all available processor cores
+
+library(parallel)
+numCores <- detectCores()
+mc.cores <- numCores
+
+```
+
 <center>
 ![](EE.jpeg)
 </center>  
