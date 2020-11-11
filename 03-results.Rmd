@@ -40,4 +40,4 @@ These are to be included in future administrations in an attempt to develop mark
 
 ## Construct and Criterion-related Validation
 
-Use Gallup for construct validation [@thackray_gallup_2005]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]
+Use Gallup for construct validation [@thackray_gallup_2005; @harter_relationship_2013]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]
