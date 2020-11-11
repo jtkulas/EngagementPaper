@@ -1,6 +1,6 @@
-# Results
+# Procedure
 
-![](results.jpg)
+![](procedure.jpg)
 
 ## Pilot
 
@@ -27,8 +27,6 @@ Eagle I.O members will be in charge of the distribution of the Engagement survey
 + Mentors will reach out to mentees individually 
 + Survey will be posted on Eagle I.O webpage
    
-   
-
 ## Demographic Information
 
 These are to be included in future administrations in an attempt to develop marketable norms:
@@ -38,6 +36,3 @@ These are to be included in future administrations in an attempt to develop mark
 
 [^nother]:I was thinking about this because at my job I have been working 12+ hours some days yet I do not get overtime pay. Not sure if this would work for what we are doing and I know my work experiences are not universal (nor should they be) haha!
 
-## Construct and Criterion-related Validation
-
-Use Gallup for construct validation [@thackray_gallup_2005; @harter_relationship_2013]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]

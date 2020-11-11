@@ -1,0 +1,9 @@
+# Analyses
+
+![](results.jpg)
+
+bifactor analysis are most commonly applied in the exploration of common method variance [see, for example, @reise_rediscovery_2012;  @rodriguez_evaluating_2016]. @giordano_exploratory_2020 provide an overview regarding past and potential applications of *exploratory* bifactor analysis and cite @reise_rediscovery_2012 as an influential impetus for the resurgence of bifactor models in general. 
+
+## Construct and Criterion-related Validation
+
+Use Gallup for construct validation [@thackray_gallup_2005; @harter_relationship_2013]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]

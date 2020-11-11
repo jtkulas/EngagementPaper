@@ -1,0 +1,159 @@
+# References
+
+@eagly_psychology_1993
+@simpson_engagement_2009
+[@harter_business_2002; @kahn_psychological_1990; @leiter_areas_2003; @R-base; @R-rmarkdown; @rothbard_enriching_2001; @saks_antecedents_2006; @schaufeli_measurement_2002; @simpson_engagement_2009]
+
+<div id="refs"></div>
+
+# (APPENDIX) Appendices {-} 
+
+# Timeline of events
+
+Here is Eagle IO's initial definition of engagement (Spring 2019):
+
+A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
+
+This definition was created by Eagle IO Spring 2019, and modified by Dr. Kulas and Renata Fall 2019 to include the four dimensions of Fulfillment, Absorbtion, Dedication, and Vigor. 
+
+## Feb 20.2020 (Considering removing fulfillment)
+
+*Fulfillment*: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. [Satisfaction(?)]
+
+Decided to operationalize fullfillment as an *outcome* of engagement rather than a definitional element 
+
+## Definitional amendments as of 02.24.2020
+
+*Absorption*: being fully concentrated and happily immersed in ones work (time passes quickly and has difficulty detaching from ones work; Schaufeli et al., 2002)
+
+*Dedication/Commitment*: being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. (Schaufeli et al., 2002) Identifying as an organizational member/ambassador
+
+include identification with the organization, a sense of "oneness"
+seeking continuous leanring and improvement 
+getting rid of challenge altogether
+moving inspiration and pride to other categories 
+
+*dedication*: seeking continous imporvement and demonstrating initiative 
+
+*Vigor*: investing consistent effort, persistence, energy, and mental resilience while working (Schaufeli et al., 2002)
+maybe add enthusiasm here as well 
+
+*Vigor*: Experiencing persistent levels of energy and enthusiasm while working 
+
+********
+potential to change from affective, cognitive, and behavioral to whether their engagement comes from content/satisfaction with the organization or the people they work with. 
+
+******** 
+
+After completing individual Q-sorts (Kulas and Renata) we decided to revisit the definitions and build them up a little to make the difference between them more noticeable. 
+
+## Definitions as of 5/19/2020
+
+*Absorption*: Being fully immersed in one’s work, where time passes quickly and one has difficulty detaching from work tasks
+
+*Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
+
+*Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+
+With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
+
+# Pilot conditions {#pilot2}
+
+Our four orderings of items were randomized within dimension (Affective, Behavioral, Cognitive or Dedication, Absorption, Vigor), "block" (Qualtrics designation for groupings of items), and item. The elements that were randomized are identified in the following tables by randomized element (A, B, C, or D):
+
+```{r conditions, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+cond1 <- read.csv("cond1.csv")
+cond2 <- read.csv("cond2.csv")
+cond3 <- read.csv("cond3.csv")
+cond4 <- read.csv("cond4.csv")
+
+library(kableExtra)
+
+kable(cond1, caption = "Pilot administration ordering Condition 1") 
+kable(cond2, caption = "Pilot administration ordering Condition 2") 
+kable(cond3, caption = "Pilot administration ordering Condition 3") 
+kable(cond4, caption = "Pilot administration ordering Condition 4") 
+
+```
+
+# Qualitative item characteristics
+
+Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975]. "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995].  [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. 
+
+```{r quanteda, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(quanteda)
+
+data2 <- corpus(cond1, docid_field = "Condition1",
+  text_field = "Condition1")
+
+tab2 <- textstat_readability(data2,
+                     measure = c("Flesch.Kincaid", "Dale.Chall"))
+
+temp <- cbind(tab2,cond1)
+
+temp$combo <- paste(temp$Substantive,temp$Attitudinal)
+
+meanfk <- mean(tab2$Flesch.Kincaid, na.rm=TRUE)
+meandc <- mean(tab2$Dale.Chall, na.rm=TRUE)
+sdfk <- sd(tab2$Flesch.Kincaid, na.rm=TRUE)
+sddc <- sd(tab2$Dale.Chall, na.rm=TRUE)
+
+```
+
+The average Flesch-Kincaied (e.g., reading grade) was `r round(meanfk,2)` (*sd* = `r round(sdfk,2)`). The average Dale-Chall index was `r round(meandc,2)` (*sd* = `r round(sddc,2)`).
+
+## Frequency distributions by dimension
+
+```{r scale, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(ggplot2)
+
+ggplot(temp, aes(x = Dale.Chall, fill = combo)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Att/Engage\nInteraction") +
+  ggtitle("Infrequent word incidence across substantive/attitudinal dimension combinations")
+
+ggplot(temp, aes(x = Dale.Chall, fill = Substantive)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Engagement\nDimension") +
+  ggtitle("Infrequent word incidence across substantive dimensions")
+
+ggplot(temp, aes(x = Dale.Chall, fill = Attitudinal)) +
+  geom_density(alpha = .5) +
+  xlab("Dale Chall Index") + labs(fill = "Attitudinal\nDimension") +
+  ggtitle("Infrequent word incidence across attitudinal dimensions")
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = combo)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Att/Engage\nInteraction") +
+  ggtitle("Item reading level estimates across substantive/attitudinal dimension combinations")
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = Substantive)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Engagement\nDimension") +
+  ggtitle("Item reading level estimates across substantive dimensions")
+
+ggplot(temp, aes(x = Flesch.Kincaid, fill = Attitudinal)) +
+  geom_density(alpha = .5) +
+  xlab("Flesch-Kincaid Index") + labs(fill = "Attitudinal\nDimension") +
+  ggtitle("Item reading level estimates across attitudinal dimensions")
+
+```
+
+## Tables of qualitative indices
+
+```{r freqtables, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3}
+
+temp2 <- temp[,c(1,5,6,2:3)]
+
+tab3 <- temp2[order(-temp2$Flesch.Kincaid),]
+knitr::kable(tab3, digits=2, caption = "Organized by Flesch-Kincaid aka Reading Level")
+
+tab4 <- temp2[order(temp2$Dale.Chall),]
+knitr::kable(tab4, digits=2, caption = "Organized by Dale Chall aka includes Difficult Words")
+
+```
+
