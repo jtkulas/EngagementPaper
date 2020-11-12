@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 always_allow_html: yes
 documentclass: book
 cover-image: "EE.jpeg"
-bibliography: [book.bib, engage.bib, packages.bib, bifactor.bib]
+bibliography: [book.bib, engage.bib, packages.bib, bifactor.bib, renata.bib]
 csl: apa.csl
 #biblio-style: "apalike"
 link-citations: yes
