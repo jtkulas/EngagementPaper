@@ -10,28 +10,32 @@
 
 # Timeline of events
 
-Here is Eagle IO's initial definition of engagement (Spring 2019):
+
+## Spring 2019
+
+This is believed to be Eagle I.O's initial definition of engagement:
 
 A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
 
-This definition was created by Eagle IO Spring 2019, and modified by Dr. Kulas and Renata Fall 2019 to include the four dimensions of Fulfillment, Absorbtion, Dedication, and Vigor. 
+This definition was created by Eagle IO Spring 2019, and modified by Dr. Kulas and Renata Fall 2019 to include the *four* dimensions of Fulfillment, Absorbtion, Dedication, and Vigor. 
 
-## Feb 20.2020 (Considering removing fulfillment)
+## Spring 2020 
+
+We considered removing fulfillment.
 
 *Fulfillment*: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. [Satisfaction(?)]
 
-Decided to operationalize fullfillment as an *outcome* of engagement rather than a definitional element 
+It was decided to operationalize fullfillment as an *outcome* of engagement rather than a definitional element 
 
-## Definitional amendments as of 02.24.2020
+### February 24, 2020
+
+Definitional amendments:
 
 *Absorption*: being fully concentrated and happily immersed in ones work (time passes quickly and has difficulty detaching from ones work; Schaufeli et al., 2002)
 
 *Dedication/Commitment*: being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. (Schaufeli et al., 2002) Identifying as an organizational member/ambassador
 
-include identification with the organization, a sense of "oneness"
-seeking continuous leanring and improvement 
-getting rid of challenge altogether
-moving inspiration and pride to other categories 
+This includes conceptual elements of identification with the organization, a sense of "oneness", seeking continuous learning and improvement. We got rid of "challenge" altogether and moved the "inspiration" and "pride" elements to other categories. 
 
 *dedication*: seeking continous imporvement and demonstrating initiative 
 
@@ -40,14 +44,15 @@ maybe add enthusiasm here as well
 
 *Vigor*: Experiencing persistent levels of energy and enthusiasm while working 
 
-********
-potential to change from affective, cognitive, and behavioral to whether their engagement comes from content/satisfaction with the organization or the people they work with. 
+### Structural considerations
 
-******** 
+It was considered to potentially change from a focus on affective, cognitive, and behavioral to whether their engagement comes from content/satisfaction with the organization or the people they work with. This idea was however abandoned Spring 2020.
 
-After completing individual Q-sorts (Kulas and Renata) we decided to revisit the definitions and build them up a little to make the difference between them more noticeable. 
+After completing individual Q-sorts (Kulas and Renata) we decided to revisit the originally specified definitions and build them up a little to make the difference between them more noticeable (and we retained the affect, behavior, cognition focus). 
 
-## Definitions as of 5/19/2020
+## Summer 2020
+
+Definitions as of 5/19/2020:
 
 *Absorption*: Being fully immersed in one’s work, where time passes quickly and one has difficulty detaching from work tasks
 
@@ -55,7 +60,7 @@ After completing individual Q-sorts (Kulas and Renata) we decided to revisit the
 
 *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
 
-With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
+The q-sorting done to inform the pilot administration was With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
 
 # Pilot conditions {#pilot2}
 

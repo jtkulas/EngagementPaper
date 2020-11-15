@@ -14,19 +14,26 @@ We chose to control the order of item administration because of our *a priori* s
 
 ### Sampling strategy (pilot)
 
-The sampling strategy will consist of Snowball or Referral Sampling to reduce the final instrument from 36 items (4 per "cell") to 18 items (2 per "cell"). Our aim is to obtain about 250 total responses viable for analysis. A Confirmatory Bi-Factor Analysis will be performed to determine the best candidate items for the final assessment. The launch was informed by research looking at different "days of the week" and their effectiveness regarding response rate. This was both [commercial](https://blog.hubspot.com/service/best-time-send-survey) as well as academic [e.g., @stone_dayweek_2012].
+The pilot sampling strategy consisted of snowball (aka referral) sampling as well as questionnaire posting within social media platforms (LinkedIn and facebook). The pilot goal was to reduce the final instrument from 36 candidate items (4 per "cell") to 18 retained items (2 per "cell"). We hoped to obtain about 250 total responses viable for analysis. 
 
-Sampling plan:
-Eagle I.O members will be in charge of the distribution of the Engagement survey.An email will be drafted asking participants to take the survey and forward it to family and friends who qualify as participants.They will reach out to other students, alumni, friends, and family through the following:
+The launch was informed by research looking at different "days of the week" and their effectiveness regarding response rate. This was both [commercial](https://blog.hubspot.com/service/best-time-send-survey) as well as academic [e.g., @stone_dayweek_2012].
 
-+ Facebook post on MSU group page 
+Eagle I.O members sent a template email asking working adults to take the survey and forward it to family and friends who also qualify as participants. Eagle I.O members were also tasked with reaching out to other students, alumni, friends, and family through the following:
+
++ Facebook post on MSU I/O group page 
 + LinkedIn profiles of all Eagle I.O members 
 + Email first and second year students directly
-+ Email MSU alumni directly (most recent 2020 graduates)
-+ Email professors in the Psychology department
-+ Mentors will reach out to mentees individually 
-+ Survey will be posted on Eagle I.O webpage
-   
++ Email MSU alumni directly
++ Email I/O professors
++ Mentors reached out to mentees individually 
++ Survey was posted on the [Eagle I.O webpage](https://eagle-io.weebly.com/engagement-survey.html)
+
+
+#### Pilot analyses
+
+A Confirmatory Bi-Factor Analysis will be performed to determine the best candidate items for the final assessment. 
+
+
 ## Demographic Information
 
 These are to be included in future administrations in an attempt to develop marketable norms:
