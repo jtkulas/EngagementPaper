@@ -4,6 +4,22 @@
 
 bifactor analysis are most commonly applied in the exploration of common method variance [see, for example, @reise_rediscovery_2012;  @rodriguez_evaluating_2016]. @giordano_exploratory_2020 provide an overview regarding past and potential applications of *exploratory* bifactor analysis and cite @reise_rediscovery_2012 as an influential impetus for the resurgence of bifactor models in general. 
 
+```{r data, echo=FALSE, warning=FALSE, message=FALSE}
+
+temp <- read.csv("FINAL+Engagement+Pilot_November+16,+2020_08.45.csv", header=FALSE)
+
+x <- temp[2,]
+data <- temp[-c(1:3),]
+colnames(data) <- x
+
+num <- nrow(data)
+
+```
+
+## Pilot analyses
+
+`r num` people responded
+
 ## Construct and Criterion-related Validation
 
 Use Gallup for construct validation [@thackray_gallup_2005; @harter_relationship_2013]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]
