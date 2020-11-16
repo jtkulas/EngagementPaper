@@ -52,3 +52,12 @@ data$hours <- as.numeric(as.character(data$hours))
 table(data$hours, data$`How many hours do you typically work per week in this job?`)
 
 hist(data$hours)
+
+library(ggplot2)
+
+ggplot(data, aes(x = hours)) +           
+  geom_histogram(alpha = 0.5, position = "identity") +
+  geom_vline(aes(xintercept=mean(hours, na.rm=T)),   # Ignore NA values for mean
+             color="blue", linetype="dotted", size=1) +
+  labs(x="Average number of hours worked (per week)")
+
