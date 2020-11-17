@@ -41,7 +41,9 @@ y<-na.omit(y)
 y<-y[-c(1),]
 
 library(stringr)
+library(tidyverse)
 
 y<-gsub("\\D","",y,ignore.case = TRUE, fixed =FALSE)
 
-substr(y,1,2)
+hours<-as.data.frame(substr(y,1,2))
+
