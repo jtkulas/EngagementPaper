@@ -29,9 +29,19 @@ df_CH <- read.csv(file="E:/Montclair State University/Engage_Pilot_Choice.csv", 
 
 df_Num <- read.csv(file="E:/Montclair State University/Engage_Pilot_Numeric.csv", header=FALSE,,na.strings="")
 
-df2_Num<-df_Num[-c(3),]
+x <- df_Num[2,]
+colnames(df_Num) <- x
+
+df2_Num<-df_Num[-c(2:3),]
 df2_Num<-df2_Num[-c(1:17)]
 
 
-df2_Num$V163[df2_Num$V163=="10-16"] <-13
+y<-df2_Num[146]
+y<-na.omit(y)
+y<-y[-c(1),]
 
+library(stringr)
+
+y<-gsub("\\D","",y,ignore.case = TRUE, fixed =FALSE)
+
+substr(y,1,2)
