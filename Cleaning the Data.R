@@ -1,5 +1,5 @@
 # Engage Pilot Choice Text
-df_CH <- read.csv(file="E:/Montclair State University/Engage_Pilot_Choice.csv", header=FALSE,,na.strings="")
+df_CH <- read.csv("Engage_Pilot_Choice.csv", header=FALSE,na.strings="")
 
 
   # Removing Uncessary Data
@@ -27,7 +27,7 @@ df_CH <- read.csv(file="E:/Montclair State University/Engage_Pilot_Choice.csv", 
 
 #Engage Pilot Numeric
 
-df_Num <- read.csv(file="E:/Montclair State University/Engage_Pilot_Numeric.csv", header=FALSE,,na.strings="")
+df_Num <- read.csv("Engage_Pilot_Numeric.csv", header=FALSE,na.strings="")
 
 x <- df_Num[2,]
 colnames(df_Num) <- x
@@ -47,3 +47,15 @@ y<-gsub("\\D","",y,ignore.case = TRUE, fixed =FALSE)
 
 hours<-as.data.frame(substr(y,1,2))
 
+hours<-hours%>%rename(Hours=`substr(y, 1, 2)`)
+hours$Hours <- as.numeric(as.character(hours$Hours))
+
+
+
+library(ggplot2)
+
+ggplot(hours, aes(x = Hours)) +           
+  geom_histogram(alpha = 0.5, position = "identity") +
+  geom_vline(aes(xintercept=mean(hours, na.rm=T)),   # Ignore NA values for mean
+             color="blue", linetype="dotted", size=1) +
+  labs(x="Average number of hours worked (per week)")
