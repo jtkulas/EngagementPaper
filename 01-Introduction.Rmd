@@ -2,7 +2,15 @@
 
 ![](research.jpg)
 
-Work engagement is the mental state where employees...  
+# Definitions of Engagement
+
+
++ Personal engagement:Personal engagement is described as the employing or    expressing of oneself physically, cognitively, and emotionally during    work role performances. When engaged, an employee is understood to   be physically involved, cognitively vigilant, and emotionally connected [@kahn_psychological_1990].
++ Engagement/Burnout: Burnout is defined as a psychological syndrome          characterized by           exhaustion, cynicism, and inefficacy, which is     experienced in response to chronic job         stressors. Engagement is       understood to be the direct opposite of burnout and exist on a                continuum—with engagement on one end and burnout on the other. Exhaustion     (low energy),       cynicism (low involvement), and inefficacy (low           efficacy) are characteristic of burnout;      whereas, high energy, high      involvement, and high efficacy are characteristic of engagement    (Maslach   and Leiter, 1997; Leiter and Maslach, 2004)
++ Work engagement: Work engagement refers to a positive, fulfilling, work-related state of      mind that is characterized by vigor, dedication, and absorption. Vigor is characterized by    high levels of energy and mental resilience while working. Dedication refers to being         strongly involved in one’s work and experiencing a sense of significance, enthusiasm,         inspiration, pride, and challenge. Absorption is characterized by being fully concentrated    and happily engrossed in one’s work, whereby time passes quickly and one has difficulties     with detaching oneself from work [@schaufeli_measurement_2002] - The Utrecht Work Engagement       Scale (UWES), a self-report questionnaire first developed by Schaufeli and Bakker (2003)      includes the three aspects of work engagement: vigor, dedication, and absorption. - we have   to make note of how we are different from this! 
++ Employee engagement:  Employee engagement refers to the ‘‘individual’s involvement and        satisfaction as well as enthusiasm for work’’ [@harter_business-unit-level_2002]
+  Work engagement is the mental state where employees...  
+
 
 + ...feel full with physical energy (**Vigor**)
 + ...are enthusiastic about the content of their work and the things they do (**Dedication**)
