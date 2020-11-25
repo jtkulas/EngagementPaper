@@ -16,7 +16,7 @@ We chose to control the order of item administration because of our *a priori* s
 
 The pilot sampling strategy consisted of snowball (aka referral) sampling as well as questionnaire posting within social media platforms (LinkedIn and facebook). The pilot goal was to reduce the final instrument from 36 candidate items (4 per "cell") to 18 retained items (2 per "cell"). We hoped to obtain about 250 total responses viable for analysis. 
 
-The launch was informed by research looking at different "days of the week" and their effectiveness regarding response rate. This was both [commercial](https://blog.hubspot.com/service/best-time-send-survey) as well as academic [e.g., @stone_dayweek_2012].
+The launch was informed by research looking at different "days of the week" and their effectiveness regarding response rate. This was both [commercial](https://blog.hubspot.com/service/best-time-send-survey) as well as academic [e.g., @anseel_response_2010].
 
 Eagle I.O members sent a template email asking working adults to take the survey and forward it to family and friends who also qualify as participants. Eagle I.O members were also tasked with reaching out to other students, alumni, friends, and family through the following:
 

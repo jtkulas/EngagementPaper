@@ -2,7 +2,7 @@
 
 ![](research.jpg)
 
-# Definitions of Engagement
+## Definitions of Engagement
 
 
 + Personal engagement:Personal engagement is described as the employing or    expressing of oneself physically, cognitively, and emotionally during    work role performances. When engaged, an employee is understood to   be physically involved, cognitively vigilant, and emotionally connected [@kahn_psychological_1990].
@@ -15,8 +15,6 @@
 + ...feel full with physical energy (**Vigor**)
 + ...are enthusiastic about the content of their work and the things they do (**Dedication**)
 + ...are so immersed in their work activities that time seems to fly (**Absorption**)
-
-These above definitions come from @bakker_job_2017.
 
 The tripartite substantive model of employee engagement is also partially informed by the definitions provided with the Utrecht Work Engagement Scale [@schaufeli_utrecht_2003]. 
 
