@@ -75,8 +75,11 @@ library(psych)
 Con1<-df2_Num[,1:36]
 Con1<-na.omit(Con1)
 Con2<-df2_Num[,37:72]
+Con2<-na.omit(Con2)
 Con3<-df2_Num[,73:108]
+Con3<-na.omit(Con3)
 Con4<-df2_Num[,109:144]
+Con4<-na.omit(Con4)
 
 
 # Changing to numeric
