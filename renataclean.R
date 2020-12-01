@@ -52,7 +52,7 @@ Condition4.2 <- Condition4[!apply(Condition4 == "", 1, all), ]
 
 test %>%
    rename(Start.Date = V1, End.Date = V2, Status = V3, IPAddress = V4, Progress = V5, SecDuration = V6, 
-        Finished = V7, RecordedDate = V8, ReponseID = V9, LastName = V10, FirstName = V11, email = V12, 
-        ExtReference = V13, Latitude = V14, Longitude = V15, DistChannel = V16, Language = V17, Item1 = V18, Item2 = V19)
+        Finished = V7, RecordedDate = V8, ReponseID = V9, Latitude = V14, Longitude = V15, DistChannel = V16, 
+        Language = V17, Item1 = V18, Item2 = V19)
 
 
