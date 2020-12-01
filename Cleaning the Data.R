@@ -30,8 +30,8 @@ df_CH <- read.csv("Engage_Pilot_Choice.csv", header=FALSE,na.strings="")
 df_Num <- read.csv("Engage_Pilot_Numeric.csv", header=TRUE,na.strings="")
 
 df2_Num<-df_Num[,-c(1:17)]
-
 -c(1:3)
+
 
 # Hours 
 y<-df2_Num[146]
@@ -79,27 +79,18 @@ df2_Num$C2.7_3<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 df2_Num$C2.5_4<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 ## Condition 3
+df2_Num$C3.1_6<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.2_2<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.2_8<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.3_3<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+
+## Condition 4
+df2_Num$C4.1_6<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.1_11<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.2_2<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.2_8<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 
-
-
-
-#Two Possible Methods:
-
-# First Methods
-# Creating Condition Columns
-df2_Num<-cbind(Condition="Condition 1", df2_Num)
-
-
-
-
-
-
-
-
-
-
-# Second Method
 # Split the Data by Condition
 
 library(psych)
