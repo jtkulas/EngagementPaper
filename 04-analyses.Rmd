@@ -6,7 +6,7 @@ bifactor analysis are most commonly applied in the exploration of common method 
 
 ```{r data, echo=FALSE, warning=FALSE, message=FALSE}
 
-temp <- read.csv("FINAL+Engagement+Pilot_November+16,+2020_08.45.csv", header=FALSE)
+temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE)
 
 x <- temp[2,]
 data <- temp[-c(1:3),]
