@@ -29,8 +29,8 @@ df_CH <- read.csv("Engage_Pilot_Choice.csv", header=FALSE,na.strings="")
 
 df_Num <- read.csv("Engage_Pilot_Numeric.csv", header=TRUE,na.strings="")
 
-df2_Num<-df_Num[,-c(1:17)]
--c(1:3)
+df2_Num<-df_Num[-c(1:3),-c(1:17)]
+
 
 
 # Hours 
@@ -70,25 +70,25 @@ ggplot(hours, aes(x = Hours)) +
 df2_Num$C1.1_2<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 df2_Num$C1.2_4<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 df2_Num$C1.7_2<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C1.8_3<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C1.8_3<-car::recode(df2_Num$C1.8_3,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 ## Condition 2
-df2_Num$C2.4_2<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C2.3_2<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C2.7_3<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C2.5_4<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C2.4_2<-car::recode(df2_Num$C2.4_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C2.3_2<-car::recode(df2_Num$C2.3_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C2.7_3<-car::recode(df2_Num$C2.7_3,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C2.5_4<-car::recode(df2_Num$C2.5_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 ## Condition 3
-df2_Num$C3.1_6<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C3.2_2<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C3.2_8<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C3.3_3<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.1_6<-car::recode(df2_Num$C3.1_6,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.2_2<-car::recode(df2_Num$C3.2_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.2_8<-car::recode(df2_Num$C3.2_8,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C3.3_3<-car::recode(df2_Num$C3.3_3,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 ## Condition 4
-df2_Num$C4.1_6<-car::recode(df2_Num$C1.1_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C4.1_11<-car::recode(df2_Num$C1.2_4,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C4.2_2<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
-df2_Num$C4.2_8<-car::recode(df2_Num$C1.7_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.1_6<-car::recode(df2_Num$C4.1_6,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.1_11<-car::recode(df2_Num$C4.1_11,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.2_2<-car::recode(df2_Num$C4.2_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
+df2_Num$C4.2_8<-car::recode(df2_Num$C4.2_8,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 
 # Split the Data by Condition
@@ -115,12 +115,27 @@ Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
 
+# Creating Condition Column
+
+Condition1<-as.data.frame(ifelse(df2_Num$C1.1_1!='NA',"Condition 1"))
+Condition1<-Condition1%>%rename(Condition_1=`ifelse(df2_Num$C1.1_1 != "NA", "Condition 1")`)
 
 
+Condition2<-as.data.frame(ifelse(df2_Num$C2.1_1!='NA',"Condition 2"))
+Condition2<-Condition2%>%rename(Condition_2=`ifelse(df2_Num$C2.1_1 != "NA", "Condition 2")`)
 
+Condition3<-as.data.frame(ifelse(df2_Num$C3.1_1!='NA',"Condition 3"))
+Condition3<-Condition3%>%rename(Condition_3=`ifelse(df2_Num$C3.1_1 != "NA", "Condition 3")`)
 
+Condition4<-as.data.frame(ifelse(df2_Num$C4.1_1!='NA',"Condition 4"))
+Condition4<-Condition4%>%rename(Condition_4=`ifelse(df2_Num$C4.1_1 != "NA", "Condition 4")`)
 
+Condition<-cbind(Condition1, Condition2, Condition3, Condition4)
 
+Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, Condition_4,
+                             na.rm=TRUE)
+
+df3_Num<-cbind(Condition,df2_Num)
 
 
 
