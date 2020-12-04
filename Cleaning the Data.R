@@ -33,10 +33,7 @@ df2_Num<-df_Num[-c(1:3),-c(1:17)]
 
 
 
-# Hours 
-y<-df2_Num[146]
-y<-na.omit(y)
-y<-y[-c(1),]
+
 
 
 library(stringr)
@@ -47,22 +44,6 @@ library(semPlot)
 library(ggplot2)
 library(carData)
 
-y<-gsub("\\D","",y,ignore.case = TRUE, fixed =FALSE)
-
-hours<-as.data.frame(substr(y,1,2))
-
-hours<-hours%>%rename(Hours=`substr(y, 1, 2)`)
-hours$Hours <- as.numeric(as.character(hours$Hours))
-
-
-
-
-
-ggplot(hours, aes(x = Hours)) +           
-  geom_histogram(alpha = 0.5, position = "identity") +
-  geom_vline(aes(xintercept=mean(hours, na.rm=T)),   # Ignore NA values for mean
-             color="blue", linetype="dotted", size=1) +
-  labs(x="Average number of hours worked (per week)")
 
 
 # Reverse Items
@@ -91,7 +72,33 @@ df2_Num$C4.2_2<-car::recode(df2_Num$C4.2_2,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 df2_Num$C4.2_8<-car::recode(df2_Num$C4.2_8,'1=6; 2=5; 3=4; 4=3; 5=2; 6=1; 7=7')
 
 
-# Split the Data by Condition
+# Creating Condition Column - Option 1
+
+Condition1<-as.data.frame(ifelse(df2_Num$C1.1_1!='NA',"Condition 1"))
+Condition1<-Condition1%>%rename(Condition_1=`ifelse(df2_Num$C1.1_1 != "NA", "Condition 1")`)
+
+
+Condition2<-as.data.frame(ifelse(df2_Num$C2.1_1!='NA',"Condition 2"))
+Condition2<-Condition2%>%rename(Condition_2=`ifelse(df2_Num$C2.1_1 != "NA", "Condition 2")`)
+
+Condition3<-as.data.frame(ifelse(df2_Num$C3.1_1!='NA',"Condition 3"))
+Condition3<-Condition3%>%rename(Condition_3=`ifelse(df2_Num$C3.1_1 != "NA", "Condition 3")`)
+
+Condition4<-as.data.frame(ifelse(df2_Num$C4.1_1!='NA',"Condition 4"))
+Condition4<-Condition4%>%rename(Condition_4=`ifelse(df2_Num$C4.1_1 != "NA", "Condition 4")`)
+
+Condition<-cbind(Condition1, Condition2, Condition3, Condition4)
+
+Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, Condition_4,
+                             na.rm=TRUE)
+
+df3_Num<-cbind(Condition,df2_Num)
+
+
+
+
+
+# Split the Data by Condition- Option 2
 
 library(psych)
 
@@ -114,28 +121,31 @@ Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
 
+# Demographics
+Demographics<-df2_Num[,145:148]
+Demographics<-Demographics%>%rename(Job_Title=Q28,
+                                    Hours=Q25,
+                                    Years_Worked_At_Company=Q49,
+                                    Feedback=Q29)
 
-# Creating Condition Column
+## Hours
 
-Condition1<-as.data.frame(ifelse(df2_Num$C1.1_1!='NA',"Condition 1"))
-Condition1<-Condition1%>%rename(Condition_1=`ifelse(df2_Num$C1.1_1 != "NA", "Condition 1")`)
+y<-Demographics$Hours
+y<-na.omit(y)
 
+y<-gsub("\\D","",y,ignore.case = TRUE, fixed =FALSE)
 
-Condition2<-as.data.frame(ifelse(df2_Num$C2.1_1!='NA',"Condition 2"))
-Condition2<-Condition2%>%rename(Condition_2=`ifelse(df2_Num$C2.1_1 != "NA", "Condition 2")`)
+hours<-as.data.frame(substr(y,1,2))
 
-Condition3<-as.data.frame(ifelse(df2_Num$C3.1_1!='NA',"Condition 3"))
-Condition3<-Condition3%>%rename(Condition_3=`ifelse(df2_Num$C3.1_1 != "NA", "Condition 3")`)
+hours<-hours%>%rename(Hours=`substr(y, 1, 2)`)
+hours$Hours <- as.numeric(as.character(hours$Hours))
 
-Condition4<-as.data.frame(ifelse(df2_Num$C4.1_1!='NA',"Condition 4"))
-Condition4<-Condition4%>%rename(Condition_4=`ifelse(df2_Num$C4.1_1 != "NA", "Condition 4")`)
+ggplot(hours, aes(x = Hours)) +           
+  geom_histogram(alpha = 0.5, position = "identity") +
+  geom_vline(aes(xintercept=mean(hours, na.rm=T)),   # Ignore NA values for mean
+             color="blue", linetype="dotted", size=1) +
+  labs(x="Average number of hours worked (per week)")
 
-Condition<-cbind(Condition1, Condition2, Condition3, Condition4)
-
-Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, Condition_4,
-                             na.rm=TRUE)
-
-df3_Num<-cbind(Condition,df2_Num)
 
 
 
