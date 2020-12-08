@@ -90,7 +90,7 @@ Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, 
 
 df3_Num<-cbind(Condition,df2_Num)
 
-
+#is.na()
 
 
 
