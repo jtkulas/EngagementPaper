@@ -27,13 +27,9 @@ df_CH <- read.csv("Engage_Pilot_Choice.csv", header=FALSE,na.strings="")
 
 #Engage Pilot Numeric
 
-df_Num <- read.csv("Engage_Pilot_Numeric.csv", header=TRUE,na.strings="")
+df_Num <- read.csv("Qualtrics_pilot_data.csv", header=TRUE,na.strings="")
 
 df2_Num<-df_Num[-c(1:3),-c(1:17)]
-
-
-
-
 
 
 library(stringr)
