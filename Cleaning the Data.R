@@ -119,13 +119,14 @@ Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
 # Creating the new column
-Con1<-cbind(Condition="Condiion 1",Con1)
-Con2<-cbind(Condition="Condiion 2",Con2)
-Con3<-cbind(Condition="Condiion 3",Con3)
-Con4<-cbind(Condition="Condiion 4",Con4)
+Con1<-cbind(Condition="Condition 1",Con1)
+Con2<-cbind(Condition="Condition 2",Con2)
+Con3<-cbind(Condition="Condition 3",Con3)
+Con4<-cbind(Condition="Condition 4",Con4)
 
-
-
+data<-merge(Con1,Con2, by="Condition",all=T)
+data2<-merge(Con3,Con4, by="Condition", all = T)
+data3<-merge(data,data2, by="Condition", all=T)
 
 # Demographics
 Demographics<-df2_Num[,145:148]
