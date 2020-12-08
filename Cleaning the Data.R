@@ -29,7 +29,11 @@ df_CH <- read.csv("Engage_Pilot_Choice.csv", header=FALSE,na.strings="")
 
 df_Num <- read.csv("Qualtrics_pilot_data.csv", header=TRUE,na.strings="")
 
-df2_Num<-df_Num[-c(1:3),-c(1:17)]
+df2_Num<-df_Num[-c(1:3),]
+
+df_Num<-df2_Num%>%select(C1.1_1:Q29)
+
+
 
 
 library(stringr)
@@ -90,21 +94,19 @@ Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, 
 
 df3_Num<-cbind(Condition,df2_Num)
 
-#is.na()
-
 
 
 # Split the Data by Condition- Option 2
 
 library(psych)
 
-Con1<-df2_Num[,1:36]
+Con1<-df2_Num%>%select(C1.1_1:C1.9_4)
 Con1<-na.omit(Con1)
-Con2<-df2_Num[,37:72]
+Con2<-df2_Num%>%select(C2.1_1:C2.9_4)
 Con2<-na.omit(Con2)
-Con3<-df2_Num[,73:108]
+Con3<-df2_Num%>%select(C3.1_1:C3.3_12)
 Con3<-na.omit(Con3)
-Con4<-df2_Num[,109:144]
+Con4<-df2_Num%>%select(C4.1_1:C4.3_12)
 Con4<-na.omit(Con4)
 
 
@@ -116,6 +118,15 @@ Con3<-as.data.frame(apply(Con3,2, as.numeric))
 Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
+# Creating the new column
+Con1<-cbind(Condition="Condition 1",Con1)
+Con2<-cbind(Condition="Condition 2",Con2)
+Con3<-cbind(Condition="Condition 3",Con3)
+Con4<-cbind(Condition="Condition 4",Con4)
+
+data<-merge(Con1,Con2, by="Condition",all=T)
+data2<-merge(Con3,Con4, by="Condition", all = T)
+data3<-merge(data,data2, by="Condition", all=T)
 
 # Demographics
 Demographics<-df2_Num[,145:148]
