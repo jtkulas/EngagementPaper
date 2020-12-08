@@ -21,10 +21,7 @@ library(dplyr)
 data2 <- data[-c(1:3),-c(1:17)]
 test <- data2[-c(1,3),]
 
-
-# Caseys code: 
-
-# Split the Data by Condition- Option 2
+# Split the Data by Condition
 
 library(psych)
 
@@ -46,25 +43,7 @@ Con3<-as.data.frame(apply(Con3,2, as.numeric))
 Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
-# Subsetting to 4 conditions
-
-Condition1 <- test["C1.1_1":"C1.9_4"]
-Condition2 <- test[, c(51:85)]
-Condition3 <- test[, c(86:121)]
-Condition4 <- test[, c(122:157)]
-Demographic <- test[, c(159:163)]
-
-Condition1 <- test[, c(15:50)]
-Condition2 <- test[, c(51:85)]
-Condition3 <- test[, c(86:121)]
-Condition4 <- test[, c(122:157)]
-Demographic <- test[, c(159:163)]
-
-# ID column
-
-test$id <- seq.int(nrow(test))
-col_num <- grep("id", names(test))
-test <- test[, c(col_num, (1:ncol(test))[-col_num])]
+# Condition column
 
 
 
