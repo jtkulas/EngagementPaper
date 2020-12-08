@@ -20,6 +20,24 @@ num <- nrow(data)
 
 `r num` people responded. Probably need to further screen for duration. This is the number of seconds to complete the entire survey (according to communications with Qualtrics in early December).
 
+### Classical test theory
+
++ corrected item-total correlations and alphas by condition
+
+### Confirmatory factor analyses
+
+#### Multigroup analyses
+
++ using experimental condition as "multiple groups" (measurement invariance)
+
+#### Bifactor analyses
+
++ looking at dual structure
+
+### Summary
+
+Recommendation for final instrument based on consideration of all of the above pieces of evidence
+
 ## Construct and Criterion-related Validation
 
 Use Gallup for construct validation [@thackray_gallup_2005; @harter_relationship_2013]. Also the Utrecht Work Engagement Scale [UWES; @schaufeli_measurement_2002; @schaufeli_defining_2010]
