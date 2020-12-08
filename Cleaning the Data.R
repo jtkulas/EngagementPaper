@@ -152,7 +152,7 @@ Condition<-cbind(Condition1, Condition2, Condition3, Condition4)
 Condition<-Condition%>%unite(Conditions, Condition_1, Condition_2, Condition_3, Condition_4,
                              na.rm=TRUE)
 
-Condition$Conditions<-trimws(Condition$Conditions)
+Condition$Conditions<-gsub("_","",Condition$Conditions,ignore.case = TRUE, fixed =FALSE)
 
 df3_Num<-cbind(Condition,df2_Num)
 
