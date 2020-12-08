@@ -1,7 +1,7 @@
 # Importing Data 
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=TRUE, na.strings="")
-library(tidyverse)
+
 glimpse(temp)
 
 # Libraries 
@@ -43,20 +43,40 @@ Con3<-as.data.frame(apply(Con3,2, as.numeric))
 Con4<-as.data.frame(apply(Con4,2, as.numeric))
 
 
+# NA values to filter out responses
+Con1.2 <- na.omit(Con1)
+Con2.2 <- na.omit(Con2)
+Con3.2 <- na.omit(Con3)
+Con4.2 <- na.omit(Con4)
+
+# This doesn't seem to be working 
+# Con1.2 <- Con1[!apply(Condition1 == "NA", 1, all), ]
+# Con2.2 <- Con2[!apply(Condition2 == "NA", 1, all), ]
+# Con3.2 <- Con3[!apply(Condition3 == "NA", 1, all), ]
+# Con4.2 <- Con4[!apply(Condition4 == "NA", 1, all), ]
+
 # Condition column
+Con1.2$Condition <- c("Condition1")
+Con2.2$Condition <- c("Condition2")
+Con3.2$Condition <- c("Condition3")
+Con4.2$Condition <- c("Condition4")
+
+# Merge Data files 
+library(dplyr)
+merge <- full_join(Con1.2, Con2.2, by = "Condition")
+merge2 <- full_join(Con3.2, Con4.2, by = "Condition")
+FullMerge <- full_join(merge, merge2, by = "Condition")
+
+# Move column to the front
+col_idx <- grep("Condition", names(FullMerge))
+FullMerge <- FullMerge[, c(col_idx, (1:ncol(FullMerge))[-col_idx])]
 
 
 
 
-# Blank values to filter out responses
-
-Condition1.2 <- Condition1[!apply(Condition1 == "", 1, all), ]
-Condition2.2 <- Condition2[!apply(Condition2 == "", 1, all), ]
-Condition3.2 <- Condition3[!apply(Condition3 == "", 1, all), ]
-Condition4.2 <- Condition4[!apply(Condition4 == "", 1, all), ]
 
 
-# Filling in New column 
+
 
 
 
