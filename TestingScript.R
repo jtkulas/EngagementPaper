@@ -1,6 +1,6 @@
 ## This is just a script to test out commands (so we don't have to build the book or knit individual chapters for data analyses)
 
-temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE)
+temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
 
 x <- temp[2,]
 data <- temp[-c(1:3),]
@@ -62,7 +62,30 @@ ggplot(data, aes(x = hours)) +
   labs(x="Average number of hours worked (per week)")
 
 library(psych)
-describe(data)
+# temp <- describe(data)
+# write.csv(temp, "checking.csv")
 
-data$Cond1 <- sum(is.na(data$`C1.1 - I am happiest when I am immersed in a project.`))
+data$Cond1 <- rowSums(is.na(data[18:53]))
+data$Cond2 <- rowSums(is.na(data[54:89]))
+data$Cond3 <- rowSums(is.na(data[90:125]))
+data$Cond4 <- rowSums(is.na(data[126:161]))
+
+data$Condition[data$Cond1 < 36] <- 1
+data$Condition[data$Cond2 < 36] <- 2
+data$Condition[data$Cond3 < 36] <- 3
+data$Condition[data$Cond4 < 36] <- 4
+
+cond1 <- data[ which(data$Condition==1), ]
+cond2 <- data[ which(data$Condition==2), ]
+cond3 <- data[ which(data$Condition==3), ]
+cond4 <- data[ which(data$Condition==4), ]
+
+# write.csv(names(cond1), "cond1.csv")
+# write.csv(names(cond2), "cond2.csv")
+# write.csv(names(cond3), "cond3.csv")
+# write.csv(names(cond4), "cond4.csv")
+
+cond1.red <- cond1[,c(6, 18:53,162:165)]
+cond2.red <- cond2[,c(6, )]
+
 
