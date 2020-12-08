@@ -18,7 +18,7 @@ num <- nrow(data)
 
 ## Pilot analyses
 
-`r num` people responded
+`r num` people responded. Probably need to further screen for duration. This is the number of seconds to complete the entire survey (according to communications with Qualtrics in early December).
 
 ## Construct and Criterion-related Validation
 

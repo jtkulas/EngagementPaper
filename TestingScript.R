@@ -1,6 +1,6 @@
 ## This is just a script to test out commands (so we don't have to build the book or knit individual chapters for data analyses)
 
-temp <- read.csv("FINAL+Engagement+Pilot_November+16,+2020_08.45.csv", header=FALSE)
+temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE)
 
 x <- temp[2,]
 data <- temp[-c(1:3),]
@@ -60,4 +60,9 @@ ggplot(data, aes(x = hours)) +
   geom_vline(aes(xintercept=mean(hours, na.rm=T)),   # Ignore NA values for mean
              color="blue", linetype="dotted", size=1) +
   labs(x="Average number of hours worked (per week)")
+
+library(psych)
+describe(data)
+
+data$Cond1 <- sum(is.na(data$`C1.1 - I am happiest when I am immersed in a project.`))
 
