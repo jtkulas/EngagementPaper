@@ -79,14 +79,14 @@ together$`This job drains my energy.` <- 7 - together$`This job drains my energy
 together$`Thinking about work saps my energy.` <- 7 - together$`Thinking about work saps my energy.`
 together$`I often think about finding another job.` <- 7 - together$`I often think about finding another job.`
 
-library(psych)
-affect <- alpha(together[2:13])  
-behave <- alpha(together[14:25])
-cogni <- alpha(together[26:37])
 
-absorb <- alpha(together[c(2:5, 14:17, 34:37)])  
-vigor <- alpha(together[c(26:29, 6:9, 18:21)])
-dedic <- alpha(together[c(30:33, 10:13, 22:25)])
+affect <- psych::alpha(together[2:13])  
+behave <- psych::alpha(together[14:25])
+cogni <- psych::alpha(together[26:37])
+
+absorb <- psych::alpha(together[c(2:5, 14:17, 34:37)])  
+vigor <- psych::alpha(together[c(26:29, 6:9, 18:21)])
+dedic <- psych::alpha(together[c(30:33, 10:13, 22:25)])
 
 
 ```
