@@ -80,11 +80,6 @@ cond2 <- data[ which(data$Condition==2), ]
 cond3 <- data[ which(data$Condition==3), ]
 cond4 <- data[ which(data$Condition==4), ]
 
-# write.csv(names(cond1), "cond1.csv")
-# write.csv(names(cond2), "cond2.csv")
-# write.csv(names(cond3), "cond3.csv")
-# write.csv(names(cond4), "cond4.csv")
-
 cond1.red <- cond1[,c(6, 18:53, 162:165, 172)]  ## using Cond1 ordering
 cond2.red <- cond2[,c(6, 62:65, 70:73, 82:85, 58:61, 74:77, 86:89, 66:69, 78:81, 54:57, 162:165, 172)]
 cond3.red <- cond3[,c(6, 94:97, 106:109, 118:121, 98:101, 110:113, 122:125, 102:105, 114:117, 90:93, 162:165, 172)]
@@ -96,4 +91,8 @@ names(cond3.red) = gsub(pattern = "C*.* - ", replacement = "", x = names(cond3.r
 names(cond4.red) = gsub(pattern = "C*.* - ", replacement = "", x = names(cond4.red))  
 
 together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red)
-write.csv(together, "together.csv")
+## write.csv(together, "together.csv")
+
+i <- c(1:37)
+together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
+                    function(x) as.numeric(as.character(x)))

@@ -45,8 +45,11 @@ together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red)        ## we'll be
 
 num_valid <- nrow(together)
 
+i <- c(1:37)                                          ## Changing item responses to numerics
+together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
+                    function(x) as.numeric(as.character(x)))
+
 library(descr)
-together$`Duration (in seconds)` <- as.numeric(as.character(together$`Duration (in seconds)`))
 freq(together$`Duration (in seconds)`)
 
 ```
@@ -59,10 +62,58 @@ freq(together$`Duration (in seconds)`)
 
 + corrected item-total correlations and alphas by condition
 
+
 ```{r alphas, echo=FALSE, warning=FALSE, message=FALSE}
 
+## recodes 12/9/20
+
+## AFFECTIVE: 
+
+together$`Most days, I feel happiest when the workday is soon to be complete.` <- 7 - together$`Most days, I feel happiest when the workday is soon to be complete.`
+together$`This job drains my energy.` <- 7 - together$`This job drains my energy.`
+
+## BEHAVIORAL (NONE):
+
+## COGNITIVE: 
+
+together$`Thinking about work saps my energy.` <- 7 - together$`Thinking about work saps my energy.`
+together$`I often think about finding another job.` <- 7 - together$`I often think about finding another job.`
+
 library(psych)
-# alpha(together[2:13])  ## need to change characters to numerics
+affect <- alpha(together[2:13])  
+behave <- alpha(together[14:25])
+cogni <- alpha(together[26:37])
+
+absorb <- alpha(together[c(2:5, 14:17, 34:37)])  
+vigor <- alpha(together[c(26:29, 6:9, 18:21)])
+dedic <- alpha(together[c(30:33, 10:13, 22:25)])
+
+
+```
+
+#### Internal consistency estimates
+
+| Dimension      | Alpha                                   |
+|----------------|-----------------------------------------|
+| Affective      | `r round(affect$total$raw_alpha, 2)`    |
+| Behavioral     | `r round(behave$total$raw_alpha, 2)`    |
+| Cognitive      | `r round(cogni$total$raw_alpha, 2)`     |
+|                |                                         |
+| Absorption     | `r round(absorb$total$raw_alpha, 2)`    |
+| Vigor          | `r round(vigor$total$raw_alpha, 2)`     |
+| Dedication     | `r round(dedic$total$raw_alpha, 2)`     |
+
+Corrected item-total correlations:
+
+```{r rdrops, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(kableExtra)
+kable(affect$item.stats[-c(2:4)], digits=2, caption="Affective Items")
+kable(behave$item.stats[-c(2:4)], digits=2, caption="Behavioral Items")
+kable(cogni$item.stats[-c(2:4)], digits=2, caption="Cognitive Items")
+kable(absorb$item.stats[-c(2:4)], digits=2, caption="Absorption Items")
+kable(vigor$item.stats[-c(2:4)], digits=2, caption="Vigor Items")
+kable(dedic$item.stats[-c(2:4)], digits=2, caption="Dedication Items")
 
 ```
 
