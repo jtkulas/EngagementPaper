@@ -83,7 +83,55 @@ kable(cond4, caption = "Pilot administration ordering Condition 4")
 
 ```
 
-# Qualitative item characteristics
+# Corrected item-total correlations {#rdrops}
+
+## Substantive scale (marginal level)
+
+```{r rdrop1, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(kableExtra)
+kable(affect$item.stats[-c(2:4)], digits=2, caption="Affective Items")
+
+```
+
+
+```{r rdrop2, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(behave$item.stats[-c(2:4)], digits=2, caption="Behavioral Items")
+
+```
+
+
+```{r rdrop3, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cogni$item.stats[-c(2:4)], digits=2, caption="Cognitive Items")
+
+```
+
+
+```{r rdrop4, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(absorb$item.stats[-c(2:4)], digits=2, caption="Absorption Items")
+
+```
+
+
+```{r rdrop5, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(vigor$item.stats[-c(2:4)], digits=2, caption="Vigor Items")
+
+```
+
+
+```{r rdrop6, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(dedic$item.stats[-c(2:4)], digits=2, caption="Dedication Items")
+
+```
+
+## Substantive scale (cell level)
+
+# Qualitative item characteristics {#qualitative}
 
 Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975]. "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995].  [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. 
 
