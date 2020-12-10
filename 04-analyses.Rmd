@@ -88,20 +88,36 @@ absorb <- psych::alpha(together[c(2:5, 14:17, 34:37)])
 vigor <- psych::alpha(together[c(26:29, 6:9, 18:21)])
 dedic <- psych::alpha(together[c(30:33, 10:13, 22:25)])
 
+one <- together[ which(together$Condition == 1), ]
+two <- together[ which(together$Condition == 2), ]
+three <- together[ which(together$Condition == 3), ]
+four <- together[ which(together$Condition == 4), ]
+
+aff.1 <- psych::alpha(one[2:13]) 
+beh.1 <- psych::alpha(one[14:25])
+cog.1 <- psych::alpha(one[26:37])
+abs.1 <- psych::alpha(one[c(2:5, 14:17, 34:37)])  
+vig.1 <- psych::alpha(one[c(26:29, 6:9, 18:21)])
+ded.1 <- psych::alpha(one[c(30:33, 10:13, 22:25)])
+
+
+aff.2 <- psych::alpha(two[2:13])  
+aff.3 <- psych::alpha(three[2:13])  
+aff.4 <- psych::alpha(four[2:13])  
 
 ```
 
 #### Internal consistency estimates
 
-| Dimension      | Alpha                                   |
-|----------------|-----------------------------------------|
-| Affective      | `r round(affect$total$raw_alpha, 2)`    |
-| Behavioral     | `r round(behave$total$raw_alpha, 2)`    |
-| Cognitive      | `r round(cogni$total$raw_alpha, 2)`     |
-|                |                                         |
-| Absorption     | `r round(absorb$total$raw_alpha, 2)`    |
-| Vigor          | `r round(vigor$total$raw_alpha, 2)`     |
-| Dedication     | `r round(dedic$total$raw_alpha, 2)`     |
+| Dimension      | Undifferentiated                        | Condition 1                       |         
+|----------------|-----------------------------------------|-----------------------------------|
+| Affective      | `r round(affect$total$raw_alpha, 2)`    |`r round(aff.1$total$raw_alpha, 2)`| 
+| Behavioral     | `r round(behave$total$raw_alpha, 2)`    |`r round(beh.1$total$raw_alpha, 2)`|
+| Cognitive      | `r round(cogni$total$raw_alpha, 2)`     |`r round(cog.1$total$raw_alpha, 2)`|
+|                |                                         |                                   |
+| Absorption     | `r round(absorb$total$raw_alpha, 2)`    |`r round(abs.1$total$raw_alpha, 2)`|
+| Vigor          | `r round(vigor$total$raw_alpha, 2)`     |`r round(vig.1$total$raw_alpha, 2)`|
+| Dedication     | `r round(dedic$total$raw_alpha, 2)`     |`r round(ded.1$total$raw_alpha, 2)`|
 
 Corrected item-total correlations:
 
