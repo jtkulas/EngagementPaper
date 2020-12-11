@@ -131,6 +131,60 @@ kable(dedic$item.stats[-c(2:4)], digits=2, caption="Dedication Items")
 
 ## Substantive scale (cell level)
 
+```{r rdrop7, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(aff.abs$item.stats[-c(2:4)], digits=2, caption="Affective - Absorption Items")
+
+```
+
+```{r rdrop8, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(aff.vig$item.stats[-c(2:4)], digits=2, caption="Affective - Vigor Items")
+
+```
+
+```{r rdrop9, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(aff.ded$item.stats[-c(2:4)], digits=2, caption="Affective - Dedication Items")
+
+```
+
+```{r rdrop10, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cog.abs$item.stats[-c(2:4)], digits=2, caption="Cognitive - Absorption Items")
+
+```
+
+```{r rdrop11, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cog.vig$item.stats[-c(2:4)], digits=2, caption="Cognitive - Vigor Items")
+
+```
+
+```{r rdrop12, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cog.ded$item.stats[-c(2:4)], digits=2, caption="Cognitive - Dedication Items")
+
+```
+
+```{r rdrop13, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(beh.abs$item.stats[-c(2:4)], digits=2, caption="Behavioral - Absorption Items")
+
+```
+
+```{r rdrop14, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(beh.vig$item.stats[-c(2:4)], digits=2, caption="Behavioral - Vigor Items")
+
+```
+
+```{r rdrop15, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(beh.ded$item.stats[-c(2:4)], digits=2, caption="Behavioral - Dedication Items")
+
+```
+
 # Qualitative item characteristics {#qualitative}
 
 Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` in `r R.version.string`. The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975]. "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995].  [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. 

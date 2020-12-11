@@ -100,6 +100,18 @@ absorb <- psych::alpha(together[c(2:5, 14:17, 34:37)])
 vigor <- psych::alpha(together[c(26:29, 6:9, 18:21)])
 dedic <- psych::alpha(together[c(30:33, 10:13, 22:25)])
 
+aff.abs <- psych::alpha(together[2:5])
+aff.vig <- psych::alpha(together[6:9])
+aff.ded <- psych::alpha(together[10:13])
+
+beh.abs <- psych::alpha(together[14:17])
+beh.vig <- psych::alpha(together[18:21])
+beh.ded <- psych::alpha(together[22:25])
+
+cog.abs <- psych::alpha(together[34:37])
+cog.vig <- psych::alpha(together[26:29])
+cog.ded <- psych::alpha(together[30:33])
+
 one <- together[ which(together$Condition == 1), ]
 two <- together[ which(together$Condition == 2), ]
 three <- together[ which(together$Condition == 3), ]
@@ -141,13 +153,29 @@ Condition 1 administered items within the substantive dimensions (with successiv
 
 | Dimension      | Undifferentiated                        | Condition 1                       |  Condition 2                      | Condition 3                       | Condition 4                       |
 |----------------|-----------------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
-| Affective      | `r round(affect$total$raw_alpha, 2)`    |`r round(aff.1$total$raw_alpha, 2)`|`r round(aff.2$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`|  
-| Behavioral     | `r round(behave$total$raw_alpha, 2)`    |`r round(beh.1$total$raw_alpha, 2)`|`r round(beh.2$total$raw_alpha, 2)`|`r round(beh.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`| 
-| Cognitive      | `r round(cogni$total$raw_alpha, 2)`     |`r round(cog.1$total$raw_alpha, 2)`|`r round(cog.2$total$raw_alpha, 2)`|`r round(cog.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`| 
+| Affective      | `r round(affect$total$raw_alpha, 2)`    |`r round(aff.1$total$raw_alpha, 2)`|`r round(aff.2$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`|  
+| Behavioral     | `r round(behave$total$raw_alpha, 2)`    |`r round(beh.1$total$raw_alpha, 2)`|`r round(beh.2$total$raw_alpha, 2)`|`r round(beh.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
+| Cognitive      | `r round(cogni$total$raw_alpha, 2)`     |`r round(cog.1$total$raw_alpha, 2)`|`r round(cog.2$total$raw_alpha, 2)`|`r round(cog.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
 |                |                                         |                                   |                                   |                                   |                                   |
-| Absorption     | `r round(absorb$total$raw_alpha, 2)`    |`r round(abs.1$total$raw_alpha, 2)`|`r round(abs.2$total$raw_alpha, 2)`|`r round(abs.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`| 
-| Vigor          | `r round(vigor$total$raw_alpha, 2)`     |`r round(vig.1$total$raw_alpha, 2)`|`r round(vig.2$total$raw_alpha, 2)`|`r round(vig.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`| 
-| Dedication     | `r round(dedic$total$raw_alpha, 2)`     |`r round(ded.1$total$raw_alpha, 2)`|`r round(ded.2$total$raw_alpha, 2)`|`r round(ded.3$total$raw_alpha, 2)`|`r round(aff.3$total$raw_alpha, 2)`| 
+| Absorption     | `r round(absorb$total$raw_alpha, 2)`    |`r round(abs.1$total$raw_alpha, 2)`|`r round(abs.2$total$raw_alpha, 2)`|`r round(abs.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
+| Vigor          | `r round(vigor$total$raw_alpha, 2)`     |`r round(vig.1$total$raw_alpha, 2)`|`r round(vig.2$total$raw_alpha, 2)`|`r round(vig.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
+| Dedication     | `r round(dedic$total$raw_alpha, 2)`     |`r round(ded.1$total$raw_alpha, 2)`|`r round(ded.2$total$raw_alpha, 2)`|`r round(ded.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
+
+"Cell" level alphas (collapsed responses across conditions) were:
+
+| Cell                       | Alpha                                |
+|----------------------------|--------------------------------------|
+| Affective - Absorption     |`r round(aff.abs$total$raw_alpha, 2)` |
+| Affective - Vigor          |`r round(aff.vig$total$raw_alpha, 2)` |
+| Affective - Dedication     |`r round(aff.ded$total$raw_alpha, 2)` |
+|                            |                                      |
+| Behavioral - Absorption    |`r round(beh.abs$total$raw_alpha, 2)` |
+| Behavioral - Vigor         |`r round(beh.vig$total$raw_alpha, 2)` |
+| Behavioral - Dedication    |`r round(beh.ded$total$raw_alpha, 2)` |
+|                            |                                      |
+| Cognitive - Absorption     |`r round(cog.abs$total$raw_alpha, 2)` |
+| Cognitive - Vigor          |`r round(cog.vig$total$raw_alpha, 2)` |
+| Cognitive - Dedication     |`r round(cog.ded$total$raw_alpha, 2)` |
 
 Corrected item-total correlations are presented in Appendix \@ref(rdrops) 
 
