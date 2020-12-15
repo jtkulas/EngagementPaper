@@ -36,8 +36,13 @@ names(cond4.red) = gsub(pattern = "C*.* - ", replacement = "", x = names(cond4.r
 together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red)        ## we'll be using this object for analyses
 
 num_valid <- nrow(together)
+i <- c(1:37)                                          ## Changing item responses to numerics
+together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
+                        function(x) as.numeric(as.character(x)))
 
 mcor<-round(cor(together[,2:37], use="na.or.complete" ),2)
+
+
 
 library(ggcorrplot)
 library(plotly)
