@@ -50,7 +50,7 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
                     function(x) as.numeric(as.character(x)))
 
 library(descr)
-freq(together$`Duration (in seconds)`)
+# freq(together$`Duration (in seconds)`)
 
 ```
 
@@ -67,8 +67,13 @@ Inter-item correlations
 mcor<-round(cor(together[2:37], use="na.or.complete" ),2)
 lower<-mcor
 lower[lower.tri(mcor, diag=TRUE)]<-""
-lower<-as.data.frame(lower)
-lower
+
+library(magrittr)
+library(kableExtra)
+
+kable(mcor, "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "100%")
 
 ```
 
