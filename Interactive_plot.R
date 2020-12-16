@@ -46,8 +46,19 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
 ## Correlation 
 library(ggplot2)
 library(reshape2)
+mcor<-together[,2:37]
+               
+mcor<-mcor[c(33,34,35,36,
+              1,2,3,4,
+              13,14,15,16,
+              25,26,27,28,
+              5,6,7,8,
+              17,18,19,20,
+              29,30,31,32,
+              9,10,11,12,
+              21,22,23,24)]
 
-mcor<-round(cor(together[,2:37], use="na.or.complete" ),2)
+mcor<-round(cor(mcor, use="na.or.complete" ),2)
 
 
 ## p-values
@@ -69,7 +80,8 @@ melted_cor<-melt(upper_tri, na.rm = TRUE)
 cor.plot<-ggplot(data=melted_cor, aes(Var1, Var2, fill=value))+
   geom_tile(color="white")+
   scale_fill_gradient2(low="blue",high="red",mid="white",
-                       midpoint = 0, limit= c(-1,1), space = "Lab")+
+                       midpoint = 0, limit= c(-1,1), space = "Lab",
+                       name="Attiduinal Correlation")+
   theme_minimal()+
   theme(axis.text = element_blank())+
   coord_fixed()
