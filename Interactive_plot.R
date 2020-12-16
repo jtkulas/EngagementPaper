@@ -40,18 +40,35 @@ i <- c(1:37)                                          ## Changing item responses
 together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
                         function(x) as.numeric(as.character(x)))
 
+
+
+
+## Correlation 
+library(ggplot2)
+library(reshape2)
+
 mcor<-round(cor(together[,2:37], use="na.or.complete" ),2)
 
 
+## Upper triangle 
+get_upper_tri <- function(mcor){
+  mcor[lower.tri(mcor)]<- NA
+  return(mcor)}
 
-library(ggcorrplot)
-library(plotly)
+upper_tri<-get_upper_tri(mcor)
 
-cor.plot<-ggcorrplot(mcor, hc.order = TRUE, type = "upper",
-           outline.col = "white")
+melted_cor<-melt(upper_tri, na.rm = TRUE)
+
+cor.plot<-ggplot(data=melted_cor, aes(Var1, Var2, fill=value))+
+  geom_tile(color="white")+
+  scale_fill_gradient2(low="blue",high="red",mid="white",
+                       midpoint = 0, limit= c(-1,1), space = "Lab")+
+  theme_minimal()+
+  theme(axis.text = element_blank())+
+  coord_fixed()
 
 # Interactive plot
-# ggplotly(cor.plot)
+ ggplotly(cor.plot)
 
 
 library(magrittr)
