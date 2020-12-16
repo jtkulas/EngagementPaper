@@ -68,6 +68,7 @@ cor.plot<-ggplot(data=melted_cor, aes(Var1, Var2, fill=value))+
   coord_fixed()
 
 # Interactive plot
+library(plotly)
  ggplotly(cor.plot)
 
 
@@ -77,3 +78,4 @@ library(kableExtra)
 kable(mcor, "html") %>%
   kable_styling() %>%
   scroll_box(width = "100%", height = "750px")
+
