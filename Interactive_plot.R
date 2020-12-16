@@ -51,7 +51,7 @@ cor.plot<-ggcorrplot(mcor, hc.order = TRUE, type = "upper",
            outline.col = "white")
 
 # Interactive plot
-ggplotly(cor.plot)
+# ggplotly(cor.plot)
 
 
 library(magrittr)
@@ -59,4 +59,4 @@ library(kableExtra)
 
 kable(mcor, "html") %>%
   kable_styling() %>%
-  scroll_box(width = "100%")
+  scroll_box(width = "100%", height = "750px")
