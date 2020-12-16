@@ -50,6 +50,11 @@ library(reshape2)
 mcor<-round(cor(together[,2:37], use="na.or.complete" ),2)
 
 
+## p-values
+library(Hmisc)
+pcor<-rcorr(as.matrix(mcor))
+
+
 ## Upper triangle 
 get_upper_tri <- function(mcor){
   mcor[lower.tri(mcor)]<- NA
@@ -58,6 +63,8 @@ get_upper_tri <- function(mcor){
 upper_tri<-get_upper_tri(mcor)
 
 melted_cor<-melt(upper_tri, na.rm = TRUE)
+
+## Plotting the correlation matrix
 
 cor.plot<-ggplot(data=melted_cor, aes(Var1, Var2, fill=value))+
   geom_tile(color="white")+
