@@ -83,6 +83,23 @@ kable(cond4, caption = "Pilot administration ordering Condition 4")
 
 ```
 
+# Item intercorrelations {#corrs}
+
+```{r correlate, echo=FALSE, warning=FALSE, message=FALSE}
+
+mcor<-round(cor(together[2:37], use="na.or.complete" ),2)
+lower<-mcor
+lower[lower.tri(mcor, diag=TRUE)]<-""
+
+library(magrittr)
+library(kableExtra)
+
+kable(mcor, "html") %>%
+  kable_styling(font_size=7) %>%
+  scroll_box(width = "100%", height = "900px")
+
+```
+
 # Corrected item-total correlations {#rdrops}
 
 ## Substantive scale (marginal level)
