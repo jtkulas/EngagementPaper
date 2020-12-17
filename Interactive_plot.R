@@ -81,7 +81,7 @@ cor.plot<-ggplot(data=melted_cor, aes(Var1, Var2, fill=value))+
   geom_tile(color="white")+
   scale_fill_gradient2(low="blue",high="red",mid="white",
                        midpoint = 0, limit= c(-1,1), space = "Lab",
-                       name="Attiduinal Correlation")+
+                       name="Attitudinal Correlation")+
   theme_minimal()+
   theme(axis.text = element_blank())+
   coord_fixed()
