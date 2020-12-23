@@ -52,6 +52,9 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
 library(descr)
 # freq(together$`Duration (in seconds)`)
 
+
+
+# Interactive plot
 library(reshape2)
 mcor<-together[,2:37]
                
