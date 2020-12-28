@@ -49,10 +49,21 @@ i <- c(1:37)                                          ## Changing item responses
 together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
                     function(x) as.numeric(as.character(x)))
 
-library(descr)
+#library(descr)
 # freq(together$`Duration (in seconds)`)
 
+```
 
+
+## Pilot analyses
+
+`r num_valid` people responded. We may want to further screen these `r num_valid` responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the "number of people who clicked on the assessment link (`r num`)" versus valid *n* (`r num_valid`) may take care of our very low duration respondents. The shortest response duration in the `r num` datafile is `r min(data$Duration)` whereas the lowest in the `r num_valid` datafile is `r min(together$Duration)`.
+
+### Classical test theory
+
+In addition to the below interactive plot, a full inter-item correlation matrix is located in Appendix \@ref(corrs).
+
+```{r interactive_plot, echo=FALSE, warning=FALSE, message=FALSE}
 
 # Interactive plot
 library(reshape2)
@@ -98,19 +109,8 @@ library(plotly)
 
 ```
 
-## Pilot analyses
 
-`r num_valid` people responded. Probably need to further screen for duration. This is the number of seconds to complete the entire survey (according to communications with Qualtrics in early December). It looks like our "number of people who clicked on the assessment link (`r num`)" versus valid *n* (`r num_valid`) took care of our very low duration respondents. The lowest in the `r num` datafile is `r min(data$Duration)` whereas the lowest in the `r num_valid` datafile is `r min(together$Duration)`.
-
-### Classical test theory
-
-Inter-item correlations are located in Appendix \@ref(corrs).
-
-
-corrected item-total correlations and alphas by condition
-
-
-```{r alphas, echo=FALSE, warning=FALSE, message=FALSE}
+```{r alphas, echo=FALSE, message=FALSE, warning=FALSE}
 
 ## recodes 12/9/20
 
@@ -184,7 +184,7 @@ ded.4 <- psych::alpha(four[c(30:33, 10:13, 22:25)])
 
 #### Internal consistency estimates
 
-Condition 1 administered items within the substantive dimensions (with successive randomized blocks of Cognitive, Affective, and Behavioral items). Condition 2 administered items within the attitudinal dimensions (with successive randomized blocks of Absorption, Vigor, and Dedication items). Condition 3 stressed the substantive dimensions (with items fully randomized regardless of attitudinal association). Condition 4 stressed the attitudinal dimensions (with items fully randomized within attitudinal dimension regardless of substantive scale association, see Chapter \@ref(conds) and Appendix \@ref(pilot2)).
+Condition 1 administered items within the substantive dimensions (with successive randomized blocks of Cognitive, Affective, and Behavioral items). Condition 2 administered items within the attitudinal dimensions (with successive randomized blocks of Absorption, Vigor, and Dedication items). Condition 3 stressed the substantive dimensions (with items fully randomized regardless of attitudinal association). Condition 4 stressed the attitudinal dimensions (with items fully randomized within attitudinal dimension regardless of substantive scale association, see Chapter \@ref(conds) and Appendix \@ref(pilot2)). Alphas for the candidate 12-item scales were:
 
 | Dimension      | Undifferentiated                        | Condition 1                       |  Condition 2                      | Condition 3                       | Condition 4                       |
 |----------------|-----------------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
@@ -196,7 +196,7 @@ Condition 1 administered items within the substantive dimensions (with successiv
 | Vigor          | `r round(vigor$total$raw_alpha, 2)`     |`r round(vig.1$total$raw_alpha, 2)`|`r round(vig.2$total$raw_alpha, 2)`|`r round(vig.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
 | Dedication     | `r round(dedic$total$raw_alpha, 2)`     |`r round(ded.1$total$raw_alpha, 2)`|`r round(ded.2$total$raw_alpha, 2)`|`r round(ded.3$total$raw_alpha, 2)`|`r round(aff.4$total$raw_alpha, 2)`| 
 
-"Cell" level alphas (collapsed responses across conditions) were:
+"Cell" level alphas (4 items each scale, responses collapsed across administrative conditions) were:
 
 | Cell                       | Alpha                                |
 |----------------------------|--------------------------------------|
