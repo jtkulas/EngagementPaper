@@ -44,6 +44,22 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
                         function(x) as.numeric(as.character(x)))
 
 
+##########################################################
+##########################################################
+##########################################################
+############# RECODES
+
+together$`Most days, I feel happiest when the workday is soon to be complete.` <- 7 - together$`Most days, I feel happiest when the workday is soon to be complete.`
+together$`This job drains my energy.` <- 7 - together$`This job drains my energy.`
+
+## BEHAVIORAL (NONE):
+
+## COGNITIVE: 
+
+together$`Thinking about work saps my energy.` <- 7 - together$`Thinking about work saps my energy.`
+together$`I often think about finding another job.` <- 7 - together$`I often think about finding another job.`
+
+
 library(lavaan)
 library(sem)
 library(semPlot)
@@ -100,7 +116,7 @@ Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item
 '
 
 Fit1.1<-lavaan::cfa(Sub_Model, data = CFAdata)
-semPlot::semPaths(Fit1.1,whatLabels = "std", layout = "tree")
+semPlot::semPaths(Fit1.1,"col", "std", "lisrel", "circle")
 lavaan::fitMeasures(Fit1.1)
 summary(Fit1.1, fit.measure=TRUE)
 
@@ -110,7 +126,7 @@ Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+I
 Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
 '
 Fit1.2<-lavaan::cfa(Att_Model, data = CFAdata)
-semPlot::semPaths(Fit1.2,whatLabels = "std", layout = "tree")
+semPlot::semPaths(Fit1.2,whatLabels = "std", layout = "tree", rotation=2)
 lavaan::fitMeasures(Fit1.2)
 summary(Fit1.2, fit.measure=TRUE)
 
