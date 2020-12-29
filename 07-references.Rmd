@@ -29,26 +29,26 @@ It was decided to operationalize fullfillment as an *outcome* of engagement rath
 
 ### February 24, 2020
 
-Definitional amendments:
+Definitional amendment notes and considerations:
 
-*Absorption*: being fully concentrated and happily immersed in ones work (time passes quickly and has difficulty detaching from ones work; Schaufeli et al., 2002)
+*Absorption*: being fully concentrated and happily immersed in ones work [time passes quickly and has difficulty detaching from ones work; @schaufeli_measurement_2002]
 
-*Dedication/Commitment*: being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. (Schaufeli et al., 2002) Identifying as an organizational member/ambassador
+*Dedication/Commitment*: being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. [@schaufeli_measurement_2002] Identifying as an organizational member/ambassador
 
 This includes conceptual elements of identification with the organization, a sense of "oneness", seeking continuous learning and improvement. We got rid of "challenge" altogether and moved the "inspiration" and "pride" elements to other categories. 
 
-*dedication*: seeking continous imporvement and demonstrating initiative 
+*Dedication*: seeking continous imporvement and demonstrating initiative 
 
-*Vigor*: investing consistent effort, persistence, energy, and mental resilience while working (Schaufeli et al., 2002)
+*Vigor*: investing consistent effort, persistence, energy, and mental resilience while working [@schaufeli_measurement_2002]
 maybe add enthusiasm here as well 
 
 *Vigor*: Experiencing persistent levels of energy and enthusiasm while working 
 
 ### Structural considerations
 
-It was considered to potentially change from a focus on affective, cognitive, and behavioral to whether their engagement comes from content/satisfaction with the organization or the people they work with. This idea was however abandoned Spring 2020.
+It was considered to potentially change from a focus on affective, cognitive, and behavioral to whether their engagement stems from content/satisfaction with the organization or the people they work with. This idea was however abandoned Spring 2020.
 
-After completing individual Q-sorts (Kulas and Renata) we decided to revisit the originally specified definitions and build them up a little to make the difference between them more noticeable (and we retained the affect, behavior, cognition focus). 
+After completing individual Q-sorts (Kulas and Renata) we decided to revisit the originally specified substantive definitions and build them up a little to make the difference between them more noticeable (and we also retained the affect, behavior, cognition focus). 
 
 ## Summer 2020
 
@@ -60,7 +60,7 @@ Definitions as of 5/19/2020:
 
 *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
 
-The q-sorting done to inform the pilot administration was With these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
+The development team "content validation" as well as the broader content validation to inform the pilot administration (see Chapter \@ref(CValid)) retained these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories. 
 
 # Pilot conditions {#pilot2}
 

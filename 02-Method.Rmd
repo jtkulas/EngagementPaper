@@ -7,7 +7,7 @@
 After content validation but prior to settling on 4 candidate items per 3x3 condition, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items [located here](https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing) (Montclair State University e-mail needed to access). It was from this larger list of (reduced) candidate items that the 36 pilot candidates were identified (and in some cases modified, edited, or otherwise further crafted)
 
 
-## Content Validation
+## Content Validation {#CValid}
 
 ```{r contentvalidation, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -16,8 +16,6 @@ cvalid <- read.csv("Engagement Survey Content Validity.csv")
 items <- nrow(cvalid)
 
 ```
-
-## Content validation
 
 7 Eagle I.O consultants were twice instructed to place each of `r items` items into one of three categories: Absorption, Dedication, or Vigor, and Cognitive, Affective, or Behavioral. Instructions asked each rater to:
 
