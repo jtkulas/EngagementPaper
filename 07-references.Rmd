@@ -137,6 +137,15 @@ plot_ly(testing, x=~Cognitive, y=~Affective, z=~Behavioral, type="scatter3d", mo
 
 ```
 
+Correlation matrix of 3 unit-weighted substantive and 3 unit-weighted attitudinal scales:
+
+```{r correlations3, echo=FALSE, warning=FALSE, message=FALSE}
+
+##cor(testing[37:42], use="complete.obs")
+psych::pairs.panels(testing[37:42])
+
+```
+
 # Corrected item-total correlations {#rdrops}
 
 ## Substantive scale (marginal level)
