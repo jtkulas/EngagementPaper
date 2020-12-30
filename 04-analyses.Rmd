@@ -283,44 +283,6 @@ summary(Fit1.1, fit.measure=TRUE)
 
 We used lavaan version `r Fit1.1@version`
 
-### Scale-level correlations
-
-Because of the large inter-construct covariance estimates, we constructed standard unit-weighted scale aggregates (interactive plot of unit-weighted aggregates located below for the substantive scales):
-
-```{r correlations, echo=FALSE, warning=FALSE, message=FALSE}
-
-testing <- CFAdata
-
-testing$Absorption <- rowMeans(testing[1:12], na.rm=TRUE)
-testing$Vigor <- rowMeans(testing[13:24], na.rm=TRUE)
-testing$Dedication <- rowMeans(testing[25:36], na.rm=TRUE)
-
-## cor(testing[37:39], use="complete.obs")
-
-# library(plotly)
-plot_ly(testing, x=~Absorption, y=~Vigor, z=~Dedication, type="scatter3d", mode="markers",
-        marker=list(size=3, color = "deepskyblue"))
-
-
-```
-
-...and the attitudinal scales:
-
-```{r correlations2, echo=FALSE, warning=FALSE, message=FALSE}
-
-testing$Cognitive <- rowMeans(testing[c(1:4,13:16,25:28)], na.rm=TRUE)
-testing$Affective <- rowMeans(testing[c(5:8,17:20,29:32)], na.rm=TRUE)
-testing$Behavioral <- rowMeans(testing[c(9:12,21:24,33:36)], na.rm=TRUE)
-
-## cor(testing[37:39], use="complete.obs")
-
-# library(plotly)
-plot_ly(testing, x=~Cognitive, y=~Affective, z=~Behavioral, type="scatter3d", mode="markers", 
-        marker=list(size=3, color = "springgreen3"))
-
-```
-
-
 #### Multigroup analyses
 
 + using experimental condition as "multiple groups" (measurement invariance)
