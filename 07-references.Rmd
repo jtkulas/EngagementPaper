@@ -77,13 +77,31 @@ cond4 <- read.csv("cond4.csv")
 library(kableExtra)
 
 kable(cond1, caption = "Pilot administration ordering Condition 1") 
-kable(cond2, caption = "Pilot administration ordering Condition 2") 
-kable(cond3, caption = "Pilot administration ordering Condition 3") 
-kable(cond4, caption = "Pilot administration ordering Condition 4") 
+
 
 ```
 
-# Item intercorrelations {#corrs}
+```{r cond2, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cond2, caption = "Pilot administration ordering Condition 2") 
+
+```
+
+```{r cond3, echo=FALSE, warning=FALSE, message=FALSE}
+
+kable(cond3, caption = "Pilot administration ordering Condition 3") 
+
+```
+
+```{r cond4, echo=FALSE, warning=FALSE, message=FALSE}
+ 
+kable(cond4, caption = "Pilot administration ordering Condition 4")
+
+```
+
+# Correlations {#corrs}
+
+## Inter-Item correlations
 
 ```{r correlate, echo=FALSE, warning=FALSE, message=FALSE}
 
