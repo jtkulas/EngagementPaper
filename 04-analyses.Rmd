@@ -110,7 +110,7 @@ library(plotly)
 ```
 
 
-```{r alphas, echo=FALSE, message=FALSE, warning=FALSE}
+```{r alphas, echo=FALSE, warning=FALSE, message=FALSE}
 
 ## recodes 12/9/20
 
