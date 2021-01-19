@@ -123,13 +123,14 @@ Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item
 Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
 Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
 Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
-global=~Absorption+Vigor+Dedication+Cognitive+Affective+Behavioral
 '
 
-Fit_Bifactor<-lavaan::cfa(Bifactor_Model,data = CFAdata, std.lv=TRUE)
-semPlot::semPaths(Fit_Bifactor,whatLabels = "std",layout="spring")
+Fit_Bifactor<-lavaan::cfa(Bifactor_Model,data = CFAdata, orthogonal=TRUE)
+semPlot::semPaths(Fit_Bifactor,whatLabels = "std",layout="tree")
 lavaan::fitmeasures(Fit_Bifactor)
 summary(Fit_Bifactor,fit.measure=TRUE)
 
+library(performance)
+performance::compare_performance(Fit1.1,Fit1.2)
 
 
