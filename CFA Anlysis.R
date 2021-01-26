@@ -115,6 +115,38 @@ lavaan::fitMeasures(Fit1.2)
 summary(Fit1.2, fit.measure=TRUE)
 
 
+Bi_Sub_Model<-'
+Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
+Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+general=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12+Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24+Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+'
+
+Fit1.3<-lavaan::cfa(Bi_Sub_Model, data = CFAdata)
+semPlot::semPaths(Fit1.3,whatLabels = "std", layout = "tree")
+lavaan::fitMeasures(Fit1.3)
+summary(Fit1.3, fit.measure=TRUE)
+
+
+Bi_Att_Model<-'
+Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+general=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28+Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32+Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+'
+Fit1.4<-lavaan::cfa(Att_Model, data = CFAdata)
+semPlot::semPaths(Fit1.4,whatLabels = "std", layout = "tree")
+lavaan::fitMeasures(Fit1.4)
+summary(Fit1.4, fit.measure=TRUE)
+
+
+
+
+
+
+
+
+
 
 Bifactor_Model<-'
 Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
