@@ -118,9 +118,11 @@ kable(mcor, "html") %>%
 
 ```
 
-## Scale-level correlations
+## Scale-level correlations {.tabset .tabset-pills}
 
-Because of the large inter-construct covariance estimates, we constructed standard unit-weighted scale aggregates (interactive plot of unit-weighted aggregates located below for the substantive scales):
+Because of the large inter-construct covariance estimates, we constructed standard unit-weighted scale aggregates (interactive plot of unit-weighted aggregates located below)
+
+### Substantive scales
 
 ```{r correlations, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -139,7 +141,7 @@ plot_ly(testing, x=~Absorption, y=~Vigor, z=~Dedication, type="scatter3d", mode=
 
 ```
 
-...and the attitudinal scales:
+### Attitudinal scales
 
 ```{r correlations2, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -154,6 +156,8 @@ plot_ly(testing, x=~Cognitive, y=~Affective, z=~Behavioral, type="scatter3d", mo
         marker=list(size=3, color = "springgreen3"))
 
 ```
+
+## {-}
 
 Correlation matrix of 3 unit-weighted substantive and 3 unit-weighted attitudinal scales:
 
