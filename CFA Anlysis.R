@@ -142,12 +142,6 @@ summary(Fit1.4, fit.measure=TRUE)
 
 
 
-
-
-
-
-
-
 Bifactor_Model<-'
 Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
@@ -164,5 +158,21 @@ summary(Fit_Bifactor,fit.measure=TRUE)
 
 library(performance)
 performance::compare_performance(Fit1.1,Fit1.2)
+
+
+
+##### Renata Sample of CFA script 
+
+#Specifying model 2 
+model2 <- '
+lifesat =~ lifsat1 + lifsat2 + lifsat3 + lifsat4 + lifsat5
+SelfEst =~ sest1 + sest2 + Rsest3 + sest4 + Rsest5 + sest6 + Rsest7 + sest8 + Rsest9 + Rsest10'
+
+fit2 <- cfa(model2, data = survey)
+summary(fit2, standardized = TRUE, rsq = TRUE)
+
+# Implied correlation matrix 
+inspect(fit2, what = "cor.all")
+
 
 
