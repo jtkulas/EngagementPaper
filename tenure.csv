@@ -1,61 +1,107 @@
 "","Var1","Freq"
-"1","",8
+"1","<1 year",1
 "2","1 month",1
-"3","1 year",5
-"4","1 year 1 month",1
-"5","1.5 years",8
-"6","1.5 Years",1
-"7","1.7 years ",1
-"8","10",1
-"9","10 months",1
-"10","10 months ",1
-"11","10 years",3
-"12","11 years",1
-"13","12 years",3
-"14","14",1
-"15","14 months",1
-"16","14 years",1
-"17","15 years",1
-"18","16 years",1
-"19","17",1
-"20","17 years ",1
-"21","18",1
-"22","2 years",9
-"23","2 years ",2
-"24","2 yr",1
-"25","2.5 years",3
-"26","2.5 years ",1
-"27","20 years",3
-"28","22 years",1
-"29","27",1
-"30","3 months",1
-"31","3 years",9
-"32","3 years ",1
-"33","3 yeats",1
-"34","3.5 years",1
-"35","3+ years",1
-"36","30 years",1
-"37","3years",1
-"38","4 1/2 years ",1
-"39","4 months",2
-"40","4 years",8
-"41","4 years ",1
-"42","4 years.",1
-"43","5",1
-"44","5 months",2
-"45","5 years",5
-"46","6 months",2
-"47","6 months ",3
-"48","6 years",3
-"49","6.5 years",1
-"50","7",1
-"51","7 years",3
-"52","8 months",1
-"53","8 years",4
-"54","9 months",1
-"55","9 years",1
-"56","A bit over a year",1
-"57","a month",1
-"58","just this semester ",1
-"59","No longer with the organization, was there for a year and a half.",1
-"60","Over a year",1
+"3","1 year",10
+"4","1 year ",1
+"5","1 year 1 month",1
+"6","1.5 years",9
+"7","1.5 Years",1
+"8","1.7 years ",1
+"9","10",1
+"10","10 months",1
+"11","10 months ",1
+"12","10 years",6
+"13","11 years",2
+"14","12 years",4
+"15","12.5 years ",1
+"16","14",1
+"17","14 months",1
+"18","14 years",2
+"19","15 years",5
+"20","15YEARS",1
+"21","16 years",2
+"22","17",1
+"23","17 years",1
+"24","17 years ",1
+"25","17years",1
+"26","18",1
+"27","1yr",1
+"28","2 and a half years",1
+"29","2 months",2
+"30","2 months ",1
+"31","2 years",15
+"32","2 years ",3
+"33","2 years 3 months",1
+"34","2 yr",1
+"35","2 yrs",1
+"36","2.5 months",1
+"37","2.5 years",6
+"38","2.5 years ",1
+"39","20 years",5
+"40","21 years",1
+"41","22 years",2
+"42","23 years",1
+"43","27",1
+"44","3",1
+"45","3 months",2
+"46","3 months ",1
+"47","3 years",15
+"48","3 years ",4
+"49","3 yeats",1
+"50","3.5",1
+"51","3.5 years",2
+"52","3.5 years ",1
+"53","3+ years",1
+"54","30 years",3
+"55","30 yrs, different location's ",1
+"56","31 years",1
+"57","32 years ",1
+"58","33 years",1
+"59","33 years ",1
+"60","35+ years",1
+"61","35+ years ",1
+"62","38 years",1
+"63","3years",1
+"64","4",1
+"65","4 1/2 years ",1
+"66","4 months",3
+"67","4 months ",1
+"68","4 semesters ",1
+"69","4 yeads",1
+"70","4 years",10
+"71","4 years ",1
+"72","4 years.",1
+"73","40 years",1
+"74","41 yrs",1
+"75","5",2
+"76","5 months",2
+"77","5 years",6
+"78","6 months",3
+"79","6 months ",3
+"80","6 years",4
+"81","6 years ",1
+"82","6.5 years",2
+"83","7",1
+"84","7 years",6
+"85","7 years ",2
+"86","8 months",2
+"87","8 years",4
+"88","9 months",1
+"89","9 years",2
+"90","9 yrs",1
+"91","A bit over a year",1
+"92","A few months in this role, two years in this organization",1
+"93","a month",1
+"94","A year",1
+"95","A year and 5 months",1
+"96","Around 1 year",1
+"97","Few months",1
+"98","I am self employed ",1
+"99","just this semester ",1
+"100","Less than a year",2
+"101","Nearly 4 years",1
+"102","No longer with the organization, was there for a year and a half.",1
+"103","One year ",1
+"104","Over a year",1
+"105","Since March 2020",1
+"106","Year and a half ",1

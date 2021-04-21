@@ -218,6 +218,7 @@ Corrected item-total correlations are presented in Appendix \@ref(rdrops)
 
 ```{r CFA, echo=FALSE, warning=FALSE, message=FALSE}
 
+options("scipen"=100, "digits"=2)  ## suppresses scientific notation
 
 library(lavaan)
 library(sem)
@@ -275,7 +276,7 @@ Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item
 '
 
 Fit1.1<-lavaan::cfa(Sub_Model, data = CFAdata)
-semPlot::semPaths(Fit1.1,"col", "std", "lisrel", "circle")
+semPlot::semPaths(Fit1.1, "col", "std", "lisrel", "circle")
 fit1.1 <- as.data.frame(fitMeasures(Fit1.1))
 fit1.1$rounded <- round(fit1.1$`fitMeasures(Fit1.1)`, 2)
 ## summary(Fit1.1, fit.measure=TRUE)
@@ -309,6 +310,8 @@ We used lavaan version `r Fit1.1@version`
 #### Bifactor analyses
 
 + looking at dual structure
+
+> Note that the semPlots package has [an option to generate bifactor plots](https://www.rdocumentation.org/packages/semPlot/versions/1.1.2/topics/semPaths) 
 
 ### Summary
 

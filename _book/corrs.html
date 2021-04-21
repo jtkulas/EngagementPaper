@@ -1,0 +1,4444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C Correlations | Engagement Survey Technical Report</title>
+  <meta name="description" content="This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C Correlations | Engagement Survey Technical Report" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="EE.jpeg" />
+  <meta property="og:description" content="This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C Correlations | Engagement Survey Technical Report" />
+  
+  <meta name="twitter:description" content="This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:image" content="EE.jpeg" />
+
+<meta name="author" content="Eagle I.O" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pilot2.html"/>
+<link rel="next" href="rdrops.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Eagle I.O Engagement Tech Report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#definitions-of-engagement"><i class="fa fa-check"></i><b>2.1</b> Definitions of Engagement</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#ABCDAV"><i class="fa fa-check"></i><b>2.2</b> Intended Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="instrument-creation.html"><a href="instrument-creation.html"><i class="fa fa-check"></i><b>3</b> Instrument creation</a><ul>
+<li class="chapter" data-level="3.1" data-path="instrument-creation.html"><a href="instrument-creation.html#item-generation"><i class="fa fa-check"></i><b>3.1</b> Item generation</a></li>
+<li class="chapter" data-level="3.2" data-path="instrument-creation.html"><a href="instrument-creation.html#CValid"><i class="fa fa-check"></i><b>3.2</b> Content Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="procedure.html"><a href="procedure.html"><i class="fa fa-check"></i><b>4</b> Procedure</a><ul>
+<li class="chapter" data-level="4.1" data-path="procedure.html"><a href="procedure.html#conds"><i class="fa fa-check"></i><b>4.1</b> Pilot</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="procedure.html"><a href="procedure.html#sampling-strategy-pilot"><i class="fa fa-check"></i><b>4.1.1</b> Sampling strategy (pilot)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="procedure.html"><a href="procedure.html#demographic-information"><i class="fa fa-check"></i><b>4.2</b> Demographic Information</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analyses.html"><a href="analyses.html"><i class="fa fa-check"></i><b>5</b> Analyses</a><ul>
+<li class="chapter" data-level="5.1" data-path="analyses.html"><a href="analyses.html#pilot-analyses-1"><i class="fa fa-check"></i><b>5.1</b> Pilot analyses</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="analyses.html"><a href="analyses.html#classical-test-theory"><i class="fa fa-check"></i><b>5.1.1</b> Classical test theory</a></li>
+<li class="chapter" data-level="5.1.2" data-path="analyses.html"><a href="analyses.html#confirmatory-factor-analyses"><i class="fa fa-check"></i><b>5.1.2</b> Confirmatory factor analyses</a></li>
+<li class="chapter" data-level="5.1.3" data-path="analyses.html"><a href="analyses.html#summary"><i class="fa fa-check"></i><b>5.1.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="analyses.html"><a href="analyses.html#construct-and-criterion-related-validation"><i class="fa fa-check"></i><b>5.2</b> Construct and Criterion-related Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="future-plans.html"><a href="future-plans.html"><i class="fa fa-check"></i><b>6</b> Future plans</a><ul>
+<li class="chapter" data-level="6.1" data-path="future-plans.html"><a href="future-plans.html#things-to-do"><i class="fa fa-check"></i><b>6.1</b> Things to do</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="author-bios.html"><a href="author-bios.html"><i class="fa fa-check"></i><b>7</b> Author bios</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="timeline-of-events.html"><a href="timeline-of-events.html"><i class="fa fa-check"></i><b>A</b> Timeline of events</a><ul>
+<li class="chapter" data-level="A.1" data-path="timeline-of-events.html"><a href="timeline-of-events.html#spring-2019"><i class="fa fa-check"></i><b>A.1</b> Spring 2019</a></li>
+<li class="chapter" data-level="A.2" data-path="timeline-of-events.html"><a href="timeline-of-events.html#spring-2020"><i class="fa fa-check"></i><b>A.2</b> Spring 2020</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="timeline-of-events.html"><a href="timeline-of-events.html#february-24-2020"><i class="fa fa-check"></i><b>A.2.1</b> February 24, 2020</a></li>
+<li class="chapter" data-level="A.2.2" data-path="timeline-of-events.html"><a href="timeline-of-events.html#structural-considerations"><i class="fa fa-check"></i><b>A.2.2</b> Structural considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="timeline-of-events.html"><a href="timeline-of-events.html#summer-2020"><i class="fa fa-check"></i><b>A.3</b> Summer 2020</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="pilot2.html"><a href="pilot2.html"><i class="fa fa-check"></i><b>B</b> Pilot conditions</a></li>
+<li class="chapter" data-level="C" data-path="corrs.html"><a href="corrs.html"><i class="fa fa-check"></i><b>C</b> Correlations</a><ul>
+<li class="chapter" data-level="C.1" data-path="corrs.html"><a href="corrs.html#inter-item-correlations"><i class="fa fa-check"></i><b>C.1</b> Inter-Item correlations</a></li>
+<li class="chapter" data-level="C.2" data-path="corrs.html"><a href="corrs.html#scale-level-correlations"><i class="fa fa-check"></i><b>C.2</b> Scale-level correlations</a><ul>
+<li class="chapter" data-level="C.2.1" data-path="corrs.html"><a href="corrs.html#substantive-scales"><i class="fa fa-check"></i><b>C.2.1</b> Substantive scales</a></li>
+<li class="chapter" data-level="C.2.2" data-path="corrs.html"><a href="corrs.html#attitudinal-scales"><i class="fa fa-check"></i><b>C.2.2</b> Attitudinal scales</a></li>
+</ul></li>
+<li><a href="corrs.html#section"></a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="rdrops.html"><a href="rdrops.html"><i class="fa fa-check"></i><b>D</b> Corrected item-total correlations</a><ul>
+<li class="chapter" data-level="D.1" data-path="rdrops.html"><a href="rdrops.html#substantive-scale-marginal-level"><i class="fa fa-check"></i><b>D.1</b> Substantive scale (marginal level)</a></li>
+<li class="chapter" data-level="D.2" data-path="rdrops.html"><a href="rdrops.html#substantive-scale-cell-level"><i class="fa fa-check"></i><b>D.2</b> Substantive scale (cell level)</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="qualitative.html"><a href="qualitative.html"><i class="fa fa-check"></i><b>E</b> Qualitative item characteristics</a><ul>
+<li class="chapter" data-level="E.1" data-path="qualitative.html"><a href="qualitative.html#frequency-distributions-by-dimension"><i class="fa fa-check"></i><b>E.1</b> Frequency distributions by dimension</a></li>
+<li class="chapter" data-level="E.2" data-path="qualitative.html"><a href="qualitative.html#tables-of-qualitative-indices"><i class="fa fa-check"></i><b>E.2</b> Tables of qualitative indices</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Engagement Survey Technical Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="corrs" class="section level1">
+<h1><span class="header-section-number">C</span> Correlations</h1>
+<div id="inter-item-correlations" class="section level2">
+<h2><span class="header-section-number">C.1</span> Inter-Item correlations</h2>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:900px; overflow-x: scroll; width:100%; ">
+<table class="table" style="font-size: 7px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I enjoy thinking about work even when Iâ€™m not at work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Most days, I feel happiest when the workday is soon to be complete.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I am happiest when I am immersed in a project.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I love starting my workday.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I enjoy spending time completing my job tasks.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Most days I feel enthusiastic about starting my work day.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I feel motivated to go beyond what is asked of me.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+This job drains my energy.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I am proud to be a member of this organization.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I feel supported by my supervisor when I fail at a task.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I feel proud of my accomplishments within this organization.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+My job makes me feel like Iâ€™m part of something meaningful.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I devote more time than is expected of me.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I have to be reminded to take breaks while Iâ€™m at work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I never miss a work deadline.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I never allow distractions to interfere with my work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+When work is slow I find ways to be productive.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I express enthusiasm for my job while at work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I try my best to perform well at work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+If I notice my energy level is low, I take corrective steps to re-energize.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I make valued contributions to the organization.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I embrace challenging situations at work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I speak positively about this organization to others.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+This organization provides the resources necessary for me to successfully perform my job.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I devote my full attention to my work tasks throughout the day.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Thinking about work saps my energy.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I would rather direct my focus toward a work task than a personal task.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Iâ€™m able to maintain good levels of energy throughout the workday.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I plan my future with this company.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I believe this company cares about my career goals.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I often think about finding another job.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+This organization challenges me to work at my full potential.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Iâ€™m able to concentrate on my work without distractions.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I have a hard time detaching mentally from my work.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Time passes quickly while Iâ€™m working.
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+I find it difficult to mentally disconnect from work.
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+I enjoy thinking about work even when Iâ€™m not at work.
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Most days, I feel happiest when the workday is soon to be complete.
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.12
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I am happiest when I am immersed in a project.
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I love starting my workday.
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I enjoy spending time completing my job tasks.
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Most days I feel enthusiastic about starting my work day.
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I feel motivated to go beyond what is asked of me.
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+This job drains my energy.
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+-0.15
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I am proud to be a member of this organization.
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+0.69
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.61
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I feel supported by my supervisor when I fail at a task.
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I feel proud of my accomplishments within this organization.
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+My job makes me feel like Iâ€™m part of something meaningful.
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I devote more time than is expected of me.
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I have to be reminded to take breaks while Iâ€™m at work.
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I never miss a work deadline.
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.12
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I never allow distractions to interfere with my work.
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+When work is slow I find ways to be productive.
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I express enthusiasm for my job while at work.
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I try my best to perform well at work.
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+If I notice my energy level is low, I take corrective steps to re-energize.
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I make valued contributions to the organization.
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I embrace challenging situations at work.
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.57
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I speak positively about this organization to others.
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+This organization provides the resources necessary for me to successfully perform my job.
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+-0.15
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I devote my full attention to my work tasks throughout the day.
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thinking about work saps my energy.
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+-0.13
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I would rather direct my focus toward a work task than a personal task.
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iâ€™m able to maintain good levels of energy throughout the workday.
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I plan my future with this company.
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I believe this company cares about my career goals.
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.69
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+0.69
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I often think about finding another job.
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+This organization challenges me to work at my full potential.
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.61
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.69
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iâ€™m able to concentrate on my work without distractions.
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I have a hard time detaching mentally from my work.
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+-0.15
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+-0.15
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.13
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Time passes quickly while Iâ€™m working.
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+<td style="text-align:right;">
+0.31
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I find it difficult to mentally disconnect from work.
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.26
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+-0.17
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="scale-level-correlations" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">C.2</span> Scale-level correlations</h2>
+<p>Because of the large inter-construct covariance estimates, we constructed standard unit-weighted scale aggregates (interactive plot of unit-weighted aggregates located below)</p>
+<div id="substantive-scales" class="section level3">
+<h3><span class="header-section-number">C.2.1</span> Substantive scales</h3>
+<div id="htmlwidget-cb1ebae0c252fb0f4dc3" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb1ebae0c252fb0f4dc3">{"x":{"visdat":{"7bb02b7448ce":["function () ","plotlyVisDat"]},"cur_data":"7bb02b7448ce","attrs":{"7bb02b7448ce":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":3,"color":"deepskyblue"},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Absorption"},"yaxis":{"title":"Vigor"},"zaxis":{"title":"Dedication"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[4.5,4.08333333333333,4.58333333333333,3.16666666666667,2.5,4.16666666666667,4.58333333333333,3,4.83333333333333,3.5,5.41666666666667,4.75,4.66666666666667,3.33333333333333,4.41666666666667,4.83333333333333,4.66666666666667,4.41666666666667,3.66666666666667,5,4.16666666666667,4.16666666666667,3.08333333333333,4.08333333333333,2.83333333333333,2.5,2.58333333333333,3.7,4.75,5.08333333333333,4,3.41666666666667,2.91666666666667,5.08333333333333,3.91666666666667,4,4.33333333333333,2.54545454545455,3,2.66666666666667,5.36363636363636,4.08333333333333,4.58333333333333,4.08333333333333,4.16666666666667,3.58333333333333,4.5,4.33333333333333,4.16666666666667,3.75,5.75,2.83333333333333,5.33333333333333,5.16666666666667,4.25,2.66666666666667,4.08333333333333,3.5,4.5,4.91666666666667,3.18181818181818,3.83333333333333,3.41666666666667,4.58333333333333,3.16666666666667,3.5,5.08333333333333,3.58333333333333,3.91666666666667,4.75,3.66666666666667,3.33333333333333,3.91666666666667,3.5,4.16666666666667,2.91666666666667,4.25,5.5,3.41666666666667,3.83333333333333,4,4.91666666666667,5.25,4.41666666666667,3.58333333333333,4.08333333333333,2.08333333333333,3.83333333333333,4.58333333333333,4.83333333333333,3,4.75,4.75,4.08333333333333,4.33333333333333,3.41666666666667,4.58333333333333,4.08333333333333,4,4.81818181818182,5.08333333333333,3.5,3.83333333333333,3.5,4.25,5,4.91666666666667,3.91666666666667,2.75,4.25,2.66666666666667,3.75,3.66666666666667,4.25,2.91666666666667,1.75,4.41666666666667,4.125,4.66666666666667,3.25,4.66666666666667,2.16666666666667,4.75,4.5,5,3.25,4.91666666666667,3.25,5.25,5.16666666666667,4.5,4.08333333333333,4.08333333333333,4.41666666666667,4.16666666666667,3.91666666666667,3.66666666666667,3.91666666666667,4.16666666666667,1.75,4.25,3.75,4.25,4.83333333333333,3.58333333333333,3.5,4.41666666666667,5,4.08333333333333,4.16666666666667,3.66666666666667,4.91666666666667,4.66666666666667,3.08333333333333,4.08333333333333,3.5,5.08333333333333,4.83333333333333,4.41666666666667,5.25,4.25,3.58333333333333,3.5,3.33333333333333,4.25,4.33333333333333,2.58333333333333,4.16666666666667,5.25,4.66666666666667,3.33333333333333,2.58333333333333,4.5,4.91666666666667,2.5,1.75,3.58333333333333,3.25,3.75,4.66666666666667,3.33333333333333,4.83333333333333,3.375,3.25,4.75,4.91666666666667,4.75,5.83333333333333,3.91666666666667,4.66666666666667,3.5,2.16666666666667,3.91666666666667,4.25,4.41666666666667,4.16666666666667,4.25,5.25,1.83333333333333,3.41666666666667,3.75,4,3.25,3.83333333333333,5.16666666666667,4.25,4.41666666666667,4.33333333333333,4.91666666666667,5.16666666666667,4.08333333333333,5.16666666666667,3.83333333333333,4.91666666666667,3.66666666666667,3.91666666666667,3.66666666666667,5,4.75,5,3.66666666666667,4.75,3.90909090909091,3.91666666666667,5.2,4.09090909090909,4.33333333333333,5.41666666666667,3.16666666666667,5.41666666666667,5.09090909090909,4.16666666666667,3.75,3.83333333333333,3.83333333333333,3,4.33333333333333,4.5,3.5,3.08333333333333,4.16666666666667,4,5.5,4.58333333333333,4.66666666666667,3.41666666666667,4.16666666666667,5.83333333333333,4.75,3.91666666666667,4.5,3.75,4.33333333333333,3.58333333333333,4.66666666666667],"y":[4.91666666666667,4.33333333333333,5.16666666666667,3.75,3.25,4.16666666666667,4.91666666666667,4.16666666666667,4.25,4.5,5.25,4.91666666666667,5.33333333333333,4.5,4.66666666666667,6,4.75,4.25,4.58333333333333,4.25,4.33333333333333,4.5,3.58333333333333,3.75,3.66666666666667,3.66666666666667,4.41666666666667,4.11111111111111,4.83333333333333,5.08333333333333,4.75,4.5,4.08333333333333,5.16666666666667,4.16666666666667,4.66666666666667,5.33333333333333,5.16666666666667,3.75,4.41666666666667,4.91666666666667,4.25,4.58333333333333,4.5,4.75,5.41666666666667,5.25,4.58333333333333,4.25,4.5,5,3.66666666666667,5.16666666666667,4.91666666666667,4.58333333333333,4.5,4.90909090909091,3.83333333333333,5.16666666666667,5.58333333333333,2.83333333333333,5.08333333333333,4.5,5.5,3.25,5,4.5,3.75,4.81818181818182,5,4.5,3.75,4.08333333333333,4.41666666666667,4.16666666666667,3.5,4.58333333333333,5.5,4.58333333333333,4.58333333333333,4.25,4.83333333333333,4.41666666666667,4.83333333333333,4,4.25,1.41666666666667,4.66666666666667,5.08333333333333,4.91666666666667,3.25,4.75,4.91666666666667,4.25,4.33333333333333,3.83333333333333,5.16666666666667,4.83333333333333,3.75,4.5,5.72727272727273,4.83333333333333,4.16666666666667,2.75,5.33333333333333,5.25,5.25,4.33333333333333,4.83333333333333,4.66666666666667,3.58333333333333,3.66666666666667,3.91666666666667,4.08333333333333,4.41666666666667,3.25,4.41666666666667,4.875,4,3.33333333333333,4.25,3.25,4.83333333333333,4.91666666666667,3.91666666666667,4.75,4.5,4.16666666666667,5.08333333333333,5.08333333333333,4.66666666666667,4.58333333333333,4.08333333333333,5.27272727272727,5,4.33333333333333,4.41666666666667,4.41666666666667,5,3,4.75,4.5,4.33333333333333,4.41666666666667,4,5.75,4.16666666666667,4.91666666666667,4.91666666666667,4.25,4.16666666666667,4.5,5,3.75,4.08333333333333,4.16666666666667,5.5,5,4.83333333333333,5,4,5.25,4.83333333333333,4.16666666666667,4.41666666666667,4,3.83333333333333,3.66666666666667,5.66666666666667,4.91666666666667,3.83333333333333,3.33333333333333,4.83333333333333,4.83333333333333,3.75,3.66666666666667,3.83333333333333,4.08333333333333,4.25,5,4.75,4.33333333333333,5,3.33333333333333,5.25,5.25,4.16666666666667,5.75,4.83333333333333,5,3.83333333333333,3.33333333333333,5.41666666666667,5.41666666666667,4.75,4.58333333333333,4.58333333333333,5.66666666666667,4.25,3.91666666666667,3.91666666666667,4.83333333333333,4.41666666666667,5.66666666666667,5,4.41666666666667,5.08333333333333,4.66666666666667,5,5.27272727272727,4.75,4.75,4.75,5.16666666666667,4.75,4.63636363636364,4.33333333333333,4.5,4.33333333333333,4.5,3.83333333333333,4.41666666666667,4.58333333333333,4.41666666666667,5.58333333333333,4.25,4.33333333333333,5.83333333333333,4.66666666666667,5.16666666666667,5.83333333333333,4,4.75,4.16666666666667,4.25,4.16666666666667,4.41666666666667,5.5,4.58333333333333,4.5,5.5,4.41666666666667,5.25,5,4.08333333333333,4.33333333333333,4.33333333333333,5.25,5.33333333333333,4.16666666666667,5.25,4.16666666666667,4.75,4.58333333333333,4.66666666666667],"z":[4.41666666666667,4.25,4.58333333333333,3.25,2.16666666666667,3.33333333333333,4.33333333333333,3.16666666666667,3.75,3.58333333333333,5,4.58333333333333,4.66666666666667,4,4.25,4.58333333333333,4.16666666666667,3.81818181818182,3.58333333333333,4.83333333333333,3.75,3.25,2,3.75,2.66666666666667,1.75,2.41666666666667,4.33333333333333,4,4.58333333333333,3.75,4,2.75,4.36363636363636,3.91666666666667,3.08333333333333,4.5,2.91666666666667,1.91666666666667,3,4.91666666666667,3.75,4.5,4,3.75,4.5,4.33333333333333,2.41666666666667,3.83333333333333,3.58333333333333,4.91666666666667,3.75,4.58333333333333,4.75,4.16666666666667,2.91666666666667,4.16666666666667,3.5,5.09090909090909,4.66666666666667,3.08333333333333,4.08333333333333,3.41666666666667,5.08333333333333,2.08333333333333,4,4.83333333333333,3.08333333333333,4.33333333333333,4.25,3.75,2.16666666666667,3.83333333333333,3.16666666666667,3.91666666666667,2.5,4,5.66666666666667,4.33333333333333,4.66666666666667,4,3.91666666666667,4.75,4,3.16666666666667,3.58333333333333,2.16666666666667,3.66666666666667,4.16666666666667,4.16666666666667,3,4.41666666666667,4.58333333333333,3.33333333333333,3.58333333333333,3.66666666666667,4.5,3.91666666666667,3.41666666666667,4.16666666666667,4.4,3.33333333333333,3.1,1,4.33333333333333,4.33333333333333,4.91666666666667,5.16666666666667,3.33333333333333,4.08333333333333,3.16666666666667,3.5,3.91666666666667,4.25,3.16666666666667,3.75,4,4.625,4.25,3.5,4.5,2,4.66666666666667,4.58333333333333,4.25,3.75,5,3.58333333333333,5,4.58333333333333,3.33333333333333,4.25,3.5,4.54545454545455,4.5,3.66666666666667,3.66666666666667,4.5,3.83333333333333,1.5,4,4,4,3.75,3,3.83333333333333,3.5,4,3.58333333333333,3.58333333333333,3.5,4.5,4.66666666666667,2.90909090909091,4.5,2.83333333333333,5,4.66666666666667,4.16666666666667,5.08333333333333,4,4.25,4.41666666666667,3.5,3.91666666666667,3.91666666666667,2.33333333333333,3.75,4.91666666666667,4.33333333333333,3.25,2.5,4.75,4.16666666666667,2.91666666666667,2.08333333333333,3.58333333333333,3.16666666666667,4,4.08333333333333,3.41666666666667,4.66666666666667,3.625,2.83333333333333,5.16666666666667,4.25,4.25,4.83333333333333,4.33333333333333,4.25,4,2.16666666666667,4.91666666666667,3.90909090909091,4.25,4.83333333333333,3.58333333333333,5.16666666666667,2.5,2.75,3.83333333333333,4.33333333333333,2.33333333333333,4,4.41666666666667,3.41666666666667,4.33333333333333,4,4.33333333333333,4.33333333333333,4.08333333333333,4.75,3.58333333333333,4.25,4.66666666666667,4,4.25,4.66666666666667,4.16666666666667,4.5,3,3.91666666666667,3.91666666666667,3.25,4.83333333333333,3.33333333333333,3.58333333333333,5.66666666666667,2.83333333333333,4.7,5.16666666666667,3.27272727272727,3.75,4.08333333333333,3.33333333333333,2,4.5,5.08333333333333,4,3.58333333333333,4.83333333333333,3.5,5,4.83333333333333,3.33333333333333,3.66666666666667,4.33333333333333,5,4.25,3.91666666666667,5.08333333333333,4.25,4.16666666666667,3.41666666666667,3.58333333333333],"mode":"markers","marker":{"color":"deepskyblue","size":3,"line":{"color":"rgba(31,119,180,1)"}},"type":"scatter3d","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="attitudinal-scales" class="section level3">
+<h3><span class="header-section-number">C.2.2</span> Attitudinal scales</h3>
+<div id="htmlwidget-5d331a09023d49a4b278" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d331a09023d49a4b278">{"x":{"visdat":{"7bb050f26977":["function () ","plotlyVisDat"]},"cur_data":"7bb050f26977","attrs":{"7bb050f26977":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":3,"color":"springgreen3"},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Cognitive"},"yaxis":{"title":"Affective"},"zaxis":{"title":"Behavioral"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[4.25,3.5,4,3.16666666666667,2,3.41666666666667,3.91666666666667,3,3.08333333333333,3.08333333333333,4.66666666666667,4,4.33333333333333,3.41666666666667,4.08333333333333,4.25,4,3.72727272727273,3.41666666666667,4.25,3.75,3.41666666666667,2.16666666666667,3.16666666666667,3.16666666666667,2.16666666666667,2.41666666666667,4.125,3.41666666666667,4,4.08333333333333,3.83333333333333,3.41666666666667,4.08333333333333,3.25,3.58333333333333,4.41666666666667,3.25,2.41666666666667,3.66666666666667,4.25,4.08333333333333,4,3.66666666666667,3.41666666666667,4.25,4.16666666666667,4.41666666666667,3.41666666666667,3.33333333333333,4.66666666666667,2.25,3.08333333333333,4.83333333333333,4.75,3.83333333333333,3.41666666666667,4.16666666666667,4.5,3.16666666666667,4.58333333333333,4.58333333333333,2.66666666666667,4,3.41666666666667,4.16666666666667,2.16666666666667,4,4.41666666666667,2.83333333333333,4.25,4.33333333333333,3.91666666666667,2.75,4.33333333333333,2.91666666666667,3.91666666666667,2.66666666666667,3.83333333333333,5.16666666666667,4,3.66666666666667,3.5,3.91666666666667,3.58333333333333,4.08333333333333,3.08333333333333,3.75,1.58333333333333,3.33333333333333,3.91666666666667,4.08333333333333,3.25,4.75,4,4.33333333333333,3.66666666666667,3.25,4.58333333333333,4.08333333333333,3.25,3.91666666666667,4.75,3.58333333333333,3,1.83333333333333,4.58333333333333,4.33333333333333,4.33333333333333,3.66666666666667,3,3.75,3,3.25,2.83333333333333,3.83333333333333,4.08333333333333,4.16666666666667,4.41666666666667,3.5,3.83333333333333,2.66666666666667,3.83333333333333,4.33333333333333,4.91666666666667,3.41666666666667,4.41666666666667,3.25,4.58333333333333,4.41666666666667,3.75,4,3.66666666666667,4.33333333333333,3.58333333333333,3.25,3.66666666666667,3.33333333333333,4.33333333333333,2,4.08333333333333,3.66666666666667,3.66666666666667,3.75,2.75,4.25,3.5,4.5,3.75,3.16666666666667,3.5,4.16666666666667,4.58333333333333,2.25,3.91666666666667,3.33333333333333,4.66666666666667,4.58333333333333,3.33333333333333,4.41666666666667,4.08333333333333,4.25,4,2.75,3.5,3.41666666666667,2.41666666666667,3.08333333333333,4.91666666666667,4.41666666666667,3,3.5,4.41666666666667,4.25,2.66666666666667,2.58333333333333,3.5,3.58333333333333,4.36363636363636,3.91666666666667,4.41666666666667,3.58333333333333,2.5,4.25,4.41666666666667,4,5.33333333333333,3.41666666666667,4.16666666666667,3.58333333333333,2.33333333333333,4.41666666666667,4.58333333333333,3.91666666666667,3.25,3.75,5.08333333333333,3.16666666666667,2.91666666666667,3.41666666666667,4.25,3,4.58333333333333,4.45454545454545,3.41666666666667,4.25,4.33333333333333,4,4,3.66666666666667,4.5,4,4.58333333333333,3.66666666666667,3.5,3.91666666666667,4.25,3.91666666666667,4.66666666666667,2.91666666666667,4.5,3.81818181818182,4,5,3.08333333333333,3.91666666666667,5.41666666666667,3.75,4.8,4.81818181818182,3.91666666666667,2.91666666666667,3.5,2.75,2.66666666666667,4.08333333333333,4.66666666666667,3.16666666666667,3.66666666666667,4.58333333333333,3.41666666666667,5.16666666666667,4.33333333333333,2.5,3.5,3,3.25,3.16666666666667,3.91666666666667,4.75,5,4.75,3.75,4.75,3.58333333333333,3.5,3.75,4.08333333333333],"y":[4.83333333333333,4.41666666666667,5.25,3.33333333333333,2.41666666666667,4.25,4.83333333333333,2.91666666666667,4.58333333333333,3.75,5.66666666666667,5,5.08333333333333,4,4.66666666666667,5.66666666666667,4.5,4.08333333333333,4.25,4.41666666666667,4.25,4.33333333333333,3,4.16666666666667,2.83333333333333,2.75,3.33333333333333,3.72727272727273,5,5.41666666666667,4.16666666666667,3.5,2.91666666666667,5.41666666666667,4.33333333333333,3.75,4.58333333333333,3.81818181818182,2.83333333333333,2.91666666666667,5.58333333333333,4.33333333333333,4.83333333333333,4.91666666666667,4.83333333333333,4.16666666666667,4.91666666666667,3.41666666666667,4.25,4.66666666666667,5.75,3.75,3.25,5.5,5,3.58333333333333,3.16666666666667,4.27272727272727,4.5,3.66666666666667,5.36363636363636,5.25,2.75,3.83333333333333,3.16666666666667,5.5,2.16666666666667,3.75,4.75,3.58333333333333,4.18181818181818,5.08333333333333,4.08333333333333,3.16666666666667,3.5,3.75,4.33333333333333,2.66666666666667,4.33333333333333,5.66666666666667,3.75,4.83333333333333,4.41666666666667,4.91666666666667,5.66666666666667,4.75,3.5,4,1.91666666666667,4.25,4.75,4.83333333333333,2.66666666666667,3.91666666666667,4.91666666666667,3.66666666666667,3.91666666666667,3.83333333333333,4.83333333333333,4.33333333333333,4,4.58333333333333,5.27272727272727,3.75,3.9,2,4.83333333333333,5.08333333333333,5.25,4.41666666666667,3.33333333333333,4.75,2.5,3.66666666666667,4.33333333333333,4.25,3.25,3.91666666666667,4.625,3.25,4.75,2.33333333333333,5.25,4.75,4,3.41666666666667,4.83333333333333,3.5,5.41666666666667,4.91666666666667,4.08333333333333,3.91666666666667,4.16666666666667,4.9,4.91666666666667,4.16666666666667,4.16666666666667,4.75,4.41666666666667,2.08333333333333,4.41666666666667,4,4.16666666666667,4.91666666666667,3.75,4,4.41666666666667,4.75,4.16666666666667,4.66666666666667,3.83333333333333,4.75,4.91666666666667,3.63636363636364,4.33333333333333,3.08333333333333,5.66666666666667,5.16666666666667,4.91666666666667,5.5,4.41666666666667,3.66666666666667,4.16666666666667,3.66666666666667,4.66666666666667,4.58333333333333,3.16666666666667,4,5.75,4.66666666666667,3.5,2.16666666666667,4.75,4.75,2.75,2,3.83333333333333,3.33333333333333,4.83333333333333,3.75,4.58333333333333,5,3.16666666666667,5.33333333333333,4.66666666666667,4.66666666666667,5.91666666666667,4.41666666666667,4.83333333333333,3.91666666666667,2.08333333333333,4.83333333333333,4.63636363636364,5,5,4.08333333333333,5.75,2.5,3.5,3.83333333333333,4.25,3.16666666666667,4.41666666666667,5.41666666666667,4.16666666666667,4.66666666666667,4.16666666666667,5,5.16666666666667,4.25,4.91666666666667,3.91666666666667,4.91666666666667,4.58333333333333,4.33333333333333,4,5,4.41666666666667,4.66666666666667,3.83333333333333,4.33333333333333,4,3.83333333333333,5.27272727272727,4.33333333333333,3.91666666666667,5.75,3.25,5.25,5.25,4,4.66666666666667,3.91666666666667,4.16666666666667,2.91666666666667,4.66666666666667,5.08333333333333,4.41666666666667,3.75,4.75,4.25,5.5,4.66666666666667,2.75,3.5,4.25,4,3.83333333333333,3.75,5.5,5.91666666666667,4.83333333333333,4.16666666666667,5,4.25,4.66666666666667,4.33333333333333,4.41666666666667],"z":[4.75,4.75,5.08333333333333,3.66666666666667,3.5,4,5.08333333333333,4.41666666666667,5.16666666666667,4.75,5.33333333333333,5.25,5.25,4.41666666666667,4.58333333333333,5.5,5.08333333333333,4.66666666666667,4.16666666666667,5.41666666666667,4.25,4.16666666666667,3.5,4.25,3.16666666666667,3,3.66666666666667,4.33333333333333,5.16666666666667,5.33333333333333,4.25,4.58333333333333,3.41666666666667,5.18181818181818,4.41666666666667,4.41666666666667,5.16666666666667,3.66666666666667,3.41666666666667,3.5,5.36363636363636,3.66666666666667,4.83333333333333,4,4.41666666666667,5.08333333333333,5,3.5,4.58333333333333,3.83333333333333,5.25,5,3.91666666666667,4.75,5.08333333333333,5.58333333333333,3.5,4.66666666666667,4.625,4,4.83333333333333,5.33333333333333,3.72727272727273,5.16666666666667,4.75,5.5,4.16666666666667,4.75,5.25,4,4.58333333333333,4.58333333333333,3.91666666666667,3.33333333333333,4,4.41666666666667,4,3.58333333333333,4.66666666666667,5.83333333333333,4.58333333333333,4.58333333333333,4.33333333333333,4.83333333333333,5.16666666666667,4.41666666666667,4.16666666666667,4.16666666666667,2.16666666666667,4.58333333333333,5.16666666666667,5,3.33333333333333,5.25,5.33333333333333,3.66666666666667,4.66666666666667,3.83333333333333,4.83333333333333,4.41666666666667,3.91666666666667,5,5.3,4.33333333333333,4.33333333333333,3.41666666666667,4.5,5.16666666666667,5.5,5.33333333333333,4.58333333333333,4.5,3.91666666666667,4,4.33333333333333,4.5,3.16666666666667,4.75,4.75,3.33333333333333,4.83333333333333,2.41666666666667,5.16666666666667,4.91666666666667,4.25,4.91666666666667,5.16666666666667,4.25,5.33333333333333,5.5,4.66666666666667,5,3.83333333333333,5,5.16666666666667,4.5,3.91666666666667,4.75,4.25,2.16666666666667,4.5,4.58333333333333,4.75,4.33333333333333,4.08333333333333,4.83333333333333,4.16666666666667,4.66666666666667,4.66666666666667,4.16666666666667,4,5,4.83333333333333,3.91666666666667,4.41666666666667,4.08333333333333,5.25,4.75,5.16666666666667,5.41666666666667,3.75,5.16666666666667,4.58333333333333,4.58333333333333,4.41666666666667,4.25,3.16666666666667,4.5,5.16666666666667,4.83333333333333,3.91666666666667,2.75,4.91666666666667,4.91666666666667,3.75,2.91666666666667,3.66666666666667,3.58333333333333,4.5,3.83333333333333,4.83333333333333,3.25,3.75,5.58333333333333,5.33333333333333,4.5,5.16666666666667,5.25,4.91666666666667,3.83333333333333,3.25,5,4.41666666666667,4.5,5.33333333333333,4.58333333333333,5.25,2.91666666666667,3.66666666666667,4.25,4.66666666666667,3.83333333333333,4.5,4.66666666666667,4.5,4.91666666666667,4.5,5.25,5.5,5,5.25,4.25,4.83333333333333,4.83333333333333,4.72727272727273,4.33333333333333,4.91666666666667,4.91666666666667,4.66666666666667,3.75,4.25,4.58333333333333,3.75,5.36363636363636,4.27272727272727,4.41666666666667,5.75,3.66666666666667,5.25,6,3.58333333333333,4.66666666666667,4.66666666666667,4.5,3.58333333333333,4.5,5.33333333333333,4.5,3.75,5.16666666666667,4.25,5.08333333333333,5.41666666666667,3.75,4.625,4,4.83333333333333,4.41666666666667,5.16666666666667,6,5.16666666666667,4.75,4.08333333333333,5.08333333333333,4.33333333333333,5.08333333333333,3.5,4.41666666666667],"mode":"markers","marker":{"color":"springgreen3","size":3,"line":{"color":"rgba(31,119,180,1)"}},"type":"scatter3d","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="section" class="section level2 unnumbered">
+<h2></h2>
+<p>Correlation matrix of 3 unit-weighted substantive and 3 unit-weighted attitudinal scales:</p>
+<p><img src="_main_files/figure-html/correlations3-1.png" width="672" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pilot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rdrops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toc_depth": 1
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

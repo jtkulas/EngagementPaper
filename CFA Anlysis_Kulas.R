@@ -117,8 +117,36 @@ Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item
 
 Fit1.1<-lavaan::cfa(Sub_Model, data = CFAdata)
 semPlot::semPaths(Fit1.1,"col", "std", "lisrel", "circle")
-lavaan::fitMeasures(Fit1.1)
+fit1.1 <- as.data.frame(fitMeasures(Fit1.1))
 summary(Fit1.1, fit.measure=TRUE)
+
+write.csv(fit1.1, "temp.csv")
+
+## Looking at scale correlations because of very large latent covariances
+
+testing <- CFAdata
+
+testing$absorp <- rowMeans(testing[1:12], na.rm=TRUE)
+testing$vigor <- rowMeans(testing[13:24], na.rm=TRUE)
+testing$dedic <- rowMeans(testing[25:36], na.rm=TRUE)
+
+cor(testing[37:39], use="complete.obs")
+
+library(plotly)
+plot_ly(testing, x=~absorp, y=~vigor, z=~dedic, type="scatter3d", mode="markers", color=temp)
+
+testing$Cognitive <- rowMeans(testing[c(1:4,13:16,25:28)], na.rm=TRUE)
+testing$Affective <- rowMeans(testing[c(5:8,17:20,29:32)], na.rm=TRUE)
+testing$Behavioral <- rowMeans(testing[c(9:12,21:24,33:36)], na.rm=TRUE)
+
+## cor(testing[37:39], use="complete.obs")
+
+# library(plotly)
+plot_ly(testing, x=~Cognitive, y=~Affective, z=~Behavioral, type="scatter3d", mode="markers", 
+        marker=list(size=3, color = "darkgreen"))
+
+
+## plot(testing$absorp, testing$dedic)
 
 Att_Model<-'
 Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
@@ -129,20 +157,4 @@ Fit1.2<-lavaan::cfa(Att_Model, data = CFAdata)
 semPlot::semPaths(Fit1.2,whatLabels = "std", layout = "tree", rotation=2)
 lavaan::fitMeasures(Fit1.2)
 summary(Fit1.2, fit.measure=TRUE)
-
-
-
-Bifactor_Model<-'
-Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
-Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
-Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
-global=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12+Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24+Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
-'
-
-Fit_Bifactor<-lavaan::cfa(Bifactor_Model,data = CFAdata, orthogonal=TRUE)
-semPlot::semPaths(Fit_Bifactor,whatLabels = "std",layout="tree")
-lavaan::fitmeasures(Fit_Bifactor)
-summary(Fit_Bifactor,fit.measure=TRUE)
-
-
 
