@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  21 APR 2021 12:50
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  21 APR 2021 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1133,7 +1133,7 @@ File: _main_files/figure-latex/correlations3-1.pdf Graphic file (type pdf)
 [81] [82]
 Appendix D.
 
-Overfull \hbox (99.45pt too wide) in paragraph at lines 3614--3643
+Overfull \hbox (94.45pt too wide) in paragraph at lines 3614--3643
  [][] 
  []
 
@@ -1173,7 +1173,7 @@ Overfull \hbox (46.72pt too wide) in paragraph at lines 3846--3859
  []
 
 
-Overfull \hbox (84.84001pt too wide) in paragraph at lines 3865--3878
+Overfull \hbox (79.84001pt too wide) in paragraph at lines 3865--3878
  [][] 
  []
 
