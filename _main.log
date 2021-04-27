@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  27 APR 2021 14:25
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  27 APR 2021 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,9 +1075,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--344
 []
  []
 
-
-Underfull \vbox (badness 4328) has occurred while \output is active []
-
 [19]
 Overfull \hbox (30.86pt too wide) in alignment at lines 345--349
  [] [] [] [] [] [] [] [] 
@@ -1288,7 +1285,7 @@ Overfull \hbox (338.18001pt too wide) in paragraph at lines 4098--4175
 
 (./_main.bbl [92] [93] [94] [95
 
-]) [96] (./_main.aux)
+] [96]) [97] (./_main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1296,12 +1293,12 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 (rerunfilecheck)             Checksum: FA591BB14048657E293231107D616274;6661.
  ) 
 Here is how much of TeX's memory you used:
- 17732 strings out of 478918
- 313326 string characters out of 5864988
- 832318 words of memory out of 5000000
- 37278 multiletter control sequences out of 15000+600000
+ 17747 strings out of 478918
+ 313572 string characters out of 5864988
+ 832644 words of memory out of 5000000
+ 37293 multiletter control sequences out of 15000+600000
  410035 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,9n,122p,1120b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,9n,122p,1120b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (96 pages).
+Output written on _main.pdf (97 pages).

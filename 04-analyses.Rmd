@@ -61,7 +61,7 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
 
 ### Classical test theory
 
-In addition to the below interactive plot, a full inter-item correlation matrix is located in Appendix \@ref(corrs).
+In addition to the below interactive plot [via `plotly` version `r packageVersion("plotly")`; @R-plotly], a full inter-item correlation matrix is located in Appendix \@ref(corrs).
 
 ```{r interactive_plot, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -184,7 +184,7 @@ ded.4 <- psych::alpha(four[c(30:33, 10:13, 22:25)])
 
 #### Internal consistency estimates
 
-Condition 1 administered items within the substantive dimensions (with successive randomized blocks of Cognitive, Affective, and Behavioral items). Condition 2 administered items within the attitudinal dimensions (with successive randomized blocks of Absorption, Vigor, and Dedication items). Condition 3 stressed the substantive dimensions (with items fully randomized regardless of attitudinal association). Condition 4 stressed the attitudinal dimensions (with items fully randomized within attitudinal dimension regardless of substantive scale association, see Chapter \@ref(conds) and Appendix \@ref(pilot2)). Alphas for the candidate 12-item scales were:
+Condition 1 administered items within the substantive dimensions (with successive randomized blocks of Cognitive, Affective, and Behavioral items). Condition 2 administered items within the attitudinal dimensions (with successive randomized blocks of Absorption, Vigor, and Dedication items). Condition 3 stressed the substantive dimensions (with items fully randomized regardless of attitudinal association). Condition 4 stressed the attitudinal dimensions (with items fully randomized within attitudinal dimension regardless of substantive scale association, see Chapter \@ref(conds) and Appendix \@ref(pilot2)). All internal consistency estimates were generated via `psych` version `r packageVersion("psych")` [@R-psych]. Alphas for the candidate 12-item scales were:
 
 | Dimension      | Undifferentiated                        | Condition 1                       |  Condition 2                      | Condition 3                       | Condition 4                       |
 |----------------|-----------------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
@@ -216,7 +216,7 @@ Corrected item-total correlations are presented in Appendix \@ref(rdrops)
 
 ### Confirmatory factor analyses
 
-We used `lavaan` version `r packageVersion("lavaan")` and `semPlot` version `r packageVersion("semPlot")`
+We used `lavaan` version `r packageVersion("lavaan")` [@R-lavaan] and `semPlot` version `r packageVersion("semPlot")` [@R-semPlot]
 
 ```{r CFA, echo=FALSE, warning=FALSE, message=FALSE}
 
