@@ -304,7 +304,7 @@ Engagement =~ Absorption + Vigor + Dedication
 '
 # fit the model
 fit1 <- lavaan::cfa(CFA1, data = CFAdata) # dont know is using missing = "ML" instead
-summary(fit1, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
+######################################### summary(fit1, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
 
 # into data frames
 fit1.H <- as.data.frame(fitMeasures(fit1))
@@ -319,7 +319,7 @@ Engagement =~ Cognitive + Affective + Behavioral
 '
 # Fit the model
 fit2 <- lavaan::cfa(CFA2, data = CFAdata)
-summary(fit2, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
+######################################### summary(fit2, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
 
 # into data frame
 fit2.A <- as.data.frame(fitMeasures(fit2))
@@ -330,9 +330,9 @@ library(semPlot)
 
 # http://sachaepskamp.com/semPlot/examples?page_id=489
 
-semPaths(fit1,"std", edge.label.cex = 0.5, curvePivot = TRUE)
+semPaths(fit1,"std", edge.label.cex = 0.5, curvePivot = TRUE, rotation=2)
 
-semPaths(fit2,"std", edge.label.cex = 0.5, curvePivot = TRUE)
+semPaths(fit2,"std", edge.label.cex = 0.5, curvePivot = TRUE, rotation=4)
 
 ```
 
