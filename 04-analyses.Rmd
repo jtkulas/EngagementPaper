@@ -293,6 +293,47 @@ semPlot::semPaths(Fit1.2,"col", "std", "lisrel", "circle")
 fit1.2 <- as.data.frame(fitMeasures(Fit1.2))
 fit1.2$rounded <- round(fit1.2$`fitMeasures(Fit1.2)`, 2)
 
+## CFA comparison
+
+# Substantive Scale
+CFA1 <-'
+Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
+Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+Engagement =~ Absorption + Vigor + Dedication
+'
+# fit the model
+fit1 <- lavaan::cfa(CFA1, data = CFAdata) # dont know is using missing = "ML" instead
+summary(fit1, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
+
+# into data frames
+fit1.H <- as.data.frame(fitMeasures(fit1))
+fit1.H$rounded <- round(fit1.H$`fitMeasures(fit1)`, 2)
+
+# Attitudinal scale
+CFA2 <- '
+Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+Engagement =~ Cognitive + Affective + Behavioral
+'
+# Fit the model
+fit2 <- lavaan::cfa(CFA2, data = CFAdata)
+summary(fit2, fit.measures = TRUE, standardized = TRUE, rsq = TRUE)
+
+# into data frame
+fit2.A <- as.data.frame(fitMeasures(fit2))
+fit2.A$rounded <- round(fit2.A$`fitMeasures(fit2)`, 2)
+
+# Visuals 
+library(semPlot)
+
+# http://sachaepskamp.com/semPlot/examples?page_id=489
+
+semPaths(fit1,"std", edge.label.cex = 0.5, curvePivot = TRUE)
+
+semPaths(fit2,"std", edge.label.cex = 0.5, curvePivot = TRUE)
+
 ```
 
 We used lavaan version `r Fit1.1@version`
@@ -301,6 +342,8 @@ We used lavaan version `r Fit1.1@version`
 |--------------------------|------------------|--------------------|-----------------|-----------------|----------------|-----------------|------------------|
 | 3-factor substantive     |`r fit1.1[3,2]`   |`r fit1.1[4,2]`     |`r fit1.1[23,2]` |`r fit1.1[29,2]` |`r fit1.1[9,2]` |`r fit1.1[10,2]` |`r fit1.1[19,2]`  |
 | 3-factor attitudinal     |`r fit1.2[3,2]`   |`r fit1.2[4,2]`     |`r fit1.2[23,2]` |`r fit1.2[29,2]` |`r fit1.2[9,2]` |`r fit1.2[10,2]` |`r fit1.2[19,2]`  |
+| Hierarchical attitudinal |`r fit1.H[3,2]`   |`r fit1.H[4,2]`     |`r fit1.H[23,2]` |`r fit1.H[29,2]`   |`r fit1.H[9,2]`   |`r fit1.H[10,2]`   |`r fit1.H[19,2]`    |
+| Hierarchical substantive |`r fit2.A[3,2]`   |`r fit2.A[4,2]`     |`r fit2.A[23,2]` |`r fit2.A[29,2]`   |`r fit2.A[9,2]`   |`r fit2.A[10,2]`   |`r fit2.A[19,2]`    |
 
 
 #### Multigroup analyses
