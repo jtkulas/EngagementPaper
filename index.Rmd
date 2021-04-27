@@ -27,6 +27,8 @@ library(parallel)
 numCores <- detectCores()
 mc.cores = numCores
 
+knitr::write_bib(.packages(all.available = TRUE), "packages.bib")
+
 ```
 
 <center>
