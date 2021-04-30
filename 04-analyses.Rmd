@@ -57,7 +57,7 @@ together[ , i] <- apply(together[ , i], 2,            # Specify own function wit
 
 ## Pilot analyses
 
-`r num_valid` people responded. We may want to further screen these `r num_valid` responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the "number of people who clicked on the assessment link (`r num`)" versus valid *n* (`r num_valid`) may take care of our very low duration respondents. The shortest response duration in the `r num` datafile is `r min(data$Duration)` whereas the lowest in the `r num_valid` datafile is `r min(together$Duration)`.
+`r num_valid` people responded. We may want to further screen these `r num_valid` responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the "number of people who clicked on the assessment link (`r num`)" versus valid *n* (`r num_valid`) may take care of our very low duration respondents. The shortest response duration in the `r num` datafile is `r min(data$Duration)` whereas the lowest in the `r num_valid` datafile is `r min(together$Duration)`. All analyses were performed via `R` version `r R.version.string` [@R-base].
 
 ### Classical test theory
 

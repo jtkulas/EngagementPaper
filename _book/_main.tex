@@ -87,7 +87,7 @@
 
 \title{Engagement Survey Technical Report}
 \author{Eagle I.O}
-\date{Most recently updated 2021-04-27}
+\date{Most recently updated 2021-04-30}
 
 \begin{document}
 \maketitle
@@ -277,14 +277,14 @@ bifactor analysis are most commonly applied in the exploration of common method 
 \hypertarget{pilot-analyses-1}{%
 \section{Pilot analyses}\label{pilot-analyses-1}}
 
-282 people responded. We may want to further screen these 282 responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the ``number of people who clicked on the assessment link (330)'' versus valid \emph{n} (282) may take care of our very low duration respondents. The shortest response duration in the 330 datafile is 101 whereas the lowest in the 282 datafile is 43.
+282 people responded. We may want to further screen these 282 responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the ``number of people who clicked on the assessment link (330)'' versus valid \emph{n} (282) may take care of our very low duration respondents. The shortest response duration in the 330 datafile is 101 whereas the lowest in the 282 datafile is 43. All analyses were performed via \texttt{R} version R version 4.0.3 (2020-10-10) \citep{R-base}.
 
 \hypertarget{classical-test-theory}{%
 \subsection{Classical test theory}\label{classical-test-theory}}
 
 In addition to the below interactive plot \citep[via \texttt{plotly} version 4.9.2.1;][]{R-plotly}, a full inter-item correlation matrix is located in Appendix \ref{corrs}.
 
-\hypertarget{htmlwidget-52ae329e18691359e57d}{}
+\hypertarget{htmlwidget-f94d380bd8a9097bf870}{}
 
 \begin{verbatim}
 ## Some items ( I find it difficult to mentally disconnect from work. ) were negatively correlated with the total scale and 
@@ -3588,12 +3588,12 @@ Because of the large inter-construct covariance estimates, we constructed standa
 \hypertarget{substantive-scales}{%
 \subsection{Substantive scales}\label{substantive-scales}}
 
-\hypertarget{htmlwidget-cdc032116709792da1ac}{}
+\hypertarget{htmlwidget-f37267996593a024bb23}{}
 
 \hypertarget{attitudinal-scales}{%
 \subsection{Attitudinal scales}\label{attitudinal-scales}}
 
-\hypertarget{htmlwidget-9dcb45844252f20efa13}{}
+\hypertarget{htmlwidget-331f5cfbf0ccaab64ea1}{}
 
 \hypertarget{section}{%
 \section*{}\label{section}}
@@ -3996,7 +3996,7 @@ This organization provides the resources necessary for me to successfully perfor
 \hypertarget{qualitative}{%
 \chapter{Qualitative item characteristics}\label{qualitative}}
 
-Quentada reading ability of final items as well as overlapping histograms by scale. Using package \texttt{quanteda} \texttt{r\ packageVersion("quanteda")} \citep{R-quanteda} in R version 4.0.3 (2020-10-10). The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975}. ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} \citep[``difficulty'' of words;][]{chall_dale_1995}. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}} = the number of words matching the Dale-Chall List of 3000 ``familiar words''. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}} = number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
+Quentada reading ability of final items as well as overlapping histograms by scale. Using package \texttt{quanteda} version 2.1.2 \citep{R-quanteda} in R version 4.0.3 (2020-10-10). The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975}. ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} \citep[``difficulty'' of words;][]{chall_dale_1995}. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}} = the number of words matching the Dale-Chall List of 3000 ``familiar words''. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}} = number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
 
 The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). The average Dale-Chall index was 38.61 (\emph{sd} = 11.11).
 

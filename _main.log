@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  27 APR 2021 17:18
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  30 APR 2021 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,6 +1050,9 @@ Overfull \hbox (41.30005pt too wide) in alignment at lines 300--304
 Overfull \hbox (41.30005pt too wide) in alignment at lines 304--313
  [] [] [] [] [] [] 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [18]
 File: _main_files/figure-latex/CFA-1.pdf Graphic file (type pdf)
