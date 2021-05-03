@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  3 MAY 2021 13:03
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.9)  3 MAY 2021 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,7 +1000,7 @@ Chapter 2.
 File: research.jpg Graphic file (type bmp)
 <research.jpg>
 [7]
-Underfull \hbox (badness 1097) in paragraph at lines 131--132
+Underfull \hbox (badness 1097) in paragraph at lines 130--131
 []\TU/lmr/m/n/10 …are so immersed in their work activities that time seems to f
 ly
  []
@@ -1027,24 +1027,24 @@ File: results.jpg Graphic file (type bmp)
 Underfull \vbox (badness 3838) has occurred while \output is active []
 
 [17]
-Overfull \hbox (300.75pt too wide) in paragraph at lines 295--295
+Overfull \hbox (300.75pt too wide) in paragraph at lines 292--292
 []\TU/lmtt/m/n/10 ## Some items ( I find it difficult to mentally disconnect fr
 om work. ) were negatively correlated with the total scale and[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 295--295
+Overfull \hbox (27.75pt too wide) in paragraph at lines 292--292
 []\TU/lmtt/m/n/10 ## To do this, run the function again with the 'check.keys=TR
 UE' option[] 
  []
 
 
-Overfull \hbox (41.30005pt too wide) in alignment at lines 302--306
+Overfull \hbox (41.30005pt too wide) in alignment at lines 299--303
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (41.30005pt too wide) in alignment at lines 306--315
+Overfull \hbox (41.30005pt too wide) in alignment at lines 303--312
  [] [] [] [] [] [] 
  []
 
@@ -1061,27 +1061,27 @@ File: _main_files/figure-latex/CFA-3.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/CFA-4.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/CFA-4.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 []
  []
 
 [19]
-Overfull \hbox (30.86pt too wide) in alignment at lines 347--351
+Overfull \hbox (30.86pt too wide) in alignment at lines 344--348
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (30.86pt too wide) in alignment at lines 351--357
+Overfull \hbox (30.86pt too wide) in alignment at lines 348--354
  [] [] [] [] [] [] [] [] 
  []
 
@@ -1097,7 +1097,7 @@ File: future.jpg Graphic file (type bmp)
 ] [24]
 Chapter 7.
 
-Overfull \hbox (272.64001pt too wide) in paragraph at lines 425--434
+Overfull \hbox (272.64001pt too wide) in paragraph at lines 422--431
 [] 
  []
 
@@ -1114,22 +1114,22 @@ Appendix A.
 [29] [30]
 Appendix B.
 
-Overfull \hbox (308.99002pt too wide) in paragraph at lines 515--592
+Overfull \hbox (308.99002pt too wide) in paragraph at lines 510--587
  [][] 
  []
 
 
-Overfull \hbox (308.99002pt too wide) in paragraph at lines 598--675
+Overfull \hbox (308.99002pt too wide) in paragraph at lines 593--670
  [][] 
  []
 
 
-Overfull \hbox (272.01003pt too wide) in paragraph at lines 681--758
+Overfull \hbox (272.01003pt too wide) in paragraph at lines 676--753
  [][] 
  []
 
 
-Overfull \hbox (272.01003pt too wide) in paragraph at lines 764--841
+Overfull \hbox (272.01003pt too wide) in paragraph at lines 759--836
  [][] 
  []
 
@@ -1147,77 +1147,77 @@ File: _main_files/figure-latex/correlations3-1.pdf Graphic file (type pdf)
 [81] [82]
 Appendix D.
 
-Overfull \hbox (94.45pt too wide) in paragraph at lines 3618--3647
+Overfull \hbox (94.45pt too wide) in paragraph at lines 3613--3642
  [][] 
  []
 
 
-Overfull \hbox (191.53001pt too wide) in paragraph at lines 3653--3682
+Overfull \hbox (191.53001pt too wide) in paragraph at lines 3648--3677
  [][] 
  []
 
 
-Overfull \hbox (111.21999pt too wide) in paragraph at lines 3688--3717
+Overfull \hbox (111.21999pt too wide) in paragraph at lines 3683--3712
  [][] 
  []
 
 
-Overfull \hbox (94.45pt too wide) in paragraph at lines 3723--3752
+Overfull \hbox (94.45pt too wide) in paragraph at lines 3718--3747
  [][] 
  []
 
 
-Overfull \hbox (116.21999pt too wide) in paragraph at lines 3758--3787
+Overfull \hbox (116.21999pt too wide) in paragraph at lines 3753--3782
  [][] 
  []
 
 
-Overfull \hbox (191.53001pt too wide) in paragraph at lines 3793--3822
+Overfull \hbox (191.53001pt too wide) in paragraph at lines 3788--3817
  [][] 
  []
 
 
-Overfull \hbox (94.45pt too wide) in paragraph at lines 3831--3844
+Overfull \hbox (94.45pt too wide) in paragraph at lines 3826--3839
  [][] 
  []
 
 
-Overfull \hbox (46.72pt too wide) in paragraph at lines 3850--3863
+Overfull \hbox (46.72pt too wide) in paragraph at lines 3845--3858
  [][] 
  []
 
 
-Overfull \hbox (79.84001pt too wide) in paragraph at lines 3869--3882
+Overfull \hbox (79.84001pt too wide) in paragraph at lines 3864--3877
  [][] 
  []
 
 
-Overfull \hbox (63.51001pt too wide) in paragraph at lines 3888--3901
+Overfull \hbox (63.51001pt too wide) in paragraph at lines 3883--3896
  [][] 
  []
 
 
-Overfull \hbox (111.21999pt too wide) in paragraph at lines 3907--3920
+Overfull \hbox (111.21999pt too wide) in paragraph at lines 3902--3915
  [][] 
  []
 
 
-Overfull \hbox (62.39003pt too wide) in paragraph at lines 3926--3939
+Overfull \hbox (62.39003pt too wide) in paragraph at lines 3921--3934
  [][] 
  []
 
 
-Overfull \hbox (58.16pt too wide) in paragraph at lines 3945--3958
+Overfull \hbox (58.16pt too wide) in paragraph at lines 3940--3953
  [][] 
  []
 
 
-Overfull \hbox (109.12003pt too wide) in paragraph at lines 3964--3977
+Overfull \hbox (109.12003pt too wide) in paragraph at lines 3959--3972
  [][] 
  []
 
 
-Overfull \hbox (191.53001pt too wide) in paragraph at lines 3983--3996
+Overfull \hbox (191.53001pt too wide) in paragraph at lines 3978--3991
  [][] 
  []
 
@@ -1238,27 +1238,27 @@ File: _main_files/figure-latex/scale-5.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/scale-6.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/scale-6.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4009
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4009
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4009
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4009
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4009
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 []
  []
 
@@ -1274,43 +1274,43 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [91]
-Overfull \hbox (338.18001pt too wide) in paragraph at lines 4017--4094
+Overfull \hbox (338.18001pt too wide) in paragraph at lines 4012--4089
  [][] 
  []
 
 
-Overfull \hbox (338.18001pt too wide) in paragraph at lines 4100--4177
+Overfull \hbox (338.18001pt too wide) in paragraph at lines 4095--4172
  [][] 
  []
 
 (./_main.bbl [92] [93] [94]
-Underfull \hbox (badness 1342) in paragraph at lines 50--58
+Underfull \hbox (badness 1342) in paragraph at lines 42--50
 \TU/lmr/m/n/10 16(2):160–177, June 1991.  doi: $[][] [] [][][][] [] [][][][][][
 ][][][][][][][][][][][][]$.  URL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--58
+Underfull \hbox (badness 10000) in paragraph at lines 42--50
 []$[][][][] [] [] [] [][][][][][][] [] [][][][][][][][][] [] [][][] [] [][][][]
  [] [][][][][] [] [][][] [] [][][][][] [] [] [] [][][][][][] [] [][][][][][][][
 ][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--58
+Underfull \hbox (badness 10000) in paragraph at lines 42--50
 [][][] [] [][][][][] [] [][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][
 ][][] [] [][][][] [][] [][][][][] [][] [][][][][][][][] [] [][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--76
+Underfull \hbox (badness 10000) in paragraph at lines 59--68
 []$[][][][] [] [] [] [][][][][][][] [] [][][][][][][][][] [] [][][] [] [][][][]
  [] [][][][][] [] [][][] [] [][][][][] [] [] [] [][][][][][] [] [][][][][][][][
 ][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--76
+Underfull \hbox (badness 10000) in paragraph at lines 59--68
 [][][] [] [][][][][] [] [][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][
 ][][] [] [][][][] [][] [][][][][] [][] [][][][][][][][] [] [][][] [][]
  []
@@ -1318,13 +1318,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--76
 [95
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 134--145
+Underfull \hbox (badness 10000) in paragraph at lines 136--147
 [][][][][] [] [] [] [][][][][][] [] [][][][][][][][][] [] [][][] [] [][][][][] 
 [] [][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][] [] [][][][] [][
 ]
  []
 
-[96]) [97] (./_main.aux)
+[96] [97]) [98] (./_main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1332,12 +1332,12 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 (rerunfilecheck)             Checksum: FA591BB14048657E293231107D616274;6661.
  ) 
 Here is how much of TeX's memory you used:
- 17765 strings out of 478918
- 314073 string characters out of 5864988
- 832892 words of memory out of 5000000
- 37311 multiletter control sequences out of 15000+600000
+ 17768 strings out of 478918
+ 314196 string characters out of 5864988
+ 832840 words of memory out of 5000000
+ 37314 multiletter control sequences out of 15000+600000
  410035 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,9n,122p,1120b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,9n,122p,1535b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (97 pages).
+Output written on _main.pdf (98 pages).

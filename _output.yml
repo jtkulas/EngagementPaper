@@ -17,4 +17,5 @@ bookdown::pdf_book:
   citation_package: natbib
   csl: "apa.csl"
   keep_tex: yes
+  pandoc_args: [--top-level-division=chapter, --wrap=none]
 bookdown::epub_book: default
