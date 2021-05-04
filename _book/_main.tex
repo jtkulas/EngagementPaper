@@ -1,0 +1,4176 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Engagement Survey Technical Report},
+  pdfauthor={Eagle I.O},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Engagement Survey Technical Report}
+\author{Eagle I.O}
+\date{Most recently updated 2021-05-04}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\hypertarget{homepage}{%
+\chapter{Home}\label{homepage}}
+
+\includegraphics{EE.jpeg}
+
+This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
+
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+\includegraphics{research.jpg}
+
+\hypertarget{definitions-of-engagement}{%
+\section{Definitions of Engagement}\label{definitions-of-engagement}}
+
+The roots of employee (aka work) engagement research started with theoretical expansions of forms of employee participation \citep[see, for example,][]{ferris_added_1984} and job involvement \citep[e.g.,][]{elloy_examination_1991}. This exploration extended into broader considerations of attitudes and emotions \citep{staw_employee_1994} and were informed by further exploration of the dimensionality of constructs such as organizational commitment \citep{meyer_three-component_1991}. The 1990's saw further development and refinement \citep[for example, a dissertation;][]{leone_relation_1995}. \citet{staw_employee_1994} presented a basic mediation model to demonstrate a relationship between \emph{positive emotions} and favourable work outcomes. Although they do not use the word, ``engagement'', their distinction between felt and expressed emotion was perhaps a contributor to the subsequent wider pursuit of engagement. Gallup was an early adopter of measurement of the construct \citep[see, for example,][]{coffman_hard_1999}.
+
+\begin{itemize}
+\item
+  Personal engagement:Personal engagement is described as the employing or expressing of oneself physically, cognitively, and emotionally during work role performances. When engaged, an employee is understood to be physically involved, cognitively vigilant, and emotionally connected \citep{kahn_psychological_1990}.
+\item
+  Engagement/Burnout: Burnout is defined as a psychological syndrome characterized by exhaustion, cynicism, and inefficacy, which is experienced in response to chronic job stressors. Engagement is understood to be the direct opposite of burnout and exist on a continuum---with engagement on one end and burnout on the other. Exhaustion (low energy), cynicism (low involvement), and inefficacy (low efficacy) are characteristic of burnout; whereas, high energy, high involvement, and high efficacy are characteristic of engagement (Maslach and Leiter, 1997) \citep{leiter_areas_2004}.
+\item
+  Work engagement: Work engagement refers to a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Vigor is characterized by high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work \citep{schaufeli_measurement_2002} - The Utrecht Work Engagement Scale (UWES), a self-report questionnaire first developed by Schaufeli and Bakker (2003) \citep{schaufeli_uwesutrecht_2003} includes the three aspects of work engagement: vigor, dedication, and absorption. - we have to make note of how we are different from this!
+\item
+  Employee engagement: Employee engagement refers to the ``individual's involvement and satisfaction as well as enthusiasm for work'' \citep{harter_business-unit-level_2002} Work engagement is the mental state where employees\ldots{}
+\item
+  \ldots feel full with physical energy (\textbf{Vigor})
+\item
+  \ldots are enthusiastic about the content of their work and the things they do (\textbf{Dedication})
+\item
+  \ldots are so immersed in their work activities that time seems to fly (\textbf{Absorption})
+\end{itemize}
+
+The tripartite substantive model of employee engagement is also partially informed by the definitions provided with the Utrecht Work Engagement Scale \citep{schaufeli_utrecht_2003}.
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from \citet{schaufeli_measurement_2002}, and we are trying to find where Fulfillment came from. We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain.
+
+\hypertarget{ABCDAV}{%
+\section{Intended Structure}\label{ABCDAV}}
+
+At some point we decided to attempt an \emph{a priori} bi-factor structure, whereby each of the substantive dimensions (Dedication, Vigor, and Absorption)\footnote{We also discovered at this point that some contagious agent has infiltrated the minds of people working on this project, such that the word, ``absorption'' confounds our spelling abilities, and roughly 50\% of the time ends up being spelled (misspelled?), ``absorbtion''\ldots{}} could further be deconstructed into the attitudinal elements of Cognition, Affect, and Behavior \citep[see, for example,][]{eagly_psychology_1993, rosenberg_cognitive_1960}.
+
+Through item-writing and revision, it began to dawn on us that the substantive elements may already reflect the Cognition (Vigor), Affect (Absorption), and Behavioral (Dedication) dimensions. As of August, 2020, however, we could not locate a source article that made this potential confound explicit, so we persisted through crafting items that reflected cognitive, affective, and behavioral indicators of each substantive dimension. \footnote{We did, however, find some criticisms of the tripartite model of attitudes as originally specified by \citet{rosenberg_cognitive_1960}, although there has also been a recent attempt to reintroduce and improve upon the original model \citep{kaiser_campbell_2019}.}
+
+The most relevant acknowledgement of this potential confound was made by \citet{schaufeli_measurement_2002} (pp.~74-75):
+
+\begin{quote}
+Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. \emph{Vigor} is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one's work, and persistence even in the face of difficulties. \emph{Dedication} is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement -- like dedication (see above) -- is usually defined in terms of psychological identification with one's work or one's job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, \emph{absorption}, is characterized by being fully concentrated and deeply engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work.
+\end{quote}
+
+The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings are intended to fully exhaust the 3 x 3 conditions (e.g., each item loads on one substantive and one attitudinal dimension):
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Substantive & Attitudinal\tabularnewline
+\midrule
+\endhead
+Dedication & Affective\tabularnewline
+Absorption & Behavioral\tabularnewline
+Vigor & Cognitive\tabularnewline
+\bottomrule
+\end{longtable}
+
+The feedback report uses the terms, ``feel'', ``do'', and ``think'' instead of the Psychological literature-based affect, behavior, and cognition.
+
+\hypertarget{instrument-creation}{%
+\chapter{Instrument creation}\label{instrument-creation}}
+
+\includegraphics{develop.jpg}
+
+\hypertarget{item-generation}{%
+\section{Item generation}\label{item-generation}}
+
+After content validation but prior to settling on 4 candidate items per 3x3 condition, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items \href{https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing}{located here} (Montclair State University e-mail needed to access). It was from this larger list of (reduced) candidate items that the 36 pilot candidates were identified (and in some cases modified, edited, or otherwise further crafted)
+
+\hypertarget{CValid}{%
+\section{Content Validation}\label{CValid}}
+
+7 Eagle I.O consultants were twice instructed to place each of 34 items into one of three categories: Absorption, Dedication, or Vigor, and Cognitive, Affective, or Behavioral. Instructions asked each rater to:
+
+\begin{quote}
+INSTRUCTIONS: Place an ``X'' in the column that you feel is the best fit for each item (only one ``X'' per row please)
+\end{quote}
+
+The substantive scale definitions provided for ratings were:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Absorption}: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
+\item
+  \emph{Vigor}: Experiencing persistent levels of energy, effort, and enthusiasm while working
+\item
+  \emph{Dedication}: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+\end{itemize}
+
+The attitudinal scale definitions were:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Cognitive}: Pertaining to thoughts or general mental processes (for example what someone thinks)
+\item
+  \emph{Affective}: Pertaining to feelings or emotions (for example, how someone feels)
+\item
+  \emph{Behavioral}: Pertaining to acts or actions (for example, what someone does)
+\end{itemize}
+
+The goal was to identify item(s) that were equally and heavily implicated with one substantive and one attitudinal scale.
+
+\hypertarget{procedure}{%
+\chapter{Procedure}\label{procedure}}
+
+\includegraphics{procedure.jpg}
+
+\hypertarget{conds}{%
+\section{Pilot}\label{conds}}
+
+The pilot administrations consisted of 36 \href{https://docs.google.com/document/d/18KYE7jq8XLhN-mfGQRMnkf5AM-_U2CJck50eISbAiwM/edit?usp=sharing}{items} that were presented in one of four administration groupings (see Appendix \ref{pilot2}): 1) within substantive dimension (attitudinally grouped {[}but randomized within blocks of 4{]}), 2) within attitudinal dimension (substantively grouped {[}but randomized within blocks of 4{]}), 3) within substantive dimension (randomly distributed by attitude), and 4) within attitudinal dimension (randomly presented by substance).\footnote{Decision was made on 10/13 to have the order of presentation \emph{randomized} within each of the broader organization blocks (for example, Condition 3: all Affective, Cognitive, and Behavioral Absorption items were randomly administered, then all ABC Dedication items, etc {[}although DAC was also randomized by block such that not every respondent had the same DAC ordering{]})}
+
+The four ``experimental'' conditions therefore prioritized and reflected the 3x3 groupings \emph{or} one of the organization schemes (cognitive, affective, and behavioral \emph{or} dedication, absorption, and vigor).
+
+We chose to control the order of item administration because of our \emph{a priori} specification of a bi-factor structure, with the expectation that item ordering would serve as a response cue, yielding stronger factor structural support based on the organization scheme.
+
+\hypertarget{sampling-strategy-pilot}{%
+\subsection{Sampling strategy (pilot)}\label{sampling-strategy-pilot}}
+
+The pilot sampling strategy consisted of snowball (aka referral) sampling as well as questionnaire posting within social media platforms (LinkedIn and facebook). The pilot goal was to reduce the final instrument from 36 candidate items (4 per ``cell'') to 18 retained items (2 per ``cell''). We hoped to obtain about 250 total responses viable for analysis.
+
+The launch was informed by research looking at different ``days of the week'' and their effectiveness regarding response rate. This was both \href{https://blog.hubspot.com/service/best-time-send-survey}{commercial} as well as academic \citep[e.g.,][]{anseel_response_2010}.
+
+Eagle I.O members sent a template email asking working adults to take the survey and forward it to family and friends who also qualify as participants. Eagle I.O members were also tasked with reaching out to other students, alumni, friends, and family through the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Facebook post on MSU I/O group page
+\item
+  LinkedIn profiles of all Eagle I.O members
+\item
+  Email first and second year students directly
+\item
+  Email MSU alumni directly
+\item
+  Email I/O professors
+\item
+  Mentors reached out to mentees individually
+\item
+  Survey was posted on the \href{https://eagle-io.weebly.com/engagement-survey.html}{Eagle I.O webpage}
+\end{itemize}
+
+\hypertarget{pilot-analyses}{%
+\subsubsection{Pilot analyses}\label{pilot-analyses}}
+
+A Confirmatory Bi-Factor Analysis will be performed to determine the best candidate items for the final assessment.
+
+\hypertarget{demographic-information}{%
+\section{Demographic Information}\label{demographic-information}}
+
+These are to be included in future administrations in an attempt to develop marketable norms:
+
+\begin{itemize}
+\tightlist
+\item
+  Employees who work overtime vs.~those who do not
+\item
+  Employees who get paid for overtime vs.~those who don't receive compensation for extra hours worked\footnote{I was thinking about this because at my job I have been working 12+ hours some days yet I do not get overtime pay. Not sure if this would work for what we are doing and I know my work experiences are not universal (nor should they be) haha!}
+\end{itemize}
+
+\hypertarget{analyses}{%
+\chapter{Analyses}\label{analyses}}
+
+\includegraphics{results.jpg}
+
+bifactor analysis are most commonly applied in the exploration of common method variance \citep[see, for example,][]{reise_rediscovery_2012, rodriguez_evaluating_2016}. \citet{giordano_exploratory_2020} provide an overview regarding past and potential applications of \emph{exploratory} bifactor analysis and cite \citet{reise_rediscovery_2012} as an influential impetus for the resurgence of bifactor models in general.
+
+\hypertarget{pilot-analyses-1}{%
+\section{Pilot analyses}\label{pilot-analyses-1}}
+
+282 people responded. We may want to further screen these 282 responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the ``number of people who clicked on the assessment link (330)'' versus valid \emph{n} (282) may take care of our very low duration respondents. The shortest response duration in the 330 datafile is 101 whereas the lowest in the 282 datafile is 43. All analyses were performed via \texttt{R} version R version 4.0.3 (2020-10-10) \citep{R-base}.
+
+\hypertarget{classical-test-theory}{%
+\subsection{Classical test theory}\label{classical-test-theory}}
+
+In addition to the below interactive plot \citep[via \texttt{plotly} version 4.9.2.1;][]{R-plotly}, a full inter-item correlation matrix is located in Appendix \ref{corrs}.
+
+\hypertarget{htmlwidget-abd62c8107302b90fde8}{}
+
+\begin{verbatim}
+## Some items ( I find it difficult to mentally disconnect from work. ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\hypertarget{internal-consistency-estimates}{%
+\subsubsection{Internal consistency estimates}\label{internal-consistency-estimates}}
+
+Condition 1 administered items within the substantive dimensions (with successive randomized blocks of Cognitive, Affective, and Behavioral items). Condition 2 administered items within the attitudinal dimensions (with successive randomized blocks of Absorption, Vigor, and Dedication items). Condition 3 stressed the substantive dimensions (with items fully randomized regardless of attitudinal association). Condition 4 stressed the attitudinal dimensions (with items fully randomized within attitudinal dimension regardless of substantive scale association, see Chapter \ref{conds} and Appendix \ref{pilot2}). All internal consistency estimates were generated via \texttt{psych} version 2.0.12 \citep{R-psych}. Alphas for the candidate 12-item scales were:
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+Dimension & Undifferentiated & Condition 1 & Condition 2 & Condition 3 & Condition 4\tabularnewline
+\midrule
+\endhead
+Affective & 0.87 & 0.88 & 0.84 & 0.88 & 0.87\tabularnewline
+Behavioral & 0.79 & 0.73 & 0.84 & 0.76 & 0.87\tabularnewline
+Cognitive & 0.81 & 0.79 & 0.85 & 0.8 & 0.87\tabularnewline
+& & & & &\tabularnewline
+Absorption & 0.74 & 0.72 & 0.77 & 0.72 & 0.87\tabularnewline
+Vigor & 0.85 & 0.8 & 0.88 & 0.84 & 0.87\tabularnewline
+Dedication & 0.9 & 0.9 & 0.91 & 0.91 & 0.87\tabularnewline
+\bottomrule
+\end{longtable}
+
+``Cell'' level alphas (4 items each scale, responses collapsed across administrative conditions) were:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Cell & Alpha\tabularnewline
+\midrule
+\endhead
+Affective - Absorption & 0.66\tabularnewline
+Affective - Vigor & 0.71\tabularnewline
+Affective - Dedication & 0.75\tabularnewline
+&\tabularnewline
+Behavioral - Absorption & 0.56\tabularnewline
+Behavioral - Vigor & 0.7\tabularnewline
+Behavioral - Dedication & 0.64\tabularnewline
+&\tabularnewline
+Cognitive - Absorption & 0.59\tabularnewline
+Cognitive - Vigor & 0.62\tabularnewline
+Cognitive - Dedication & 0.83\tabularnewline
+\bottomrule
+\end{longtable}
+
+Corrected item-total correlations are presented in Appendix \ref{rdrops}
+
+\hypertarget{confirmatory-factor-analyses}{%
+\subsection{Confirmatory factor analyses}\label{confirmatory-factor-analyses}}
+
+We used \texttt{lavaan} version 0.6.8 \citep{R-lavaan} and \texttt{semPlot} version 1.1.2 \citep{R-semPlot}
+
+\includegraphics{_main_files/figure-latex/CFA-1.pdf} \includegraphics{_main_files/figure-latex/CFA-2.pdf} \includegraphics{_main_files/figure-latex/CFA-3.pdf} \includegraphics{_main_files/figure-latex/CFA-4.pdf}
+
+\begin{longtable}[]{@{}llllllll@{}}
+\toprule
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+\midrule
+\endhead
+3-factor substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97\tabularnewline
+Hierarchical substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97\tabularnewline
+3-factor attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68\tabularnewline
+Hierarchical attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{multigroup-analyses}{%
+\subsubsection{Multigroup analyses}\label{multigroup-analyses}}
+
+\begin{itemize}
+\tightlist
+\item
+  using experimental condition as ``multiple groups'' (measurement invariance)
+\end{itemize}
+
+\hypertarget{bifactor-analyses}{%
+\subsubsection{Bifactor analyses}\label{bifactor-analyses}}
+
+\begin{itemize}
+\tightlist
+\item
+  looking at dual structure
+\end{itemize}
+
+\begin{quote}
+Note that the semPlots package has \href{https://www.rdocumentation.org/packages/semPlot/versions/1.1.2/topics/semPaths}{an option to generate bifactor plots}
+\end{quote}
+
+\hypertarget{summary}{%
+\subsection{Summary}\label{summary}}
+
+Recommendation for final instrument based on consideration of all of the above pieces of evidence
+
+\hypertarget{construct-and-criterion-related-validation}{%
+\section{Construct and Criterion-related Validation}\label{construct-and-criterion-related-validation}}
+
+Use Gallup for construct validation \citep{thackray_gallup_2005, harter_relationship_2013}. Also the Utrecht Work Engagement Scale \citep[UWES;][]{schaufeli_measurement_2002, schaufeli_defining_2010}
+
+\hypertarget{future-plans}{%
+\chapter{Future plans}\label{future-plans}}
+
+\includegraphics{future.jpg}
+
+Development of the feedback report will occur in stages:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Static .pdf
+\item
+  Dynamic dashboard
+\item
+  Optimize interpretation (invite contributions of cognitive psychologists and/or graphic designers)
+\end{enumerate}
+
+\hypertarget{things-to-do}{%
+\section{Things to do}\label{things-to-do}}
+
+\begin{itemize}
+\tightlist
+\item
+  Finalize items
+\item
+  Get survey into Qualtrics for pilot testing
+\item
+  Work on feedback report
+\end{itemize}
+
+\hypertarget{author-bios}{%
+\chapter{Author bios}\label{author-bios}}
+
+\begin{tabular}{l|l}
+\hline
+![](casey.jpg) & [Casey Osorio-Duffoo](mailto:osorioduffc1@montclair.edu)\\
+\hline
+[Renata Garcia Prieto Palacios Roji](mailto:garciaprier1@mail.montclair.edu) & ![](renata.jpg)\\
+\hline
+![](kulas.jpg) & [John Kulas](mailto:kulasj@montclair.edu)\\
+\hline
+\end{tabular}
+
+\hypertarget{references}{%
+\chapter{References}\label{references}}
+
+\citeauthor{simpson_engagement_2009} \citetext{\citeyear{simpson_engagement_2009}; \citealp{kahn_psychological_1990}; \citealp{leiter_areas_2003}; \citealp{rothbard_enriching_2001}; \citealp{saks_antecedents_2006}; \citealp{schaufeli_measurement_2002}; \citealp{simpson_engagement_2009}}
+
+\hypertarget{refs}{}
+
+\hypertarget{appendix-appendices}{%
+\appendix}
+
+
+\hypertarget{timeline-of-events}{%
+\chapter{Timeline of events}\label{timeline-of-events}}
+
+\hypertarget{spring-2019}{%
+\section{Spring 2019}\label{spring-2019}}
+
+This is believed to be Eagle I.O's initial definition of engagement:
+
+A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
+
+This definition was created by Eagle IO Spring 2019, and modified by Dr.~Kulas and Renata Fall 2019 to include the \emph{four} dimensions of Fulfillment, Absorbtion, Dedication, and Vigor.
+
+\hypertarget{spring-2020}{%
+\section{Spring 2020}\label{spring-2020}}
+
+We considered removing fulfillment.
+
+\emph{Fulfillment}: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. {[}Satisfaction(?){]}
+
+It was decided to operationalize fullfillment as an \emph{outcome} of engagement rather than a definitional element
+
+\hypertarget{february-24-2020}{%
+\subsection{February 24, 2020}\label{february-24-2020}}
+
+Definitional amendment notes and considerations:
+
+\emph{Absorption}: being fully concentrated and happily immersed in ones work \citep[time passes quickly and has difficulty detaching from ones work;][]{schaufeli_measurement_2002}
+
+\emph{Dedication/Commitment}: being strongly involved in one's work and experiencing a sense of enthusiasm, inspiration, pride, and challenge. \citep{schaufeli_measurement_2002} Identifying as an organizational member/ambassador
+
+This includes conceptual elements of identification with the organization, a sense of ``oneness'', seeking continuous learning and improvement. We got rid of ``challenge'' altogether and moved the ``inspiration'' and ``pride'' elements to other categories.
+
+\emph{Dedication}: seeking continous imporvement and demonstrating initiative
+
+\emph{Vigor}: investing consistent effort, persistence, energy, and mental resilience while working \citep{schaufeli_measurement_2002} maybe add enthusiasm here as well
+
+\emph{Vigor}: Experiencing persistent levels of energy and enthusiasm while working
+
+\hypertarget{structural-considerations}{%
+\subsection{Structural considerations}\label{structural-considerations}}
+
+It was considered to potentially change from a focus on affective, cognitive, and behavioral to whether their engagement stems from content/satisfaction with the organization or the people they work with. This idea was however abandoned Spring 2020.
+
+After completing individual Q-sorts (Kulas and Renata) we decided to revisit the originally specified substantive definitions and build them up a little to make the difference between them more noticeable (and we also retained the affect, behavior, cognition focus).
+
+\hypertarget{summer-2020}{%
+\section{Summer 2020}\label{summer-2020}}
+
+Definitions as of 5/19/2020:
+
+\emph{Absorption}: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
+
+\emph{Vigor}: Experiencing persistent levels of energy, effort, and enthusiasm while working
+
+\emph{Dedication}: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+
+The development team ``content validation'' as well as the broader content validation to inform the pilot administration (see Chapter \ref{CValid}) retained these definitions we ordered all the items according to the ones we individually selected for each category and created an item bank with the remaining items. Together we placed the items in the bank into the agreed upon categories.
+
+\hypertarget{pilot2}{%
+\chapter{Pilot conditions}\label{pilot2}}
+
+Our four orderings of items were randomized within dimension (Affective, Behavioral, Cognitive or Dedication, Absorption, Vigor), ``block'' (Qualtrics designation for groupings of items), and item. The elements that were randomized are identified in the following tables by randomized element (A, B, C, or D):
+
+\begin{table}
+
+\caption{\label{tab:conditions}Pilot administration ordering Condition 1}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l}
+\hline
+Condition1 & Substantive & Attitudinal & Dimension & Block & Item\\
+\hline
+I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A & A\\
+\hline
+I have a hard time detaching mentally from my work & Absorption & Cognitive & A & A & B\\
+\hline
+Time passes quickly while I’m working & Absorption & Cognitive & A & A & C\\
+\hline
+I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & A & D\\
+\hline
+I enjoy thinking about work even when I’m not at work & Absorption & Affective & A & B & A\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & A & B & B\\
+\hline
+I am happiest when I am immersed in a project & Absorption & Affective & A & B & C\\
+\hline
+I love starting my workday. & Absorption & Affective & A & B & D\\
+\hline
+I devote more time than is expected of me. & Absorption & Behavioral & A & C & A\\
+\hline
+I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & A & C & B\\
+\hline
+I never miss a work deadline. & Absorption & Behavioral & A & C & C\\
+\hline
+I never allow distractions to interfere with my work & Absorption & Behavioral & A & C & D\\
+\hline
+I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & B & A & A\\
+\hline
+Thinking about work saps my energy (r) & Vigor & Cognitive & B & A & B\\
+\hline
+I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & B & A & C\\
+\hline
+I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & B & A & D\\
+\hline
+I enjoy spending time completing my job tasks. & Vigor & Affective & B & B & A\\
+\hline
+Most days I feel enthusiastic about starting my work day. & Vigor & Affective & B & B & B\\
+\hline
+I feel motivated to go beyond what is asked of me & Vigor & Affective & B & B & C\\
+\hline
+This job drains my energy (r) & Vigor & Affective & B & B & D\\
+\hline
+When work is slow I find ways to be productive. & Vigor & Behavioral & B & C & A\\
+\hline
+I express enthusiasm for my job while at work & Vigor & Behavioral & B & C & B\\
+\hline
+I try my best to perform well at work & Vigor & Behavioral & B & C & C\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & B & C & D\\
+\hline
+I plan my future with this company. & Dedication & Cognitive & C & A & A\\
+\hline
+I believe this company cares about my career goals & Dedication & Cognitive & C & A & B\\
+\hline
+I often think about finding another job (r) & Dedication & Cognitive & C & A & C\\
+\hline
+This organization challenges me to work at my full potential & Dedication & Cognitive & C & A & D\\
+\hline
+I am proud to be a member of this organization. & Dedication & Affective & C & B & A\\
+\hline
+I feel supported by my supervisor when I fail at a task & Dedication & Affective & C & B & B\\
+\hline
+I feel proud of my accomplishments within this organization & Dedication & Affective & C & B & C\\
+\hline
+My job makes me feel like I’m part of something meaningful & Dedication & Affective & C & B & D\\
+\hline
+I make valued contributions to the organization & Dedication & Behavioral & C & C & A\\
+\hline
+I embrace challenging situations at work. & Dedication & Behavioral & C & C & B\\
+\hline
+I speak positively about this organization to others. & Dedication & Behavioral & C & C & C\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & C & C & D\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:cond2}Pilot administration ordering Condition 2}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l}
+\hline
+Condition2 & Substantive & Attitudinal & Dimension & Block & Item\\
+\hline
+I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A & A\\
+\hline
+I have a hard time detaching mentally from my work & Absorption & Cognitive & A & A & B\\
+\hline
+Time passes quickly while I’m working & Absorption & Cognitive & A & A & C\\
+\hline
+I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & A & D\\
+\hline
+I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & A & B & A\\
+\hline
+Thinking about work saps my energy (r) & Vigor & Cognitive & A & B & B\\
+\hline
+I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & A & B & C\\
+\hline
+I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & A & B & D\\
+\hline
+I plan my future with this company. & Dedication & Cognitive & A & C & A\\
+\hline
+I believe this company cares about my career goals & Dedication & Cognitive & A & C & B\\
+\hline
+I often think about finding another job (r) & Dedication & Cognitive & A & C & C\\
+\hline
+This organization challenges me to work at my full potential & Dedication & Cognitive & A & C & D\\
+\hline
+I enjoy thinking about work even when I’m not at work & Absorption & Affective & B & A & A\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & B & A & B\\
+\hline
+I am happiest when I am immersed in a project & Absorption & Affective & B & A & C\\
+\hline
+I love starting my workday. & Absorption & Affective & B & A & D\\
+\hline
+I enjoy spending time completing my job tasks. & Vigor & Affective & B & B & A\\
+\hline
+Most days I feel enthusiastic about starting my work day. & Vigor & Affective & B & B & B\\
+\hline
+I feel motivated to go beyond what is asked of me & Vigor & Affective & B & B & C\\
+\hline
+This job drains my energy (r) & Vigor & Affective & B & B & D\\
+\hline
+I am proud to be a member of this organization. & Dedication & Affective & B & C & A\\
+\hline
+I feel supported by my supervisor when I fail at a task & Dedication & Affective & B & C & B\\
+\hline
+I feel proud of my accomplishments within this organization & Dedication & Affective & B & C & C\\
+\hline
+My job makes me feel like I’m part of something meaningful & Dedication & Affective & B & C & D\\
+\hline
+I devote more time than is expected of me. & Absorption & Behavioral & C & A & A\\
+\hline
+I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & C & A & B\\
+\hline
+I never miss a work deadline. & Absorption & Behavioral & C & A & C\\
+\hline
+I never allow distractions to interfere with my work & Absorption & Behavioral & C & A & D\\
+\hline
+When work is slow I find ways to be productive. & Vigor & Behavioral & C & B & A\\
+\hline
+I express enthusiasm for my job while at work & Vigor & Behavioral & C & B & B\\
+\hline
+I try my best to perform well at work & Vigor & Behavioral & C & B & C\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & C & B & D\\
+\hline
+I make valued contributions to the organization & Dedication & Behavioral & C & C & A\\
+\hline
+I embrace challenging situations at work. & Dedication & Behavioral & C & C & B\\
+\hline
+I speak positively about this organization to others. & Dedication & Behavioral & C & C & C\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & C & C & D\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:cond3}Pilot administration ordering Condition 3}
+\centering
+\begin{tabular}[t]{l|l|l|l|l}
+\hline
+Condition3 & Substantive & Attitudinal & Dimension & Item\\
+\hline
+I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A\\
+\hline
+I enjoy thinking about work even when I’m not at work & Absorption & Affective & A & B\\
+\hline
+I devote more time than is expected of me. & Absorption & Behavioral & A & C\\
+\hline
+I have a hard time detaching mentally from my work & Absorption & Cognitive & A & D\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & A & E\\
+\hline
+I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & A & F\\
+\hline
+Time passes quickly while I’m working & Absorption & Cognitive & A & G\\
+\hline
+I am happiest when I am immersed in a project & Absorption & Affective & A & H\\
+\hline
+I never miss a work deadline. & Absorption & Behavioral & A & I\\
+\hline
+I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & J\\
+\hline
+I love starting my workday. & Absorption & Affective & A & K\\
+\hline
+I never allow distractions to interfere with my work & Absorption & Behavioral & A & L\\
+\hline
+I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & B & A\\
+\hline
+I enjoy spending time completing my job tasks. & Vigor & Affective & B & B\\
+\hline
+When work is slow I find ways to be productive. & Vigor & Behavioral & B & C\\
+\hline
+Thinking about work saps my energy (r) & Vigor & Cognitive & B & D\\
+\hline
+Most days I feel enthusiastic about starting my work day. & Vigor & Affective & B & E\\
+\hline
+I express enthusiasm for my job while at work & Vigor & Behavioral & B & F\\
+\hline
+I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & B & G\\
+\hline
+I feel motivated to go beyond what is asked of me & Vigor & Affective & B & H\\
+\hline
+I try my best to perform well at work & Vigor & Behavioral & B & I\\
+\hline
+I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & B & J\\
+\hline
+This job drains my energy (r) & Vigor & Affective & B & K\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & B & L\\
+\hline
+I plan my future with this company. & Dedication & Cognitive & C & A\\
+\hline
+I am proud to be a member of this organization. & Dedication & Affective & C & B\\
+\hline
+I make valued contributions to the organization & Dedication & Behavioral & C & C\\
+\hline
+I believe this company cares about my career goals & Dedication & Cognitive & C & D\\
+\hline
+I feel supported by my supervisor when I fail at a task & Dedication & Affective & C & E\\
+\hline
+I embrace challenging situations at work. & Dedication & Behavioral & C & F\\
+\hline
+I often think about finding another job (r) & Dedication & Cognitive & C & G\\
+\hline
+I feel proud of my accomplishments within this organization & Dedication & Affective & C & H\\
+\hline
+I speak positively about this organization to others. & Dedication & Behavioral & C & I\\
+\hline
+This organization challenges me to work at my full potential & Dedication & Cognitive & C & J\\
+\hline
+My job makes me feel like I’m part of something meaningful & Dedication & Affective & C & K\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & C & L\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:cond4}Pilot administration ordering Condition 4}
+\centering
+\begin{tabular}[t]{l|l|l|l|l}
+\hline
+Condition4 & Substantive & Attitudinal & Dimension & Item\\
+\hline
+I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A\\
+\hline
+I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & A & B\\
+\hline
+I plan my future with this company. & Dedication & Cognitive & A & C\\
+\hline
+I have a hard time detaching mentally from my work & Absorption & Cognitive & A & D\\
+\hline
+Thinking about work saps my energy (r) & Vigor & Cognitive & A & E\\
+\hline
+I believe this company cares about my career goals & Dedication & Cognitive & A & F\\
+\hline
+Time passes quickly while I’m working & Absorption & Cognitive & A & G\\
+\hline
+I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & A & H\\
+\hline
+I often think about finding another job (r) & Dedication & Cognitive & A & I\\
+\hline
+I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & J\\
+\hline
+I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & A & K\\
+\hline
+This organization challenges me to work at my full potential & Dedication & Cognitive & A & L\\
+\hline
+I enjoy thinking about work even when I’m not at work & Absorption & Affective & B & A\\
+\hline
+I enjoy spending time completing my job tasks. & Vigor & Affective & B & B\\
+\hline
+I am proud to be a member of this organization. & Dedication & Affective & B & C\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & B & D\\
+\hline
+Most days I feel enthusiastic about starting my work day. & Vigor & Affective & B & E\\
+\hline
+I feel supported by my supervisor when I fail at a task & Dedication & Affective & B & F\\
+\hline
+I am happiest when I am immersed in a project & Absorption & Affective & B & G\\
+\hline
+I feel motivated to go beyond what is asked of me & Vigor & Affective & B & H\\
+\hline
+I feel proud of my accomplishments within this organization & Dedication & Affective & B & I\\
+\hline
+I love starting my workday. & Absorption & Affective & B & J\\
+\hline
+This job drains my energy (r) & Vigor & Affective & B & K\\
+\hline
+My job makes me feel like I’m part of something meaningful & Dedication & Affective & B & L\\
+\hline
+I devote more time than is expected of me. & Absorption & Behavioral & C & A\\
+\hline
+When work is slow I find ways to be productive. & Vigor & Behavioral & C & B\\
+\hline
+I make valued contributions to the organization & Dedication & Behavioral & C & C\\
+\hline
+I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & C & D\\
+\hline
+I express enthusiasm for my job while at work & Vigor & Behavioral & C & E\\
+\hline
+I embrace challenging situations at work. & Dedication & Behavioral & C & F\\
+\hline
+I never miss a work deadline. & Absorption & Behavioral & C & G\\
+\hline
+I try my best to perform well at work & Vigor & Behavioral & C & H\\
+\hline
+I speak positively about this organization to others. & Dedication & Behavioral & C & I\\
+\hline
+I never allow distractions to interfere with my work & Absorption & Behavioral & C & J\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & C & K\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & C & L\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{corrs}{%
+\chapter{Correlations}\label{corrs}}
+
+\hypertarget{inter-item-correlations}{%
+\section{Inter-Item correlations}\label{inter-item-correlations}}
+
+I enjoy thinking about work even when Iâ€™m not at work.
+
+Most days, I feel happiest when the workday is soon to be complete.
+
+I am happiest when I am immersed in a project.
+
+I love starting my workday.
+
+I enjoy spending time completing my job tasks.
+
+Most days I feel enthusiastic about starting my work day.
+
+I feel motivated to go beyond what is asked of me.
+
+This job drains my energy.
+
+I am proud to be a member of this organization.
+
+I feel supported by my supervisor when I fail at a task.
+
+I feel proud of my accomplishments within this organization.
+
+My job makes me feel like Iâ€™m part of something meaningful.
+
+I devote more time than is expected of me.
+
+I have to be reminded to take breaks while Iâ€™m at work.
+
+I never miss a work deadline.
+
+I never allow distractions to interfere with my work.
+
+When work is slow I find ways to be productive.
+
+I express enthusiasm for my job while at work.
+
+I try my best to perform well at work.
+
+If I notice my energy level is low, I take corrective steps to re-energize.
+
+I make valued contributions to the organization.
+
+I embrace challenging situations at work.
+
+I speak positively about this organization to others.
+
+This organization provides the resources necessary for me to successfully perform my job.
+
+I devote my full attention to my work tasks throughout the day.
+
+Thinking about work saps my energy.
+
+I would rather direct my focus toward a work task than a personal task.
+
+Iâ€™m able to maintain good levels of energy throughout the workday.
+
+I plan my future with this company.
+
+I believe this company cares about my career goals.
+
+I often think about finding another job.
+
+This organization challenges me to work at my full potential.
+
+Iâ€™m able to concentrate on my work without distractions.
+
+I have a hard time detaching mentally from my work.
+
+Time passes quickly while Iâ€™m working.
+
+I find it difficult to mentally disconnect from work.
+
+I enjoy thinking about work even when Iâ€™m not at work.
+
+1.00
+
+0.42
+
+0.27
+
+0.49
+
+0.40
+
+0.51
+
+0.33
+
+0.25
+
+0.36
+
+0.21
+
+0.30
+
+0.43
+
+0.18
+
+0.17
+
+-0.03
+
+0.10
+
+0.24
+
+0.38
+
+0.25
+
+0.10
+
+0.28
+
+0.28
+
+0.35
+
+0.00
+
+0.15
+
+0.40
+
+0.24
+
+0.29
+
+0.38
+
+0.33
+
+0.37
+
+0.36
+
+0.16
+
+0.26
+
+0.34
+
+0.25
+
+Most days, I feel happiest when the workday is soon to be complete.
+
+0.42
+
+1.00
+
+0.19
+
+0.36
+
+0.35
+
+0.47
+
+0.23
+
+0.36
+
+0.25
+
+0.07
+
+0.20
+
+0.28
+
+0.10
+
+-0.05
+
+-0.13
+
+-0.02
+
+0.15
+
+0.24
+
+0.18
+
+0.08
+
+0.15
+
+0.13
+
+0.17
+
+-0.01
+
+0.10
+
+0.50
+
+0.18
+
+0.21
+
+0.37
+
+0.27
+
+0.39
+
+0.20
+
+0.06
+
+0.03
+
+0.30
+
+0.00
+
+I am happiest when I am immersed in a project.
+
+0.27
+
+0.19
+
+1.00
+
+0.21
+
+0.35
+
+0.27
+
+0.43
+
+0.09
+
+0.14
+
+0.16
+
+0.18
+
+0.20
+
+0.21
+
+0.17
+
+0.05
+
+0.13
+
+0.20
+
+0.25
+
+0.18
+
+0.12
+
+0.20
+
+0.28
+
+0.10
+
+-0.02
+
+0.22
+
+0.12
+
+0.30
+
+0.10
+
+0.19
+
+0.13
+
+0.13
+
+0.06
+
+0.13
+
+0.12
+
+0.22
+
+0.12
+
+I love starting my workday.
+
+0.49
+
+0.36
+
+0.21
+
+1.00
+
+0.59
+
+0.82
+
+0.35
+
+0.43
+
+0.50
+
+0.20
+
+0.46
+
+0.50
+
+0.19
+
+0.14
+
+0.11
+
+0.25
+
+0.34
+
+0.46
+
+0.31
+
+0.23
+
+0.33
+
+0.28
+
+0.46
+
+0.26
+
+0.35
+
+0.51
+
+0.33
+
+0.49
+
+0.46
+
+0.50
+
+0.52
+
+0.53
+
+0.29
+
+0.12
+
+0.49
+
+0.06
+
+I enjoy spending time completing my job tasks.
+
+0.40
+
+0.35
+
+0.35
+
+0.59
+
+1.00
+
+0.59
+
+0.52
+
+0.28
+
+0.47
+
+0.19
+
+0.47
+
+0.58
+
+0.21
+
+0.24
+
+0.06
+
+0.23
+
+0.36
+
+0.52
+
+0.35
+
+0.20
+
+0.32
+
+0.39
+
+0.42
+
+0.24
+
+0.36
+
+0.40
+
+0.39
+
+0.35
+
+0.40
+
+0.46
+
+0.41
+
+0.39
+
+0.30
+
+0.09
+
+0.44
+
+0.04
+
+Most days I feel enthusiastic about starting my work day.
+
+0.51
+
+0.47
+
+0.27
+
+0.82
+
+0.59
+
+1.00
+
+0.43
+
+0.43
+
+0.53
+
+0.24
+
+0.48
+
+0.54
+
+0.20
+
+0.19
+
+0.11
+
+0.24
+
+0.34
+
+0.55
+
+0.35
+
+0.23
+
+0.36
+
+0.31
+
+0.49
+
+0.20
+
+0.37
+
+0.54
+
+0.38
+
+0.51
+
+0.47
+
+0.50
+
+0.55
+
+0.50
+
+0.25
+
+0.17
+
+0.47
+
+0.12
+
+I feel motivated to go beyond what is asked of me.
+
+0.33
+
+0.23
+
+0.43
+
+0.35
+
+0.52
+
+0.43
+
+1.00
+
+0.17
+
+0.41
+
+0.32
+
+0.52
+
+0.53
+
+0.40
+
+0.40
+
+0.10
+
+0.23
+
+0.46
+
+0.57
+
+0.43
+
+0.26
+
+0.41
+
+0.54
+
+0.37
+
+0.14
+
+0.39
+
+0.21
+
+0.32
+
+0.36
+
+0.39
+
+0.40
+
+0.36
+
+0.40
+
+0.20
+
+0.31
+
+0.42
+
+0.27
+
+This job drains my energy.
+
+0.25
+
+0.36
+
+0.09
+
+0.43
+
+0.28
+
+0.43
+
+0.17
+
+1.00
+
+0.36
+
+0.27
+
+0.21
+
+0.34
+
+-0.05
+
+-0.05
+
+-0.02
+
+0.04
+
+0.11
+
+0.28
+
+0.06
+
+0.02
+
+0.12
+
+0.15
+
+0.35
+
+0.31
+
+0.09
+
+0.61
+
+0.09
+
+0.30
+
+0.35
+
+0.42
+
+0.51
+
+0.31
+
+0.10
+
+-0.14
+
+0.22
+
+-0.19
+
+I am proud to be a member of this organization.
+
+0.36
+
+0.25
+
+0.14
+
+0.50
+
+0.47
+
+0.53
+
+0.41
+
+0.36
+
+1.00
+
+0.29
+
+0.52
+
+0.63
+
+0.17
+
+0.19
+
+0.14
+
+0.28
+
+0.37
+
+0.54
+
+0.39
+
+0.21
+
+0.27
+
+0.36
+
+0.75
+
+0.40
+
+0.26
+
+0.36
+
+0.24
+
+0.34
+
+0.57
+
+0.68
+
+0.59
+
+0.59
+
+0.26
+
+0.15
+
+0.44
+
+0.11
+
+I feel supported by my supervisor when I fail at a task.
+
+0.21
+
+0.07
+
+0.16
+
+0.20
+
+0.19
+
+0.24
+
+0.32
+
+0.27
+
+0.29
+
+1.00
+
+0.27
+
+0.35
+
+0.04
+
+0.02
+
+-0.04
+
+0.03
+
+0.05
+
+0.22
+
+0.19
+
+0.02
+
+0.25
+
+0.33
+
+0.28
+
+0.34
+
+0.02
+
+0.17
+
+0.03
+
+0.18
+
+0.20
+
+0.44
+
+0.27
+
+0.36
+
+0.02
+
+0.00
+
+0.20
+
+-0.01
+
+I feel proud of my accomplishments within this organization.
+
+0.30
+
+0.20
+
+0.18
+
+0.46
+
+0.47
+
+0.48
+
+0.52
+
+0.21
+
+0.52
+
+0.27
+
+1.00
+
+0.56
+
+0.26
+
+0.16
+
+0.09
+
+0.22
+
+0.28
+
+0.52
+
+0.37
+
+0.18
+
+0.55
+
+0.54
+
+0.49
+
+0.29
+
+0.24
+
+0.21
+
+0.20
+
+0.31
+
+0.38
+
+0.43
+
+0.38
+
+0.46
+
+0.22
+
+0.21
+
+0.35
+
+0.16
+
+My job makes me feel like Iâ€™m part of something meaningful.
+
+0.43
+
+0.28
+
+0.20
+
+0.50
+
+0.58
+
+0.54
+
+0.53
+
+0.34
+
+0.63
+
+0.35
+
+0.56
+
+1.00
+
+0.21
+
+0.22
+
+0.02
+
+0.27
+
+0.35
+
+0.56
+
+0.38
+
+0.16
+
+0.46
+
+0.43
+
+0.53
+
+0.27
+
+0.34
+
+0.40
+
+0.26
+
+0.40
+
+0.53
+
+0.58
+
+0.56
+
+0.55
+
+0.33
+
+0.15
+
+0.47
+
+0.10
+
+I devote more time than is expected of me.
+
+0.18
+
+0.10
+
+0.21
+
+0.19
+
+0.21
+
+0.20
+
+0.40
+
+-0.05
+
+0.17
+
+0.04
+
+0.26
+
+0.21
+
+1.00
+
+0.38
+
+-0.01
+
+0.24
+
+0.33
+
+0.24
+
+0.32
+
+0.15
+
+0.22
+
+0.20
+
+0.13
+
+-0.01
+
+0.34
+
+0.03
+
+0.13
+
+0.20
+
+0.24
+
+0.13
+
+0.22
+
+0.25
+
+0.17
+
+0.31
+
+0.32
+
+0.29
+
+I have to be reminded to take breaks while Iâ€™m at work.
+
+0.17
+
+-0.05
+
+0.17
+
+0.14
+
+0.24
+
+0.19
+
+0.40
+
+-0.05
+
+0.19
+
+0.02
+
+0.16
+
+0.22
+
+0.38
+
+1.00
+
+0.12
+
+0.21
+
+0.20
+
+0.33
+
+0.29
+
+0.14
+
+0.16
+
+0.14
+
+0.14
+
+-0.02
+
+0.37
+
+-0.03
+
+0.19
+
+0.14
+
+0.17
+
+0.11
+
+0.13
+
+0.23
+
+0.11
+
+0.27
+
+0.15
+
+0.28
+
+I never miss a work deadline.
+
+-0.03
+
+-0.13
+
+0.05
+
+0.11
+
+0.06
+
+0.11
+
+0.10
+
+-0.02
+
+0.14
+
+-0.04
+
+0.09
+
+0.02
+
+-0.01
+
+0.12
+
+1.00
+
+0.35
+
+0.18
+
+0.16
+
+0.19
+
+0.08
+
+0.11
+
+0.11
+
+0.17
+
+0.10
+
+0.32
+
+-0.03
+
+0.10
+
+0.26
+
+0.01
+
+0.01
+
+0.00
+
+0.06
+
+0.33
+
+-0.01
+
+0.08
+
+-0.06
+
+I never allow distractions to interfere with my work.
+
+0.10
+
+-0.02
+
+0.13
+
+0.25
+
+0.23
+
+0.24
+
+0.23
+
+0.04
+
+0.28
+
+0.03
+
+0.22
+
+0.27
+
+0.24
+
+0.21
+
+0.35
+
+1.00
+
+0.29
+
+0.29
+
+0.21
+
+0.19
+
+0.26
+
+0.21
+
+0.30
+
+0.11
+
+0.54
+
+0.09
+
+0.21
+
+0.39
+
+0.12
+
+0.14
+
+0.20
+
+0.22
+
+0.54
+
+0.04
+
+0.31
+
+0.01
+
+When work is slow I find ways to be productive.
+
+0.24
+
+0.15
+
+0.20
+
+0.34
+
+0.36
+
+0.34
+
+0.46
+
+0.11
+
+0.37
+
+0.05
+
+0.28
+
+0.35
+
+0.33
+
+0.20
+
+0.18
+
+0.29
+
+1.00
+
+0.42
+
+0.45
+
+0.31
+
+0.23
+
+0.29
+
+0.31
+
+0.09
+
+0.46
+
+0.23
+
+0.24
+
+0.40
+
+0.34
+
+0.25
+
+0.34
+
+0.41
+
+0.31
+
+0.17
+
+0.40
+
+0.13
+
+I express enthusiasm for my job while at work.
+
+0.38
+
+0.24
+
+0.25
+
+0.46
+
+0.52
+
+0.55
+
+0.57
+
+0.28
+
+0.54
+
+0.22
+
+0.52
+
+0.56
+
+0.24
+
+0.33
+
+0.16
+
+0.29
+
+0.42
+
+1.00
+
+0.50
+
+0.31
+
+0.40
+
+0.46
+
+0.54
+
+0.15
+
+0.40
+
+0.32
+
+0.35
+
+0.41
+
+0.38
+
+0.44
+
+0.41
+
+0.43
+
+0.28
+
+0.19
+
+0.42
+
+0.14
+
+I try my best to perform well at work.
+
+0.25
+
+0.18
+
+0.18
+
+0.31
+
+0.35
+
+0.35
+
+0.43
+
+0.06
+
+0.39
+
+0.19
+
+0.37
+
+0.38
+
+0.32
+
+0.29
+
+0.19
+
+0.21
+
+0.45
+
+0.50
+
+1.00
+
+0.30
+
+0.26
+
+0.37
+
+0.38
+
+0.16
+
+0.41
+
+0.19
+
+0.23
+
+0.36
+
+0.29
+
+0.32
+
+0.26
+
+0.36
+
+0.24
+
+0.24
+
+0.32
+
+0.19
+
+If I notice my energy level is low, I take corrective steps to re-energize.
+
+0.10
+
+0.08
+
+0.12
+
+0.23
+
+0.20
+
+0.23
+
+0.26
+
+0.02
+
+0.21
+
+0.02
+
+0.18
+
+0.16
+
+0.15
+
+0.14
+
+0.08
+
+0.19
+
+0.31
+
+0.31
+
+0.30
+
+1.00
+
+0.25
+
+0.22
+
+0.24
+
+0.11
+
+0.32
+
+0.18
+
+0.08
+
+0.37
+
+0.17
+
+0.21
+
+0.14
+
+0.31
+
+0.27
+
+-0.06
+
+0.24
+
+-0.07
+
+I make valued contributions to the organization.
+
+0.28
+
+0.15
+
+0.20
+
+0.33
+
+0.32
+
+0.36
+
+0.41
+
+0.12
+
+0.27
+
+0.25
+
+0.55
+
+0.46
+
+0.22
+
+0.16
+
+0.11
+
+0.26
+
+0.23
+
+0.40
+
+0.26
+
+0.25
+
+1.00
+
+0.46
+
+0.20
+
+0.12
+
+0.31
+
+0.20
+
+0.18
+
+0.27
+
+0.26
+
+0.25
+
+0.29
+
+0.29
+
+0.24
+
+0.09
+
+0.26
+
+0.00
+
+I embrace challenging situations at work.
+
+0.28
+
+0.13
+
+0.28
+
+0.28
+
+0.39
+
+0.31
+
+0.54
+
+0.15
+
+0.36
+
+0.33
+
+0.54
+
+0.43
+
+0.20
+
+0.14
+
+0.11
+
+0.21
+
+0.29
+
+0.46
+
+0.37
+
+0.22
+
+0.46
+
+1.00
+
+0.34
+
+0.22
+
+0.27
+
+0.16
+
+0.14
+
+0.28
+
+0.24
+
+0.33
+
+0.22
+
+0.36
+
+0.19
+
+0.19
+
+0.30
+
+0.14
+
+I speak positively about this organization to others.
+
+0.35
+
+0.17
+
+0.10
+
+0.46
+
+0.42
+
+0.49
+
+0.37
+
+0.35
+
+0.75
+
+0.28
+
+0.49
+
+0.53
+
+0.13
+
+0.14
+
+0.17
+
+0.30
+
+0.31
+
+0.54
+
+0.38
+
+0.24
+
+0.20
+
+0.34
+
+1.00
+
+0.43
+
+0.30
+
+0.32
+
+0.20
+
+0.35
+
+0.54
+
+0.62
+
+0.56
+
+0.55
+
+0.28
+
+0.13
+
+0.40
+
+0.08
+
+This organization provides the resources necessary for me to successfully perform my job.
+
+0.00
+
+-0.01
+
+-0.02
+
+0.26
+
+0.24
+
+0.20
+
+0.14
+
+0.31
+
+0.40
+
+0.34
+
+0.29
+
+0.27
+
+-0.01
+
+-0.02
+
+0.10
+
+0.11
+
+0.09
+
+0.15
+
+0.16
+
+0.11
+
+0.12
+
+0.22
+
+0.43
+
+1.00
+
+0.06
+
+0.26
+
+-0.03
+
+0.20
+
+0.25
+
+0.45
+
+0.36
+
+0.37
+
+0.18
+
+-0.13
+
+0.11
+
+-0.16
+
+I devote my full attention to my work tasks throughout the day.
+
+0.15
+
+0.10
+
+0.22
+
+0.35
+
+0.36
+
+0.37
+
+0.39
+
+0.09
+
+0.26
+
+0.02
+
+0.24
+
+0.34
+
+0.34
+
+0.37
+
+0.32
+
+0.54
+
+0.46
+
+0.40
+
+0.41
+
+0.32
+
+0.31
+
+0.27
+
+0.30
+
+0.06
+
+1.00
+
+0.17
+
+0.30
+
+0.53
+
+0.25
+
+0.15
+
+0.24
+
+0.32
+
+0.57
+
+0.13
+
+0.48
+
+0.06
+
+Thinking about work saps my energy.
+
+0.40
+
+0.50
+
+0.12
+
+0.51
+
+0.40
+
+0.54
+
+0.21
+
+0.61
+
+0.36
+
+0.17
+
+0.21
+
+0.40
+
+0.03
+
+-0.03
+
+-0.03
+
+0.09
+
+0.23
+
+0.32
+
+0.19
+
+0.18
+
+0.20
+
+0.16
+
+0.32
+
+0.26
+
+0.17
+
+1.00
+
+0.17
+
+0.45
+
+0.28
+
+0.41
+
+0.51
+
+0.30
+
+0.21
+
+-0.12
+
+0.32
+
+-0.18
+
+I would rather direct my focus toward a work task than a personal task.
+
+0.24
+
+0.18
+
+0.30
+
+0.33
+
+0.39
+
+0.38
+
+0.32
+
+0.09
+
+0.24
+
+0.03
+
+0.20
+
+0.26
+
+0.13
+
+0.19
+
+0.10
+
+0.21
+
+0.24
+
+0.35
+
+0.23
+
+0.08
+
+0.18
+
+0.14
+
+0.20
+
+-0.03
+
+0.30
+
+0.17
+
+1.00
+
+0.29
+
+0.12
+
+0.16
+
+0.18
+
+0.14
+
+0.26
+
+0.18
+
+0.26
+
+0.13
+
+Iâ€™m able to maintain good levels of energy throughout the workday.
+
+0.29
+
+0.21
+
+0.10
+
+0.49
+
+0.35
+
+0.51
+
+0.36
+
+0.30
+
+0.34
+
+0.18
+
+0.31
+
+0.40
+
+0.20
+
+0.14
+
+0.26
+
+0.39
+
+0.40
+
+0.41
+
+0.36
+
+0.37
+
+0.27
+
+0.28
+
+0.35
+
+0.20
+
+0.53
+
+0.45
+
+0.29
+
+1.00
+
+0.24
+
+0.33
+
+0.32
+
+0.43
+
+0.50
+
+0.12
+
+0.50
+
+0.08
+
+I plan my future with this company.
+
+0.38
+
+0.37
+
+0.19
+
+0.46
+
+0.40
+
+0.47
+
+0.39
+
+0.35
+
+0.57
+
+0.20
+
+0.38
+
+0.53
+
+0.24
+
+0.17
+
+0.01
+
+0.12
+
+0.34
+
+0.38
+
+0.29
+
+0.17
+
+0.26
+
+0.24
+
+0.54
+
+0.25
+
+0.25
+
+0.28
+
+0.12
+
+0.24
+
+1.00
+
+0.60
+
+0.63
+
+0.51
+
+0.18
+
+0.16
+
+0.38
+
+0.10
+
+I believe this company cares about my career goals.
+
+0.33
+
+0.27
+
+0.13
+
+0.50
+
+0.46
+
+0.50
+
+0.40
+
+0.42
+
+0.68
+
+0.44
+
+0.43
+
+0.58
+
+0.13
+
+0.11
+
+0.01
+
+0.14
+
+0.25
+
+0.44
+
+0.32
+
+0.21
+
+0.25
+
+0.33
+
+0.62
+
+0.45
+
+0.15
+
+0.41
+
+0.16
+
+0.33
+
+0.60
+
+1.00
+
+0.57
+
+0.69
+
+0.19
+
+0.19
+
+0.33
+
+0.12
+
+I often think about finding another job.
+
+0.37
+
+0.39
+
+0.13
+
+0.52
+
+0.41
+
+0.55
+
+0.36
+
+0.51
+
+0.59
+
+0.27
+
+0.38
+
+0.56
+
+0.22
+
+0.13
+
+0.00
+
+0.20
+
+0.34
+
+0.41
+
+0.26
+
+0.14
+
+0.29
+
+0.22
+
+0.56
+
+0.36
+
+0.24
+
+0.51
+
+0.18
+
+0.32
+
+0.63
+
+0.57
+
+1.00
+
+0.48
+
+0.26
+
+0.03
+
+0.38
+
+-0.02
+
+This organization challenges me to work at my full potential.
+
+0.36
+
+0.20
+
+0.06
+
+0.53
+
+0.39
+
+0.50
+
+0.40
+
+0.31
+
+0.59
+
+0.36
+
+0.46
+
+0.55
+
+0.25
+
+0.23
+
+0.06
+
+0.22
+
+0.41
+
+0.43
+
+0.36
+
+0.31
+
+0.29
+
+0.36
+
+0.55
+
+0.37
+
+0.32
+
+0.30
+
+0.14
+
+0.43
+
+0.51
+
+0.69
+
+0.48
+
+1.00
+
+0.29
+
+0.27
+
+0.45
+
+0.20
+
+Iâ€™m able to concentrate on my work without distractions.
+
+0.16
+
+0.06
+
+0.13
+
+0.29
+
+0.30
+
+0.25
+
+0.20
+
+0.10
+
+0.26
+
+0.02
+
+0.22
+
+0.33
+
+0.17
+
+0.11
+
+0.33
+
+0.54
+
+0.31
+
+0.28
+
+0.24
+
+0.27
+
+0.24
+
+0.19
+
+0.28
+
+0.18
+
+0.57
+
+0.21
+
+0.26
+
+0.50
+
+0.18
+
+0.19
+
+0.26
+
+0.29
+
+1.00
+
+0.01
+
+0.44
+
+-0.04
+
+I have a hard time detaching mentally from my work.
+
+0.26
+
+0.03
+
+0.12
+
+0.12
+
+0.09
+
+0.17
+
+0.31
+
+-0.14
+
+0.15
+
+0.00
+
+0.21
+
+0.15
+
+0.31
+
+0.27
+
+-0.01
+
+0.04
+
+0.17
+
+0.19
+
+0.24
+
+-0.06
+
+0.09
+
+0.19
+
+0.13
+
+-0.13
+
+0.13
+
+-0.12
+
+0.18
+
+0.12
+
+0.16
+
+0.19
+
+0.03
+
+0.27
+
+0.01
+
+1.00
+
+0.15
+
+0.90
+
+Time passes quickly while Iâ€™m working.
+
+0.34
+
+0.30
+
+0.22
+
+0.49
+
+0.44
+
+0.47
+
+0.42
+
+0.22
+
+0.44
+
+0.20
+
+0.35
+
+0.47
+
+0.32
+
+0.15
+
+0.08
+
+0.31
+
+0.40
+
+0.42
+
+0.32
+
+0.24
+
+0.26
+
+0.30
+
+0.40
+
+0.11
+
+0.48
+
+0.32
+
+0.26
+
+0.50
+
+0.38
+
+0.33
+
+0.38
+
+0.45
+
+0.44
+
+0.15
+
+1.00
+
+0.09
+
+I find it difficult to mentally disconnect from work.
+
+0.25
+
+0.00
+
+0.12
+
+0.06
+
+0.04
+
+0.12
+
+0.27
+
+-0.19
+
+0.11
+
+-0.01
+
+0.16
+
+0.10
+
+0.29
+
+0.28
+
+-0.06
+
+0.01
+
+0.13
+
+0.14
+
+0.19
+
+-0.07
+
+0.00
+
+0.14
+
+0.08
+
+-0.16
+
+0.06
+
+-0.18
+
+0.13
+
+0.08
+
+0.10
+
+0.12
+
+-0.02
+
+0.20
+
+-0.04
+
+0.90
+
+0.09
+
+1.00
+
+\hypertarget{scale-level-correlations}{%
+\section{Scale-level correlations}\label{scale-level-correlations}}
+
+Because of the large inter-construct covariance estimates, we constructed standard unit-weighted scale aggregates (interactive plot of unit-weighted aggregates located below)
+
+\hypertarget{substantive-scales}{%
+\subsection{Substantive scales}\label{substantive-scales}}
+
+\hypertarget{htmlwidget-388b2da2c8c5f76fc036}{}
+
+\hypertarget{attitudinal-scales}{%
+\subsection{Attitudinal scales}\label{attitudinal-scales}}
+
+\hypertarget{htmlwidget-ae8dec4aebb0e1d67f25}{}
+
+\hypertarget{section}{%
+\section*{}\label{section}}
+\addcontentsline{toc}{section}{}
+
+Correlation matrix of 3 unit-weighted substantive and 3 unit-weighted attitudinal scales:
+
+\includegraphics{_main_files/figure-latex/correlations3-1.pdf}
+
+\hypertarget{rdrops}{%
+\chapter{Corrected item-total correlations}\label{rdrops}}
+
+\hypertarget{substantive-scale-marginal-level}{%
+\section{Substantive scale (marginal level)}\label{substantive-scale-marginal-level}}
+
+\begin{table}
+
+\caption{\label{tab:rdrop1}Affective Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I enjoy thinking about work even when Iâ€™m not at work. & 270 & 0.56 & 3.1 & 1.5\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete. & 269 & 0.40 & 2.6 & 1.2\\
+\hline
+I am happiest when I am immersed in a project. & 267 & 0.35 & 4.6 & 1.0\\
+\hline
+I love starting my workday. & 270 & 0.70 & 3.6 & 1.3\\
+\hline
+I enjoy spending time completing my job tasks. & 270 & 0.65 & 4.5 & 1.0\\
+\hline
+Most days I feel enthusiastic about starting my work day. & 269 & 0.77 & 3.8 & 1.4\\
+\hline
+I feel motivated to go beyond what is asked of me. & 269 & 0.58 & 4.6 & 1.2\\
+\hline
+This job drains my energy. & 269 & 0.43 & 3.2 & 1.4\\
+\hline
+I am proud to be a member of this organization. & 268 & 0.64 & 4.7 & 1.2\\
+\hline
+I feel supported by my supervisor when I fail at a task. & 263 & 0.35 & 4.5 & 1.4\\
+\hline
+I feel proud of my accomplishments within this organization. & 268 & 0.60 & 5.0 & 1.0\\
+\hline
+My job makes me feel like Iâ€™m part of something meaningful. & 267 & 0.70 & 4.6 & 1.3\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop2}Behavioral Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I devote more time than is expected of me. & 271 & 0.40 & 4.5 & 1.29\\
+\hline
+I have to be reminded to take breaks while Iâ€™m at work. & 269 & 0.35 & 3.7 & 1.57\\
+\hline
+I never miss a work deadline. & 269 & 0.29 & 4.5 & 1.21\\
+\hline
+I never allow distractions to interfere with my work. & 271 & 0.47 & 3.2 & 1.35\\
+\hline
+When work is slow I find ways to be productive. & 270 & 0.52 & 4.5 & 1.18\\
+\hline
+I express enthusiasm for my job while at work. & 271 & 0.63 & 4.8 & 1.11\\
+\hline
+I try my best to perform well at work. & 272 & 0.58 & 5.4 & 0.76\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & 271 & 0.39 & 4.2 & 1.14\\
+\hline
+I make valued contributions to the organization. & 267 & 0.43 & 5.1 & 0.76\\
+\hline
+I embrace challenging situations at work. & 269 & 0.48 & 5.0 & 0.89\\
+\hline
+I speak positively about this organization to others. & 269 & 0.55 & 4.7 & 1.25\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job. & 270 & 0.24 & 4.5 & 1.22\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop3}Cognitive Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I devote my full attention to my work tasks throughout the day. & 271 & 0.46 & 4.1 & 1.3\\
+\hline
+Thinking about work saps my energy. & 270 & 0.35 & 3.6 & 1.4\\
+\hline
+I would rather direct my focus toward a work task than a personal task. & 269 & 0.35 & 3.4 & 1.4\\
+\hline
+Iâ€™m able to maintain good levels of energy throughout the workday. & 271 & 0.56 & 4.1 & 1.2\\
+\hline
+I plan my future with this company. & 265 & 0.55 & 3.9 & 1.6\\
+\hline
+I believe this company cares about my career goals. & 268 & 0.58 & 3.9 & 1.5\\
+\hline
+I often think about finding another job. & 267 & 0.56 & 3.5 & 1.6\\
+\hline
+This organization challenges me to work at my full potential. & 268 & 0.67 & 4.3 & 1.3\\
+\hline
+Iâ€™m able to concentrate on my work without distractions. & 270 & 0.39 & 3.7 & 1.4\\
+\hline
+I have a hard time detaching mentally from my work. & 272 & 0.31 & 3.7 & 1.5\\
+\hline
+Time passes quickly while Iâ€™m working. & 272 & 0.60 & 4.6 & 1.2\\
+\hline
+I find it difficult to mentally disconnect from work. & 273 & 0.22 & 3.7 & 1.6\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop4}Absorption Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I enjoy thinking about work even when Iâ€™m not at work. & 270 & 0.46 & 3.1 & 1.5\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete. & 269 & 0.16 & 2.6 & 1.2\\
+\hline
+I am happiest when I am immersed in a project. & 267 & 0.32 & 4.6 & 1.0\\
+\hline
+I love starting my workday. & 270 & 0.50 & 3.6 & 1.3\\
+\hline
+I devote more time than is expected of me. & 271 & 0.46 & 4.5 & 1.3\\
+\hline
+I have to be reminded to take breaks while Iâ€™m at work. & 269 & 0.37 & 3.7 & 1.6\\
+\hline
+I never miss a work deadline. & 269 & 0.16 & 4.5 & 1.2\\
+\hline
+I never allow distractions to interfere with my work. & 271 & 0.39 & 3.2 & 1.4\\
+\hline
+Iâ€™m able to concentrate on my work without distractions. & 270 & 0.36 & 3.7 & 1.4\\
+\hline
+I have a hard time detaching mentally from my work. & 272 & 0.42 & 3.7 & 1.5\\
+\hline
+Time passes quickly while Iâ€™m working. & 272 & 0.51 & 4.6 & 1.2\\
+\hline
+I find it difficult to mentally disconnect from work. & 273 & 0.37 & 3.7 & 1.6\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop5}Vigor Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I devote my full attention to my work tasks throughout the day. & 271 & 0.50 & 4.1 & 1.28\\
+\hline
+Thinking about work saps my energy. & 270 & 0.49 & 3.6 & 1.38\\
+\hline
+I would rather direct my focus toward a work task than a personal task. & 269 & 0.39 & 3.4 & 1.37\\
+\hline
+Iâ€™m able to maintain good levels of energy throughout the workday. & 271 & 0.63 & 4.1 & 1.22\\
+\hline
+I enjoy spending time completing my job tasks. & 270 & 0.62 & 4.5 & 1.03\\
+\hline
+Most days I feel enthusiastic about starting my work day. & 269 & 0.70 & 3.8 & 1.40\\
+\hline
+I feel motivated to go beyond what is asked of me. & 269 & 0.59 & 4.6 & 1.20\\
+\hline
+This job drains my energy. & 269 & 0.34 & 3.2 & 1.37\\
+\hline
+When work is slow I find ways to be productive. & 270 & 0.53 & 4.5 & 1.18\\
+\hline
+I express enthusiasm for my job while at work. & 271 & 0.68 & 4.8 & 1.11\\
+\hline
+I try my best to perform well at work. & 272 & 0.50 & 5.4 & 0.76\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & 271 & 0.36 & 4.2 & 1.14\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop6}Dedication Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I plan my future with this company. & 265 & 0.63 & 3.9 & 1.63\\
+\hline
+I believe this company cares about my career goals. & 268 & 0.75 & 3.9 & 1.54\\
+\hline
+I often think about finding another job. & 267 & 0.66 & 3.5 & 1.61\\
+\hline
+This organization challenges me to work at my full potential. & 268 & 0.71 & 4.3 & 1.33\\
+\hline
+I am proud to be a member of this organization. & 268 & 0.77 & 4.7 & 1.21\\
+\hline
+I feel supported by my supervisor when I fail at a task. & 263 & 0.43 & 4.5 & 1.38\\
+\hline
+I feel proud of my accomplishments within this organization. & 268 & 0.62 & 5.0 & 1.00\\
+\hline
+My job makes me feel like Iâ€™m part of something meaningful. & 267 & 0.71 & 4.6 & 1.27\\
+\hline
+I make valued contributions to the organization. & 267 & 0.43 & 5.1 & 0.76\\
+\hline
+I embrace challenging situations at work. & 269 & 0.46 & 5.0 & 0.89\\
+\hline
+I speak positively about this organization to others. & 269 & 0.72 & 4.7 & 1.25\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job. & 270 & 0.46 & 4.5 & 1.22\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{substantive-scale-cell-level}{%
+\section{Substantive scale (cell level)}\label{substantive-scale-cell-level}}
+
+\begin{table}
+
+\caption{\label{tab:rdrop7}Affective - Absorption Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I enjoy thinking about work even when Iâ€™m not at work. & 270 & 0.57 & 3.1 & 1.5\\
+\hline
+Most days, I feel happiest when the workday is soon to be complete. & 269 & 0.37 & 2.6 & 1.2\\
+\hline
+I am happiest when I am immersed in a project. & 267 & 0.31 & 4.6 & 1.0\\
+\hline
+I love starting my workday. & 270 & 0.51 & 3.6 & 1.3\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop8}Affective - Vigor Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I enjoy spending time completing my job tasks. & 270 & 0.58 & 4.5 & 1.0\\
+\hline
+Most days I feel enthusiastic about starting my work day. & 269 & 0.63 & 3.8 & 1.4\\
+\hline
+I feel motivated to go beyond what is asked of me. & 269 & 0.47 & 4.6 & 1.2\\
+\hline
+This job drains my energy. & 269 & 0.34 & 3.2 & 1.4\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop9}Affective - Dedication Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I am proud to be a member of this organization. & 268 & 0.61 & 4.7 & 1.2\\
+\hline
+I feel supported by my supervisor when I fail at a task. & 263 & 0.38 & 4.5 & 1.4\\
+\hline
+I feel proud of my accomplishments within this organization. & 268 & 0.59 & 5.0 & 1.0\\
+\hline
+My job makes me feel like Iâ€™m part of something meaningful. & 267 & 0.66 & 4.6 & 1.3\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop10}Cognitive - Absorption Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+Iâ€™m able to concentrate on my work without distractions. & 270 & 0.14 & 3.7 & 1.4\\
+\hline
+I have a hard time detaching mentally from my work. & 272 & 0.58 & 3.7 & 1.5\\
+\hline
+Time passes quickly while Iâ€™m working. & 272 & 0.29 & 4.6 & 1.2\\
+\hline
+I find it difficult to mentally disconnect from work. & 273 & 0.52 & 3.7 & 1.6\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop11}Cognitive - Vigor Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I devote my full attention to my work tasks throughout the day. & 271 & 0.40 & 4.1 & 1.3\\
+\hline
+Thinking about work saps my energy. & 270 & 0.32 & 3.6 & 1.4\\
+\hline
+I would rather direct my focus toward a work task than a personal task. & 269 & 0.32 & 3.4 & 1.4\\
+\hline
+Iâ€™m able to maintain good levels of energy throughout the workday. & 271 & 0.60 & 4.1 & 1.2\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop12}Cognitive - Dedication Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I plan my future with this company. & 265 & 0.67 & 3.9 & 1.6\\
+\hline
+I believe this company cares about my career goals. & 268 & 0.70 & 3.9 & 1.5\\
+\hline
+I often think about finding another job. & 267 & 0.65 & 3.5 & 1.6\\
+\hline
+This organization challenges me to work at my full potential. & 268 & 0.65 & 4.3 & 1.3\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop13}Behavioral - Absorption Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I devote more time than is expected of me. & 271 & 0.36 & 4.5 & 1.3\\
+\hline
+I have to be reminded to take breaks while Iâ€™m at work. & 269 & 0.37 & 3.7 & 1.6\\
+\hline
+I never miss a work deadline. & 269 & 0.22 & 4.5 & 1.2\\
+\hline
+I never allow distractions to interfere with my work. & 271 & 0.42 & 3.2 & 1.4\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop14}Behavioral - Vigor Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+When work is slow I find ways to be productive. & 270 & 0.51 & 4.5 & 1.18\\
+\hline
+I express enthusiasm for my job while at work. & 271 & 0.54 & 4.8 & 1.11\\
+\hline
+I try my best to perform well at work. & 272 & 0.54 & 5.4 & 0.76\\
+\hline
+If I notice my energy level is low, I take corrective steps to re-energize. & 271 & 0.40 & 4.2 & 1.14\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:rdrop15}Behavioral - Dedication Items}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & n & r.drop & mean & sd\\
+\hline
+I make valued contributions to the organization. & 267 & 0.37 & 5.1 & 0.76\\
+\hline
+I embrace challenging situations at work. & 269 & 0.45 & 5.0 & 0.89\\
+\hline
+I speak positively about this organization to others. & 269 & 0.52 & 4.7 & 1.25\\
+\hline
+This organization provides the resources necessary for me to successfully perform my job. & 270 & 0.40 & 4.5 & 1.22\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{qualitative}{%
+\chapter{Qualitative item characteristics}\label{qualitative}}
+
+Quentada reading ability of final items as well as overlapping histograms by scale. Using package \texttt{quanteda} version 2.1.2 \citep{R-quanteda} in R version 4.0.3 (2020-10-10). The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975}. ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} \citep[``difficulty'' of words;][]{chall_dale_1995}. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}} = the number of words matching the Dale-Chall List of 3000 ``familiar words''. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}} = number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
+
+The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). The average Dale-Chall index was 38.61 (\emph{sd} = 11.11).
+
+\hypertarget{frequency-distributions-by-dimension}{%
+\section{Frequency distributions by dimension}\label{frequency-distributions-by-dimension}}
+
+\includegraphics{_main_files/figure-latex/scale-1.pdf} \includegraphics{_main_files/figure-latex/scale-2.pdf} \includegraphics{_main_files/figure-latex/scale-3.pdf} \includegraphics{_main_files/figure-latex/scale-4.pdf} \includegraphics{_main_files/figure-latex/scale-5.pdf} \includegraphics{_main_files/figure-latex/scale-6.pdf}
+
+\hypertarget{tables-of-qualitative-indices}{%
+\section{Tables of qualitative indices}\label{tables-of-qualitative-indices}}
+
+\begin{table}
+
+\caption{\label{tab:freqtables}Organized by Flesch-Kincaid aka Reading Level}
+\centering
+\begin{tabular}[t]{l|l|l|l|r|r}
+\hline
+  & document & Substantive & Attitudinal & Flesch.Kincaid & Dale.Chall\\
+\hline
+36 & This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & 14.0 & 11\\
+\hline
+35 & I speak positively about this organization to others. & Dedication & Behavioral & 12.6 & 35\\
+\hline
+33 & I make valued contributions to the organization & Dedication & Behavioral & 12.4 & 32\\
+\hline
+34 & I embrace challenging situations at work. & Dedication & Behavioral & 10.3 & 12\\
+\hline
+31 & I feel proud of my accomplishments within this organization & Dedication & Affective & 10.2 & 26\\
+\hline
+28 & This organization challenges me to work at my full potential & Dedication & Cognitive & 9.6 & 29\\
+\hline
+24 & If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & 8.3 & 28\\
+\hline
+16 & I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & 8.0 & 22\\
+\hline
+1 & I’m able to concentrate on my work without distractions & Absorption & Cognitive & 7.6 & 37\\
+\hline
+4 & I find it difficult to mentally disconnect from work & Absorption & Cognitive & 7.6 & 26\\
+\hline
+12 & I never allow distractions to interfere with my work & Absorption & Behavioral & 7.6 & 37\\
+\hline
+18 & Most days I feel enthusiastic about starting my work day. & Vigor & Affective & 7.2 & 48\\
+\hline
+15 & I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & 6.7 & 41\\
+\hline
+27 & I often think about finding another job (r) & Dedication & Cognitive & 6.7 & 47\\
+\hline
+22 & I express enthusiasm for my job while at work & Vigor & Behavioral & 6.3 & 37\\
+\hline
+26 & I believe this company cares about my career goals & Dedication & Cognitive & 6.3 & 47\\
+\hline
+29 & I am proud to be a member of this organization. & Dedication & Affective & 6.0 & 48\\
+\hline
+30 & I feel supported by my supervisor when I fail at a task & Dedication & Affective & 5.8 & 40\\
+\hline
+14 & Thinking about work saps my energy (r) & Vigor & Cognitive & 5.7 & 32\\
+\hline
+17 & I enjoy spending time completing my job tasks. & Vigor & Affective & 5.2 & 47\\
+\hline
+6 & Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & 5.0 & 34\\
+\hline
+2 & I have a hard time detaching mentally from my work & Absorption & Cognitive & 4.8 & 38\\
+\hline
+7 & I am happiest when I am immersed in a project & Absorption & Affective & 4.8 & 38\\
+\hline
+13 & I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & 4.8 & 40\\
+\hline
+5 & I enjoy thinking about work even when I’m not at work & Absorption & Affective & 4.8 & 56\\
+\hline
+19 & I feel motivated to go beyond what is asked of me & Vigor & Affective & 4.8 & 39\\
+\hline
+3 & Time passes quickly while I’m working & Absorption & Cognitive & 4.4 & 60\\
+\hline
+25 & I plan my future with this company. & Dedication & Cognitive & 4.0 & 46\\
+\hline
+32 & My job makes me feel like I’m part of something meaningful & Dedication & Affective & 3.7 & 48\\
+\hline
+9 & I devote more time than is expected of me. & Absorption & Behavioral & 3.6 & 47\\
+\hline
+8 & I love starting my workday. & Absorption & Affective & 2.9 & 42\\
+\hline
+10 & I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & 2.9 & 56\\
+\hline
+11 & I never miss a work deadline. & Absorption & Behavioral & 2.5 & 44\\
+\hline
+20 & This job drains my energy (r) & Vigor & Affective & 2.5 & 28\\
+\hline
+21 & When work is slow I find ways to be productive. & Vigor & Behavioral & 2.5 & 48\\
+\hline
+23 & I try my best to perform well at work & Vigor & Behavioral & 1.0 & 47\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:freqtables}Organized by Dale Chall aka includes Difficult Words}
+\centering
+\begin{tabular}[t]{l|l|l|l|r|r}
+\hline
+  & document & Substantive & Attitudinal & Flesch.Kincaid & Dale.Chall\\
+\hline
+36 & This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & 14.0 & 11\\
+\hline
+34 & I embrace challenging situations at work. & Dedication & Behavioral & 10.3 & 12\\
+\hline
+16 & I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & 8.0 & 22\\
+\hline
+4 & I find it difficult to mentally disconnect from work & Absorption & Cognitive & 7.6 & 26\\
+\hline
+31 & I feel proud of my accomplishments within this organization & Dedication & Affective & 10.2 & 26\\
+\hline
+20 & This job drains my energy (r) & Vigor & Affective & 2.5 & 28\\
+\hline
+24 & If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & 8.3 & 28\\
+\hline
+28 & This organization challenges me to work at my full potential & Dedication & Cognitive & 9.6 & 29\\
+\hline
+14 & Thinking about work saps my energy (r) & Vigor & Cognitive & 5.7 & 32\\
+\hline
+33 & I make valued contributions to the organization & Dedication & Behavioral & 12.4 & 32\\
+\hline
+6 & Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & 5.0 & 34\\
+\hline
+35 & I speak positively about this organization to others. & Dedication & Behavioral & 12.6 & 35\\
+\hline
+1 & I’m able to concentrate on my work without distractions & Absorption & Cognitive & 7.6 & 37\\
+\hline
+12 & I never allow distractions to interfere with my work & Absorption & Behavioral & 7.6 & 37\\
+\hline
+22 & I express enthusiasm for my job while at work & Vigor & Behavioral & 6.3 & 37\\
+\hline
+2 & I have a hard time detaching mentally from my work & Absorption & Cognitive & 4.8 & 38\\
+\hline
+7 & I am happiest when I am immersed in a project & Absorption & Affective & 4.8 & 38\\
+\hline
+19 & I feel motivated to go beyond what is asked of me & Vigor & Affective & 4.8 & 39\\
+\hline
+13 & I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & 4.8 & 40\\
+\hline
+30 & I feel supported by my supervisor when I fail at a task & Dedication & Affective & 5.8 & 40\\
+\hline
+15 & I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & 6.7 & 41\\
+\hline
+8 & I love starting my workday. & Absorption & Affective & 2.9 & 42\\
+\hline
+11 & I never miss a work deadline. & Absorption & Behavioral & 2.5 & 44\\
+\hline
+25 & I plan my future with this company. & Dedication & Cognitive & 4.0 & 46\\
+\hline
+17 & I enjoy spending time completing my job tasks. & Vigor & Affective & 5.2 & 47\\
+\hline
+27 & I often think about finding another job (r) & Dedication & Cognitive & 6.7 & 47\\
+\hline
+9 & I devote more time than is expected of me. & Absorption & Behavioral & 3.6 & 47\\
+\hline
+23 & I try my best to perform well at work & Vigor & Behavioral & 1.0 & 47\\
+\hline
+26 & I believe this company cares about my career goals & Dedication & Cognitive & 6.3 & 47\\
+\hline
+18 & Most days I feel enthusiastic about starting my work day. & Vigor & Affective & 7.2 & 48\\
+\hline
+21 & When work is slow I find ways to be productive. & Vigor & Behavioral & 2.5 & 48\\
+\hline
+29 & I am proud to be a member of this organization. & Dedication & Affective & 6.0 & 48\\
+\hline
+32 & My job makes me feel like I’m part of something meaningful & Dedication & Affective & 3.7 & 48\\
+\hline
+10 & I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & 2.9 & 56\\
+\hline
+5 & I enjoy thinking about work even when I’m not at work & Absorption & Affective & 4.8 & 56\\
+\hline
+3 & Time passes quickly while I’m working & Absorption & Cognitive & 4.4 & 60\\
+\hline
+\end{tabular}
+\end{table}
+
+  \bibliography{book.bib,engage.bib,packages.bib,bifactor.bib}
+
+\end{document}
