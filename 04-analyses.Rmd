@@ -357,6 +357,8 @@ semPaths(fit2,"std", edge.label.cex = 0.5, curvePivot = TRUE, rotation=4)
 
 > Note that the semPlots package has [an option to generate bifactor plots](https://www.rdocumentation.org/packages/semPlot/versions/1.1.2/topics/semPaths) 
 
+Deese guys also do bifactor stuff: @mansolf_when_2017
+
 ### Summary
 
 Recommendation for final instrument based on consideration of all of the above pieces of evidence
