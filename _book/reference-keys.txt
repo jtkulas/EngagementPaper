@@ -18,7 +18,6 @@ tab:rdrop13
 tab:rdrop14
 tab:rdrop15
 tab:freqtables
-homepage
 intro
 definitions-of-engagement
 instrument-creation

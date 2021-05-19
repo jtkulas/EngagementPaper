@@ -14,7 +14,7 @@ toc-depth: 4
 description: "This is a technical report that contains the development of the Eagle IO Engagement survey. The output format for this example is bookdown::gitbook."
 ---
 
-# Home {#homepage}
+# Home {.unnumbered}
 
 
 ```{r quicker, message=FALSE, warning=FALSE, echo=FALSE}

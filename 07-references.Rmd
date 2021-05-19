@@ -275,7 +275,7 @@ Quentada reading ability of final items as well as overlapping histograms by sca
 
 ```{r quanteda, echo=FALSE, warning=FALSE, message=FALSE}
 library(quanteda)
-library(quanteda.textstats)
+## library(quanteda.textstats)
 
 data2 <- corpus(cond1, docid_field = "Condition1",
   text_field = "Condition1")
