@@ -158,3 +158,37 @@ semPlot::semPaths(Fit1.2,whatLabels = "std", layout = "tree", rotation=2)
 lavaan::fitMeasures(Fit1.2)
 summary(Fit1.2, fit.measure=TRUE)
 
+## Bifactor below (5/19/21):
+
+Bifactor_Model<-'
+Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
+Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+Cognitive ~~ 0*Absorption
+Cognitive ~~ 0*Vigor
+Cognitive ~~ 0*Dedication
+Affextive ~~ 0*Absorption
+Affective ~~ 0*Vigor
+Affective ~~ 0*Dedication
+Behavioral ~~ 0*Absorption
+Behavioral ~~ 0*Vigor
+Behavioral ~~ 0*Dedication
+Absorption ~~ 0*Cognitive
+Absorption ~~ 0*Affective
+Absorption ~~ 0*Behavioral
+Vigor ~~ 0*Cognitive
+Vigor ~~ 0*Affective
+Vigor ~~ 0*Behavioral
+Dedication ~~ 0*Cognitive
+Dedication ~~ 0*Affective
+Dedication ~~ 0*Behavioral'
+
+Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata)
+
+semPlot::semPaths(Fit.Bi, bifactor = c("Cognitive", "Affective", "Behavioral"), layout = "tree3", rotation = 2)
+
+## for SIOP: https://lavaan.ugent.be/tutorial/groups.html
+## 1) MI across experimental groups; 2) a priori bifactor; 3) ???
