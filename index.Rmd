@@ -37,4 +37,4 @@ knitr::write_bib(.packages(all.available = TRUE), "packages.bib")
 
 This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
 
-
+This report was written with `bookdown` [@R-bookdown] within `rMarkdown` [@R-markdown] using `R` version `r version$major`.`r version$minor`.

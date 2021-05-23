@@ -111,7 +111,7 @@
 
 \title{Engagement Survey Technical Report}
 \author{Eagle I.O}
-\date{Most recently updated 2021-05-19}
+\date{Most recently updated 2021-05-23}
 
 \begin{document}
 \maketitle
@@ -127,6 +127,8 @@
 \includegraphics{EE.jpeg}
 
 This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
+
+This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt{rMarkdown} \citep{R-markdown} using \texttt{R} version 4.0.5.
 
 \hypertarget{intro}{%
 \chapter{Introduction}\label{intro}}
@@ -296,8 +298,6 @@ These are to be included in future administrations in an attempt to develop mark
 
 \includegraphics{results.jpg}
 
-bifactor analysis are most commonly applied in the exploration of common method variance \citep[see, for example,][]{reise_rediscovery_2012, rodriguez_evaluating_2016}. \citet{giordano_exploratory_2020} provide an overview regarding past and potential applications of \emph{exploratory} bifactor analysis and cite \citet{reise_rediscovery_2012} as an influential impetus for the resurgence of bifactor models in general.
-
 \hypertarget{pilot-analyses-1}{%
 \section{Pilot analyses}\label{pilot-analyses-1}}
 
@@ -390,15 +390,185 @@ Hierarchical attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68 \\
 \hypertarget{bifactor-analyses}{%
 \subsubsection{Bifactor analyses}\label{bifactor-analyses}}
 
-\begin{itemize}
-\tightlist
-\item
-  looking at dual structure
-\end{itemize}
+bifactor analysis are most commonly applied in the exploration of common method variance \citep[see, for example,][]{reise_rediscovery_2012, rodriguez_evaluating_2016}. \citet{giordano_exploratory_2020} provide an overview regarding past and potential applications of \emph{exploratory} bifactor analysis and cite \citet{reise_rediscovery_2012} as an influential impetus for the resurgence of bifactor models in general.
 
-\begin{quote}
-Note that the semPlots package has \href{https://www.rdocumentation.org/packages/semPlot/versions/1.1.2/topics/semPaths}{an option to generate bifactor plots}
-\end{quote}
+\includegraphics{_main_files/figure-latex/bifactor-1.pdf}
+
+\begin{verbatim}
+## lavaan 0.6-8 did NOT end normally after 820 iterations
+## ** WARNING ** Estimates below are most likely unreliable
+## 
+##   Estimator                                         ML
+##   Optimization method                           NLMINB
+##   Number of model parameters                       114
+##                                                       
+##                                                   Used       Total
+##   Number of observations                           239         282
+##                                                                   
+## Model Test User Model:
+##                                                       
+##   Test statistic                                    NA
+##   Degrees of freedom                                NA
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                             Standard
+##   Information                                 Expected
+##   Information saturated (h1) model          Structured
+## 
+## Latent Variables:
+##                    Estimate   Std.Err  z-value  P(>|z|)
+##   Cognitive =~                                         
+##     Item_1             1.000                           
+##     Item_2             0.516       NA                  
+##     Item_3             1.090       NA                  
+##     Item_4             0.353       NA                  
+##     Item_13            1.130       NA                  
+##     Item_14            0.838       NA                  
+##     Item_15            0.798       NA                  
+##     Item_16            1.098       NA                  
+##     Item_25            0.988       NA                  
+##     Item_26            0.909       NA                  
+##     Item_27            1.080       NA                  
+##     Item_28            0.999       NA                  
+##   Affective =~                                         
+##     Item_5             1.000                           
+##     Item_6             0.656       NA                  
+##     Item_7             0.475       NA                  
+##     Item_8             1.242       NA                  
+##     Item_17            0.933       NA                  
+##     Item_18            1.372       NA                  
+##     Item_19            1.044       NA                  
+##     Item_20            0.536       NA                  
+##     Item_29            0.841       NA                  
+##     Item_30            0.381       NA                  
+##     Item_31            0.724       NA                  
+##     Item_32            1.063       NA                  
+##   Behavioral =~                                        
+##     Item_9             1.000                           
+##     Item_10            1.109       NA                  
+##     Item_11            0.572       NA                  
+##     Item_12            1.176       NA                  
+##     Item_21            1.362       NA                  
+##     Item_22            1.573       NA                  
+##     Item_23            0.873       NA                  
+##     Item_24            0.890       NA                  
+##     Item_33            0.707       NA                  
+##     Item_34            0.879       NA                  
+##     Item_35            1.237       NA                  
+##     Item_36            0.369       NA                  
+##   Absorption =~                                        
+##     Item_1             1.000                           
+##     Item_2         19131.383       NA                  
+##     Item_3          -390.734       NA                  
+##     Item_4         21074.473       NA                  
+##     Item_5          2937.496       NA                  
+##     Item_6         -1569.896       NA                  
+##     Item_7           727.592       NA                  
+##     Item_8         -1533.787       NA                  
+##     Item_9          4326.028       NA                  
+##     Item_10         5122.173       NA                  
+##     Item_11        -1534.018       NA                  
+##     Item_12        -1356.265       NA                  
+##   Vigor =~                                             
+##     Item_13            1.000                           
+##     Item_14           -3.413       NA                  
+##     Item_15            0.449       NA                  
+##     Item_16           -0.517       NA                  
+##     Item_17           -0.246       NA                  
+##     Item_18           -1.152       NA                  
+##     Item_19            0.766       NA                  
+##     Item_20           -3.510       NA                  
+##     Item_21            0.381       NA                  
+##     Item_22           -0.278       NA                  
+##     Item_23            0.324       NA                  
+##     Item_24            0.093       NA                  
+##   Dedication =~                                        
+##     Item_25            1.000                           
+##     Item_26            1.378       NA                  
+##     Item_27            1.009       NA                  
+##     Item_28            0.830       NA                  
+##     Item_29            0.885       NA                  
+##     Item_30            0.650       NA                  
+##     Item_31            0.274       NA                  
+##     Item_32            0.512       NA                  
+##     Item_33            0.010       NA                  
+##     Item_34            0.122       NA                  
+##     Item_35            0.888       NA                  
+##     Item_36            0.783       NA                  
+## 
+## Covariances:
+##                    Estimate   Std.Err  z-value  P(>|z|)
+##   Cognitive ~~                                         
+##     Affective          0.549       NA                  
+##     Behavioral         0.363       NA                  
+##   Affective ~~                                         
+##     Behavioral         0.372       NA                  
+##   Absorption ~~                                        
+##     Vigor              0.000       NA                  
+##     Dedication        -0.000       NA                  
+##   Vigor ~~                                             
+##     Dedication        -0.082       NA                  
+##   Cognitive ~~                                         
+##     Absorption         0.000                           
+##     Vigor              0.000                           
+##     Dedication         0.000                           
+##   Affective ~~                                         
+##     Absorption         0.000                           
+##     Vigor              0.000                           
+##     Dedication         0.000                           
+##   Behavioral ~~                                        
+##     Absorption         0.000                           
+##     Vigor              0.000                           
+##     Dedication         0.000                           
+## 
+## Variances:
+##                    Estimate   Std.Err  z-value  P(>|z|)
+##    .Item_1             1.343       NA                  
+##    .Item_2             0.350       NA                  
+##    .Item_3             0.786       NA                  
+##    .Item_4             0.124       NA                  
+##    .Item_13            0.809       NA                  
+##    .Item_14            0.659       NA                  
+##    .Item_15            1.471       NA                  
+##    .Item_16            0.760       NA                  
+##    .Item_25            1.350       NA                  
+##    .Item_26            0.629       NA                  
+##    .Item_27            1.282       NA                  
+##    .Item_28            0.763       NA                  
+##    .Item_5             1.324       NA                  
+##    .Item_6             1.195       NA                  
+##    .Item_7             0.845       NA                  
+##    .Item_8             0.688       NA                  
+##    .Item_17            0.484       NA                  
+##    .Item_18            0.559       NA                  
+##    .Item_19            0.771       NA                  
+##    .Item_20            0.780       NA                  
+##    .Item_29            0.479       NA                  
+##    .Item_30            1.514       NA                  
+##    .Item_31            0.538       NA                  
+##    .Item_32            0.667       NA                  
+##    .Item_9             1.293       NA                  
+##    .Item_10            1.961       NA                  
+##    .Item_11            1.288       NA                  
+##    .Item_12            1.342       NA                  
+##    .Item_21            0.894       NA                  
+##    .Item_22            0.510       NA                  
+##    .Item_23            0.338       NA                  
+##    .Item_24            1.026       NA                  
+##    .Item_33            0.401       NA                  
+##    .Item_34            0.532       NA                  
+##    .Item_35            0.547       NA                  
+##    .Item_36            0.984       NA                  
+##     Cognitive          0.593       NA                  
+##     Affective          0.639       NA                  
+##     Behavioral         0.283       NA                  
+##     Absorption         0.000       NA                  
+##     Vigor              0.072       NA                  
+##     Dedication         0.596       NA
+\end{verbatim}
+
+Currently pretty messed up prior to item deletion (Vigor especially). Model also technically not converging need Renata to fix.
 
 Deese guys also do bifactor stuff: \citet{mansolf_when_2017}
 

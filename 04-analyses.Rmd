@@ -2,7 +2,6 @@
 
 ![](results.jpg)
 
-bifactor analysis are most commonly applied in the exploration of common method variance [see, for example, @reise_rediscovery_2012;  @rodriguez_evaluating_2016]. @giordano_exploratory_2020 provide an overview regarding past and potential applications of *exploratory* bifactor analysis and cite @reise_rediscovery_2012 as an influential impetus for the resurgence of bifactor models in general. 
 
 ```{r data, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -353,9 +352,37 @@ semPaths(fit2,"std", edge.label.cex = 0.5, curvePivot = TRUE, rotation=4)
 
 #### Bifactor analyses
 
-+ looking at dual structure
+bifactor analysis are most commonly applied in the exploration of common method variance [see, for example, @reise_rediscovery_2012;  @rodriguez_evaluating_2016]. @giordano_exploratory_2020 provide an overview regarding past and potential applications of *exploratory* bifactor analysis and cite @reise_rediscovery_2012 as an influential impetus for the resurgence of bifactor models in general. 
 
-> Note that the semPlots package has [an option to generate bifactor plots](https://www.rdocumentation.org/packages/semPlot/versions/1.1.2/topics/semPaths) 
+```{r bifactor, echo=FALSE, message=FALSE, warning=FALSE}
+
+## Bifactor below (5/19/21):
+
+Bifactor_Model<-'
+Cognitive=~Item_1+Item_2+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
+Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+Cognitive ~~ Affective
+Cognitive ~~ Behavioral
+Affective ~~ Behavioral
+Absorption ~~ Vigor
+Absorption ~~ Dedication
+Vigor ~~ Dedication'
+
+Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata, orthogonal=TRUE)
+
+semPlot::semPaths(Fit.Bi, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
+              rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)  ## exoCov=FALSE deletes all covariances
+title("Initial pilot bifactor analysis (36 candidate items)")
+
+summary(Fit.Bi)
+
+```
+
+Currently pretty messed up prior to item deletion (Vigor especially). Model also technically not converging need Renata to fix.
 
 Deese guys also do bifactor stuff: @mansolf_when_2017
 
