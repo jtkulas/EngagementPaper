@@ -167,18 +167,21 @@ Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_
 Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
 Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
-Cognitive ~~ Affective
-Cognitive ~~ Behavioral
-Affective ~~ Behavioral
-Absorption ~~ Vigor
-Absorption ~~ Dedication
-Vigor ~~ Dedication'
+'
+#Cognitive ~~ Affective
+#Cognitive ~~ Behavioral
+#Affective ~~ Behavioral
+#Absorption ~~ Vigor
+#Absorption ~~ Dedication
+#Vigor ~~ Dedication'
 
-Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata, orthogonal=TRUE)
+Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata, orthogonal=TRUE, likelihood = "wishart")
 
 semPlot::semPaths(Fit.Bi, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
               rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)  ## exoCov=FALSE deletes all covariances
 title("Initial pilot bifactor analysis (36 candidate items)")
+
+modindices(Fit.Bi, sort = TRUE, maximum.number = 5)
 
 ## for SIOP: https://lavaan.ugent.be/tutorial/groups.html
 ## 1) MI across experimental groups; 2) a priori bifactor; 3) convergent/discriminant validation

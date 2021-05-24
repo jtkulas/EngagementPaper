@@ -64,6 +64,9 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
+% Avoid problems with \sout in headers with hyperref
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -111,7 +114,7 @@
 
 \title{Engagement Survey Technical Report}
 \author{Eagle I.O}
-\date{Most recently updated 2021-05-23}
+\date{Most recently updated 2021-05-24}
 
 \begin{document}
 \maketitle
@@ -587,18 +590,42 @@ Use Gallup for construct validation \citep{thackray_gallup_2005, harter_relation
 
 \includegraphics{future.jpg}
 
-Development of the feedback report will occur in stages:
+Most effort is currently dedicated to the technical report. We also need feedback reports and a user manual. The feedback report(s) are the most secondarily important.
+
+The development of the feedback report will occur in stages:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Static .pdf
+  static .pdf
+\item
+  ``static'' .html (standard template but potentially interactive elements)
+\item
+  ``static'' \texttt{xaringan} \citep{R-xaringan}
+\item
+  dynamic \texttt{xaringan}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  user-generated presenter notes
+\item
+  user-selected visuals (taken from .html report)
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
 \item
   Dynamic dashboard
-\item
-  Optimize interpretation (invite contributions of cognitive psychologists and/or graphic designers)
 \end{enumerate}
+
+The intent is to lean on the \texttt{xaringan} presentation as the central marketable piece. Initial templates should be able to do client colors and fonts via chunk specification, but evolved templates should be client-driven, such that figures can be selected and annotated from the .html, generating a user-selected and annotated \texttt{xaringan} presentation that can be hosted by Eagle but accessed via password protection by the client.
+
+Eventually Eagle could optimize interpretation via contributions of cognitive psychologists, graphic designers, etc.
 
 \hypertarget{things-to-do}{%
 \section{Things to do}\label{things-to-do}}
@@ -608,10 +635,34 @@ Development of the feedback report will occur in stages:
 \item
   Finalize items
 \item
-  Get survey into Qualtrics for pilot testing
+  \sout{Get survey into Qualtrics for pilot testing}
 \item
   Work on feedback report
+\item
+  Generate User Manual
 \end{itemize}
+
+\hypertarget{research-projects}{%
+\section{Research projects}\label{research-projects}}
+
+\begin{figure}
+\centering
+\includegraphics{SeattleViewinblue.jpg}
+\caption{SIOP 2022}
+\end{figure}
+
+Three projects are being targetted for SIOP 2022:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Engagement instrument development
+\item
+  Measurement invariance across the 4 pilot administration conditions
+\item
+  Engagement instrument validation (data collection summer 2021)
+\end{enumerate}
 
 \hypertarget{author-bios}{%
 \chapter{Author bios}\label{author-bios}}

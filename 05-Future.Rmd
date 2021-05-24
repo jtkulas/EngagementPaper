@@ -2,16 +2,35 @@
 
 ![](future.jpg)
 
-Development of the feedback report will occur in stages:
+Most effort is currently dedicated to the technical report. We also need feedback reports and a user manual. The feedback report(s) are the most secondarily important.
 
-1. Static .pdf
-2. Dynamic dashboard
-3. Optimize interpretation (invite contributions of cognitive psychologists and/or graphic designers)
+The development of the feedback report will occur in stages:
+
+1. static .pdf
+2. "static" .html (standard template but potentially interactive elements)
+3. "static" `xaringan` [@R-xaringan]
+4. dynamic `xaringan`
+  + user-generated presenter notes
+  + user-selected visuals (taken from .html report)
+5. Dynamic dashboard
+
+The intent is to lean on the `xaringan` presentation as the central marketable piece. Initial templates should be able to do client colors and fonts via chunk specification, but evolved templates should be client-driven, such that figures can be selected and annotated from the .html, generating a user-selected and annotated `xaringan` presentation that can be hosted by Eagle but accessed via password protection by the client.
+
+Eventually Eagle could optimize interpretation via contributions of cognitive psychologists, graphic designers, etc.
 
 ## Things to do 
 
 + Finalize items 
-+ Get survey into Qualtrics for pilot testing
++ ~~Get survey into Qualtrics for pilot testing~~
 + Work on feedback report 
++ Generate User Manual
 
+## Research projects
 
+![SIOP 2022](SeattleViewinblue.jpg)
+
+Three projects are being targetted for SIOP 2022: 
+
+1. Engagement instrument development
+2. Measurement invariance across the 4 pilot administration conditions
+3. Engagement instrument validation (data collection summer 2021)
