@@ -114,7 +114,7 @@
 
 \title{Engagement Survey Technical Report}
 \author{Eagle I.O}
-\date{Most recently updated 2021-05-24}
+\date{Most recently updated 2021-06-01}
 
 \begin{document}
 \maketitle
@@ -131,7 +131,7 @@
 
 This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
 
-This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt{rMarkdown} \citep{R-markdown} using \texttt{R} version 4.0.5.
+This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt{rMarkdown} \citep{R-markdown} using \texttt{R} version 4.0.5 \citep{R-base}.
 
 \hypertarget{intro}{%
 \chapter{Introduction}\label{intro}}
@@ -141,7 +141,7 @@ This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt
 \hypertarget{definitions-of-engagement}{%
 \section{Definitions of Engagement}\label{definitions-of-engagement}}
 
-The roots of employee (aka work) engagement research started with theoretical expansions of forms of employee participation \citep[see, for example,][]{ferris_added_1984} and job involvement \citep[e.g.,][]{elloy_examination_1991}. This exploration extended into broader considerations of attitudes and emotions \citep{staw_employee_1994} and were informed by further exploration of the dimensionality of constructs such as organizational commitment \citep{meyer_three-component_1991}. The 1990's saw further development and refinement {[}for example, a dissertation; \citet{leone_relation_1995}{]}. \citet{staw_employee_1994} presented a basic mediation model to demonstrate a relationship between \emph{positive emotions} and favourable work outcomes. Although they do not use the word, ``engagement'', their distinction between felt and expressed emotion was perhaps a contributor to the subsequent wider pursuit of engagement. Gallup was an early adopter of measurement of the construct \citep[see, for example,][]{coffman_hard_1999}.
+The roots of employee \citep[aka work; e.g.,][]{schaufeli_conceptualization_2010} engagement research likely started with theoretical expansions of forms of employee participation \citep[see, for example,][]{ferris_added_1984} and job involvement \citep[e.g.,][]{elloy_examination_1991}. This exploration extended into broader considerations of attitudes and emotions \citep{staw_employee_1994} and were informed by further exploration of the dimensionality of constructs such as organizational commitment \citep{meyer_three-component_1991}. The 1990's saw focused development and refinement {[}for example, a dissertation; \citet{leone_relation_1995} or actual semantic reference; \citet{kahn_psychological_1990}{]}. \citet{staw_employee_1994} investigated the relationships between \emph{positive emotions} and favourable work outcomes, and although they do not use the word, ``engagement'', their distinction between felt and expressed emotion was likely a stimulating influence upon the burgeoning interest in the engagement construct. Gallup is also widely acknowledged as an early pioneer in the measurement of the construct \citep[see, for example,][]{coffman_hard_1999}.
 
 \begin{itemize}
 \item
@@ -161,8 +161,6 @@ The roots of employee (aka work) engagement research started with theoretical ex
 \end{itemize}
 
 The tripartite substantive model of employee engagement is also partially informed by the definitions provided with the Utrecht Work Engagement Scale \citep{schaufeli_utrecht_2003}.
-
-We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from \citet{schaufeli_measurement_2002}, and we are trying to find where Fulfillment came from. We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain.
 
 \hypertarget{instrument-creation}{%
 \chapter{Instrument creation}\label{instrument-creation}}
@@ -680,8 +678,6 @@ Three projects are being targetted for SIOP 2022:
 \hypertarget{references}{%
 \chapter{References}\label{references}}
 
-\citeauthor{simpson_engagement_2009} \citetext{\citeyear{simpson_engagement_2009}; \citealp{kahn_psychological_1990}; \citealp{leiter_areas_2003}; \citealp{rothbard_enriching_2001}; \citealp{saks_antecedents_2006}; \citealp{schaufeli_measurement_2002}; \citealp{simpson_engagement_2009}}
-
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \end{CSLReferences}
@@ -698,9 +694,11 @@ Three projects are being targetted for SIOP 2022:
 
 This is believed to be Eagle I.O's initial definition of engagement:
 
+\begin{quote}
 A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
+\end{quote}
 
-This definition was created by Eagle IO Spring 2019, and modified by Dr.~Kulas and Renata Fall 2019 to include the \emph{four} dimensions of Fulfillment, Absorbtion, Dedication, and Vigor.
+This definition was created by Eagle IO Spring 2019, and modified by Kulas and Renata the following Fall semester of 2019 to include the \emph{four} dimensions of Fulfillment, Absorbtion, Dedication, and Vigor.
 
 \hypertarget{spring-2020}{%
 \section{Spring 2020}\label{spring-2020}}
@@ -710,6 +708,13 @@ We considered removing fulfillment.
 \emph{Fulfillment}: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. {[}Satisfaction(?){]}
 
 It was decided to operationalize fullfillment as an \emph{outcome} of engagement rather than a definitional element
+
+\hypertarget{february-4-2020}{%
+\subsection{February 4, 2020}\label{february-4-2020}}
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020).
+
+Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from \citet{schaufeli_measurement_2002}, and we are trying to find where Fulfillment came from. We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain.
 
 \hypertarget{february-24-2020}{%
 \subsection{February 24, 2020}\label{february-24-2020}}
@@ -4243,7 +4248,7 @@ This organization provides the resources necessary for me to successfully perfor
 \hypertarget{qualitative}{%
 \chapter{Qualitative item characteristics}\label{qualitative}}
 
-Quentada reading ability of final items as well as overlapping histograms by scale. Using package \texttt{quanteda} version 2.1.2 \citep{R-quanteda} in R version 4.0.5 (2021-03-31). The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975}. ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} {[}``difficulty'' of words; \citet{chall_dale_1995}{]}. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}} = the number of words matching the Dale-Chall List of 3000 ``familiar words''. \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}} = number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
+Item reading level information was performed via the package \texttt{quanteda} version 2.1.2 \citep{R-quanteda} in R version 4.0.5 (2021-03-31). Two indices were investigated: ``Flesch-Kincaid'' is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975} whereas ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} {[}``difficulty'' of words; \citet{chall_dale_1995}{]}. These indices are primarily influenced by two qualitative characteristics: \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}}, which is the number of words matching the Dale-Chall List of 3000 ``familiar words'', and \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}}, which is the number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
 
 The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). The average Dale-Chall index was 38.61 (\emph{sd} = 11.11).
 

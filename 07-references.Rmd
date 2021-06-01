@@ -1,8 +1,5 @@
 # References
 
-@simpson_engagement_2009
-[@kahn_psychological_1990; @leiter_areas_2003; @rothbard_enriching_2001; @saks_antecedents_2006; @schaufeli_measurement_2002; @simpson_engagement_2009]
-
 <div id="refs"></div>
 
 # (APPENDIX) Appendices {-} 
@@ -14,9 +11,9 @@
 
 This is believed to be Eagle I.O's initial definition of engagement:
 
-A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
+>A state of personal immersion in work characterized by enthusiasm, dedication, and personal investment, expressed cognitively, affectively, and behaviorally in the proactive pursuit of advancing organizational goals.
 
-This definition was created by Eagle IO Spring 2019, and modified by Dr. Kulas and Renata Fall 2019 to include the *four* dimensions of Fulfillment, Absorbtion, Dedication, and Vigor. 
+This definition was created by Eagle IO Spring 2019, and modified by Kulas and Renata the following Fall semester of 2019 to include the *four* dimensions of Fulfillment, Absorbtion, Dedication, and Vigor. 
 
 ## Spring 2020 
 
@@ -25,6 +22,13 @@ We considered removing fulfillment.
 *Fulfillment*: finding meaning in one's work, while having a sense of autonomy, growth, usefulness, achievement, and feeling appreciated by org. [Satisfaction(?)]
 
 It was decided to operationalize fullfillment as an *outcome* of engagement rather than a definitional element 
+
+### February 4, 2020
+
+We lost the document where we had saved the citations for the creation of our engagement dimensions. we found it today (02/04/2020). 
+
+Three out of the four dimensions (Dedication, Vigor, and Absorbtion) came from @schaufeli_measurement_2002, and we are trying to find where Fulfillment came from. 
+We are also trying to improve the definition of each domain by looking at the current items and conducting a Modified Q sort (not correct name) to create piles of items that have commonalities within each domain. 
 
 ### February 24, 2020
 
@@ -271,7 +275,7 @@ kable(beh.ded$item.stats[-c(2:4)], digits=2, caption="Behavioral - Dedication It
 
 # Qualitative item characteristics {#qualitative}
 
-Quentada reading ability of final items as well as overlapping histograms by scale. Using package `quanteda` version `r packageVersion("quanteda")` [@R-quanteda] in `r R.version.string`. The Flesch-Kincaid is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975]. "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995].  [*N~wf~*](https://quanteda.io/reference/textstat_readability.html) = the number of words matching the Dale-Chall List of 3000 "familiar words". [*N~wd~*](https://quanteda.io/reference/textstat_readability.html) = number of "difficult" words not matching the Dale-Chall list of "familiar" words. 
+Item reading level information was performed via the package `quanteda` version `r packageVersion("quanteda")` [@R-quanteda] in `r R.version.string`. Two indices were investigated: "Flesch-Kincaid" is the same grade level index that's currently used by Microsoft Word [@kincaid_derivation_1975] whereas "Dale.Chall" reflects *N~wd~* ["difficulty" of words; @chall_dale_1995]. These indices are primarily influenced by two qualitative characteristics: [*N~wf~*](https://quanteda.io/reference/textstat_readability.html), which is the number of words matching the Dale-Chall List of 3000 "familiar words", and  [*N~wd~*](https://quanteda.io/reference/textstat_readability.html), which is the number of "difficult" words not matching the Dale-Chall list of "familiar" words. 
 
 ```{r quanteda, echo=FALSE, warning=FALSE, message=FALSE}
 library(quanteda)

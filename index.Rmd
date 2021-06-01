@@ -22,7 +22,7 @@ description: "This is a technical report that contains the development of the Ea
 ## new machines in DH 226 were slow - the following accesses all available processor cores
 
 ## run this code in the console prior to building book:
-library(quanteda.textstats)
+#library(quanteda.textstats)
 library(parallel)
 numCores <- detectCores()
 mc.cores = numCores
@@ -37,4 +37,4 @@ knitr::write_bib(.packages(all.available = TRUE), "packages.bib")
 
 This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
 
-This report was written with `bookdown` [@R-bookdown] within `rMarkdown` [@R-markdown] using `R` version `r version$major`.`r version$minor`.
+This report was written with `bookdown` [@R-bookdown] within `rMarkdown` [@R-markdown] using `R` version `r version$major`.`r version$minor` [@R-base].
