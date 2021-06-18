@@ -1,0 +1,119 @@
+---
+title             : "Development of a BiFactor Engagement Measure"
+shorttitle        : "BiFactor Engagement"
+
+author: 
+  - name          : "Morgan Russell"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Postal address"
+    email         : "my@email.com"
+  - name          : "Casey Osorio-Duffoo"
+    affiliation   : "2"
+  - name          : "Renata Garcia Prieto Palacios Roji"
+    affiliation   : "1"
+  - name          : "John Kulas"
+    affiliation   : "1"
+
+affiliation:
+  - id            : "1"
+    institution   : "Montclair State University"
+  - id            : "2"
+    institution   : "Harver"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
+  
+  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
+  
+  One sentence clearly stating the **general problem** being addressed by  this particular study.
+  
+  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
+  
+  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
+  
+  One or two sentences to put the results into a more **general context**.
+  
+  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : ["r-references.bib", "engage.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("r-references.bib")
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+
+The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. The 1990's saw focused development and refinement (for example, a dissertation; @leone_relation_1995 or actual semantic reference; @kahn_psychological_1990). @staw_employee_1994 investigated the  relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct. 
+
+@kahn_psychological_1990 described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. @goering2017not explore nomological networks, concluding that these two constructs have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
+
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker’s involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one’s work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one’s work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. This absorption element has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow". 
+
+Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements. 
+
+> we need to do some market research on the Q12: 1. what's the feedback report look like? (google images show one overall "satsifaction" score and/or one overall "engagement" score), 2. how much does it cost, 3. what are the 200 pulse items Gallup refers to? (6/7/21)
+
+Our conceptualization of work engagement is a mental state wherein employees...  
+
++ ...feel energized (**Vigor**)
++ ...are enthusiastic about the content of their work and the things they do (**Dedication**)
++ ...are so immersed in their work activities that time seems compressed (**Absorption**)
+
+# Methods
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+## Participants
+
+## Material
+
+## Procedure
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+
+# Results
+
+# Discussion
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
