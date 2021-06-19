@@ -46,7 +46,7 @@ abstract: |
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : ["r-references.bib", "engage.bib"]
+bibliography      : ["r-references.bib", "engage.bib", "siopadds.bib"]
 
 floatsintext      : no
 figurelist        : no
@@ -97,6 +97,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ## Material
 
 ## Procedure
+Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`)
 
 ## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses.
