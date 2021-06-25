@@ -4,13 +4,14 @@
 %
 \documentclass[
 ]{book}
-\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -41,7 +42,7 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -114,7 +115,7 @@
 
 \title{Engagement Survey Technical Report}
 \author{Eagle I.O}
-\date{Most recently updated 2021-06-02}
+\date{Most recently updated 2021-06-22}
 
 \begin{document}
 \maketitle
@@ -131,7 +132,7 @@
 
 This is a report that documents the technical details regarding the development of the Eagle I.O Engagement survey.
 
-This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt{rMarkdown} \citep{R-markdown} using \texttt{R} version 4.0.5 \citep{R-base}.
+This report was written with \texttt{bookdown} \citep{R-bookdown} within \texttt{rMarkdown} \citep{R-markdown} using \texttt{R} version 4.1.0 \citep{R-base}.
 
 \hypertarget{intro}{%
 \chapter{Introduction}\label{intro}}
@@ -184,12 +185,12 @@ The survey is intentionally complex in terms of item and scale associations. The
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Substantive & Attitudinal \\
+Substantive & Attitudinal\tabularnewline
 \midrule
 \endhead
-Dedication & Affective \\
-Absorption & Behavioral \\
-Vigor & Cognitive \\
+Dedication & Affective\tabularnewline
+Absorption & Behavioral\tabularnewline
+Vigor & Cognitive\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -302,14 +303,12 @@ These are to be included in future administrations in an attempt to develop mark
 \hypertarget{pilot-analyses-1}{%
 \section{Pilot analyses}\label{pilot-analyses-1}}
 
-282 people responded. We may want to further screen these 282 responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the ``number of people who clicked on the assessment link (330)'' versus valid \emph{n} (282) may take care of our very low duration respondents. The shortest response duration in the 330 datafile is 101 whereas the lowest in the 282 datafile is 43. All analyses were performed via \texttt{R} version R version 4.0.5 (2021-03-31) \citep{R-base}.
+282 people responded. We may want to further screen these 282 responses for short response durations. According to communications with Qualtrics in early December, this is the number of seconds to complete the entire survey. Currently, the ``number of people who clicked on the assessment link (330)'' versus valid \emph{n} (282) may take care of our very low duration respondents. The shortest response duration in the 330 datafile is 101 whereas the lowest in the 282 datafile is 43. All analyses were performed via \texttt{R} version R version 4.1.0 (2021-05-18) \citep{R-base}.
 
 \hypertarget{classical-test-theory}{%
 \subsection{Classical test theory}\label{classical-test-theory}}
 
 In addition to the below interactive plot {[}via \texttt{plotly} version 4.9.3; \citet{R-plotly}{]}, a full inter-item correlation matrix is located in Appendix \ref{corrs}.
-
-\includegraphics{_main_files/figure-latex/interactive_plot-1.pdf}
 
 \begin{verbatim}
 ## Some items ( I find it difficult to mentally disconnect from work. ) were negatively correlated with the total scale and 
@@ -324,16 +323,16 @@ Condition 1 administered items within the substantive dimensions (with successiv
 
 \begin{longtable}[]{@{}llllll@{}}
 \toprule
-Dimension & Undifferentiated & Condition 1 & Condition 2 & Condition 3 & Condition 4 \\
+Dimension & Undifferentiated & Condition 1 & Condition 2 & Condition 3 & Condition 4\tabularnewline
 \midrule
 \endhead
-Affective & 0.87 & 0.88 & 0.84 & 0.88 & 0.87 \\
-Behavioral & 0.79 & 0.73 & 0.84 & 0.76 & 0.87 \\
-Cognitive & 0.81 & 0.79 & 0.85 & 0.8 & 0.87 \\
-& & & & & \\
-Absorption & 0.74 & 0.72 & 0.77 & 0.72 & 0.87 \\
-Vigor & 0.85 & 0.8 & 0.88 & 0.84 & 0.87 \\
-Dedication & 0.9 & 0.9 & 0.91 & 0.91 & 0.87 \\
+Affective & 0.87 & 0.88 & 0.84 & 0.88 & 0.87\tabularnewline
+Behavioral & 0.79 & 0.73 & 0.84 & 0.76 & 0.87\tabularnewline
+Cognitive & 0.81 & 0.79 & 0.85 & 0.8 & 0.87\tabularnewline
+& & & & &\tabularnewline
+Absorption & 0.74 & 0.72 & 0.77 & 0.72 & 0.87\tabularnewline
+Vigor & 0.85 & 0.8 & 0.88 & 0.84 & 0.87\tabularnewline
+Dedication & 0.9 & 0.9 & 0.91 & 0.91 & 0.87\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -341,20 +340,20 @@ Dedication & 0.9 & 0.9 & 0.91 & 0.91 & 0.87 \\
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Cell & Alpha \\
+Cell & Alpha\tabularnewline
 \midrule
 \endhead
-Affective - Absorption & 0.66 \\
-Affective - Vigor & 0.71 \\
-Affective - Dedication & 0.75 \\
-& \\
-Behavioral - Absorption & 0.56 \\
-Behavioral - Vigor & 0.7 \\
-Behavioral - Dedication & 0.64 \\
-& \\
-Cognitive - Absorption & 0.59 \\
-Cognitive - Vigor & 0.62 \\
-Cognitive - Dedication & 0.83 \\
+Affective - Absorption & 0.66\tabularnewline
+Affective - Vigor & 0.71\tabularnewline
+Affective - Dedication & 0.75\tabularnewline
+&\tabularnewline
+Behavioral - Absorption & 0.56\tabularnewline
+Behavioral - Vigor & 0.7\tabularnewline
+Behavioral - Dedication & 0.64\tabularnewline
+&\tabularnewline
+Cognitive - Absorption & 0.59\tabularnewline
+Cognitive - Vigor & 0.62\tabularnewline
+Cognitive - Dedication & 0.83\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -369,13 +368,13 @@ We used \texttt{lavaan} version 0.6.8 \citep{R-lavaan} and \texttt{semPlot} vers
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 \midrule
 \endhead
-3-factor substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97 \\
-Hierarchical substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97 \\
-3-factor attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68 \\
-Hierarchical attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68 \\
+3-factor substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97\tabularnewline
+Hierarchical substantive & 2159.21 & 591 & 0.11 & 0.1 & 0.64 & 0.62 & 25481.97\tabularnewline
+3-factor attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68\tabularnewline
+Hierarchical attitudinal & 2318.92 & 591 & 0.11 & 0.1 & 0.6 & 0.58 & 25641.68\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -766,13 +765,13 @@ Our four orderings of items were randomized within dimension (Affective, Behavio
 \hline
 Condition1 & Substantive & Attitudinal & Dimension & Block & Item\\
 \hline
-I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A & A\\
+I’m able to concentrate on my work without distractions  & Absorption & Cognitive & A & A & A\\
 \hline
-I have a hard time detaching mentally from my work & Absorption & Cognitive & A & A & B\\
+I have a hard time detaching mentally from my work  & Absorption & Cognitive & A & A & B\\
 \hline
 Time passes quickly while I’m working & Absorption & Cognitive & A & A & C\\
 \hline
-I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & A & D\\
+I find it difficult to mentally disconnect from work  & Absorption & Cognitive & A & A & D\\
 \hline
 I enjoy thinking about work even when I’m not at work & Absorption & Affective & A & B & A\\
 \hline
@@ -786,11 +785,11 @@ I devote more time than is expected of me. & Absorption & Behavioral & A & C & A
 \hline
 I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & A & C & B\\
 \hline
-I never miss a work deadline. & Absorption & Behavioral & A & C & C\\
+I never miss a work deadline.  & Absorption & Behavioral & A & C & C\\
 \hline
-I never allow distractions to interfere with my work & Absorption & Behavioral & A & C & D\\
+I never allow distractions to interfere with my work  & Absorption & Behavioral & A & C & D\\
 \hline
-I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & B & A & A\\
+I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & B & A & A\\
 \hline
 Thinking about work saps my energy (r) & Vigor & Cognitive & B & A & B\\
 \hline
@@ -808,7 +807,7 @@ This job drains my energy (r) & Vigor & Affective & B & B & D\\
 \hline
 When work is slow I find ways to be productive. & Vigor & Behavioral & B & C & A\\
 \hline
-I express enthusiasm for my job while at work & Vigor & Behavioral & B & C & B\\
+I express enthusiasm for my job while at work  & Vigor & Behavioral & B & C & B\\
 \hline
 I try my best to perform well at work & Vigor & Behavioral & B & C & C\\
 \hline
@@ -820,15 +819,15 @@ I believe this company cares about my career goals & Dedication & Cognitive & C 
 \hline
 I often think about finding another job (r) & Dedication & Cognitive & C & A & C\\
 \hline
-This organization challenges me to work at my full potential & Dedication & Cognitive & C & A & D\\
+This organization challenges me to work at my full potential  & Dedication & Cognitive & C & A & D\\
 \hline
 I am proud to be a member of this organization. & Dedication & Affective & C & B & A\\
 \hline
 I feel supported by my supervisor when I fail at a task & Dedication & Affective & C & B & B\\
 \hline
-I feel proud of my accomplishments within this organization & Dedication & Affective & C & B & C\\
+I feel proud of my accomplishments within this organization  & Dedication & Affective & C & B & C\\
 \hline
-My job makes me feel like I’m part of something meaningful & Dedication & Affective & C & B & D\\
+My job makes me feel like I’m part of something meaningful  & Dedication & Affective & C & B & D\\
 \hline
 I make valued contributions to the organization & Dedication & Behavioral & C & C & A\\
 \hline
@@ -849,15 +848,15 @@ This organization provides the resources necessary for me to successfully perfor
 \hline
 Condition2 & Substantive & Attitudinal & Dimension & Block & Item\\
 \hline
-I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A & A\\
+I’m able to concentrate on my work without distractions  & Absorption & Cognitive & A & A & A\\
 \hline
-I have a hard time detaching mentally from my work & Absorption & Cognitive & A & A & B\\
+I have a hard time detaching mentally from my work  & Absorption & Cognitive & A & A & B\\
 \hline
 Time passes quickly while I’m working & Absorption & Cognitive & A & A & C\\
 \hline
-I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & A & D\\
+I find it difficult to mentally disconnect from work  & Absorption & Cognitive & A & A & D\\
 \hline
-I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & A & B & A\\
+I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & A & B & A\\
 \hline
 Thinking about work saps my energy (r) & Vigor & Cognitive & A & B & B\\
 \hline
@@ -871,7 +870,7 @@ I believe this company cares about my career goals & Dedication & Cognitive & A 
 \hline
 I often think about finding another job (r) & Dedication & Cognitive & A & C & C\\
 \hline
-This organization challenges me to work at my full potential & Dedication & Cognitive & A & C & D\\
+This organization challenges me to work at my full potential  & Dedication & Cognitive & A & C & D\\
 \hline
 I enjoy thinking about work even when I’m not at work & Absorption & Affective & B & A & A\\
 \hline
@@ -893,21 +892,21 @@ I am proud to be a member of this organization. & Dedication & Affective & B & C
 \hline
 I feel supported by my supervisor when I fail at a task & Dedication & Affective & B & C & B\\
 \hline
-I feel proud of my accomplishments within this organization & Dedication & Affective & B & C & C\\
+I feel proud of my accomplishments within this organization  & Dedication & Affective & B & C & C\\
 \hline
-My job makes me feel like I’m part of something meaningful & Dedication & Affective & B & C & D\\
+My job makes me feel like I’m part of something meaningful  & Dedication & Affective & B & C & D\\
 \hline
 I devote more time than is expected of me. & Absorption & Behavioral & C & A & A\\
 \hline
 I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & C & A & B\\
 \hline
-I never miss a work deadline. & Absorption & Behavioral & C & A & C\\
+I never miss a work deadline.  & Absorption & Behavioral & C & A & C\\
 \hline
-I never allow distractions to interfere with my work & Absorption & Behavioral & C & A & D\\
+I never allow distractions to interfere with my work  & Absorption & Behavioral & C & A & D\\
 \hline
 When work is slow I find ways to be productive. & Vigor & Behavioral & C & B & A\\
 \hline
-I express enthusiasm for my job while at work & Vigor & Behavioral & C & B & B\\
+I express enthusiasm for my job while at work  & Vigor & Behavioral & C & B & B\\
 \hline
 I try my best to perform well at work & Vigor & Behavioral & C & B & C\\
 \hline
@@ -932,13 +931,13 @@ This organization provides the resources necessary for me to successfully perfor
 \hline
 Condition3 & Substantive & Attitudinal & Dimension & Item\\
 \hline
-I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A\\
+I’m able to concentrate on my work without distractions  & Absorption & Cognitive & A & A\\
 \hline
 I enjoy thinking about work even when I’m not at work & Absorption & Affective & A & B\\
 \hline
 I devote more time than is expected of me. & Absorption & Behavioral & A & C\\
 \hline
-I have a hard time detaching mentally from my work & Absorption & Cognitive & A & D\\
+I have a hard time detaching mentally from my work  & Absorption & Cognitive & A & D\\
 \hline
 Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & A & E\\
 \hline
@@ -948,15 +947,15 @@ Time passes quickly while I’m working & Absorption & Cognitive & A & G\\
 \hline
 I am happiest when I am immersed in a project & Absorption & Affective & A & H\\
 \hline
-I never miss a work deadline. & Absorption & Behavioral & A & I\\
+I never miss a work deadline.  & Absorption & Behavioral & A & I\\
 \hline
-I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & J\\
+I find it difficult to mentally disconnect from work  & Absorption & Cognitive & A & J\\
 \hline
 I love starting my workday. & Absorption & Affective & A & K\\
 \hline
-I never allow distractions to interfere with my work & Absorption & Behavioral & A & L\\
+I never allow distractions to interfere with my work  & Absorption & Behavioral & A & L\\
 \hline
-I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & B & A\\
+I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & B & A\\
 \hline
 I enjoy spending time completing my job tasks. & Vigor & Affective & B & B\\
 \hline
@@ -966,7 +965,7 @@ Thinking about work saps my energy (r) & Vigor & Cognitive & B & D\\
 \hline
 Most days I feel enthusiastic about starting my work day. & Vigor & Affective & B & E\\
 \hline
-I express enthusiasm for my job while at work & Vigor & Behavioral & B & F\\
+I express enthusiasm for my job while at work  & Vigor & Behavioral & B & F\\
 \hline
 I would rather direct my focus toward a work task than a personal task & Vigor & Cognitive & B & G\\
 \hline
@@ -994,13 +993,13 @@ I embrace challenging situations at work. & Dedication & Behavioral & C & F\\
 \hline
 I often think about finding another job (r) & Dedication & Cognitive & C & G\\
 \hline
-I feel proud of my accomplishments within this organization & Dedication & Affective & C & H\\
+I feel proud of my accomplishments within this organization  & Dedication & Affective & C & H\\
 \hline
 I speak positively about this organization to others. & Dedication & Behavioral & C & I\\
 \hline
-This organization challenges me to work at my full potential & Dedication & Cognitive & C & J\\
+This organization challenges me to work at my full potential  & Dedication & Cognitive & C & J\\
 \hline
-My job makes me feel like I’m part of something meaningful & Dedication & Affective & C & K\\
+My job makes me feel like I’m part of something meaningful  & Dedication & Affective & C & K\\
 \hline
 This organization provides the resources necessary for me to successfully perform my job & Dedication & Behavioral & C & L\\
 \hline
@@ -1015,13 +1014,13 @@ This organization provides the resources necessary for me to successfully perfor
 \hline
 Condition4 & Substantive & Attitudinal & Dimension & Item\\
 \hline
-I’m able to concentrate on my work without distractions & Absorption & Cognitive & A & A\\
+I’m able to concentrate on my work without distractions  & Absorption & Cognitive & A & A\\
 \hline
-I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & A & B\\
+I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & A & B\\
 \hline
 I plan my future with this company. & Dedication & Cognitive & A & C\\
 \hline
-I have a hard time detaching mentally from my work & Absorption & Cognitive & A & D\\
+I have a hard time detaching mentally from my work  & Absorption & Cognitive & A & D\\
 \hline
 Thinking about work saps my energy (r) & Vigor & Cognitive & A & E\\
 \hline
@@ -1033,11 +1032,11 @@ I would rather direct my focus toward a work task than a personal task & Vigor &
 \hline
 I often think about finding another job (r) & Dedication & Cognitive & A & I\\
 \hline
-I find it difficult to mentally disconnect from work & Absorption & Cognitive & A & J\\
+I find it difficult to mentally disconnect from work  & Absorption & Cognitive & A & J\\
 \hline
 I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & A & K\\
 \hline
-This organization challenges me to work at my full potential & Dedication & Cognitive & A & L\\
+This organization challenges me to work at my full potential  & Dedication & Cognitive & A & L\\
 \hline
 I enjoy thinking about work even when I’m not at work & Absorption & Affective & B & A\\
 \hline
@@ -1055,13 +1054,13 @@ I am happiest when I am immersed in a project & Absorption & Affective & B & G\\
 \hline
 I feel motivated to go beyond what is asked of me & Vigor & Affective & B & H\\
 \hline
-I feel proud of my accomplishments within this organization & Dedication & Affective & B & I\\
+I feel proud of my accomplishments within this organization  & Dedication & Affective & B & I\\
 \hline
 I love starting my workday. & Absorption & Affective & B & J\\
 \hline
 This job drains my energy (r) & Vigor & Affective & B & K\\
 \hline
-My job makes me feel like I’m part of something meaningful & Dedication & Affective & B & L\\
+My job makes me feel like I’m part of something meaningful  & Dedication & Affective & B & L\\
 \hline
 I devote more time than is expected of me. & Absorption & Behavioral & C & A\\
 \hline
@@ -1071,17 +1070,17 @@ I make valued contributions to the organization & Dedication & Behavioral & C & 
 \hline
 I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & C & D\\
 \hline
-I express enthusiasm for my job while at work & Vigor & Behavioral & C & E\\
+I express enthusiasm for my job while at work  & Vigor & Behavioral & C & E\\
 \hline
 I embrace challenging situations at work. & Dedication & Behavioral & C & F\\
 \hline
-I never miss a work deadline. & Absorption & Behavioral & C & G\\
+I never miss a work deadline.  & Absorption & Behavioral & C & G\\
 \hline
 I try my best to perform well at work & Vigor & Behavioral & C & H\\
 \hline
 I speak positively about this organization to others. & Dedication & Behavioral & C & I\\
 \hline
-I never allow distractions to interfere with my work & Absorption & Behavioral & C & J\\
+I never allow distractions to interfere with my work  & Absorption & Behavioral & C & J\\
 \hline
 If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & C & K\\
 \hline
@@ -3840,12 +3839,8 @@ Because of the large inter-construct covariance estimates, we constructed standa
 \hypertarget{substantive-scales}{%
 \subsection{Substantive scales}\label{substantive-scales}}
 
-\includegraphics{_main_files/figure-latex/correlations-1.pdf}
-
 \hypertarget{attitudinal-scales}{%
 \subsection{Attitudinal scales}\label{attitudinal-scales}}
-
-\includegraphics{_main_files/figure-latex/correlations2-1.pdf}
 
 \hypertarget{section}{%
 \section*{}\label{section}}
@@ -4248,7 +4243,7 @@ This organization provides the resources necessary for me to successfully perfor
 \hypertarget{qualitative}{%
 \chapter{Qualitative item characteristics}\label{qualitative}}
 
-Item reading level information was performed via the package \texttt{quanteda} version 2.1.2 \citep{R-quanteda} in R version 4.0.5 (2021-03-31). Two indices were investigated: ``Flesch-Kincaid'' is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975} whereas ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} {[}``difficulty'' of words; \citet{chall_dale_1995}{]}. These indices are primarily influenced by two qualitative characteristics: \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}}, which is the number of words matching the Dale-Chall List of 3000 ``familiar words'', and \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}}, which is the number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
+Item reading level information was performed via the package \texttt{quanteda} version 3.0.0 \citep{R-quanteda} in R version 4.1.0 (2021-05-18). Two indices were investigated: ``Flesch-Kincaid'' is the same grade level index that's currently used by Microsoft Word \citep{kincaid_derivation_1975} whereas ``Dale.Chall'' reflects \emph{N\textsubscript{wd}} {[}``difficulty'' of words; \citet{chall_dale_1995}{]}. These indices are primarily influenced by two qualitative characteristics: \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wf}}}, which is the number of words matching the Dale-Chall List of 3000 ``familiar words'', and \href{https://quanteda.io/reference/textstat_readability.html}{\emph{N\textsubscript{wd}}}, which is the number of ``difficult'' words not matching the Dale-Chall list of ``familiar'' words.
 
 The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). The average Dale-Chall index was 38.61 (\emph{sd} = 11.11).
 
@@ -4276,19 +4271,19 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 34 & I embrace challenging situations at work. & Dedication & Behavioral & 10.3 & 12\\
 \hline
-31 & I feel proud of my accomplishments within this organization & Dedication & Affective & 10.2 & 26\\
+31 & I feel proud of my accomplishments within this organization  & Dedication & Affective & 10.2 & 26\\
 \hline
-28 & This organization challenges me to work at my full potential & Dedication & Cognitive & 9.6 & 29\\
+28 & This organization challenges me to work at my full potential  & Dedication & Cognitive & 9.6 & 29\\
 \hline
 24 & If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & 8.3 & 28\\
 \hline
 16 & I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & 8.0 & 22\\
 \hline
-1 & I’m able to concentrate on my work without distractions & Absorption & Cognitive & 7.6 & 37\\
+1 & I’m able to concentrate on my work without distractions  & Absorption & Cognitive & 7.6 & 37\\
 \hline
-4 & I find it difficult to mentally disconnect from work & Absorption & Cognitive & 7.6 & 26\\
+4 & I find it difficult to mentally disconnect from work  & Absorption & Cognitive & 7.6 & 26\\
 \hline
-12 & I never allow distractions to interfere with my work & Absorption & Behavioral & 7.6 & 37\\
+12 & I never allow distractions to interfere with my work  & Absorption & Behavioral & 7.6 & 37\\
 \hline
 18 & Most days I feel enthusiastic about starting my work day. & Vigor & Affective & 7.2 & 48\\
 \hline
@@ -4296,7 +4291,7 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 27 & I often think about finding another job (r) & Dedication & Cognitive & 6.7 & 47\\
 \hline
-22 & I express enthusiasm for my job while at work & Vigor & Behavioral & 6.3 & 37\\
+22 & I express enthusiasm for my job while at work  & Vigor & Behavioral & 6.3 & 37\\
 \hline
 26 & I believe this company cares about my career goals & Dedication & Cognitive & 6.3 & 47\\
 \hline
@@ -4310,11 +4305,11 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 6 & Most days, I feel happiest when the workday is soon to be complete (r) & Absorption & Affective & 5.0 & 34\\
 \hline
-2 & I have a hard time detaching mentally from my work & Absorption & Cognitive & 4.8 & 38\\
+2 & I have a hard time detaching mentally from my work  & Absorption & Cognitive & 4.8 & 38\\
 \hline
 7 & I am happiest when I am immersed in a project & Absorption & Affective & 4.8 & 38\\
 \hline
-13 & I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & 4.8 & 40\\
+13 & I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & 4.8 & 40\\
 \hline
 5 & I enjoy thinking about work even when I’m not at work & Absorption & Affective & 4.8 & 56\\
 \hline
@@ -4324,7 +4319,7 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 25 & I plan my future with this company. & Dedication & Cognitive & 4.0 & 46\\
 \hline
-32 & My job makes me feel like I’m part of something meaningful & Dedication & Affective & 3.7 & 48\\
+32 & My job makes me feel like I’m part of something meaningful  & Dedication & Affective & 3.7 & 48\\
 \hline
 9 & I devote more time than is expected of me. & Absorption & Behavioral & 3.6 & 47\\
 \hline
@@ -4332,7 +4327,7 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 10 & I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & 2.9 & 56\\
 \hline
-11 & I never miss a work deadline. & Absorption & Behavioral & 2.5 & 44\\
+11 & I never miss a work deadline.  & Absorption & Behavioral & 2.5 & 44\\
 \hline
 20 & This job drains my energy (r) & Vigor & Affective & 2.5 & 28\\
 \hline
@@ -4357,15 +4352,15 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 16 & I’m able to maintain good levels of energy throughout the workday & Vigor & Cognitive & 8.0 & 22\\
 \hline
-4 & I find it difficult to mentally disconnect from work & Absorption & Cognitive & 7.6 & 26\\
+4 & I find it difficult to mentally disconnect from work  & Absorption & Cognitive & 7.6 & 26\\
 \hline
-31 & I feel proud of my accomplishments within this organization & Dedication & Affective & 10.2 & 26\\
+31 & I feel proud of my accomplishments within this organization  & Dedication & Affective & 10.2 & 26\\
 \hline
 20 & This job drains my energy (r) & Vigor & Affective & 2.5 & 28\\
 \hline
 24 & If I notice my energy level is low, I take corrective steps to re-energize. & Vigor & Behavioral & 8.3 & 28\\
 \hline
-28 & This organization challenges me to work at my full potential & Dedication & Cognitive & 9.6 & 29\\
+28 & This organization challenges me to work at my full potential  & Dedication & Cognitive & 9.6 & 29\\
 \hline
 14 & Thinking about work saps my energy (r) & Vigor & Cognitive & 5.7 & 32\\
 \hline
@@ -4375,19 +4370,19 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 35 & I speak positively about this organization to others. & Dedication & Behavioral & 12.6 & 35\\
 \hline
-1 & I’m able to concentrate on my work without distractions & Absorption & Cognitive & 7.6 & 37\\
+1 & I’m able to concentrate on my work without distractions  & Absorption & Cognitive & 7.6 & 37\\
 \hline
-12 & I never allow distractions to interfere with my work & Absorption & Behavioral & 7.6 & 37\\
+12 & I never allow distractions to interfere with my work  & Absorption & Behavioral & 7.6 & 37\\
 \hline
-22 & I express enthusiasm for my job while at work & Vigor & Behavioral & 6.3 & 37\\
+22 & I express enthusiasm for my job while at work  & Vigor & Behavioral & 6.3 & 37\\
 \hline
-2 & I have a hard time detaching mentally from my work & Absorption & Cognitive & 4.8 & 38\\
+2 & I have a hard time detaching mentally from my work  & Absorption & Cognitive & 4.8 & 38\\
 \hline
 7 & I am happiest when I am immersed in a project & Absorption & Affective & 4.8 & 38\\
 \hline
 19 & I feel motivated to go beyond what is asked of me & Vigor & Affective & 4.8 & 39\\
 \hline
-13 & I devote my full attention to my work tasks throughout the day & Vigor & Cognitive & 4.8 & 40\\
+13 & I devote my full attention to my work tasks throughout the day  & Vigor & Cognitive & 4.8 & 40\\
 \hline
 30 & I feel supported by my supervisor when I fail at a task & Dedication & Affective & 5.8 & 40\\
 \hline
@@ -4395,7 +4390,7 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 8 & I love starting my workday. & Absorption & Affective & 2.9 & 42\\
 \hline
-11 & I never miss a work deadline. & Absorption & Behavioral & 2.5 & 44\\
+11 & I never miss a work deadline.  & Absorption & Behavioral & 2.5 & 44\\
 \hline
 25 & I plan my future with this company. & Dedication & Cognitive & 4.0 & 46\\
 \hline
@@ -4415,7 +4410,7 @@ The average Flesch-Kincaied (e.g., reading grade) was 6.2 (\emph{sd} = 3.04). Th
 \hline
 29 & I am proud to be a member of this organization. & Dedication & Affective & 6.0 & 48\\
 \hline
-32 & My job makes me feel like I’m part of something meaningful & Dedication & Affective & 3.7 & 48\\
+32 & My job makes me feel like I’m part of something meaningful  & Dedication & Affective & 3.7 & 48\\
 \hline
 10 & I have to be reminded to take breaks while I’m at work & Absorption & Behavioral & 2.9 & 56\\
 \hline
