@@ -1,0 +1,14 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.sub-1.pdf}
+\caption{(\#fig:CFA.sub)Substantive factor structure CFA}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att-1.pdf}
+\caption{(\#fig:CFA.att)Attitudinal factor structure CFA}
+\end{figure*}
