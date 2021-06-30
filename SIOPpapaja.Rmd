@@ -94,6 +94,22 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
+```{r getData, echo=FALSE, warning=FALSE}
+
+#CFA Analysis
+
+temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
+
+x <- temp[2,]
+data <- temp[-c(1:3),]
+colnames(data) <- x
+
+num <- nrow(data)
+
+```
+
+`r num` individuals provided ratings across 36 candidate items. 
+
 ## Material
 
 ## Procedure
@@ -108,16 +124,6 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 CFA drafts below
 
 ```{r CFA.sub, echo=FALSE, warning=FALSE, fig.cap="Substantive factor structure CFA"}
-
-#CFA Analysis
-
-temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
-
-x <- temp[2,]
-data <- temp[-c(1:3),]
-colnames(data) <- x
-
-num <- nrow(data)
 
 ## getting conditions into one large file below - 12/9/20
 
