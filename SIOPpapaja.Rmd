@@ -1,5 +1,5 @@
 ---
-title             : "Development of a BiFactor Engagement Measure"
+title             : "Development of an Intentional BiFactor Engagement Measure"
 shorttitle        : "BiFactor Engagement"
 
 author: 
@@ -46,7 +46,7 @@ abstract: |
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : ["r-references.bib", "engage.bib", "siopadds.bib"]
+bibliography      : ["r-references.bib", "engage.bib", "siopadds.bib", "bifactor.bib", "book.bib", "renata.bib"]
 
 floatsintext      : no
 figurelist        : no
