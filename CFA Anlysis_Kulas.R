@@ -120,6 +120,9 @@ semPlot::semPaths(Fit1.1, "std")
 fit1.1 <- as.data.frame(fitMeasures(Fit1.1))
 summary(Fit1.1, fit.measure=TRUE)
 
+write.csv(modindices(Fit1.1, sort=TRUE), "fit_substantive.csv")
+
+
 write.csv(fit1.1, "temp.csv")
 
 ## Looking at scale correlations because of very large latent covariances
@@ -157,6 +160,9 @@ Fit1.2<-lavaan::cfa(Att_Model, data = CFAdata)
 semPlot::semPaths(Fit1.2,"std")
 lavaan::fitMeasures(Fit1.2)
 summary(Fit1.2, fit.measure=TRUE)
+
+write.csv(modindices(Fit1.2, sort=TRUE), "fit_attitudinal.csv")
+
 
 ## Bifactor below (5/19/21):
 

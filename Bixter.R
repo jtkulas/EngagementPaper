@@ -27,8 +27,8 @@ Dedication ~~ 0*Cognitive
 
 ## Thread on correlations as input and need to constrain residual variances: https://groups.google.com/g/lavaan/c/sJuzT7obIpg?pli=1
 
-Fit.Bi <- lavaan::cfa(Bifactor_Model, data = poly$rho) ## Absorption & Vigor have correlation over 1
-Fit.Bi <- lavaan::cfa(Bifactor_Model, sample.cov = poly$rho, sample.nobs = 282, likelihood = "wishart")
+Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata) ## Absorption & Vigor have correlation over 1
+Fit.Bi <- lavaan::cfa(Bifactor_Model, sample.cov = poly$rho, sample.nobs = 282, estimator = "GLS")
 Fit.Bi <- lavaan::cfa(Bifactor_Model, data = CFAdata, estimator = "MLR")
 modindices(Fit.Bi, sort = TRUE, maximum.number = 5)
 summary(Fit.Bi)
