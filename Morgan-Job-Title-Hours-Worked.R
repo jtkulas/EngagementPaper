@@ -43,7 +43,9 @@ onet <- c('Agriculture, Food & Natural Resources', 'Archtecture & Construction',
 together$`What is the title of the job you were thinking about while responding to this survey?` %>% 
   tolower() %>% 
   trimws() 
-  
+
+demo_table <- datatable(together[38:41])
+
 
 
 # To do:
