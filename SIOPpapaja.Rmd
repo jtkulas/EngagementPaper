@@ -95,7 +95,7 @@ Our conceptualization of work engagement is a mental state wherein employees...
 
 # Methods
 
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices.
 
 ## Participants
 

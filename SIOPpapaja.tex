@@ -5,14 +5,13 @@
 \documentclass[
   english,
   man]{apa6}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -41,7 +40,7 @@
   pdftitle={Development of an Intentional BiFactor Engagement Measure},
   pdfauthor={Morgan Russell1, Casey Osorio-Duffoo2, Renata Garcia Prieto Palacios Roji1, \& John Kulas1},
   pdflang={en-EN},
-  pdfkeywords={keywords},
+  pdfkeywords={Engagement, engagement},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -113,7 +112,7 @@
   {}{\typeout{Failed to patch title.}}
 \makeatother
 \shorttitle{BiFactor Engagement}
-\keywords{keywords\newline\indent Word count: X}
+\keywords{Engagement, engagement\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -129,7 +128,10 @@
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
 \else
-  \usepackage[shorthands=off,main=english]{babel}
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
@@ -173,6 +175,9 @@ Correspondence concerning this article should be addressed to Morgan Russell, Po
 \affiliation{\vspace{0.5cm}\textsuperscript{1} Montclair State University\\\textsuperscript{2} Harver}
 
 \abstract{
+Employee engagement has, in recent years, enjoyed a surge in popularity as a positive employee outcome.
+Despite this burgeoning interest, disagreement still remains regarding its factor structure and nomological relationship with similar concepts, such as burnout.
+
 One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
 
 Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
@@ -195,9 +200,9 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 
 The roots of employee (aka work; e.g., W. Schaufeli \& Bakker, 2010) engagement research likely started with theoretical expansions of forms of employee participation (see, for example, Ferris \& Hellier, 1984) and job involvement (e.g., Elloy, Everett, \& Flynn, 1991). This exploration extended into broader considerations of attitudes and emotions (Staw, Sutton, \& Pelled, 1994) and were informed by further exploration of the dimensionality of constructs such as organizational commitment (Meyer \& Allen, 1991). The 1990's saw focused development and refinement (for example, a dissertation; Leone (1995) or actual semantic reference; Kahn (1990)). Staw, Sutton, and Pelled (1994) investigated the relationships between \emph{positive emotions} and favorable work outcomes, and although they do not use the word, ``engagement,'' their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
 
-Kahn (1990) described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to \emph{burnout} (Christina Maslach \& Leiter, 2008), these two constructs are currently most commonly conceptualized as being distinct (Goering, Shimazu, Zhou, Wada, \& Sakai, 2017; Kim, Shin, \& Swanger, 2009; Wilmar B. Schaufeli, Taris, \& Van Rhenen, 2008; Timms, Brough, \& Graham, 2012), although certainly not universally (Cole, Walter, Bedeian, \& O'Boyle, 2012; Taris, Ybema, \& Beek, 2017). Goering, Shimazu, Zhou, Wada, and Sakai (2017) explore nomological networks, concluding that these two constructs have a moderate (negative) association, but also distinct nomological networks. Wilmar B. Schaufeli, Taris, and Van Rhenen (2008) investigated both internal and external association indicators, concluding that engagement and burnout (as well as \emph{workaholism}) should be considered three distinct constructs.
+Kahn (1990) described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to \emph{burnout} (Christina Maslach \& Leiter, 2008), these two constructs are currently most commonly conceptualized as being distinct (Goering, Shimazu, Zhou, Wada, \& Sakai, 2017; Kim, Shin, \& Swanger, 2009; Wilmar B. Schaufeli, Taris, \& Van Rhenen, 2008; Timms, Brough, \& Graham, 2012), although certainly not universally (Cole, Walter, Bedeian, \& O'Boyle, 2012; Taris, Ybema, \& Beek, 2017). Comparing the two, Goering, Shimazu, Zhou, Wada, and Sakai (2017) concluded that they have a moderate (negative) association, but also distinct nomological networks. Wilmar B. Schaufeli, Taris, and Van Rhenen (2008) investigated both internal and external association indicators, concluding that engagement and burnout (as well as \emph{workaholism}) should be considered three distinct constructs.
 
-Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low efficacy), which is experienced in response to chronic job stressors (e.g., Leiter \& Maslach, 2004; C. Maslach \& Leiter, 1997). Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work (Harter, Schmidt, \& Hayes, 2002). W. B. Schaufeli and Bakker (2003) further specify a ``positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption'' (p.~74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work (Wilmar B. Schaufeli, Salanova, González-Romá, \& Bakker, 2002). This absorption element has been noted as being influenced in conceptual specification by (Csikszentmihalyi, 1990)'s concept of ``flow.''
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors (e.g., Leiter \& Maslach, 2004; C. Maslach \& Leiter, 1997). Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work (Harter, Schmidt, \& Hayes, 2002). W. B. Schaufeli and Bakker (2003) further specify a ``positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption'' (p.~74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work (Wilmar B. Schaufeli, Salanova, González-Romá, \& Bakker, 2002). This absorption element has been noted as being influenced in conceptual specification by (Csikszentmihalyi, 1990)'s concept of ``flow.''
 
 Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct (see, for example, Coffman \& Harter, 1999). The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by W. B. Schaufeli and Bakker (2003) that directly assesses the vigor, dedication, and absorption elements.
 
@@ -220,7 +225,7 @@ Our conceptualization of work engagement is a mental state wherein employees\ldo
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices.
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
@@ -238,7 +243,7 @@ Looking into the specification of polychoric covariances (Jöreskog, 1994). This
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used R {[}Version 4.1.0; R Core Team (2021){]} and the R-packages \emph{dplyr} {[}Version 1.0.6; Wickham, François, Henry, and Müller (2021){]}, \emph{kableExtra} {[}Version 1.3.4; Zhu (2021){]}, \emph{lavaan} {[}Version 0.6.8; Rosseel (2012){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{sem} {[}Version 3.1.11; Fox, Nie, and Byrnes (2020); Epskamp (2019){]}, and \emph{semPlot} {[}Version 1.1.2; Epskamp (2019){]} for all our analyses.
+We used R {[}Version 4.0.5; R Core Team (2021){]} and the R-packages \emph{dplyr} {[}Version 1.0.6; Wickham, François, Henry, and Müller (2021){]}, \emph{kableExtra} {[}Version 1.3.4; Zhu (2021){]}, \emph{lavaan} {[}Version 0.6.8; Rosseel (2012){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{sem} {[}Version 3.1.11; Fox, Nie, and Byrnes (2020); Epskamp (2019){]}, and \emph{semPlot} {[}Version 1.1.2; Epskamp (2019){]} for all our analyses.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
