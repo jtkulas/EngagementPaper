@@ -119,9 +119,12 @@ num <- nrow(data)
 
 Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`). We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices. 
 
-### CFA Modividation Indices
+### CFA Modification Indices
 
-Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
+Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1] 
+
+We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
+
 
 [^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association).
 

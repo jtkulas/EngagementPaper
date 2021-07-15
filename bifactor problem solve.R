@@ -156,11 +156,15 @@ write.csv(modindices(Fit1.2, sort = TRUE, maximum.number = 25), "att.csv")
 #####################################################################################
 #####################################################################################
 
+## delete: 2, 12
+## 9,33
+
+## write.csv(cor(CFAdata, use="pairwise.complete.obs"), "correlations.csv")
 
 Sub_Model<-'
-Absorption=~Item_1+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
+Absorption=~Item_1+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_10+Item_11
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
-Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_34+Item_35+Item_36
 '
 
 Fit2.1<-lavaan::cfa(Sub_Model, data = CFAdata)
@@ -170,11 +174,13 @@ write.csv(modindices(Fit2.1, sort = TRUE, maximum.number = 25), "sub2.csv")
 Att_Model<-'
 Cognitive=~Item_1+Item_3+Item_4+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
 Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
-Behavioral=~Item_9+Item_10+Item_11+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+Behavioral=~Item_10+Item_11+Item_21+Item_22+Item_23+Item_24+Item_34+Item_35+Item_36
 '
 Fit2.2<-lavaan::cfa(Att_Model, data = CFAdata)
 write.csv(modindices(Fit2.2, sort = TRUE, maximum.number = 25), "att2.csv")
 
+semPlot::semPaths(Fit2.2, "std", layout = "tree3", 
+                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
 
 #####################################################################################
 #####################################################################################
@@ -237,18 +243,18 @@ summary(Fit.Bi)
 #############################################################################################
 #############################################################################################
 #############################################################################################
-################################# Play Here #################################################
+################################# Minus 2 and 12 ############################################
 #############################################################################################
 #############################################################################################
 #############################################################################################
 
-## delete item 2 (remember to do twice on all iterations)
+## delete items 2, 12 (remember to do twice on all iterations)
 
 modified1 <-'
 Cognitive=~Item_1+Item_3+Item_2+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
 Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
-Behavioral=~Item_9+Item_10+Item_12+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
-Absorption=~Item_1+Item_3+Item_2+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_12
+Behavioral=~Item_9+Item_10+Item_21+Item_22+Item_23+Item_24+Item_33+Item_34+Item_35+Item_36
+Absorption=~Item_1+Item_3+Item_2+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
 Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_33+Item_34+Item_35+Item_36
 Absorption ~~ 0*Affective
@@ -260,13 +266,15 @@ Vigor ~~ 0*Cognitive
 Dedication ~~ 0*Affective
 Dedication ~~ 0*Behavioral
 Dedication ~~ 0*Cognitive
-Dedication ~~ 0*Vigor      
-Dedication ~~ 0*Absorption
-Vigor ~~ 0*Absorption
-Affective ~~ 0*Behavioral
-Affective ~~ 0*Cognitive
-Behavioral ~~ 0*Cognitive
 '
+#Dedication ~~ 0*Vigor      
+#Dedication ~~ 0*Absorption
+#Vigor ~~ 0*Absorption
+#Affective ~~ 0*Behavioral
+#Affective ~~ 0*Cognitive
+#Behavioral ~~ 0*Cognitive
+#'
+
 Fit.mod1 <- lavaan::cfa(modified1, data = CFAdata) 
 
 semPlot::semPaths(Fit.mod1, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
@@ -277,5 +285,52 @@ modindices(Fit.mod1, sort = TRUE, maximum.number = 25)
 summary(Fit.mod1)
 
 
+#############################################################################################
+#############################################################################################
+#############################################################################################
+#############################################################################################
+################################# Play Here #################################################
+#############################################################################################
+#############################################################################################
+#############################################################################################
 
+## delete items 2, 12 
+## delete 33, 9
 
+## deleted if: 1) modification index was high (relative to others) and 2) error residual was within same cell 
+
+modified1 <-'
+Cognitive=~Item_1+Item_3+Item_2+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Behavioral=~Item_10+Item_21+Item_22+Item_23+Item_24+Item_34+Item_35+Item_36
+Absorption=~Item_1+Item_3+Item_2+Item_5+Item_6+Item_7+Item_8+Item_10
+Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_34+Item_35+Item_36
+Absorption ~~ 0*Affective
+Absorption ~~ 0*Behavioral
+Absorption ~~ 0*Cognitive
+Vigor ~~ 0*Affective
+Vigor ~~ 0*Behavioral
+Vigor ~~ 0*Cognitive
+Dedication ~~ 0*Affective
+Dedication ~~ 0*Behavioral
+Dedication ~~ 0*Cognitive
+'
+#Dedication ~~ 0*Vigor      
+#Dedication ~~ 0*Absorption
+#Vigor ~~ 0*Absorption
+#Affective ~~ 0*Behavioral
+#Affective ~~ 0*Cognitive
+#Behavioral ~~ 0*Cognitive
+#'
+
+Fit.mod1 <- lavaan::cfa(modified1, data = CFAdata) 
+
+semPlot::semPaths(Fit.mod1, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
+                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0) 
+
+modindices(Fit.mod1, sort = TRUE, maximum.number = 25)
+
+summary(Fit.mod1)
+
+## write.csv(psych::describe(CFAdata), "descriptives.csv")
