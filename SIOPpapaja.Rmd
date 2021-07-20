@@ -109,26 +109,38 @@ colnames(data) <- x
 
 num <- nrow(data)
 
+temp$V163 <- temp$V163 %>% 
+  gsub("[^0-9./-]", "", .) %>%  # removes all characters not included in brackets
+  gsub(".*/", "", .) %>% # Selects second number after "/" (e.g. 40/50 -> 50)
+  gsub(".*-", "", .) %>%  # Selects second number after "-" (e.g. 50-60 -> 60)
+  gsub("[^0-9]", "", .) %>% # Removes
+  str_sub(1,2) %>% # Subsets all responses to first two indices. Quick and easy way to rule out impossible hour entries
+  as.numeric()
+
+demo_table <- datatable(temp[7:333,162:164], colnames = c("What is the title of the job you were thinking about while responding to this survey?", "How many hours do you typically work per week in this job?", "How long have you been with this organization?"))
 ```
 
-`r num` individuals provided ratings across 36 candidate items.
+`r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
+
+Participant job title, hours worked per week, and organizational tenure were recorded.
+
+`r demo_table`
 
 ## Material
 
 ## Procedure
 
-Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`). We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices. 
+Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`). We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices.
 
 ### CFA Modification Indices
 
-Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1] 
-
-We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
-
+Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
 
 [^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association).
 
->> Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
+We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
+
+> > Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
 
 ## Data analysis
 
