@@ -98,7 +98,8 @@ Our conceptualization of work engagement is a mental state wherein employees...
 ## Participants
 
 ```{r getData, echo=FALSE, warning=FALSE}
-
+library(tidyverse)
+library(DT)
 #CFA Analysis
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
@@ -122,7 +123,9 @@ demo_table <- datatable(temp[7:333,162:164], colnames = c("What is the title of 
 
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
 
-Participant job title, hours worked per week, and organizational tenure were recorded.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `r mean(temp$V163, na.rm = TRUE)`
+
+Mean organizational tenure was INSERT HERE, with a standard deviation of INSERT HERE. YOU NEED TO RECODE TENURE TO ACCOUNT FOR MONTHS/YEARS. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
 `r demo_table`
 
@@ -141,6 +144,8 @@ Looking at the substantive and attitudinal models independently, we requested mo
 We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
 
 > > Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
+
+### Single factor versus bifactor approaches
 
 ## Data analysis
 
