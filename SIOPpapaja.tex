@@ -228,7 +228,9 @@ Our conceptualization of work engagement is a mental state wherein employees\ldo
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-330 individuals provided ratings across 36 candidate items.
+330 individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
+
+Participant job title, hours worked per week, and organizational tenure were recorded.
 
 \hypertarget{material}{%
 \subsection{Material}\label{material}}
@@ -238,12 +240,12 @@ Our conceptualization of work engagement is a mental state wherein employees\ldo
 
 Looking into the specification of polychoric covariances (Jöreskog, 1994). This seems to be not very commonly leveraged (only package that seems to estimate these is \texttt{semPlot}). We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices.
 
-\hypertarget{cfa-modividation-indices}{%
-\subsubsection{CFA Modividation Indices}\label{cfa-modividation-indices}}
+\hypertarget{cfa-modification-indices}{%
+\subsubsection{CFA Modification Indices}\label{cfa-modification-indices}}
 
 Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being ``freed.'' The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of ``Absorption'' and ``Cognition.'' One of these items was therefore a candidate for deletion, and semantic preference was given to item4, ``I find it difficult to mentally disconnect from work'' over item2, ``I have a hard time detaching mentally from my work.'' After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.\footnote{Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association).}
 
-We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same ``cell.'' The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency).
+We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same ``cell.'' The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
 
 \begin{quote}
 \begin{quote}
@@ -254,7 +256,7 @@ Actually it doesn't matter that much with only 1 item deletion - probably go ahe
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used R {[}Version 4.0.5; R Core Team (2021){]} and the R-packages \emph{dplyr} {[}Version 1.0.6; Wickham, François, Henry, and Müller (2021){]}, \emph{kableExtra} {[}Version 1.3.4; Zhu (2021){]}, \emph{lavaan} {[}Version 0.6.8; Rosseel (2012){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{sem} {[}Version 3.1.11; Fox, Nie, and Byrnes (2020); Epskamp (2019){]}, and \emph{semPlot} {[}Version 1.1.2; Epskamp (2019){]} for all our analyses.
+We used R {[}Version 4.0.5; R Core Team (2021){]} and the R-packages \emph{dplyr} {[}Version 1.0.6; Wickham, François, Henry, and Müller (2021){]}, \emph{DT} {[}Version 0.18; Xie, Cheng, and Tan (2021){]}, \emph{forcats} {[}Version 0.5.1; Wickham (2021a){]}, \emph{ggplot2} {[}Version 3.3.3; Wickham (2016){]}, \emph{kableExtra} {[}Version 1.3.4; Zhu (2021){]}, \emph{lavaan} {[}Version 0.6.8; Rosseel (2012){]}, \emph{magrittr} {[}Version 2.0.1; Bache and Wickham (2020){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{purrr} {[}Version 0.3.4; Henry and Wickham (2020){]}, \emph{readr} {[}Version 1.4.0; Wickham and Hester (2020){]}, \emph{sem} {[}Version 3.1.11; Fox, Nie, and Byrnes (2020); Epskamp (2019){]}, \emph{semPlot} {[}Version 1.1.2; Epskamp (2019){]}, \emph{stringr} {[}Version 1.4.0; Wickham (2019){]}, \emph{tibble} {[}Version 3.1.2; Müller and Wickham (2021){]}, \emph{tidyr} {[}Version 1.1.3; Wickham (2021b){]}, and \emph{tidyverse} {[}Version 1.3.1; Wickham et al. (2019){]} for all our analyses.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -290,6 +292,9 @@ CFA drafts below
 \leavevmode\hypertarget{ref-R-papaja}{}%
 Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
 
+\leavevmode\hypertarget{ref-R-magrittr}{}%
+Bache, S. M., \& Wickham, H. (2020). \emph{Magrittr: A forward-pipe operator for r}. Retrieved from \url{https://CRAN.R-project.org/package=magrittr}
+
 \leavevmode\hypertarget{ref-coffman_hard_1999}{}%
 Coffman, C., \& Harter, J. (1999). A hard look at soft numbers. \emph{Position Paper, Gallup Organization}.
 
@@ -317,6 +322,9 @@ Goering, D. D., Shimazu, A., Zhou, F., Wada, T., \& Sakai, R. (2017). Not if, bu
 \leavevmode\hypertarget{ref-harter_business-unit-level_2002}{}%
 Harter, J. K., Schmidt, F. L., \& Hayes, T. L. (2002). Business-unit-level relationship between employee satisfaction, employee engagement, and business outcomes: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{87}(2), 268.
 
+\leavevmode\hypertarget{ref-R-purrr}{}%
+Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. Retrieved from \url{https://CRAN.R-project.org/package=purrr}
+
 \leavevmode\hypertarget{ref-joreskog1994estimation}{}%
 Jöreskog, K. G. (1994). On the estimation of polychoric correlations and their asymptotic covariance matrix. \emph{Psychometrika}, \emph{59}(3), 381--389.
 
@@ -340,6 +348,9 @@ Maslach, Christina, \& Leiter, M. P. (2008). Early predictors of job burnout and
 
 \leavevmode\hypertarget{ref-meyer_three-component_1991}{}%
 Meyer, J. P., \& Allen, N. J. (1991). A three-component conceptualization of organizational commitment. \emph{Human Resource Management Review}, \emph{1}(1), 61--89.
+
+\leavevmode\hypertarget{ref-R-tibble}{}%
+Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
 
 \leavevmode\hypertarget{ref-R-base}{}%
 R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
@@ -368,8 +379,29 @@ Taris, T. W., Ybema, J. F., \& Beek, I. van. (2017). Burnout and engagement: Ide
 \leavevmode\hypertarget{ref-timms2012burnt}{}%
 Timms, C., Brough, P., \& Graham, D. (2012). Burnt-out but engaged: The co-existence of psychological burnout and engagement. \emph{Journal of Educational Administration}, \emph{50}(3), 327--345.
 
+\leavevmode\hypertarget{ref-R-ggplot2}{}%
+Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\hypertarget{ref-R-stringr}{}%
+Wickham, H. (2019). \emph{Stringr: Simple, consistent wrappers for common string operations}. Retrieved from \url{https://CRAN.R-project.org/package=stringr}
+
+\leavevmode\hypertarget{ref-R-forcats}{}%
+Wickham, H. (2021a). \emph{Forcats: Tools for working with categorical variables (factors)}. Retrieved from \url{https://CRAN.R-project.org/package=forcats}
+
+\leavevmode\hypertarget{ref-R-tidyr}{}%
+Wickham, H. (2021b). \emph{Tidyr: Tidy messy data}. Retrieved from \url{https://CRAN.R-project.org/package=tidyr}
+
+\leavevmode\hypertarget{ref-R-tidyverse}{}%
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+
 \leavevmode\hypertarget{ref-R-dplyr}{}%
 Wickham, H., François, R., Henry, L., \& Müller, K. (2021). \emph{Dplyr: A grammar of data manipulation}. Retrieved from \url{https://CRAN.R-project.org/package=dplyr}
+
+\leavevmode\hypertarget{ref-R-readr}{}%
+Wickham, H., \& Hester, J. (2020). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
+
+\leavevmode\hypertarget{ref-R-DT}{}%
+Xie, Y., Cheng, J., \& Tan, X. (2021). \emph{DT: A wrapper of the JavaScript library 'DataTables'}. Retrieved from \url{https://CRAN.R-project.org/package=DT}
 
 \leavevmode\hypertarget{ref-R-kableExtra}{}%
 Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}

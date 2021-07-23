@@ -99,6 +99,7 @@ Our conceptualization of work engagement is a mental state wherein employees...
 
 ```{r getData, echo=FALSE, warning=FALSE}
 
+
 #CFA Analysis
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
@@ -109,22 +110,11 @@ colnames(data) <- x
 
 num <- nrow(data)
 
-temp$V163 <- temp$V163 %>% 
-  gsub("[^0-9./-]", "", .) %>%  # removes all characters not included in brackets
-  gsub(".*/", "", .) %>% # Selects second number after "/" (e.g. 40/50 -> 50)
-  gsub(".*-", "", .) %>%  # Selects second number after "-" (e.g. 50-60 -> 60)
-  gsub("[^0-9]", "", .) %>% # Removes
-  str_sub(1,2) %>% # Subsets all responses to first two indices. Quick and easy way to rule out impossible hour entries
-  as.numeric()
-
-demo_table <- datatable(temp[7:333,162:164], colnames = c("What is the title of the job you were thinking about while responding to this survey?", "How many hours do you typically work per week in this job?", "How long have you been with this organization?"))
 ```
 
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
 
 Participant job title, hours worked per week, and organizational tenure were recorded.
-
-`r demo_table`
 
 ## Material
 
