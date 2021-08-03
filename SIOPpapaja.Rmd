@@ -63,7 +63,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_word
 ---
 
 ```{r setup, include = FALSE}
@@ -94,6 +94,21 @@ Our conceptualization of work engagement is a mental state wherein employees...
 -   ...are so immersed in their work activities that time seems compressed (**Absorption**)
 
 # Methods
+
+| Cell                       | Alpha                                |
+|----------------------------|--------------------------------------|
+| Affective - Absorption     |r round(aff.abs$total$raw_alpha, 2)   |
+| Affective - Vigor          |r round(aff.vig$total$raw_alpha, 2)   |
+| Affective - Dedication     |r round(aff.ded$total$raw_alpha, 2)   |
+|                            |                                      |
+| Behavioral - Absorption    |r round(beh.abs$total$raw_alpha, 2)   |
+| Behavioral - Vigor         |r round(beh.vig$total$raw_alpha, 2)   |
+| Behavioral - Dedication    |r round(beh.ded$total$raw_alpha, 2)   |
+|                            |                                      |
+| Cognitive - Absorption     |r round(cog.abs$total$raw_alpha, 2)   |
+| Cognitive - Vigor          |r round(cog.vig$total$raw_alpha, 2)   |
+| Cognitive - Dedication     |r round(cog.ded$total$raw_alpha, 2)   |
+
 
 ## Participants
 
