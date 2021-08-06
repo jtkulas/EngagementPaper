@@ -62,6 +62,23 @@ together$`How many hours do you typically work per week in this job?` <- togethe
   str_sub(1,2) %>% # Subsets all responses to first two indices. Quick and easy way to rule out impossible hour entries
   as.numeric()
 
+# Organizational tenure
+# This is going to be a doozy and will require some imperfect text analysis
+
+together$tenure <- together[40]
+  
+
+
+
+hold <- head(together[40]) %>%  #%>% #test data for playing with temp
+  as.vector() 
+
+months <- str_detect(hold[,1], "month") #logical vector for whether row contains month
+years <- str_detect(hold[,1], "year") #logical vector for whether row contains year
+
+#and no clue how to do more than this
+
+
 
 #Job title
 unique(together$`What is the title of the job you were thinking about while responding to this survey?`) # Two-hundred and thirty-seven unique responses
@@ -82,7 +99,11 @@ together$`What is the title of the job you were thinking about while responding 
   tolower() %>% 
   trimws() 
 
-demo_table <- datatable(together[38:40])
+#creates demographic table using DT library
+
+demo_table <- together[38:40] %>% 
+  filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
+  datatable()
 
 
 
