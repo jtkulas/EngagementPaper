@@ -63,7 +63,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_word
+output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
@@ -113,13 +113,10 @@ Our conceptualization of work engagement is a mental state wherein employees...
 ## Participants
 
 ```{r getData, echo=FALSE, warning=FALSE}
-<<<<<<< HEAD
+
 library(tidyverse)
 library(DT)
-=======
 
-
->>>>>>> 04b7706744356b2a639e864a8c1dfe0c5325bee3
 #CFA Analysis
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
