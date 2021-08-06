@@ -249,7 +249,7 @@ summary(Fit.Bi)
 #############################################################################################
 
 ## delete items 2, 12 (remember to do twice on all iterations)
-
+#MORGAN: Don't edit this--use the copied version of this below
 modified1 <-'
 Cognitive=~Item_1+Item_3+Item_2+Item_13+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
 Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
@@ -301,10 +301,10 @@ summary(Fit.mod1)
 
 modified1 <-'
 Cognitive=~Item_1+Item_3+Item_2+Item_14+Item_15+Item_16+Item_25+Item_26+Item_27+Item_28
-Affective=~Item_5+Item_6+Item_7+Item_8+Item_17+Item_18+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
+Affective=~Item_5+Item_6+Item_7+Item_8+Item_19+Item_20+Item_29+Item_30+Item_31+Item_32
 Behavioral=~Item_10+Item_21+Item_22+Item_23+Item_24+Item_34+Item_35+Item_36
 Absorption=~Item_1+Item_3+Item_2+Item_5+Item_6+Item_7+Item_8+Item_10
-Vigor=~Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
+Vigor=~Item_14+Item_15+Item_16+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
 Dedication=~Item_25+Item_26+Item_27+Item_28+Item_29+Item_30+Item_31+Item_32+Item_34+Item_35+Item_36
 Absorption ~~ 0*Affective
 Absorption ~~ 0*Behavioral
@@ -316,6 +316,7 @@ Dedication ~~ 0*Affective
 Dedication ~~ 0*Behavioral
 Dedication ~~ 0*Cognitive
 '
+
 #Dedication ~~ 0*Vigor      
 #Dedication ~~ 0*Absorption
 #Vigor ~~ 0*Absorption
