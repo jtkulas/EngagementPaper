@@ -95,28 +95,16 @@ Our conceptualization of work engagement is a mental state wherein employees...
 
 # Methods
 
-| Cell                       | Alpha                                |
-|----------------------------|--------------------------------------|
-| Affective - Absorption     |r round(aff.abs$total$raw_alpha, 2)   |
-| Affective - Vigor          |r round(aff.vig$total$raw_alpha, 2)   |
-| Affective - Dedication     |r round(aff.ded$total$raw_alpha, 2)   |
-|                            |                                      |
-| Behavioral - Absorption    |r round(beh.abs$total$raw_alpha, 2)   |
-| Behavioral - Vigor         |r round(beh.vig$total$raw_alpha, 2)   |
-| Behavioral - Dedication    |r round(beh.ded$total$raw_alpha, 2)   |
-|                            |                                      |
-| Cognitive - Absorption     |r round(cog.abs$total$raw_alpha, 2)   |
-| Cognitive - Vigor          |r round(cog.vig$total$raw_alpha, 2)   |
-| Cognitive - Dedication     |r round(cog.ded$total$raw_alpha, 2)   |
-
-
 ## Participants
 
 ```{r getData, echo=FALSE, warning=FALSE}
-
+<<<<<<< HEAD
 library(tidyverse)
 library(DT)
+=======
 
+
+>>>>>>> 04b7706744356b2a639e864a8c1dfe0c5325bee3
 #CFA Analysis
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
@@ -129,11 +117,13 @@ num <- nrow(data)
 
 ```
 
-`r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
+`r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
 Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `r mean(temp$V163, na.rm = TRUE)`
 
 Mean organizational tenure was INSERT HERE, with a standard deviation of INSERT HERE. YOU NEED TO RECODE TENURE TO ACCOUNT FOR MONTHS/YEARS. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
+
+
 
 ## Material
 
@@ -141,9 +131,7 @@ Our survey was administered on Qualtrics
 
 ### Item generation
 
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18.
-
-These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example *EXAMPLE ITEM HERE*
+We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example *EXAMPLE ITEM HERE*
 
 Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions. *DON'T KNOW HOW IN RMARKDOWN BUT CAN WE INSERT A 3x3 TABLE TO VISUALIZE HOW THERE ARE 4 ITEMS FOR EACH PAIRING OF THE SUB/ATT DIMENSIONS. ALSO, THIS WORDING SUCKS, MAKE IT BETTER*
 
