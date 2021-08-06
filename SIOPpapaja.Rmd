@@ -81,7 +81,7 @@ The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engage
 
 @kahn_psychological_1990 described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs.
 
-Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. This absorption element has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
 
 Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements.
 
@@ -139,6 +139,18 @@ Participant job title, hours worked per week, and organizational tenure were rec
 Mean organizational tenure was INSERT HERE, with a standard deviation of INSERT HERE. YOU NEED TO RECODE TENURE TO ACCOUNT FOR MONTHS/YEARS. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
 ## Material
+
+Our survey was administered on Qualtrics
+
+### Item generation
+
+We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18.
+
+These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example *EXAMPLE ITEM HERE*
+
+Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions. *DON'T KNOW HOW IN RMARKDOWN BUT CAN WE INSERT A 3x3 TABLE TO VISUALIZE HOW THERE ARE 4 ITEMS FOR EACH PAIRING OF THE SUB/ATT DIMENSIONS. ALSO, THIS WORDING SUCKS, MAKE IT BETTER*
+
+See table *X* for a full list of items and their respective dimensions.
 
 ## Procedure
 

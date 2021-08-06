@@ -4,33 +4,35 @@
 
 ## Intended Structure {#ABCDAV}
 
-At some point we decided to attempt an *a priori* bi-factor structure, whereby each of the substantive dimensions (Dedication, Vigor, and Absorption)[^1] could further be deconstructed into the attitudinal elements of Cognition, Affect, and Behavior [see, for example, @eagly_psychology_1993; @rosenberg_cognitive_1960]. 
-
-Through item-writing and revision, it began to dawn on us that the substantive elements may already reflect the Cognition (Vigor), Affect (Absorption), and Behavioral (Dedication) dimensions. As of August, 2020, however, we could not locate a source article that made this potential confound explicit, so we persisted through crafting items that reflected cognitive, affective, and behavioral indicators of each substantive dimension. [^2]
-
-The most relevant acknowledgement of this potential confound was made by @schaufeli_measurement_2002 (pp. 74-75):
-
->Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. *Vigor* is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one’s work, and persistence even in the face of difficulties. *Dedication* is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one’s work or one’s job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative
-sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, *absorption*, is characterized by being fully concentrated and deeply engrossed in one’s work, whereby time passes quickly and one has difficulties with detaching oneself from work.
-
-The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings are intended to fully exhaust the 3 x 3 conditions (e.g., each item loads on one substantive and one attitudinal dimension): 
-
-| Substantive    | Attitudinal   |
-|----------------|---------------|
-| Dedication     | Affective     |
-| Absorption     | Behavioral    |
-| Vigor          | Cognitive     |
-
-The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition.
+Our original intention was to attempt an *a priori* bi-factor structure, whereby each of the substantive dimensions (Dedication, Vigor, and Absorption)[^1] could further be deconstructed into the attitudinal elements of Cognition, Affect, and Behavior [see, for example, @eagly_psychology_1993; @rosenberg_cognitive_1960].
 
 [^1]: We also discovered at this point that some contagious agent has infiltrated the minds of people working on this project, such that the word, "absorption" confounds our spelling abilities, and roughly 50% of the time ends up being spelled (misspelled?), "absorbtion"...
 
+Through item-writing and revision, it began to dawn on us that the attitudinal dimensions may map onto the substantive dimensions on a one-to-one level (i.e., Cognition corresponding to Vigor, Affect to Absorption, and Behavior to Dedication), contrary to our tripartite hypothesis.
+
+For example: **FIND EXAMPLES OF SIMILAR WORDING ACROSS FACTORS**
+
+As of August, 2020, however, we could not locate a source article that made this potential confound explicit, so we persisted through crafting items that reflected cognitive, affective, and behavioral indicators of each substantive dimension. [^2]
+
 [^2]: We did, however, find some criticisms of the tripartite model of attitudes as originally specified by @rosenberg_cognitive_1960, although there has also been a recent attempt to reintroduce and improve upon the original model [@kaiser_campbell_2019] as well as repurposing of the framework as a *process* [e.g., thoughts and feelings leading to behavior; @pachankis_psychological_2007].
+
+The most relevant acknowledgement of this potential confound was made by @schaufeli_measurement_2002 (pp. 74-75):
+
+> Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. *Vigor* is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one's work, and persistence even in the face of difficulties. *Dedication* is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement -- like dedication (see above) -- is usually defined in terms of psychological identification with one's work or one's job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, *absorption*, is characterized by being fully concentrated and deeply engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work.
+
+The survey is intentionally complex in terms of item and scale associations. There are three substantive engagement dimensions as well as three attitudinal dimensions, and item cross-loadings are intended to fully exhaust the 3 x 3 conditions (e.g., each item loads on one substantive and one attitudinal dimension):
+
+| Substantive | Attitudinal |
+|-------------|-------------|
+| Dedication  | Affective   |
+| Absorption  | Behavioral  |
+| Vigor       | Cognitive   |
+
+The feedback report uses the terms, "feel", "do", and "think" instead of the Psychological literature-based affect, behavior, and cognition.
 
 ## Item generation
 
 After content validation but prior to settling on 4 candidate items per 3x3 condition, there was a dearth of items within some of the Affective, Cognitive, or Behavioral item groupings. We generated additional candidates at this point and have these items [located here](https://docs.google.com/document/d/1whB4Ve4aDDl3bxx3dIlloouTDy1ScCcxrT3gK6s9DyU/edit?usp=sharing) (Montclair State University e-mail needed to access). It was from this larger list of (reduced) candidate items that the 36 pilot candidates were identified (and in some cases modified, edited, or otherwise further crafted)
-
 
 ## Content Validation {#CValid}
 
@@ -46,17 +48,17 @@ items <- nrow(cvalid)
 
 > INSTRUCTIONS: Place an "X" in the column that you feel is the best fit for each item (only one "X" per row please)
 
-The substantive scale definitions provided for ratings were: 
+The substantive scale definitions provided for ratings were:
 
-+ *Absorption*: Being fully immersed in one’s work, where time passes quickly and one has difficulty detaching from work tasks
-+ *Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
-+ *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+-   *Absorption*: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
+-   *Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
+-   *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
 
 The attitudinal scale definitions were:
 
-+ *Cognitive*: Pertaining to thoughts or general mental processes (for example what someone thinks)
-+ *Affective*: Pertaining to feelings or emotions (for example, how someone feels)
-+ *Behavioral*: Pertaining to acts or actions (for example, what someone does) 
+-   *Cognitive*: Pertaining to thoughts or general mental processes (for example what someone thinks)
+-   *Affective*: Pertaining to feelings or emotions (for example, how someone feels)
+-   *Behavioral*: Pertaining to acts or actions (for example, what someone does)
 
 The goal was to identify item(s) that were equally and heavily implicated with one substantive and one attitudinal scale.
 
@@ -83,4 +85,3 @@ table(cvalid[,c(8,2)])
 table(cvalid[,c(8,3)])
 table(cvalid[,c(8,4)])
 ```
-
