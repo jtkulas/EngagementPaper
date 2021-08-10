@@ -44,16 +44,6 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -235,29 +225,10 @@ Our conceptualization of work engagement is a mental state wherein employees\ldo
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-Cell & Alpha \\
-\midrule
-\endhead
-Affective - Absorption & r round(aff.abs\(total\)raw\_alpha, 2) \\
-Affective - Vigor & r round(aff.vig\(total\)raw\_alpha, 2) \\
-Affective - Dedication & r round(aff.ded\(total\)raw\_alpha, 2) \\
-& \\
-Behavioral - Absorption & r round(beh.abs\(total\)raw\_alpha, 2) \\
-Behavioral - Vigor & r round(beh.vig\(total\)raw\_alpha, 2) \\
-Behavioral - Dedication & r round(beh.ded\(total\)raw\_alpha, 2) \\
-& \\
-Cognitive - Absorption & r round(cog.abs\(total\)raw\_alpha, 2) \\
-Cognitive - Vigor & r round(cog.vig\(total\)raw\_alpha, 2) \\
-Cognitive - Dedication & r round(cog.ded\(total\)raw\_alpha, 2) \\
-\bottomrule
-\end{longtable}
-
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-330 individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling.
+330 individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
 Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was NA
 
@@ -271,9 +242,7 @@ Our survey was administered on Qualtrics
 \hypertarget{item-generation}{%
 \subsubsection{Item generation}\label{item-generation}}
 
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18.
-
-These items were generated according to a review of extant tripartite engagement measures, as well as \emph{WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST ``I THINK,'' ``I FEEL,'' ``I DO?''} Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example \emph{EXAMPLE ITEM HERE}
+We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as \emph{WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST ``I THINK,'' ``I FEEL,'' ``I DO?''} Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example \emph{EXAMPLE ITEM HERE}
 
 Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions. \emph{DON'T KNOW HOW IN RMARKDOWN BUT CAN WE INSERT A 3x3 TABLE TO VISUALIZE HOW THERE ARE 4 ITEMS FOR EACH PAIRING OF THE SUB/ATT DIMENSIONS. ALSO, THIS WORDING SUCKS, MAKE IT BETTER}
 
