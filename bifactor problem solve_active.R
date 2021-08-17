@@ -88,7 +88,7 @@ Dedication ~~ 0*Cognitive
 Fit.mod1 <- lavaan::cfa(modified1, data = CFAdata) 
 
 semPlot::semPaths(Fit.mod1, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
-                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0, edge.label.cex = 1) 
+                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0, edge.label.cex = 1.5, pastel=TRUE) 
 
 modindices(Fit.mod1, sort = TRUE, maximum.number = 25)
 

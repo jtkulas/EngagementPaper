@@ -95,6 +95,8 @@ Our conceptualization of work engagement is a mental state wherein employees...
 
 # Methods
 
+Choice of focus on BIC versus AIC discussed in @dziak2020sensitivity.
+
 ## Participants
 
 ```{r getData, echo=FALSE, warning=FALSE}
