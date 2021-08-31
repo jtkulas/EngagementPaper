@@ -95,9 +95,19 @@ onet <- c('Agriculture, Food & Natural Resources', 'Archtecture & Construction',
 
 
 
-together$`What is the title of the job you were thinking about while responding to this survey?` %>% 
+#creates new column 'position' detecting presence of keywords. To create new search terms, copy the "str_detect" line
+together <- together %>% 
+  mutate_at(vars(`What is the title of the job you were thinking about while responding to this survey?`), 
+            list(position =~ case_when(str_detect(., regex("account"))~"accountant",
+                                       str_detect(., regex("analy"))~"analyst",
+                                       TRUE~.)))
+
+together$position %>% 
   tolower() %>% 
-  trimws() 
+  trimws() %>% 
+  table()
+
+
 
 #creates demographic table using DT library
 
