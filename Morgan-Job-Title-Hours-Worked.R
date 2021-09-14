@@ -7,6 +7,7 @@
 # Packages
 library(tidyverse)
 library(DT)
+library(labourR)
 
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
@@ -48,17 +49,11 @@ together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red)        ## we'll be
 
 
 # Hours worked
-unique(together$`How many hours do you typically work per week in this job?`) # Sixty-two unique responses
-
-gsub("[^0-9.-]", "", together$`How many hours do you typically work per week in this job?`)
-
-together$`How many hours do you typically work per week in this job?` 
-  
 together$`How many hours do you typically work per week in this job?` <- together$`How many hours do you typically work per week in this job?` %>% 
   gsub("[^0-9./-]", "", .) %>%  # removes all characters not included in brackets
   gsub(".*/", "", .) %>% # Selects second number after "/" (e.g. 40/50 -> 50)
   gsub(".*-", "", .) %>%  # Selects second number after "-" (e.g. 50-60 -> 60)
-  gsub("[^0-9]", "", .) %>% # Removes
+  gsub("[^0-9]", "", .) %>%
   str_sub(1,2) %>% # Subsets all responses to first two indices. Quick and easy way to rule out impossible hour entries
   as.numeric()
 
@@ -66,8 +61,6 @@ together$`How many hours do you typically work per week in this job?` <- togethe
 # This is going to be a doozy and will require some imperfect text analysis
 
 together$tenure <- together[40]
-  
-
 
 
 hold <- head(together[40]) %>%  #%>% #test data for playing with temp
@@ -78,21 +71,19 @@ years <- str_detect(hold[,1], "year") #logical vector for whether row contains y
 
 #and no clue how to do more than this
 
+#creates demographic table using DT library
 
+demo_table <- together[38:40] %>% 
+  filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
+  datatable()
 
 #Job title
-unique(together$`What is the title of the job you were thinking about while responding to this survey?`) # Two-hundred and thirty-seven unique responses
 
-
-together$`What is the title of the job you were thinking about while responding to this survey?`
-
-
-#ONET job clusters, for use as factor levels
+#outdated: ONET job clusters
 onet <- c('Agriculture, Food & Natural Resources', 'Archtecture & Construction', 'Arts, Audio/Video Technology & Communications',
           'Business Management & Administration', 'Education & Training', 'Finance', 'Government & Public Administration',
           'Health Science', 'Hospitality & Tourism', 'Human Services', 'Information Technology', 'Law, Public Safety, Corrections & Security',
           'Manufacturing', 'Marketing', 'Science, Technology, Engineering & Mathematics', 'Transportation, Distribution & Logistics')
-
 
 
 #creates new column 'position' detecting presence of keywords. To create new search terms, copy the "str_detect" line
@@ -102,23 +93,38 @@ together <- together %>%
                                        str_detect(., regex("analy"))~"analyst",
                                        TRUE~.)))
 
-together$position %>% 
+together$position <- together$`What is the title of the job you were thinking about while responding to this survey?` %>% 
   tolower() %>% 
-  trimws() %>% 
-  table()
+  trimws()
 
+#ESCO/ISCO classification using the labourR package
+#ISCO = International Standard Classification of Occupations
 
+together$id <- 1:nrow(together) #adds unique identifier to satisfy inane requirement of classify_occupation()
 
-#creates demographic table using DT library
+ISCO <- classify_occupation(together, text_col = 'position', isco_level = 1) #nrow = 249 (I think BC it ignores NA's?)
 
-demo_table <- together[38:40] %>% 
-  filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
-  datatable()
+job_groups <- table(ISCO$iscoGroup) #table of first level of ISCO classifications for all participants
+
+job_groups
+#1 (Managers): 51
+#2 (Professionals): 120
+#3 (Technicians and associate professionals): 62
+#4 (Clerical support workers): 4
+#5 (Service and sales workers): 8
+#6 (Skilled agricultural, forest and fishery workers): 0
+#7 (Craft and relate trades workers): 1
+#8 (Plant and machine operators and assemblers): 3
+#9 (Elementary occupations): 0
+#0 (Armed forces occupations): 0
+
+# I can't figure out how to merge this with the original dataframe because classify_occupation doesn't output an ID column that matches
+# the original row number in together... for some reason. Either way this table gets the job done. Lesson learned: free text entry is bad
 
 
 
 # To do:
-# Find quick and easy classification
+# Tenure variable
 
 # include as appendix in SIOPpapaja
 # make as searchable table inside tech report via "DT" package
@@ -127,6 +133,17 @@ demo_table <- together[38:40] %>%
 
 # Down the line:
 # management/non management
+
+
+
+
+
+
+
+
+
+
+
 
 
 
