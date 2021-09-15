@@ -47,7 +47,6 @@ names(cond4.red) = gsub(pattern = "C*.* - ", replacement = "", x = names(cond4.r
 
 together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red)        ## we'll be using this object for analyses
 
-
 # Hours worked
 together$`How many hours do you typically work per week in this job?` <- together$`How many hours do you typically work per week in this job?` %>% 
   gsub("[^0-9./-]", "", .) %>%  # removes all characters not included in brackets
@@ -57,34 +56,7 @@ together$`How many hours do you typically work per week in this job?` <- togethe
   str_sub(1,2) %>% # Subsets all responses to first two indices. Quick and easy way to rule out impossible hour entries
   as.numeric()
 
-# Organizational tenure
-# This is going to be a doozy and will require some imperfect text analysis
-
-together$tenure <- together[40]
-
-
-hold <- head(together[40]) %>%  #%>% #test data for playing with temp
-  as.vector() 
-
-months <- str_detect(hold[,1], "month") #logical vector for whether row contains month
-years <- str_detect(hold[,1], "year") #logical vector for whether row contains year
-
-#and no clue how to do more than this
-
-#creates demographic table using DT library
-
-demo_table <- together[38:40] %>% 
-  filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
-  datatable()
-
 #Job title
-
-#outdated: ONET job clusters
-onet <- c('Agriculture, Food & Natural Resources', 'Archtecture & Construction', 'Arts, Audio/Video Technology & Communications',
-          'Business Management & Administration', 'Education & Training', 'Finance', 'Government & Public Administration',
-          'Health Science', 'Hospitality & Tourism', 'Human Services', 'Information Technology', 'Law, Public Safety, Corrections & Security',
-          'Manufacturing', 'Marketing', 'Science, Technology, Engineering & Mathematics', 'Transportation, Distribution & Logistics')
-
 
 #creates new column 'position' detecting presence of keywords. To create new search terms, copy the "str_detect" line
 together <- together %>% 
@@ -106,7 +78,7 @@ ISCO <- classify_occupation(together, text_col = 'position', isco_level = 1) #nr
 
 job_groups <- table(ISCO$iscoGroup) #table of first level of ISCO classifications for all participants
 
-job_groups
+data.table(job_groups)
 #1 (Managers): 51
 #2 (Professionals): 120
 #3 (Technicians and associate professionals): 62
@@ -121,32 +93,24 @@ job_groups
 # I can't figure out how to merge this with the original dataframe because classify_occupation doesn't output an ID column that matches
 # the original row number in together... for some reason. Either way this table gets the job done. Lesson learned: free text entry is bad
 
+###### Tenure
+#Result of manual coding
+together$tenure <- c(0.5,7,2.5,0.5,0.83,14,3,3,5,2,2,12,3,1.5,5,1,5,1,3,20,1.5,NA,8,2,NA,4,2,4,1.08,5,15,3.5,
+                     20,15,0.66,2,12.5,15,7,1.5,5,7,3.5,0.25,NA,15,NA,2,3,38,9,NA,2,1,NA,NA,1,0.20,NA,NA,2,
+                     0.5,NA,NA,5,2,1,2,1.5,3,3,2,1.5,0.25,NA,1,NA,3,NA,3,1,5,0.83,1.5,0.08,16,4,2,9,11,8,
+                     0.75,NA,4,3,4.5,NA,1.5,4,3,0.33,3,0.5,3,6.5,17,1,21,14,3,7,1,17,2.5,33,32,11,9,NA,2,3,1.5,1,NA,2.5,NA,NA,NA,NA,
+                     NA,NA,NA,3,18,NA,2.5,NA,9,NA,8,15,12,2.5,20,2.5,17,10,20,6.5,6,1,10,2,0.83,6,0.33,8,1.16,
+                     4,5,6,10,1.5,2,17,14,30,0.16,4,3,1,20,0.16,40,3,1,12,3.5,2.25,10,22,1,31,41,16,NA,35,
+                     0.5,4,2.5,30,2,NA,4,2,NA,3,8,2,0.5,5,2.5,3,1.5,NA,0.33,4,NA,2,3,4,27,1.5,4,6,4,22,1.7,2,1.5,3.5,0.41,
+                     7,6,1,0.08,1.5,7,0.41,4,2.5,2,2,12,7,0.66,NA,3,10,0.33,15,33,30,23,2,0.33,35,6,7,1,3,2,
+                     1,3,10,NA,30,0.16,7,6,5,2,3,NA,NA,NA,4,2.5,4,NA,1.41,3,NA,NA,25,2,12,12,1.2,8,1.5,1
+)
 
+#creates demographic table using DT library
 
-# To do:
-# Tenure variable
-
-# include as appendix in SIOPpapaja
-# make as searchable table inside tech report via "DT" package
-#     May only work inside HTML version
-# include other demo data (e.g. hours worked)
-
-# Down the line:
-# management/non management
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+demo_table <- together %>% 
+  select(`How many hours do you typically work per week in this job?`, tenure, 
+         `What is the title of the job you were thinking about while responding to this survey?`) %>% 
+  filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
+  datatable()
 

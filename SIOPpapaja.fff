@@ -2,6 +2,20 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{SIOPpapaja_files/figure-latex/unnamed-chunk-1-1.pdf}
+\caption{\label{fig:unnamed-chunk-1}Distribution of organizational tenure (years)}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOPpapaja_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:unnamed-chunk-2}Distribution of mean hours worked per week}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{SIOPpapaja_files/figure-latex/CFA.sub-1.pdf}
 \caption{(\#fig:CFA.sub)Substantive factor structure CFA}
 \end{figure*}
