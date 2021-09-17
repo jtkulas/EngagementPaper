@@ -412,7 +412,7 @@ semPlot::semPaths(Fit1.2,"std")
 
 ## Study 2
 
-Construct validation was acccomplished via administration of the 17-item UWES as well as the @saks2006antecedents 12-item scale. @saks2006antecedents aggregates to two scales: job and organizational engagement. 
+Construct validation was acccomplished via administration of the 17-item UWES as well as the @saks2006antecedents 12-item scale. @saks2006antecedents aggregates to two scales: job and organizational engagement [@saks2019antecedents]. 
 
 # Discussion
 
