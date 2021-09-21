@@ -120,9 +120,6 @@
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
-\usepackage{lineno}
-
-\linenumbers
 \usepackage{csquotes}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
@@ -252,6 +249,8 @@ Mean organizational tenure was INSERT HERE, with a standard deviation of INSERT 
 \caption{\label{fig:unnamed-chunk-2}Distribution of mean hours worked per week}
 \end{figure}
 
+Participants provided their job titles via an optional free text-entry box at the end of the survey. From there, classified jobs according to the International Standard Classification of Occupations (ISCO-8) with the \texttt{classify\_occupation} function within the \texttt{labourR} package. The ISCO hierarchically organizes jobs in increasing order of specificity. For example, the first level of the hierarchy distinguishes a professional from a clerical worker or a technician. On the second level, professionals are distinguished among each other by whether they are engineers, medical workers, lawyers, and so on.
+
 \hypertarget{material}{%
 \subsection{Material}\label{material}}
 
@@ -308,6 +307,11 @@ CFA drafts below
 \includegraphics{SIOPpapaja_files/figure-latex/CFA.att-1.pdf}
 \caption{(\#fig:CFA.att)Attitudinal factor structure CFA}
 \end{figure}
+
+\hypertarget{study-2}{%
+\subsection{Study 2}\label{study-2}}
+
+Construct validation was acccomplished via administration of the 17-item UWES as well as the Saks (2006) 12-item scale. Saks (2006) aggregates to two scales: job and organizational engagement.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -403,6 +407,9 @@ R Core Team. (2021). \emph{R: A language and environment for statistical computi
 
 \leavevmode\hypertarget{ref-R-lavaan}{}%
 Rosseel, Y. (2012). {lavaan}: An {R} package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{https://www.jstatsoft.org/v48/i02/}
+
+\leavevmode\hypertarget{ref-saks2006antecedents}{}%
+Saks, A. M. (2006). Antecedents and consequences of employee engagement. \emph{Journal of Managerial Psychology}, \emph{21}(7), 600--619.
 
 \leavevmode\hypertarget{ref-schaufeli_uwesutrecht_2003}{}%
 Schaufeli, W. B., \& Bakker, A. B. (2003). {UWES}--utrecht work engagement scale: Test manual. \emph{Unpublished Manuscript: Department of Psychology, Utrecht University}, \emph{8}.
