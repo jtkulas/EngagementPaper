@@ -1,18 +1,26 @@
-\begin{longtable}[]{@{}ll@{}}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:unnamed-chunk-3}}
+
+\begin{tabular}{llll}
 \toprule
-Cell & Alpha \\
+lhs & \multicolumn{1}{c}{op} & \multicolumn{1}{c}{rhs} & \multicolumn{1}{c}{mi}\\
 \midrule
-\endhead
-Affective - Absorption & r round(aff.abs\(total\)raw\_alpha, 2) \\
-Affective - Vigor & r round(aff.vig\(total\)raw\_alpha, 2) \\
-Affective - Dedication & r round(aff.ded\(total\)raw\_alpha, 2) \\
-& \\
-Behavioral - Absorption & r round(beh.abs\(total\)raw\_alpha, 2) \\
-Behavioral - Vigor & r round(beh.vig\(total\)raw\_alpha, 2) \\
-Behavioral - Dedication & r round(beh.ded\(total\)raw\_alpha, 2) \\
-& \\
-Cognitive - Absorption & r round(cog.abs\(total\)raw\_alpha, 2) \\
-Cognitive - Vigor & r round(cog.vig\(total\)raw\_alpha, 2) \\
-Cognitive - Dedication & r round(cog.ded\(total\)raw\_alpha, 2) \\
+Item\_2 & \textasciitilde{}\textasciitilde{} & Item\_4 & 192.41\\
+Item\_8 & \textasciitilde{}\textasciitilde{} & Item\_18 & 96.05\\
+Item\_29 & \textasciitilde{}\textasciitilde{} & Item\_35 & 62.25\\
+Item\_14 & \textasciitilde{}\textasciitilde{} & Item\_20 & 56.38\\
+Item\_1 & \textasciitilde{}\textasciitilde{} & Item\_12 & 51.39\\
+Item\_1 & \textasciitilde{}\textasciitilde{} & Item\_13 & 50.33\\
 \bottomrule
-\end{longtable}
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

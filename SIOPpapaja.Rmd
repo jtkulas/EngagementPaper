@@ -271,15 +271,39 @@ See table *X* for a full list of items and their respective dimensions.
 
 ## Procedure
 
-Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`). We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We took two different approaches to determining final scale definitions: 1) focus on corrected item-total correlations, and 2) focus on CFA modificiation indices.
+> Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`).
+
+The effective result of this was two divergent quasi-experimental approaches: 1) focus on corrected item-total correlations, and 2) focus on CFA modification indices.
+
+### Corrected item-total correlations
+
+> To Casey: document your process here
 
 ### CFA Modification Indices
 
-Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
+We followed two parallel stepwise item-reduction processes centered around eliminating items in decreasing order of modification indices. Looking at the 36-item substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose fixed shared residual covariances were associated with high modification indices (indicating better model fit if the paths were freed). The item pair with the highest modification index was scrutinized, with a subjective group judgment made on wording/semantics content domain coverage. The less preferred item was removed from the model. In cases where the highest modification index was between the only two remaining items in a substantive-attitudinal pair, these items were passed over for scrutiny in favor of the items with the next-highest index. This process was repeated until 18 items remained (i.e., 2 items for each of the 9 substantive-attitudinal pairs)
 
-[^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association).
 
-We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of itme to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
+For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, "I find it difficult to mentally disconnect from work" over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1] 
+
+
+
+The end result was two separate final scale definitions (one optimized for the substantive model and one for the attitudinal).
+
+[^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association). Look at "modincides1"
+
+
+
+
+We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of item to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
+
+```{r fig.cap="mod table", include=TRUE, echo=FALSE, warning=FALSE}
+mod <- data.frame(read.csv('att.csv', row.names = NULL)[1:6, 2:5])
+test <- apa_table(mod, escape = TRUE)
+test
+mod
+```
+
 
 > > Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
 
