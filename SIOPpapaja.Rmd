@@ -221,16 +221,16 @@ demo_table <- together %>%
 
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
-Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `` r mean(together$`How many hours do you typically work per week in this job?`, na.rm = TRUE) `` . Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was ` r mean(together$`How many hours do you typically work per week in this job?`, na.rm = TRUE)`, see Figure \@ref(fig:hours). Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`, see Figure \@ref(fig-tenure). Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
-```{r echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
+```{r tenure, echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
 tenure_hist <- ggplot(together) +
   geom_histogram(aes(x = tenure))
 
 tenure_hist
 ```
 
-```{r echo=FALSE, warning=FALSE, fig.cap="Distribution of mean hours worked per week"}
+```{r hours, echo=FALSE, warning=FALSE, fig.cap="Distribution of mean hours worked per week"}
 hours_hist <- ggplot(together) +
   geom_histogram(aes(x = `How many hours do you typically work per week in this job?`))
 
