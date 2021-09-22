@@ -64,7 +64,7 @@ draft             : no
 documentclass     : "apa6"
 classoption       : "man"
 output            : papaja::apa6_pdf
-bibliography: references.bib
+
 ---
 
 ```{r setup, include = FALSE}
