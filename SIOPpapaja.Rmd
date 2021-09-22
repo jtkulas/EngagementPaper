@@ -287,20 +287,18 @@ We followed two parallel stepwise item-reduction processes centered around elimi
 For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, "I find it difficult to mentally disconnect from work" over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1] 
 
 
-
 The end result was two separate final scale definitions (one optimized for the substantive model and one for the attitudinal).
 
 [^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association). Look at "modincides1"
 
 
-
-
 We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of item to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
 
-```{r fig.cap="mod table", include=TRUE, echo=FALSE, warning=FALSE}
+```{r, fig.cap="Sample modification index table"}
+#figure out how to display this in the middle of the paper rather than a figure at the end of the paper
 mod <- data.frame(read.csv('att.csv', row.names = NULL)[1:6, 2:5])
-test <- apa_table(mod, escape = TRUE)
-test
+colnames(mod) <- c('Variable 1', 'Relationship', 'Variable 2', 'delta chi square')
+mod <- apa_table(mod)
 mod
 ```
 

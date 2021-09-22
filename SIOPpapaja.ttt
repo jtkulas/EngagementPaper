@@ -9,7 +9,7 @@
 
 \begin{tabular}{llll}
 \toprule
-lhs & \multicolumn{1}{c}{op} & \multicolumn{1}{c}{rhs} & \multicolumn{1}{c}{mi}\\
+Variable 1 & \multicolumn{1}{c}{Relationship} & \multicolumn{1}{c}{Variable 2} & \multicolumn{1}{c}{delta chi square}\\
 \midrule
 Item\_2 & \textasciitilde{}\textasciitilde{} & Item\_4 & 192.41\\
 Item\_8 & \textasciitilde{}\textasciitilde{} & Item\_18 & 96.05\\
