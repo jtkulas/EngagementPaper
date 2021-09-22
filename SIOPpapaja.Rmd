@@ -64,6 +64,7 @@ draft             : no
 documentclass     : "apa6"
 classoption       : "man"
 output            : papaja::apa6_pdf
+bibliography: references.bib
 ---
 
 ```{r setup, include = FALSE}
@@ -182,7 +183,6 @@ ISCO <- classify_occupation(together, text_col = 'position', isco_level = 1) #nr
 
 job_groups <- table(ISCO$iscoGroup) #table of first level of ISCO classifications for all participants
 
-table(job_groups)
 #1 (Managers): 51
 #2 (Professionals): 120
 #3 (Technicians and associate professionals): 62
@@ -221,9 +221,7 @@ demo_table <- together %>%
 
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
-Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `r mean(temp$V163, na.rm = TRUE)`
-
-Mean organizational tenure was INSERT HERE, with a standard deviation of INSERT HERE. YOU NEED TO RECODE TENURE TO ACCOUNT FOR MONTHS/YEARS. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `` r mean(together$`How many hours do you typically work per week in this job?`, na.rm = TRUE) `` . Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`. Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
 ```{r echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
 tenure_hist <- ggplot(together) +
@@ -239,17 +237,35 @@ hours_hist <- ggplot(together) +
 hours_hist
 ```
 
-Participants provided their job titles via an optional free text-entry box at the end of the survey. From there, classified jobs according to the International Standard Classification of Occupations (ISCO-8) with the `classify_occupation` function within the `labourR` package. The ISCO hierarchically organizes jobs in increasing order of specificity. For example, the first level of the hierarchy distinguishes a professional from a clerical worker or a technician. On the second level, professionals are distinguished among each other by whether they are engineers, medical workers, lawyers, and so on.
+Participants provided their job titles via an optional free text-entry box at the end of the survey. From there, we classified job titles according to the International Standard Classification of Occupations (ISCO-8) with the `classify_occupation` function within the `labourR` package (@kouretsis2020). The ISCO hierarchically organizes jobs in increasing order of specificity. For example, the first level of the hierarchy distinguishes a professional from a clerical worker or a technician. On the second level, professionals are distinguished among each other by whether they are engineers, medical workers, lawyers, and so on.
+
+`r job_groups`
 
 ## Material
 
-Our survey was administered on Qualtrics
+Our survey was administered on Qualtrics.
 
 ### Item generation
 
 We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example *EXAMPLE ITEM HERE*
 
-Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions. *DON'T KNOW HOW IN RMARKDOWN BUT CAN WE INSERT A 3x3 TABLE TO VISUALIZE HOW THERE ARE 4 ITEMS FOR EACH PAIRING OF THE SUB/ATT DIMENSIONS. ALSO, THIS WORDING SUCKS, MAKE IT BETTER*
+Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions.
+
+The substantive scale definitions provided for ratings were:
+
+-   *Absorption*: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
+
+-   *Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
+
+-   *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
+
+The attitudinal scale definitions were:
+
+-   *Cognitive*: Pertaining to thoughts or general mental processes (for example what someone thinks)
+
+-   *Affective*: Pertaining to feelings or emotions (for example, how someone feels)
+
+-   *Behavioral*: Pertaining to acts or actions (for example, what someone does)
 
 See table *X* for a full list of items and their respective dimensions.
 
@@ -259,7 +275,7 @@ Looking into the specification of polychoric covariances [@joreskog1994estimatio
 
 ### CFA Modification Indices
 
-Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item2 and item4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
+Looking at the substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose shared residual covariances were implicated as being "freed". The path with the highest modification index across both CFA's was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item4, "I find it difficult to mentally disconnect from work" over item2, "I have a hard time detaching mentally from my work". After item2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
 
 [^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association).
 
@@ -268,6 +284,8 @@ We prioritized item deletions such that an item was implicated for deletion if: 
 > > Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
 
 ### Single factor versus bifactor approaches
+
+> Casey this is where you come in
 
 ## Data analysis
 
@@ -412,7 +430,7 @@ semPlot::semPaths(Fit1.2,"std")
 
 ## Study 2
 
-Construct validation was acccomplished via administration of the 17-item UWES as well as the @saks2006antecedents 12-item scale. @saks2006antecedents aggregates to two scales: job and organizational engagement [@saks2019antecedents]. 
+Construct validation was acccomplished via administration of the 17-item UWES as well as the @saks2006antecedents 12-item scale. @saks2006antecedents aggregates to two scales: job and organizational engagement.
 
 # Discussion
 
