@@ -64,7 +64,6 @@ draft             : no
 documentclass     : "apa6"
 classoption       : "man"
 output            : papaja::apa6_pdf
-
 ---
 
 ```{r setup, include = FALSE}
@@ -113,6 +112,7 @@ Choice of focus on BIC versus AIC discussed in @dziak2020sensitivity.
 library(tidyverse)
 library(DT)
 library(labourR)
+library(apaTables)
 
 
 temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
@@ -181,6 +181,11 @@ together$id <- 1:nrow(together) #adds unique identifier to satisfy inane require
 
 ISCO <- classify_occupation(together, text_col = 'position', isco_level = 1) #nrow = 249 (I think BC it ignores NA's?)
 
+ISCO$iscoGroup <- as.numeric(ISCO$iscoGroup)
+ISCO$iscoGroup
+
+ISCO$iscoGroup <- recode(ISCO$iscoGroup, `1` = "Managers", `2` = "Professionals", `3` = "Technicians and associate professionals", `4` = "Clerical Support Workers", `5` = "Service and sales workers", `6` = "Skilled agricultural, forestry and fishery workers", `7` = "Craft and related trades workers", `8` = "Plant and machine operators, and assemblers", `9` = "Elementary occupations", `10` = "Armed forces occupations")
+
 job_groups <- table(ISCO$iscoGroup) #table of first level of ISCO classifications for all participants
 
 #1 (Managers): 51
@@ -225,14 +230,22 @@ Participant job title, hours worked per week, and organizational tenure were rec
 
 ```{r echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
 tenure_hist <- ggplot(together) +
-  geom_histogram(aes(x = tenure))
+  geom_histogram(aes(x = tenure)) + 
+  xlab("Organizational tenure (years)") +
+  ylab("Number of responses") +
+  ggtitle("How long have you been with this organization?") +
+  theme_apa()
 
 tenure_hist
 ```
 
 ```{r echo=FALSE, warning=FALSE, fig.cap="Distribution of mean hours worked per week"}
 hours_hist <- ggplot(together) +
-  geom_histogram(aes(x = `How many hours do you typically work per week in this job?`))
+  geom_histogram(aes(x = `How many hours do you typically work per week in this job?`)) +
+  xlab("Hours worked per week") +
+  ylab("Number of responses") +
+  theme_apa() +
+  ggtitle("How many hours do you typically work per week in this job?")
 
 hours_hist
 ```
@@ -283,14 +296,11 @@ The effective result of this was two divergent quasi-experimental approaches: 1)
 
 We followed two parallel stepwise item-reduction processes centered around eliminating items in decreasing order of modification indices. Looking at the 36-item substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose fixed shared residual covariances were associated with high modification indices (indicating better model fit if the paths were freed). The item pair with the highest modification index was scrutinized, with a subjective group judgment made on wording/semantics content domain coverage. The less preferred item was removed from the model. In cases where the highest modification index was between the only two remaining items in a substantive-attitudinal pair, these items were passed over for scrutiny in favor of the items with the next-highest index. This process was repeated until 18 items remained (i.e., 2 items for each of the 9 substantive-attitudinal pairs)
 
-
-For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, "I find it difficult to mentally disconnect from work" over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1] 
-
-
-The end result was two separate final scale definitions (one optimized for the substantive model and one for the attitudinal).
+For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of "Absorption" and "Cognition". One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, "I find it difficult to mentally disconnect from work" over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.[^1]
 
 [^1]: Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association). Look at "modincides1"
 
+The end result was two separate final scale definitions (one optimized for the substantive model and one for the attitudinal).
 
 We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same "cell". The choice of item to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
 
@@ -301,7 +311,6 @@ colnames(mod) <- c('Variable 1', 'Relationship', 'Variable 2', "Δχ2") #Δχ2 i
 mod <- apa_table(mod)
 mod
 ```
-
 
 > > Actually it doesn't matter that much with only 1 item deletion - probably go ahead and do a few before recheck modification indices
 
