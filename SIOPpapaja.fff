@@ -2,15 +2,15 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/unnamed-chunk-1-1.pdf}
-\caption{\label{fig:unnamed-chunk-1}Distribution of organizational tenure (years)}
+\includegraphics{SIOPpapaja_files/figure-latex/tenure-1.pdf}
+\caption{\label{fig:tenure}Distribution of organizational tenure (years)}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/unnamed-chunk-2-1.pdf}
-\caption{\label{fig:unnamed-chunk-2}Distribution of mean hours worked per week}
+\includegraphics{SIOPpapaja_files/figure-latex/hours-1.pdf}
+\caption{\label{fig:hours}Distribution of mean hours worked per week}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}

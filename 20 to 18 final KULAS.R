@@ -7,6 +7,8 @@ library(dplyr)
 
 CFAdata <- read.csv("CFAdata.csv") 
 
+testpoly <- CFAdata[2:37]
+
 
 modified1 <-'
 Absorption = ~Item_1 +  Item_2  + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
@@ -26,7 +28,32 @@ Dedication ~~ 0*Behavioral
 Dedication ~~ 0*Cognitive
 '
 
-Fit.mod1 <- lavaan::cfa(modified1, data = CFAdata, missing = 'ML', estimator = 'MLR') 
+## https://stackoverflow.com/questions/41395611/cfa-in-r-lavaan-with-ordinal-data-polychoric-correlation-included
+
+fit.poly <- lavCor(testpoly, ordered=TRUE, group=NULL, output="cov")
+
+
+## Jorgensen's post for necessary poly elements to run a DWLS:
+
+fit_poly <- lavCor(data = Data, ordered = TRUE, output = "lavaan")
+## obtain summary stats
+sample.cov  <- lavInspect(fit_poly, "sampstat")$cov
+sample.mean <- lavInspect(fit_poly, "sampstat")$mean
+sample.th   <- lavInspect(fit_poly, "sampstat")$th
+attr(sample.th, "th.idx") <- lavInspect(fit_poly, "th.idx")
+sample.nobs <- lavInspect(fit_poly, "nobs")
+WLS.V <- lavInspect(fit_poly, "WLS.V")
+NACOV <- lavInspect(fit_poly, "gamma")
+## fit model to summary stats
+fit <- cfa(model, sample.cov = sample.cov, sample.mean = sample.mean,
+           sample.th = sample.th, sample.nobs = sample.nobs,
+           WLS.V = WLS.V, NACOV = NACOV)
+
+## end post
+
+
+                   
+Fit.mod1 <- lavaan::cfa(modified1, sample.cov=fit.poly, sample.nobs=282, estimator="DWLS") 
 
 semPlot::semPaths(Fit.mod1, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3", 
                   rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0, edge.label.cex = 1.5, pastel=TRUE) 
