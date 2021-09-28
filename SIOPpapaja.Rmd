@@ -77,6 +77,10 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
+> Renata's SEM paper will come in handy
+
+Recent decades have seen a proliferation of interest and research in the construct of employee engagement.
+
 The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. The 1990's saw focused development and refinement (for example, a dissertation; @leone_relation_1995 or actual semantic reference; @kahn_psychological_1990). @staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
 
 @kahn_psychological_1990 described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs.
@@ -93,11 +97,19 @@ Our conceptualization of work engagement is a mental state wherein employees...
 -   ...are enthusiastic about the content of their work and the things they do (**Dedication**)
 -   ...are so immersed in their work activities that time seems compressed (**Absorption**)
 
+This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other [@kulikowski2017we].
+
+> need more on criticisms of model
+
+Another conceptualization of engagement can be taken from the tripartite attitudinal model. First proposed by @rosenberg_cognitive_1960, this model frames attitudes as a latent variable that manifests cognitively, affectively and behaviorally. Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019,
+
+> more on why we're looking at tripartite model
+
+The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+
 # Methods
 
 Choice of focus on BIC versus AIC discussed in @dziak2020sensitivity.
-
-## Participants
 
 ```{r getData, echo=FALSE, warning=FALSE}
 #PASTED CURRENT VERSION OF 'MORGAN JOB TITLE HOURS WORKED'
@@ -224,9 +236,11 @@ demo_table <- together %>%
   datatable()
 ```
 
+## Participants
+
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
-Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was ` r mean(together$`How many hours do you typically work per week in this job?`, na.rm = TRUE)`, see Figure \@ref(fig:hours). Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`, see Figure \@ref(fig-tenure). Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `` r mean(together$`How many hours do you typically work perk week in this job?` ``ow many hours do you typically work per week in this job?`, na.rm = TRUE)`, see Figure \@ref(fig:hours). Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`, see Figure \@ref(fig-tenure). Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
 ```{r tenure, echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
 tenure_hist <- ggplot(together) +
@@ -260,7 +274,7 @@ Our survey was administered on Qualtrics.
 
 ### Item generation
 
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example *EXAMPLE ITEM HERE*
+We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension. For example, the item "My job makes me feel like I'm part of something meaningful" reflects the affective dimension with "feel" and the dedication dimension with "I'm part of something meaningful."
 
 Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions.
 
@@ -429,6 +443,11 @@ CFAdata<-CFAdata%>%rename(
 )
 
 
+
+
+```
+
+```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Substantive factor structure CFA"}
 Sub_Model<-'
 Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
@@ -441,7 +460,6 @@ fit1.1 <- as.data.frame(fitMeasures(Fit1.1))
 # summary(Fit1.1, fit.measure=TRUE)
 
 # write.csv(modindices(Fit1.1, sort=TRUE), "fit_substantive.csv")
-
 ```
 
 ```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Attitudinal factor structure CFA"}
@@ -456,6 +474,37 @@ Fit1.2<-lavaan::cfa(Att_Model, data = CFAdata)
 semPlot::semPaths(Fit1.2,"std")
 # lavaan::fitMeasures(Fit1.2)
 # summary(Fit1.2, fit.measure=TRUE)
+
+```
+
+```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Bifactor structure"}
+
+modified2 <-'
+Absorption = ~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
+Vigor      = ~Item_14 + Item_16 + Item_17 + Item_19 + Item_21 + Item_22
+Dedication = ~ Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
+Cognitive  = ~Item_1  + Item_3  + Item_14 + Item_16 + Item_26 + Item_28
+Affective  = ~Item_5 +  Item_8  + Item_17 + Item_19 + Item_31 + Item_32
+Behavioral = ~Item_10 + Item_11 + Item_21 + Item_22 + Item_34 + Item_35
+Absorption ~~ 0*Affective
+Absorption ~~ 0*Behavioral
+Absorption ~~ 0*Cognitive
+Vigor      ~~ 0*Affective
+Vigor      ~~ 0*Behavioral
+Vigor      ~~ 0*Cognitive
+Dedication ~~ 0*Affective
+Dedication ~~ 0*Behavioral
+Dedication ~~ 0*Cognitive
+'
+
+Fit.mod2 <- lavaan::cfa(modified2, data = CFAdata, missing = "ML", estimator = 'MLR')
+
+semPlot::semPaths(Fit.mod2, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3",
+                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0, pastel=TRUE)
+
+modindices(Fit.mod2, sort = TRUE, maximum.number = 25)
+
+summary(Fit.mod2, standardized=TRUE)
 
 ```
 
