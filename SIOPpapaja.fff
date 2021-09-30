@@ -16,13 +16,20 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.sub-1.pdf}
-\caption{(\#fig:CFA.sub)Substantive factor structure CFA}
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att1-1.pdf}
+\caption{(\#fig:CFA.att1)Substantive factor structure CFA}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.att-1.pdf}
-\caption{(\#fig:CFA.att)Attitudinal factor structure CFA}
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att2-1.pdf}
+\caption{(\#fig:CFA.att2)Attitudinal factor structure CFA}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att3-1.pdf}
+\caption{(\#fig:CFA.att3)Bifactor structure}
 \end{figure*}

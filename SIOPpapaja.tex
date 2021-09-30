@@ -169,6 +169,12 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \begin{document}
 \maketitle
 
+\begin{quote}
+Renata's SEM paper will come in handy
+\end{quote}
+
+Recent decades have seen a proliferation of interest and research in the construct of employee engagement.
+
 The roots of employee (aka work; e.g., Schaufeli \& Bakker, 2010) engagement research likely started with theoretical expansions of forms of employee participation (see, for example, Ferris \& Hellier, 1984) and job involvement (e.g., Elloy, Everett, \& Flynn, 1991). This exploration extended into broader considerations of attitudes and emotions (Staw, Sutton, \& Pelled, 1994) and were informed by further exploration of the dimensionality of constructs such as organizational commitment (Meyer \& Allen, 1991). The 1990's saw focused development and refinement (for example, a dissertation; Leone (1995) or actual semantic reference; Kahn (1990)). Staw et al. (1994) investigated the relationships between \emph{positive emotions} and favorable work outcomes, and although they do not use the word, \enquote{engagement}, their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
 
 Kahn (1990) described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to \emph{burnout} (Maslach \& Leiter, 2008), these two constructs are currently most commonly conceptualized as being distinct (Goering, Shimazu, Zhou, Wada, \& Sakai, 2017; Kim, Shin, \& Swanger, 2009; Schaufeli, Taris, \& Van Rhenen, 2008; Timms, Brough, \& Graham, 2012), although certainly not universally (Cole, Walter, Bedeian, \& O'Boyle, 2012; Taris, Ybema, \& Beek, 2017). Comparing the two, Goering et al. (2017) concluded that they have a moderate (negative) association, but also distinct nomological networks. Schaufeli et al. (2008) investigated both internal and external association indicators, concluding that engagement and burnout (as well as \emph{workaholism}) should be considered three distinct constructs.
@@ -193,17 +199,41 @@ Our conceptualization of work engagement is a mental state wherein employees\ldo
   \ldots are so immersed in their work activities that time seems compressed (\textbf{Absorption})
 \end{itemize}
 
+This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other (Kulikowski, 2017).
+
+\begin{quote}
+need more on criticisms of model
+\end{quote}
+
+Another conceptualization of engagement can be taken from the tripartite attitudinal model. First proposed by Rosenberg (1960), this model frames attitudes as a latent variable that manifests cognitively, affectively and behaviorally. Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by Kaiser and Wilson (2019),
+
+\begin{quote}
+more on why we're looking at tripartite model
+\end{quote}
+
+The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
 Choice of focus on BIC versus AIC discussed in Dziak, Coffman, Lanza, Li, and Jermiin (2020).
+
+\begin{verbatim}
+##   [1] 2 3 1 2 3 2 1 1 2 2 2 3 1 1 3 2 3 2 3 1 1 3 1 3 2 2 1 2 2 1 2 3 2 2 2 4 2
+##  [38] 3 3 3 2 2 3 2 1 3 1 2 3 2 1 2 2 1 2 3 3 1 1 2 2 1 2 2 3 2 1 2 3 2 3 2 1 7
+##  [75] 1 2 2 2 1 2 2 1 3 2 4 2 8 2 2 3 5 2 1 2 3 2 2 2 1 2 1 3 3 2 3 2 2 2 3 3 2
+## [112] 2 2 1 2 2 3 2 5 2 3 2 3 2 3 3 1 2 1 3 8 2 1 3 2 3 3 5 3 2 2 2 2 1 3 2 3 3
+## [149] 5 2 2 3 2 1 2 3 1 2 3 4 1 2 1 2 1 2 3 5 2 3 2 2 1 3 5 8 5 2 2 3 3 2 1 2 2
+## [186] 3 1 1 3 3 1 2 2 2 1 2 2 2 2 3 2 3 2 2 2 2 1 3 3 4 2 2 2 3 1 2 2 1 2 1 2 1
+## [223] 1 2 5 2 2 1 2 2 2 2 1 2 3 3 1 3 2 2 2 2 1 2 2 2 3 3 2
+\end{verbatim}
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
 330 individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
-Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was \texttt{r\ mean(together\$}How many hours do you typically work per week in this job?\texttt{,\ na.rm\ =\ TRUE)}, see Figure \ref{fig:hours}. Mean organizational tenure was 6.82 years with a standard deviation of 8.50, see Figure \ref{fig-tenure}. Participants who did not exactly specify their tenure (e.g.~\enquote{A bit over a year}) were not included in this average.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was 40.59 (SD = 13.69), see Figure \ref{fig:hours}. Mean organizational tenure was 6.82 years with a standard deviation of 8.50, see Figure \ref{fig:tenure}. Participants who did not exactly specify their tenure (e.g.~\enquote{A bit over a year}) were not included in this average.
 
 \begin{figure}
 \centering
@@ -219,7 +249,7 @@ Participant job title, hours worked per week, and organizational tenure were rec
 
 Participants provided their job titles via an optional free text-entry box at the end of the survey. From there, we classified job titles according to the International Standard Classification of Occupations (ISCO-8) with the \texttt{classify\_occupation} function within the \texttt{labourR} package (({\textbf{???}})). The ISCO hierarchically organizes jobs in increasing order of specificity. For example, the first level of the hierarchy distinguishes a professional from a clerical worker or a technician. On the second level, professionals are distinguished among each other by whether they are engineers, medical workers, lawyers, and so on.
 
-51, 120, 62, 4, 8, 1, and 3
+4, 1, 51, 3, 120, 8, and 62
 
 \hypertarget{material}{%
 \subsection{Material}\label{material}}
@@ -229,7 +259,7 @@ Our survey was administered on Qualtrics.
 \hypertarget{item-generation}{%
 \subsubsection{Item generation}\label{item-generation}}
 
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as \emph{WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST \enquote{I THINK}, \enquote{I FEEL}, \enquote{I DO}?} Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension, for example \emph{EXAMPLE ITEM HERE}
+We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as \emph{WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST \enquote{I THINK}, \enquote{I FEEL}, \enquote{I DO}?} Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension. For example, the item \enquote{My job makes me feel like I'm part of something meaningful} reflects the affective dimension with \enquote{feel} and the dedication dimension with \enquote{I'm part of something meaningful.}
 
 Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions.
 
@@ -325,7 +355,7 @@ Casey this is where you come in
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used R (Version 4.0.3; R Core Team, 2021) and the R-packages \emph{dplyr} (Version 1.0.2; Wickham et al., 2021), \emph{DT} (Version 0.16; Xie, Cheng, \& Tan, 2021), \emph{forcats} (Version 0.5.0; Wickham, 2021a), \emph{ggplot2} (Version 3.3.2; Wickham, 2016), \emph{kableExtra} (Version 1.3.1; Zhu, 2021), \emph{labourR} (Version 1.0.0; Kouretsis, Bampouris, Morfiris, \& Papageorgiou, 2020), \emph{lavaan} (Version 0.6.8; Rosseel, 2012), \emph{magrittr} (Version 2.0.1; Bache \& Wickham, 2020), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 1.4.0; Wickham \& Hester, 2020), \emph{sem} (Version 3.1.11; Fox, Nie, \& Byrnes, 2020; Epskamp, 2019), \emph{semPlot} (Version 1.1.2; Epskamp, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.0; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.1.2; Wickham, 2021b), and \emph{tidyverse} (Version 1.3.0; Wickham, Averick, et al., 2019) for all our analyses.
+We used R (Version 4.0.3; R Core Team, 2021) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.0.2; Wickham et al., 2021), \emph{DT} (Version 0.16; Xie, Cheng, \& Tan, 2021), \emph{forcats} (Version 0.5.0; Wickham, 2021a), \emph{ggplot2} (Version 3.3.2; Wickham, 2016), \emph{kableExtra} (Version 1.3.1; Zhu, 2021), \emph{labourR} (Version 1.0.0; Kouretsis, Bampouris, Morfiris, \& Papageorgiou, 2020), \emph{lavaan} (Version 0.6.8; Rosseel, 2012), \emph{magrittr} (Version 2.0.1; Bache \& Wickham, 2020), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 1.4.0; Wickham \& Hester, 2020), \emph{sem} (Version 3.1.11; Fox, Nie, \& Byrnes, 2020; Epskamp, 2019), \emph{semPlot} (Version 1.1.2; Epskamp, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.0; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.1.2; Wickham, 2021b), and \emph{tidyverse} (Version 1.3.0; Wickham, Averick, et al., 2019) for all our analyses.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -334,15 +364,200 @@ CFA drafts below
 
 \begin{figure}
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.sub-1.pdf}
-\caption{(\#fig:CFA.sub)Substantive factor structure CFA}
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att1-1.pdf}
+\caption{(\#fig:CFA.att1)Substantive factor structure CFA}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.att-1.pdf}
-\caption{(\#fig:CFA.att)Attitudinal factor structure CFA}
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att2-1.pdf}
+\caption{(\#fig:CFA.att2)Attitudinal factor structure CFA}
 \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{SIOPpapaja_files/figure-latex/CFA.att3-1.pdf}
+\caption{(\#fig:CFA.att3)Bifactor structure}
+\end{figure}
+
+\begin{verbatim}
+##            lhs op     rhs     mi    epc sepc.lv sepc.all sepc.nox
+## 176     Item_1 ~~ Item_11 23.897  0.436   0.436    0.318    0.318
+## 151  Affective =~ Item_11 15.429 -3.949  -1.878   -1.558   -1.558
+## 291    Item_19 ~~ Item_26 13.236  0.222   0.222    0.354    0.354
+## 309    Item_22 ~~ Item_35 12.338  0.166   0.166    0.279    0.279
+## 178     Item_1 ~~ Item_16 12.237  0.267   0.267    0.267    0.267
+## 299    Item_21 ~~ Item_28 11.658  0.187   0.187    0.256    0.256
+## 248    Item_11 ~~ Item_16 11.262  0.227   0.227    0.230    0.230
+## 100 Absorption =~ Item_14 10.747 -6.649  -1.795   -1.300   -1.300
+## 121      Vigor =~ Item_32 10.583  0.287   0.310    0.248    0.248
+## 222     Item_8 ~~ Item_14 10.378 -0.345  -0.345   -0.551   -0.551
+## 225     Item_8 ~~ Item_19 10.143 -0.169  -0.169   -0.310   -0.310
+## 137  Cognitive =~  Item_8  9.803  0.782   0.539    0.411    0.411
+## 142  Cognitive =~ Item_21  9.475  0.849   0.586    0.497    0.497
+## 102 Absorption =~ Item_17  9.373  1.937   0.523    0.512    0.512
+## 143  Cognitive =~ Item_22  8.938 -0.743  -0.513   -0.466   -0.466
+## 258    Item_11 ~~ Item_35  8.496  0.190   0.190    0.194    0.194
+## 229     Item_8 ~~ Item_28  8.478  0.155   0.155    0.274    0.274
+## 310    Item_26 ~~ Item_28  8.472  0.294   0.294    0.451    0.451
+## 265    Item_14 ~~ Item_28  8.466 -0.191  -0.191   -0.291   -0.291
+## 270    Item_16 ~~ Item_17  8.249 -0.128  -0.128   -0.216   -0.216
+## 158  Affective =~ Item_34  8.216  1.960   0.932    1.060    1.060
+## 139  Cognitive =~ Item_11  8.204  0.893   0.616    0.511    0.511
+## 320    Item_31 ~~ Item_34  8.121  0.098   0.098    0.198    0.198
+## 106 Absorption =~ Item_26  7.921 -1.640  -0.443   -0.288   -0.288
+## 180     Item_1 ~~ Item_19  7.842 -0.189  -0.189   -0.217   -0.217
+\end{verbatim}
+
+\begin{verbatim}
+## lavaan 0.6-8 ended normally after 191 iterations
+## 
+##   Estimator                                         ML
+##   Optimization method                           NLMINB
+##   Number of model parameters                        78
+##                                                       
+##                                                   Used       Total
+##   Number of observations                           279         282
+##   Number of missing patterns                        23            
+##                                                                   
+## Model Test User Model:
+##                                                Standard      Robust
+##   Test Statistic                                264.700     246.388
+##   Degrees of freedom                                111         111
+##   P-value (Chi-square)                            0.000       0.000
+##   Scaling correction factor                                   1.074
+##        Yuan-Bentler correction (Mplus variant)                     
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                             Sandwich
+##   Information bread                           Observed
+##   Observed information based on                Hessian
+## 
+## Latent Variables:
+##                    Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+##   Absorption =~                                                         
+##     Item_1            1.000                               0.270    0.194
+##     Item_3            1.666    0.926    1.799    0.072    0.450    0.382
+##     Item_5            2.813    2.727    1.032    0.302    0.759    0.525
+##     Item_8            3.532    3.010    1.174    0.241    0.953    0.727
+##     Item_10          -0.356    1.530   -0.233    0.816   -0.096   -0.061
+##     Item_11           0.017    0.703    0.024    0.981    0.005    0.004
+##   Vigor =~                                                              
+##     Item_14           1.000                               1.079    0.781
+##     Item_16           0.532    0.287    1.856    0.064    0.575    0.471
+##     Item_17           0.379    0.329    1.153    0.249    0.409    0.401
+##     Item_19           0.150    0.308    0.486    0.627    0.162    0.135
+##     Item_21           0.214    0.290    0.737    0.461    0.231    0.196
+##     Item_22           0.311    0.328    0.949    0.343    0.335    0.305
+##   Dedication =~                                                         
+##     Item_26           1.000                               1.204    0.783
+##     Item_28           0.705    0.161    4.384    0.000    0.849    0.642
+##     Item_31           0.297    0.168    1.769    0.077    0.357    0.363
+##     Item_32           0.523    0.229    2.281    0.023    0.629    0.503
+##     Item_34           0.131    0.122    1.069    0.285    0.157    0.179
+##     Item_35           0.569    0.156    3.637    0.000    0.685    0.559
+##   Cognitive =~                                                          
+##     Item_1            1.000                               0.690    0.496
+##     Item_3            1.054    0.281    3.745    0.000    0.727    0.618
+##     Item_14           0.192    0.580    0.331    0.740    0.133    0.096
+##     Item_16           0.955    0.272    3.511    0.000    0.659    0.541
+##     Item_26           0.642    0.654    0.981    0.326    0.443    0.288
+##     Item_28           0.961    0.470    2.043    0.041    0.663    0.501
+##   Affective =~                                                          
+##     Item_5            1.000                               0.476    0.329
+##     Item_8            1.089    0.357    3.048    0.002    0.518    0.395
+##     Item_17           1.307    0.442    2.956    0.003    0.622    0.609
+##     Item_19           1.961    1.157    1.695    0.090    0.932    0.777
+##     Item_31           1.242    0.496    2.504    0.012    0.591    0.601
+##     Item_32           1.532    0.389    3.935    0.000    0.729    0.583
+##   Behavioral =~                                                         
+##     Item_10           1.000                               0.709    0.450
+##     Item_11           0.436    0.180    2.420    0.016    0.309    0.256
+##     Item_21           0.928    0.279    3.323    0.001    0.658    0.558
+##     Item_22           1.092    0.341    3.200    0.001    0.774    0.703
+##     Item_34           0.706    0.178    3.959    0.000    0.500    0.569
+##     Item_35           0.807    0.480    1.682    0.093    0.572    0.467
+## 
+## Covariances:
+##                    Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+##   Absorption ~~                                                         
+##     Affective         0.000                               0.000    0.000
+##     Behavioral        0.000                               0.000    0.000
+##     Cognitive         0.000                               0.000    0.000
+##   Vigor ~~                                                              
+##     Affective         0.000                               0.000    0.000
+##     Behavioral        0.000                               0.000    0.000
+##     Cognitive         0.000                               0.000    0.000
+##   Dedication ~~                                                         
+##     Affective         0.000                               0.000    0.000
+##     Behavioral        0.000                               0.000    0.000
+##     Cognitive         0.000                               0.000    0.000
+##   Absorption ~~                                                         
+##     Vigor             0.242    0.278    0.873    0.383    0.832    0.832
+##     Dedication        0.218    0.314    0.692    0.489    0.670    0.670
+##   Vigor ~~                                                              
+##     Dedication        0.804    0.404    1.989    0.047    0.619    0.619
+##   Cognitive ~~                                                          
+##     Affective         0.246    0.241    1.021    0.307    0.749    0.749
+##     Behavioral        0.411    0.114    3.603    0.000    0.839    0.839
+##   Affective ~~                                                          
+##     Behavioral        0.320    0.197    1.627    0.104    0.950    0.950
+## 
+## Intercepts:
+##                    Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+##    .Item_1            3.737    0.085   44.146    0.000    3.737    2.688
+##    .Item_3            4.573    0.072   63.582    0.000    4.573    3.885
+##    .Item_5            3.087    0.088   35.068    0.000    3.087    2.136
+##    .Item_8            3.543    0.080   44.121    0.000    3.543    2.702
+##    .Item_10           3.717    0.096   38.856    0.000    3.717    2.361
+##    .Item_11           4.549    0.074   61.780    0.000    4.549    3.774
+##    .Item_14           3.562    0.084   42.442    0.000    3.562    2.579
+##    .Item_16           4.129    0.074   55.472    0.000    4.129    3.386
+##    .Item_17           4.503    0.063   71.240    0.000    4.503    4.409
+##    .Item_19           4.593    0.074   62.003    0.000    4.593    3.826
+##    .Item_21           4.533    0.072   62.787    0.000    4.533    3.848
+##    .Item_22           4.751    0.068   70.220    0.000    4.751    4.315
+##    .Item_26           3.923    0.094   41.796    0.000    3.923    2.550
+##    .Item_28           4.270    0.081   52.682    0.000    4.270    3.227
+##    .Item_31           4.973    0.062   80.789    0.000    4.973    5.057
+##    .Item_32           4.581    0.078   58.435    0.000    4.581    3.664
+##    .Item_34           4.981    0.054   92.021    0.000    4.981    5.663
+##    .Item_35           4.715    0.076   62.230    0.000    4.715    3.846
+##     Absorption        0.000                               0.000    0.000
+##     Vigor             0.000                               0.000    0.000
+##     Dedication        0.000                               0.000    0.000
+##     Cognitive         0.000                               0.000    0.000
+##     Affective         0.000                               0.000    0.000
+##     Behavioral        0.000                               0.000    0.000
+## 
+## Variances:
+##                    Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+##    .Item_1            1.384    0.193    7.180    0.000    1.384    0.716
+##    .Item_3            0.655    0.122    5.346    0.000    0.655    0.472
+##    .Item_5            1.286    0.157    8.200    0.000    1.286    0.616
+##    .Item_8            0.542    0.154    3.509    0.000    0.542    0.315
+##    .Item_10           1.966    0.183   10.767    0.000    1.966    0.793
+##    .Item_11           1.357    0.119   11.378    0.000    1.357    0.934
+##    .Item_14           0.726    0.524    1.386    0.166    0.726    0.380
+##    .Item_16           0.722    0.101    7.119    0.000    0.722    0.486
+##    .Item_17           0.489    0.080    6.119    0.000    0.489    0.469
+##    .Item_19           0.545    0.148    3.695    0.000    0.545    0.378
+##    .Item_21           0.902    0.121    7.453    0.000    0.902    0.650
+##    .Item_22           0.501    0.069    7.237    0.000    0.501    0.413
+##    .Item_26           0.721    0.235    3.065    0.002    0.721    0.305
+##    .Item_28           0.590    0.076    7.717    0.000    0.590    0.337
+##    .Item_31           0.491    0.076    6.425    0.000    0.491    0.507
+##    .Item_32           0.636    0.086    7.381    0.000    0.636    0.407
+##    .Item_34           0.499    0.054    9.184    0.000    0.499    0.645
+##    .Item_35           0.706    0.110    6.445    0.000    0.706    0.470
+##     Absorption        0.073    0.160    0.454    0.650    1.000    1.000
+##     Vigor             1.164    0.502    2.319    0.020    1.000    1.000
+##     Dedication        1.449    0.327    4.437    0.000    1.000    1.000
+##     Cognitive         0.476    0.188    2.528    0.011    1.000    1.000
+##     Affective         0.226    0.278    0.812    0.417    1.000    1.000
+##     Behavioral        0.503    0.159    3.153    0.002    1.000    1.000
+\end{verbatim}
 
 \hypertarget{study-2}{%
 \subsection{Study 2}\label{study-2}}
@@ -407,11 +622,17 @@ Jöreskog, K. G. (1994). On the estimation of polychoric correlations and their 
 \leavevmode\hypertarget{ref-kahn_psychological_1990}{}%
 Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work. \emph{Academy of Management Journal}, \emph{33}(4), 692--724.
 
+\leavevmode\hypertarget{ref-kaiser_campbell_2019}{}%
+Kaiser, F. G., \& Wilson, M. (2019). The Campbell Paradigm as a Behavior-Predictive Reinterpretation of the Classical Tripartite Model of Attitudes. \emph{European Psychologist}, \emph{24}(4), 359--374. \url{https://doi.org/10.1027/1016-9040/a000364}
+
 \leavevmode\hypertarget{ref-kim_burnout_2009}{}%
 Kim, H. J., Shin, K. H., \& Swanger, N. (2009). Burnout and engagement: A comparative analysis using the Big Five personality dimensions. \emph{International Journal of Hospitality Management}, \emph{28}(1), 96--104. \url{https://doi.org/10.1016/j.ijhm.2008.06.001}
 
 \leavevmode\hypertarget{ref-R-labourR}{}%
 Kouretsis, A., Bampouris, A., Morfiris, P., \& Papageorgiou, K. (2020). \emph{LabourR: Classify multilingual labour market free-text to standardized hierarchical occupations}. Retrieved from \url{https://CRAN.R-project.org/package=labourR}
+
+\leavevmode\hypertarget{ref-kulikowski2017we}{}%
+Kulikowski, K. (2017). Do we all agree on how to measure work engagement? Factorial validity of utrecht work engagement scale as a standard measurement tool--a literature review. \emph{International Journal of Occupational Medicine and Environmental Health}, \emph{30}(2), 161--175.
 
 \leavevmode\hypertarget{ref-leiter_areas_2004}{}%
 Leiter, M., \& Maslach, C. (2004). Areas of worklife: A structured approach to organizational predictors of job burnout. In \emph{Research in occupational stress and well-being} (Vol. 3, pp. 91--134). \url{https://doi.org/10.1016/S1479-3555(03)03003-8}
@@ -434,6 +655,9 @@ Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved
 \leavevmode\hypertarget{ref-R-base}{}%
 R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
+\leavevmode\hypertarget{ref-rosenberg_cognitive_1960}{}%
+Rosenberg, M. J. (1960). \emph{Cognitive, affective, and behavioral components of attitudes}. \emph{Attitude organization and change}.
+
 \leavevmode\hypertarget{ref-R-lavaan}{}%
 Rosseel, Y. (2012). lavaan: An R package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{https://www.jstatsoft.org/v48/i02/}
 
@@ -451,6 +675,9 @@ Schaufeli, W. B., Salanova, M., González-Romá, V., \& Bakker, A. B. (2002). Th
 
 \leavevmode\hypertarget{ref-schaufeli2008workaholism}{}%
 Schaufeli, W. B., Taris, T. W., \& Van Rhenen, W. (2008). Workaholism, burnout, and work engagement: Three of a kind or three different kinds of employee well-being? \emph{Applied Psychology}, \emph{57}(2), 173--203.
+
+\leavevmode\hypertarget{ref-R-apaTables}{}%
+Stanley, D. (2021). \emph{ApaTables: Create american psychological association (apa) style tables}. Retrieved from \url{https://CRAN.R-project.org/package=apaTables}
 
 \leavevmode\hypertarget{ref-staw_employee_1994}{}%
 Staw, B. M., Sutton, R. I., \& Pelled, L. H. (1994). Employee positive emotion and favorable outcomes at the workplace. \emph{Organization Science}, \emph{5}(1), 51--71.

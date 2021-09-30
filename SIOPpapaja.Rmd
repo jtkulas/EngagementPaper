@@ -234,13 +234,16 @@ demo_table <- together %>%
          `What is the title of the job you were thinking about while responding to this survey?`) %>% 
   filter_all(any_vars(!is.na(.))) %>% #changed DT to filter out rows where all col values == NA
   datatable()
+
+colnames(together)[39] <- "hours"     ## label too long
+
 ```
 
 ## Participants
 
 `r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
 
-Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `` r mean(together$`How many hours do you typically work perk week in this job?` ``ow many hours do you typically work per week in this job?`, na.rm = TRUE)`, see Figure \@ref(fig:hours). Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`, see Figure \@ref(fig-tenure). Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
+Participant job title, hours worked per week, and organizational tenure were recorded. Mean hours worked per week was `r mean(together$hours, na.rm=TRUE)` (SD = `r sd(together$hours, na.rm=TRUE)`), see Figure \@ref(fig:hours). Mean organizational tenure was `r mean(together$tenure, na.rm = TRUE)` years with a standard deviation of `r sd(together$tenure, na.rm = TRUE)`, see Figure \@ref(fig:tenure). Participants who did not exactly specify their tenure (e.g. "A bit over a year") were not included in this average.
 
 ```{r tenure, echo=FALSE, warning=FALSE, fig.cap="Distribution of organizational tenure (years)"}
 tenure_hist <- ggplot(together) +
@@ -254,8 +257,9 @@ tenure_hist
 ```
 
 ```{r hours, echo=FALSE, warning=FALSE, fig.cap="Distribution of mean hours worked per week"}
+
 hours_hist <- ggplot(together) +
-  geom_histogram(aes(x = `How many hours do you typically work per week in this job?`)) +
+  geom_histogram(aes(x = hours)) +
   xlab("Hours worked per week") +
   ylab("Number of responses") +
   theme_apa() +
@@ -447,7 +451,7 @@ CFAdata<-CFAdata%>%rename(
 
 ```
 
-```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Substantive factor structure CFA"}
+```{r CFA.att1, echo=FALSE, warning=FALSE, fig.cap="Substantive factor structure CFA"}
 Sub_Model<-'
 Absorption=~Item_1+Item_2+Item_3+Item_4+Item_5+Item_6+Item_7+Item_8+Item_9+Item_10+Item_11+Item_12
 Vigor=~Item_13+Item_14+Item_15+Item_16+Item_17+Item_18+Item_19+Item_20+Item_21+Item_22+Item_23+Item_24
@@ -462,7 +466,7 @@ fit1.1 <- as.data.frame(fitMeasures(Fit1.1))
 # write.csv(modindices(Fit1.1, sort=TRUE), "fit_substantive.csv")
 ```
 
-```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Attitudinal factor structure CFA"}
+```{r CFA.att2, echo=FALSE, warning=FALSE, fig.cap="Attitudinal factor structure CFA"}
 
 
 Att_Model<-'
@@ -477,7 +481,7 @@ semPlot::semPaths(Fit1.2,"std")
 
 ```
 
-```{r CFA.att, echo=FALSE, warning=FALSE, fig.cap="Bifactor structure"}
+```{r CFA.att3, echo=FALSE, warning=FALSE, fig.cap="Bifactor structure"}
 
 modified2 <-'
 Absorption = ~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
