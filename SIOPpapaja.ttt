@@ -1,58 +1,9 @@
-\begin{table*}[hbt]
-\ifnextchar[{\eatarg}{}
-[tbp]
-
-\begin{center}
-\begin{threeparttable}
-
-\caption{\label{tab:substantive}Measurement invariance summary statistics.}
-
-\begin{tabular}{llllllll}
+\begin{longtable}[]{@{}llllllll@{}}
 \toprule
- & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
-configural & 528 & 13,583.46 & 14,390.87 & 1,083.68 & NA & NA & NA\\
-weak & 573 & 13,554.10 & 14,202.15 & 1,144.32 & 60.64 & 45 & 0.06\\
-strong & 618 & 13,981.61 & 14,470.31 & 1,661.83 & 517.52 & 45 & 0.00\\
-strict & 672 & 13,996.37 & 14,293.84 & 1,784.59 & 122.76 & 54 & 0.00\\
+\endhead
+3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88 \\
+3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35 \\
 \bottomrule
-\addlinespace
-\end{tabular}
-
-\begin{tablenotes}[para]
-\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
-\end{tablenotes}
-
-\end{threeparttable}
-\end{center}
-
-\end{table*}
-\begin{table*}[hbt]
-\ifnextchar[{\eatarg}{}
-[tbp]
-
-\begin{center}
-\begin{threeparttable}
-
-\caption{\label{tab:attitude}Measurement invariance summary statistics.}
-
-\begin{tabular}{llllllll}
-\toprule
- & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
-\midrule
-configural & 528 & 13,611.94 & 14,419.35 & 1,112.16 & NA & NA & NA\\
-weak & 573 & 13,580.06 & 14,228.11 & 1,170.28 & 58.12 & 45 & 0.09\\
-strong & 618 & 14,017.04 & 14,505.74 & 1,697.26 & 526.98 & 45 & 0.00\\
-strict & 672 & 14,036.47 & 14,333.94 & 1,824.69 & 127.43 & 54 & 0.00\\
-\bottomrule
-\addlinespace
-\end{tabular}
-
-\begin{tablenotes}[para]
-\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
-\end{tablenotes}
-
-\end{threeparttable}
-\end{center}
-
-\end{table*}
+\end{longtable}
