@@ -384,6 +384,25 @@ Cond4_Model$Cond <- "Cond4"
 
 SIOPmi <- as.data.frame(rbind(Cond1_Model,Cond2_Model,Cond3_Model,Cond4_Model))
 
+library(lavaan)
+substantive <-'
+Absorption=~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
+Vigor=~Item_14 + Item_16 + Item_17 + Item_19 + Item_21 + Item_22
+Dedication=~Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
+'
+
+fullsub <- lavaan::cfa(substantive, data = SIOPmi)
+fullsub <- as.data.frame(fitMeasures(fullsub))
+fullsub$rounded <- round(fullsub$`fitMeasures(fullsub)`,2)
+
+
+t.fullsub <- fullsub %>% 
+  select(Substantive=rounded) %>% 
+  mutate(across("Substantive",~as.numeric(.))) %>% 
+  t(.) %>% 
+  as.data.frame(.) %>% 
+  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic)
+
 ```
 
 ```{r condition 1, warning=FALSE}
@@ -404,7 +423,7 @@ t.cond1sub <- cond1sub %>%
   mutate(across("Substantive",~as.numeric(.))) %>% 
   t(.) %>% 
   as.data.frame(.) %>% 
-  select(npar,chisq,df,pvalue,cfi,rfi,rmsea)
+  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic)
 
 
 attiduinal <-'
@@ -423,12 +442,12 @@ t.cond1att <- cond1att %>%
   mutate(across("Attitudinal",~as.numeric(.))) %>% 
   t(.) %>% 
   as.data.frame(.) %>% 
-  select(npar,chisq,df,pvalue,cfi,rfi,rmsea) 
+  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic) 
 
 cond1_stats <- rbind(t.cond1sub,t.cond1att)
 
 
-papaja::apa_table(cond1_stats$apa, # apa contains the data.frame needed for apa_table
+papaja::apa_table(cond1_stats, # apa contains the data.frame needed for apa_table
                    caption = "Scale intercorrelations (students low-stakes).",
                   note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
                   landscape = FALSE,
@@ -592,7 +611,6 @@ The effective result of this was two divergent quasi-experimental approaches: 1)
 We conduct a correct item-total correlation on our original 36-items set. Base off, the r. drops that the corrected item-total correlations provide us we narrowed it down by selecting that items that had the best r. drops off removing one item at a time. For example, each cell division contain 4 items, therefore, we remove one of the four items creating 6 potential 3 item corrected item correlations, and from there we choose the items with the best r. drops. We continue the same process when narrowing our three items down to two items. An example is shown below:
 
 ```{r alpha items example}
-alpha(SIOPmi[)
 
 ```
 
