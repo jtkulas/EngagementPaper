@@ -428,11 +428,8 @@ cond1sub <- as.data.frame(fitMeasures(cond1sub))
 cond1sub$rounded <- round(cond1sub$`fitMeasures(cond1sub)`,2)
 
 t.cond1sub <- cond1sub %>% 
-  select(Substantive=rounded) %>% 
-  mutate_at(vars("Substantive"),list(~as.numeric(.))) %>%
-  t(.) %>% 
-  as.data.frame(.) %>% 
-  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic)
+  select(Substantive=rounded) 
+t.cond1sub <- as.data.frame(t(t.cond1sub[c(3,4,5,23,29,9,10,19),]))
 
 
 attiduinal <-'
@@ -447,11 +444,8 @@ cond1att$rounded <- round(cond1att$`fitMeasures(cond1att)`,2)
 
 
 t.cond1att <- cond1att %>% 
-  select(Attitudinal=rounded) %>% 
-  mutate(across("Attitudinal",~as.numeric(.))) %>% 
-  t(.) %>% 
-  as.data.frame(.) %>% 
-  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic) 
+  select(Attitudinal=rounded) 
+t.cond1att <- as.data.frame(t(t.cond1att[c(3,4,5,23,29,9,10,19),]))
 
 cond1_stats <- rbind(t.cond1sub,t.cond1att)
 

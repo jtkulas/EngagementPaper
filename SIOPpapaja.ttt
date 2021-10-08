@@ -7,12 +7,12 @@
 
 \caption{\label{tab:condition 1}Scale intercorrelations (students low-stakes).}
 
-\begin{tabular}{lllllllll}
+\begin{tabular}{llllllll}
 \toprule
- & \multicolumn{1}{c}{chisq} & \multicolumn{1}{c}{df} & \multicolumn{1}{c}{pvalue} & \multicolumn{1}{c}{rmsea} & \multicolumn{1}{c}{srmr} & \multicolumn{1}{c}{cfi} & \multicolumn{1}{c}{tli} & \multicolumn{1}{c}{aic}\\
+V1 & \multicolumn{1}{c}{V2} & \multicolumn{1}{c}{V3} & \multicolumn{1}{c}{V4} & \multicolumn{1}{c}{V5} & \multicolumn{1}{c}{V6} & \multicolumn{1}{c}{V7} & \multicolumn{1}{c}{V8}\\
 \midrule
-Substantive & 300.86 & 132.00 & 0.00 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\\
-Attitudinal & 290.33 & 132.00 & 0.00 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\\
+300.86 & 132.00 & 0.00 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\\
+290.33 & 132.00 & 0.00 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -29,43 +29,43 @@ Attitudinal & 290.33 & 132.00 & 0.00 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\\
  
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 \midrule
 \endhead
-3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88 \\
-3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35 \\
+3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\tabularnewline
+3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\tabularnewline
 \bottomrule
 \end{longtable}
 \efloatseparator
  
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 \midrule
 \endhead
-3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45 \\
-3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96 \\
+3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45\tabularnewline
+3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96\tabularnewline
 \bottomrule
 \end{longtable}
 \efloatseparator
  
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 \midrule
 \endhead
-3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32 \\
-3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534 \\
+3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32\tabularnewline
+3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534\tabularnewline
 \bottomrule
 \end{longtable}
 \efloatseparator
  
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 \midrule
 \endhead
-3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64 \\
-3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66 \\
+3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64\tabularnewline
+3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66\tabularnewline
 \bottomrule
 \end{longtable}
