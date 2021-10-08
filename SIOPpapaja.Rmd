@@ -91,7 +91,17 @@ The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engage
 
 > burnout
 
-Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs.
+## Response cues in Psychological assessment
+
+Response cues in general and order effects in particular have their root in Cognitive Psychology, with much of the work occuring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response [e.g., @krosnick1987evaluation]. This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test [see, for example, @dean1980presentation]. @ackerman1989comparison found only small differences in response patterns when presenting *test* items in a fixed versus random ordering. @mashburn2014effect experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
+
+@knowles1988item and @hamilton1990self both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) *later* in the assessment, regardless of actual item content. @steinberg1994context provides a description of this effect: "...literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct." (p. 341) This statement could be rephrased as: location serves as a response cue. "This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item" [@steinberg1994context, p. 341]. 
+
+@steinberg1994context looked at order effects in personality measurement, 
+
+
+
+Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
 
 Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
 
@@ -116,6 +126,8 @@ This model is not without criticism, however. Some critics question its structur
 > need more on criticisms of model
 
 The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+
+Existing measures include @soane2012development
 
 # Methods
 
@@ -397,11 +409,8 @@ fullsub$rounded <- round(fullsub$`fitMeasures(fullsub)`,2)
 
 
 t.fullsub <- fullsub %>% 
-  select(Substantive=rounded) %>% 
-  mutate(across("Substantive",~as.numeric(.))) %>% 
-  t(.) %>% 
-  as.data.frame(.) %>% 
-  select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic)
+  select(Substantive=rounded) 
+t.fullsub <- as.data.frame(t(t.fullsub[c(3,4,5,23,29,9,10,19),]))        ## Chi-sq, df, RMSEA, SRMR, CFI, TLI, AIC
 
 ```
 
@@ -420,7 +429,7 @@ cond1sub$rounded <- round(cond1sub$`fitMeasures(cond1sub)`,2)
 
 t.cond1sub <- cond1sub %>% 
   select(Substantive=rounded) %>% 
-  mutate(across("Substantive",~as.numeric(.))) %>% 
+  mutate_at(vars("Substantive"),list(~as.numeric(.))) %>%
   t(.) %>% 
   as.data.frame(.) %>% 
   select(chisq,df,pvalue,rmsea,srmr,cfi,tli,aic)
