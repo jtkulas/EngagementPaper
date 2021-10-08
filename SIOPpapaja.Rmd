@@ -399,6 +399,14 @@ cond1sub <- lavaan::cfa(substantive, data = Cond1_Model)
 cond1sub <- as.data.frame(fitMeasures(cond1sub))
 cond1sub$rounded <- round(cond1sub$`fitMeasures(cond1sub)`,2)
 
+t.cond1sub <- cond1sub %>% 
+  select(Substantive=rounded) %>% 
+  mutate(across("Substantive",~as.numeric(.))) %>% 
+  t(.) %>% 
+  as.data.frame(.) %>% 
+  select(npar,chisq,df,pvalue,cfi,rfi,rmsea)
+
+
 attiduinal <-'
 Cognitive=~Item_1+Item_3+ Item_14 + Item_16 + Item_26 + Item_28
 Affective=~Item_5+Item_8+ Item_17 + Item_19 + Item_31 + Item_32
@@ -408,6 +416,25 @@ Behavioral=~Item_10+Item_11 + Item_21 + Item_22 + Item_34 + Item_35
 cond1att <- lavaan::cfa(attiduinal, data = Cond1_Model)
 cond1att <- as.data.frame(fitMeasures(cond1att))
 cond1att$rounded <- round(cond1att$`fitMeasures(cond1att)`,2)
+
+
+t.cond1att <- cond1att %>% 
+  select(Attitudinal=rounded) %>% 
+  mutate(across("Attitudinal",~as.numeric(.))) %>% 
+  t(.) %>% 
+  as.data.frame(.) %>% 
+  select(npar,chisq,df,pvalue,cfi,rfi,rmsea) 
+
+cond1_stats <- rbind(t.cond1sub,t.cond1att)
+
+
+papaja::apa_table(cond1_stats$apa, # apa contains the data.frame needed for apa_table
+                   caption = "Scale intercorrelations (students low-stakes).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+
 ```
 
 
