@@ -423,6 +423,15 @@ t.fullsub <- as.data.frame(t(t.fullsub[c(3,4,5,23,29,9,10,19),]))        ## Chi-
 
 ```
 
+```{r}
+
+newdata.att <- read.csv("Engagement+(Attitudinal)_October+12,+2021_08.02.csv")[47:66]
+newdata.sub <- read.csv("Engagement+(Substantive)_October+12,+2021_08.01.csv")[47:66]
+
+
+```
+
+
 ```{r condition 1, warning=FALSE}
 
 library(lavaan)
