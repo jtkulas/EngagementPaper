@@ -99,7 +99,9 @@ Response cues in general and order effects in particular have their root in Cogn
 
 @steinberg1994context looked at order effects in personality measurement, 
 
+>Weinberg, M. K., Seton, C., & Cameron, N. (2018). The Measurement of Subjective Wellbeing: Item-Order Effects in the Personal Wellbeing Index—Adult. Journal of Happiness Studies, 19(1), 315–332. https://doi-org.ezproxy.montclair.edu/10.1007/s10902-016-9822-1
 
+@Weinberg2018 examine the effects of randomized items and domains in the Personal Wellbeing Index (PWI) in measure subjective wellbeing (SWB). @Weinberg2018 conduct two studies one, looking at the PWI comparing its usual general-specific format to a modified format, furthermore, the order of the domain items will stay the same, while the general items will be random in question order. In the second study, @Weinberg2018 randomized the domain items while the general items will be the same to standard scale order. In @Weinberg2018, study 1 showed no results between general specific format and the modified format, however in study 2, they did find that presenting the random order effects did have lower means, then fixed order effects. @Weinberg2018 present many different reasons for this outcomes, which could be those in the random order effect group had more participant experiencing high levels of wellbeing, and the other explanation is that changing order of items of PWI could affect the score. @Weinberg2018 conducted a multiple regression analysis which showed that random order group account for 9% more variance in GLS than the fixed order group and conducted a confirmatory factor analysis showing that the fixed order groups was not a good model fit. 
 
 @serico2021 looked at item order effects in self-report measures of aggression perpetration and victimization. @serico2021 provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. # citation from other articles (Dietz & Jasinski, 2007; Shorey, Woods, & Cornelius, 2016). ######### In @serico2021, the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
 
@@ -584,45 +586,14 @@ cond4att$rounded <- round(cond4att$`fitMeasures(cond4att)`,2)
 
 Our survey was administered on Qualtrics.
 
-### Item generation
-
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as *WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST "I THINK", "I FEEL", "I DO"?* Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension. For example, the item "My job makes me feel like I'm part of something meaningful" reflects the affective dimension with "feel" and the dedication dimension with "I'm part of something meaningful."
-
-Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions.
-
-The substantive scale definitions provided for ratings were:
-
--   *Absorption*: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
-
--   *Vigor*: Experiencing persistent levels of energy, effort, and enthusiasm while working
-
--   *Dedication*: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
-
-The attitudinal scale definitions were:
-
--   *Cognitive*: Pertaining to thoughts or general mental processes (for example what someone thinks)
-
--   *Affective*: Pertaining to feelings or emotions (for example, how someone feels)
-
--   *Behavioral*: Pertaining to acts or actions (for example, what someone does)
-
-See table *X* for a full list of items and their respective dimensions.
+  
 
 ## Procedure
+### Item-Order Effects
 
-> Looking into the specification of polychoric covariances [@joreskog1994estimation]. This seems to be not very commonly leveraged (only package that seems to estimate these is `semPlot`).
+In our survey, we randomized our 36 items for our engagement measures, to control for item-order effects. We created four conditions: 1) grouping items by substantive then attitudinal, 2) grouping items by attitudinal then substantive, 3) grouping items by substantive then a control randomization of the attitudinal items, and 4) grouping items by attitudinal, and then control randomization of the substantive items.
 
-The effective result of this was two divergent quasi-experimental approaches: 1) focus on corrected item-total correlations, and 2) focus on CFA modification indices.
 
-### Corrected item-total correlations
-
-> To Casey: document your process here
-
-We conduct a correct item-total correlation on our original 36-items set. Base off, the r. drops that the corrected item-total correlations provide us we narrowed it down by selecting that items that had the best r. drops off removing one item at a time. For example, each cell division contain 4 items, therefore, we remove one of the four items creating 6 potential 3 item corrected item correlations, and from there we choose the items with the best r. drops. We continue the same process when narrowing our three items down to two items. An example is shown below:
-
-```{r alpha items example}
-
-```
 
 
 ### CFA Modification Indices
