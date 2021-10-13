@@ -1,5 +1,5 @@
 ---
-title             : "Measurement Invariance of a BiFactor Assessment of Engagement"
+title             : "Engagement vs. Attitude: Testing Measurement Invariance across Item Orderings"
 shorttitle        : "BiFactor Engagement"
 
 author: 
@@ -27,28 +27,9 @@ authornote: |
   Enter author note here.
 
 abstract: |
-  Employee engagement has, in recent years, enjoyed a surge in popularity as a positive employee outcome.
-  Despite this burgeoning interest, disagreement still remains regarding its factor structure and nomological relationship with similar concepts, such as burnout.
-  The classical definition of engagement divides it between the dimensions of vigor, dedication, and absorption, while the tripartite model of attitudes divides engagement between its cognitive, behavioral, and affective manifestations. 
-  Using bifactor analysis, study 1 proposes a scale that reconciles these two models.
-  Study 2 convergently and discriminantly validates this scale.
+  The most common current definition of attitudinal engagement implicates sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes specifies cognitive, behavioral, and affective components. The current study investigates measurement invariance across a new measure of engagement that intentionally crosses the substantive and attitudinal components. Through counterbalancing the order of item presentation, we provide response cues regarding structural priority. Analyses of measurement invariance reveal that... 
 
-  
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  
-  One or two sentences to put the results into a more **general context**.
-  
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
-  
-  <!-- https://tinyurl.com/ybremelq -->
+    <!-- https://tinyurl.com/ybremelq -->
   
 keywords          : "Engagement, engagement"
 wordcount         : "X"
@@ -79,21 +60,28 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-> Renata's SEM paper will come in handy
-
-Recent decades have seen a proliferation of interest and research in the construct of employee engagement.
-
-
-
-> more on why we're looking at tripartite model
-
 The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. The 1990's saw focused development and refinement (for example, a dissertation; @leone_relation_1995 or actual semantic reference; @kahn_psychological_1990). @staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
 
-> burnout
+Clear in this history is the specification of engagement as a work *attitude*.
 
-## Response cues in Psychological assessment
 
-Response cues in general and order effects in particular have their root in Cognitive Psychology, with much of the work occuring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response [e.g., @krosnick1987evaluation]. This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test [see, for example, @dean1980presentation]. @ackerman1989comparison found only small differences in response patterns when presenting *test* items in a fixed versus random ordering. @mashburn2014effect experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
+Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
+
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
+
+Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements.
+
+## Attitudes 
+
+> TRIPARTITE MODEL--work here
+
+The first, to our knowledge, use of the word "engagement" as a construct came in @kahn1990psychological, defining it as: "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances." Although this definition was quickly bypassed by subsequent papers (see, for example, [@baumruk2004missing] and [@shaw2005engagement], who framed it in terms of one's cognitive and affective *commitment* to one's organization), @kahn1990psychological's definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by @rosenberg_cognitive_1960. This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
+
+Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019,
+
+## Item order as a multidimensional assessment response cues
+
+Response cues in general and order effects in particular have their root in Cognitive Psychology, with the bulk of studies occurring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response [e.g., @krosnick1987evaluation]. This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test [see, for example, @dean1980presentation]. @ackerman1989comparison found only small differences in response patterns when presenting *test* items in a fixed versus random ordering. @mashburn2014effect experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
 
 @knowles1988item and @hamilton1990self both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) *later* in the assessment, regardless of actual item content. @steinberg1994context provides a description of this effect: "...literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct." (p. 341) This statement could be rephrased as: location serves as a response cue. "This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item" [@steinberg1994context, p. 341]. 
 
@@ -105,42 +93,21 @@ Response cues in general and order effects in particular have their root in Cogn
 
 @serico2021 looked at item order effects in self-report measures of aggression perpetration and victimization. @serico2021 provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. # citation from other articles (Dietz & Jasinski, 2007; Shorey, Woods, & Cornelius, 2016). ######### In @serico2021, the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
 
-
-
-
-
-
-Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
-
-Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
-
-Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements.
-
-> TRIPARTITE MODEL--work here
-
-The first, to our knowledge, use of the word "engagement" as a construct came in @kahn1990psychological, defining it as: "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances." Although this definition was quickly bypassed by subsequent papers (see, for example, [@baumruk2004missing] and [@shaw2005engagement], who framed it in terms of one's cognitive and affective *commitment* to one's organization), @kahn1990psychological's definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by @rosenberg_cognitive_1960. This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
-
-Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019,
-
-> we need to do some market research on the Q12: 1. what's the feedback report look like? (google images show one overall "satsifaction" score and/or one overall "engagement" score), 2. how much does it cost, 3. what are the 200 pulse items Gallup refers to? (6/7/21)
-
-Our conceptualization of work engagement is a mental state wherein employees...
-
--   ...feel energized (**Vigor**)
--   ...are enthusiastic about the content of their work and the things they do (**Dedication**)
--   ...are so immersed in their work activities that time seems compressed (**Absorption**)
-
 This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other [@kulikowski2017we].
-
-> need more on criticisms of model
 
 The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
 
 Existing measures include @soane2012development
 
+Our conceptualization of work engagement is a mental state wherein employees...
+-   ...feel energized (**Vigor**)
+-   ...are enthusiastic about the content of their work and the things they do (**Dedication**)
+-   ...are so immersed in their work activities that time seems compressed (**Absorption**)
+
+We further decompose each of these facets into three attitudinal components: 1) feeling (e.g., affect), thought (e.g., cognition), and action (e.g., behavior). Development and construct validation of our 18-item measure of engagement is described elsewhere, the current study focuses on administrative response cues in the form of order of item presentation, with the expectation that either model (attitudinal or substantive) will exhibit stronger factorial validity when item administration parallels latent structure.
+
 # Methods
 
-Choice of focus on BIC versus AIC discussed in @dziak2020sensitivity.
 
 ```{r getData, echo=FALSE, warning=FALSE}
 # Loading packages
@@ -405,6 +372,54 @@ Cond4_Model$Cond <- "Cond4"
 
 SIOPmi <- as.data.frame(rbind(Cond1_Model,Cond2_Model,Cond3_Model,Cond4_Model))
 
+######################################################################
+######################################################################
+####################### New data 10/12
+
+newdata.att <- read.csv("Engagement+(Attitudinal)_October+12,+2021_08.02.csv")[47:66]
+newdata.sub <- read.csv("Engagement+(Substantive)_October+12,+2021_08.01.csv")[47:66]
+
+newdata.att <- newdata.att[-c(1:2),]
+newdata.sub <- newdata.sub[-c(1:2),]
+
+names(newdata.att) <- c("Item_1","Item_3","Item_4","Item_14","Item_16","Item_25","Item_26","Item_28","Item_5","Item_8","Item_17","Item_19","Item_31","Item_32","Item_10","Item_11","Item_21","Item_22","Item_34","Item_35")
+
+names(newdata.sub) <- c("Item_1","Item_3","Item_4","Item_5","Item_8","Item_10","Item_11","Item_14","Item_16","Item_17","Item_19","Item_21","Item_22","Item_25","Item_26","Item_28","Item_31","Item_32","Item_34","Item_35")
+
+use.att <- newdata.att[,c(1,2,9,10,15,16,4,5,11,12,17,18,7,8,13,14,19,20)]
+use.sub <- newdata.sub[,-c(3,14)]
+use.att$Cond <- "Cond5"
+use.sub$Cond <- "Cond6"
+
+siop.pilot <- SIOPmi[,c(1,3,5,8,10,11,14,16,17,19,21,22,26,28,31,32,34,35,37)]
+siop <- as.data.frame(rbind(siop.pilot,use.att,use.sub))
+
+siop$Item_1 <- as.numeric(as.character(siop$Item_1))
+siop$Item_3 <- as.numeric(as.character(siop$Item_3))
+siop$Item_5 <- as.numeric(as.character(siop$Item_5))
+siop$Item_8 <- as.numeric(as.character(siop$Item_8))
+siop$Item_10 <- as.numeric(as.character(siop$Item_10))
+siop$Item_11 <- as.numeric(as.character(siop$Item_11))
+siop$Item_14 <- as.numeric(as.character(siop$Item_14))
+siop$Item_16 <- as.numeric(as.character(siop$Item_16))
+siop$Item_17 <- as.numeric(as.character(siop$Item_17))
+siop$Item_19 <- as.numeric(as.character(siop$Item_19))
+siop$Item_21 <- as.numeric(as.character(siop$Item_21))
+siop$Item_22 <- as.numeric(as.character(siop$Item_22))
+siop$Item_26 <- as.numeric(as.character(siop$Item_26))
+siop$Item_28 <- as.numeric(as.character(siop$Item_28))
+siop$Item_31 <- as.numeric(as.character(siop$Item_31))
+siop$Item_32 <- as.numeric(as.character(siop$Item_32))
+siop$Item_34 <- as.numeric(as.character(siop$Item_34))
+siop$Item_35 <- as.numeric(as.character(siop$Item_35))
+
+siop$Item_14 <- 7-siop$Item_14
+
+```
+
+
+```{r newdata}
+
 library(lavaan)
 substantive <-'
 Absorption=~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
@@ -421,12 +436,6 @@ t.fullsub <- fullsub %>%
   select(Substantive=rounded) 
 t.fullsub <- as.data.frame(t(t.fullsub[c(3,4,5,23,29,9,10,19),]))        ## Chi-sq, df, RMSEA, SRMR, CFI, TLI, AIC
 
-```
-
-```{r}
-
-newdata.att <- read.csv("Engagement+(Attitudinal)_October+12,+2021_08.02.csv")[47:66]
-newdata.sub <- read.csv("Engagement+(Substantive)_October+12,+2021_08.01.csv")[47:66]
 
 
 ```
@@ -459,20 +468,6 @@ Behavioral=~Item_10+Item_11 + Item_21 + Item_22 + Item_34 + Item_35
 cond1att <- lavaan::cfa(attiduinal, data = Cond1_Model)
 cond1att <- as.data.frame(fitMeasures(cond1att))
 cond1att$rounded <- round(cond1att$`fitMeasures(cond1att)`,2)
-
-
-t.cond1att <- cond1att %>% 
-  select(Attitudinal=rounded) 
-t.cond1att <- as.data.frame(t(t.cond1att[c(3,4,5,23,29,9,10,19),]))
-
-cond1_stats <- rbind(t.cond1sub,t.cond1att)
-
-
-papaja::apa_table(cond1_stats, # apa contains the data.frame needed for apa_table
-                   caption = "Scale intercorrelations (students low-stakes).",
-                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
-                  landscape = FALSE,
-                  escape = F)
 
 
 ```
@@ -584,18 +579,48 @@ cond4att$rounded <- round(cond4att$`fitMeasures(cond4att)`,2)
 | 3-factor attitudinal     |`r cond4att[3,2]`   |`r cond4att[4,2]`     |`r cond4att[23,2]`  |`r cond4att[29,2]`  |`r cond4att[9,2]`  |`r cond4att[10,2]`  |`r cond4att[19,2]`  |
 
 
+```{r alphas}
 
+abs <- psych::alpha(siop[c(1:6)])
+vig <- psych::alpha(siop[c(7:12)])
+ded <- psych::alpha(siop[c(13:18)])
+aff <- psych::alpha(siop[c(1:2,7:8,13:14)])
+cog <- psych::alpha(siop[c(3:4,9:10,15:16)])
+beh <- psych::alpha(siop[c(5:6,11:12,17:18)])
 
+```
 
 ## Participants
 
-`r num` individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
+Data was obtained from two sources. In the first sampling, 282 individuals responded to a snowball sampling initiated by Industrial and Organizational Psychology faculty and graduate students. There were four counterbalanced orderings of item presentations within this administration. In the second data collection initiative, Qualtrics panels were solicited, yielding 343 working adults who responded to attitudinally clustered items and 404 working adults who responded to substantively clustered items.
 
 ## Material
 
-Our survey was administered on Qualtrics.
+Our 18-item engagement measure was crafted to be intentionally complex (each item loads on two constructs). This complexity, however, derives from a crossing of the attitudinal components of affect, cognition, and behavior with the substantive engagement components of vigor, dedication, and absorption. Within the current investigation, we realized $\alpha$'s of `r round(abs$total$raw_alpha,2)` (Absorption), `r round(ded$total$raw_alpha,2)` (Dedication), `r round(vig$total$raw_alpha,2)` (Vigor), `r round(aff$total$raw_alpha,2)` (Affect), `r round(cog$total$raw_alpha,2)` (Cognition), and `r round(beh$total$raw_alpha,2)` (Behavior).
 
-  
+```{r}
+
+siop$Absorption <- rowMeans(siop[c(1:6)], na.rm=TRUE)
+siop$Vigor <- rowMeans(siop[c(7:12)], na.rm=TRUE)
+siop$Dedication <- rowMeans(siop[c(13:18)], na.rm=TRUE)
+siop$Affect <- rowMeans(siop[c(1:2,7:8,13:14)], na.rm=TRUE)
+siop$Cognition <- rowMeans(siop[c(3:4,9:10,15:16)], na.rm=TRUE)
+siop$Behavior <- rowMeans(siop[c(5:6,11:12,17:18)], na.rm=TRUE)
+
+
+r <- corx::corx(siop[,20:25],                     ## can extend if needed
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
+                  caption = "Unit-weighted scale intercorrelations (all conditions).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = TRUE,
+                  escape = F)
+
+```
+
 
 ## Procedure
 ### Item-Order Effects

@@ -5,8 +5,8 @@
 \documentclass[
   english,
   man]{apa6}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -37,14 +37,15 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Measurement Invariance of a BiFactor Assessment of Engagement},
+  pdftitle={Engagement vs.~Attitude: Testing Measurement Invariance across Item Orderings},
   pdfauthor={Casey Osorio-Duffoo2, Renata Garcia Prieto Palacios Roji1, Morgan Russell1, \& John Kulas1},
   pdflang={en-EN},
   pdfkeywords={Engagement, engagement},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -53,7 +54,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -94,9 +95,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\begin{center}\begin{threeparttable}}
-%   {\end{threeparttable}\end{center}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -134,10 +135,36 @@
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
 \else
-  \usepackage[shorthands=off,main=english]{babel}
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\title{Measurement Invariance of a BiFactor Assessment of Engagement}
+\title{Engagement vs.~Attitude: Testing Measurement Invariance across Item Orderings}
 \author{Casey Osorio-Duffoo\textsuperscript{2}, Renata Garcia Prieto Palacios Roji\textsuperscript{1}, Morgan Russell\textsuperscript{1}, \& John Kulas\textsuperscript{1}}
 \date{}
 
@@ -155,25 +182,7 @@ Correspondence concerning this article should be addressed to Casey Osorio-Duffo
 \affiliation{\vspace{0.5cm}\textsuperscript{1} Montclair State University\\\textsuperscript{2} Harver}
 
 \abstract{
-Employee engagement has, in recent years, enjoyed a surge in popularity as a positive employee outcome.
-Despite this burgeoning interest, disagreement still remains regarding its factor structure and nomological relationship with similar concepts, such as burnout.
-The classical definition of engagement divides it between the dimensions of vigor, dedication, and absorption, while the tripartite model of attitudes divides engagement between its cognitive, behavioral, and affective manifestations.
-Using bifactor analysis, study 1 proposes a scale that reconciles these two models.
-Study 2 convergently and discriminantly validates this scale.
-
-One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
-
-Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
-
-One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
-
-One sentence summarizing the main result (with the words ``\textbf{here we show}'' or their equivalent).
-
-Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
-
-One or two sentences to put the results into a more \textbf{general context}.
-
-Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
+The most common current definition of attitudinal engagement implicates sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes specifies cognitive, behavioral, and affective components. The current study investigates measurement invariance across a new measure of engagement that intentionally crosses the substantive and attitudinal components. Through counterbalancing the order of item presentation, we provide response cues regarding structural priority. Analyses of measurement invariance reveal that\ldots{}
 }
 
 
@@ -181,113 +190,69 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \begin{document}
 \maketitle
 
-\begin{quote}
-Renata's SEM paper will come in handy
-\end{quote}
+The roots of employee (aka work; e.g., W. Schaufeli \& Bakker, 2010) engagement research likely started with theoretical expansions of forms of employee participation (see, for example, Ferris \& Hellier, 1984) and job involvement (e.g., Elloy, Everett, \& Flynn, 1991). This exploration extended into broader considerations of attitudes and emotions (Staw, Sutton, \& Pelled, 1994) and were informed by further exploration of the dimensionality of constructs such as organizational commitment (Meyer \& Allen, 1991). The 1990's saw focused development and refinement (for example, a dissertation; Leone (1995) or actual semantic reference; William A. Kahn (1990a)). Staw, Sutton, and Pelled (1994) investigated the relationships between \emph{positive emotions} and favorable work outcomes, and although they do not use the word, ``engagement,'' their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
 
-Recent decades have seen a proliferation of interest and research in the construct of employee engagement.
+Clear in this history is the specification of engagement as a work \emph{attitude}.
 
-\begin{quote}
-more on why we're looking at tripartite model
-\end{quote}
+Although occasionally referred to as residing on the opposing pole to \emph{burnout} (Christina Maslach \& Leiter, 2008), these two constructs are currently most commonly conceptualized as being distinct (Goering, Shimazu, Zhou, Wada, \& Sakai, 2017; Kim, Shin, \& Swanger, 2009; Wilmar B. Schaufeli, Taris, \& Van Rhenen, 2008; Timms, Brough, \& Graham, 2012), although certainly not universally (Cole, Walter, Bedeian, \& O'Boyle, 2012; Taris, Ybema, \& Beek, 2017). Comparing the two, Goering, Shimazu, Zhou, Wada, and Sakai (2017) concluded that they have a moderate (negative) association, but also distinct nomological networks. Wilmar B. Schaufeli, Taris, and Van Rhenen (2008) investigated both internal and external association indicators, concluding that engagement and burnout (as well as \emph{workaholism}) should be considered three distinct constructs.
 
-The roots of employee (aka work; e.g., Schaufeli \& Bakker, 2010) engagement research likely started with theoretical expansions of forms of employee participation (see, for example, Ferris \& Hellier, 1984) and job involvement (e.g., Elloy, Everett, \& Flynn, 1991). This exploration extended into broader considerations of attitudes and emotions (Staw, Sutton, \& Pelled, 1994) and were informed by further exploration of the dimensionality of constructs such as organizational commitment (Meyer \& Allen, 1991). The 1990's saw focused development and refinement (for example, a dissertation; Leone (1995) or actual semantic reference; William A. Kahn (1990)). Staw et al. (1994) investigated the relationships between \emph{positive emotions} and favorable work outcomes, and although they do not use the word, \enquote{engagement}, their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors (e.g., Leiter \& Maslach, 2004; C. Maslach \& Leiter, 1997). Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work (Harter, Schmidt, \& Hayes, 2002). W. B. Schaufeli and Bakker (2003) further specify a ``positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption'' (p.~74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work (Wilmar B. Schaufeli, Salanova, González-Romá, \& Bakker, 2002). The dimension of absorption has been noted as being influenced in conceptual specification by (Csikszentmihalyi, 1990)'s concept of ``flow.''
 
-\begin{quote}
-burnout
-\end{quote}
+Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct (see, for example, Coffman \& Harter, 1999). The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by W. B. Schaufeli and Bakker (2003) that directly assesses the vigor, dedication, and absorption elements.
 
-\hypertarget{response-cues-in-psychological-assessment}{%
-\subsection{Response cues in Psychological assessment}\label{response-cues-in-psychological-assessment}}
-
-Response cues in general and order effects in particular have their root in Cognitive Psychology, with much of the work occuring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response (e.g., Krosnick \& Alwin, 1987). This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test (see, for example, Dean, 1980). Ackerman, Spray, Reckase, and Carlson (1989) found only small differences in response patterns when presenting \emph{test} items in a fixed versus random ordering. Mashburn, Meyer, Allen, and Pianta (2014) experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
-
-Knowles (1988) and Hamilton and Shuminsky (1990) both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) \emph{later} in the assessment, regardless of actual item content. Steinberg (1994) provides a description of this effect: \enquote{\ldots literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct.} (p.~341) This statement could be rephrased as: location serves as a response cue. \enquote{This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item} (Steinberg, 1994, p. 341).
-
-Steinberg (1994) looked at order effects in personality measurement,
-
-({\textbf{???}}) looked at item order effects in self-report measures of aggression perpetration and victimization. ({\textbf{???}}) provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. \# citation from other articles (Dietz \& Jasinski, 2007; Shorey, Woods, \& Cornelius, 2016). \#\#\#\#\#\#\#\#\# In ({\textbf{???}}), the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
-
-Although occasionally referred to as residing on the opposing pole to \emph{burnout} (Maslach \& Leiter, 2008), these two constructs are currently most commonly conceptualized as being distinct (Goering, Shimazu, Zhou, Wada, \& Sakai, 2017; Kim, Shin, \& Swanger, 2009; Schaufeli, Taris, \& Van Rhenen, 2008; Timms, Brough, \& Graham, 2012), although certainly not universally (Cole, Walter, Bedeian, \& O'Boyle, 2012; Taris, Ybema, \& Beek, 2017). Comparing the two, Goering et al. (2017) concluded that they have a moderate (negative) association, but also distinct nomological networks. Schaufeli et al. (2008) investigated both internal and external association indicators, concluding that engagement and burnout (as well as \emph{workaholism}) should be considered three distinct constructs.
-
-Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors (e.g., Leiter \& Maslach, 2004; Maslach \& Leiter, 1997). Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work (Harter, Schmidt, \& Hayes, 2002). Schaufeli and Bakker (2003) further specify a \enquote{positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption} (p.~74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work (Schaufeli, Salanova, González-Romá, \& Bakker, 2002). The dimension of absorption has been noted as being influenced in conceptual specification by (Csikszentmihalyi, 1990)'s concept of \enquote{flow}.
-
-Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct (see, for example, Coffman \& Harter, 1999). The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by Schaufeli and Bakker (2003) that directly assesses the vigor, dedication, and absorption elements.
+\hypertarget{attitudes}{%
+\subsection{Attitudes}\label{attitudes}}
 
 \begin{quote}
 TRIPARTITE MODEL--work here
 \end{quote}
 
-The first, to our knowledge, use of the word \enquote{engagement} as a construct came in William A Kahn (1990), defining it as: \enquote{the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances.} Although this definition was quickly bypassed by subsequent papers (see, for example, (Baumruk, 2004) and (Shaw, 2005), who framed it in terms of one's cognitive and affective \emph{commitment} to one's organization), William A Kahn (1990)'s definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by Rosenberg (1960). This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
+The first, to our knowledge, use of the word ``engagement'' as a construct came in William A. Kahn (1990b), defining it as: ``the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances.'' Although this definition was quickly bypassed by subsequent papers (see, for example, (Baumruk, 2004) and (Shaw, 2005), who framed it in terms of one's cognitive and affective \emph{commitment} to one's organization), William A. Kahn (1990b)'s definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by Rosenberg (1960). This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
 
 Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by Kaiser and Wilson (2019),
 
+\hypertarget{item-order-as-a-multidimensional-assessment-response-cues}{%
+\subsection{Item order as a multidimensional assessment response cues}\label{item-order-as-a-multidimensional-assessment-response-cues}}
+
+Response cues in general and order effects in particular have their root in Cognitive Psychology, with the bulk of studies occurring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response (e.g., Krosnick \& Alwin, 1987). This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test (see, for example, Dean, 1980). Ackerman, Spray, Reckase, and Carlson (1989) found only small differences in response patterns when presenting \emph{test} items in a fixed versus random ordering. Mashburn, Meyer, Allen, and Pianta (2014) experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
+
+Knowles (1988) and Hamilton and Shuminsky (1990) both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) \emph{later} in the assessment, regardless of actual item content. Steinberg (1994) provides a description of this effect: ``\ldots literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct.'' (p.~341) This statement could be rephrased as: location serves as a response cue. ``This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item'' (Steinberg, 1994, p. 341).
+
+Steinberg (1994) looked at order effects in personality measurement,
+
 \begin{quote}
-we need to do some market research on the Q12: 1. what's the feedback report look like? (google images show one overall \enquote{satsifaction} score and/or one overall \enquote{engagement} score), 2. how much does it cost, 3. what are the 200 pulse items Gallup refers to? (6/7/21)
+Weinberg, M. K., Seton, C., \& Cameron, N. (2018). The Measurement of Subjective Wellbeing: Item-Order Effects in the Personal Wellbeing Index---Adult. Journal of Happiness Studies, 19(1), 315--332. \url{https://doi-org.ezproxy.montclair.edu/10.1007/s10902-016-9822-1}
 \end{quote}
 
-Our conceptualization of work engagement is a mental state wherein employees\ldots{}
+(\textbf{Weinberg2018?}) examine the effects of randomized items and domains in the Personal Wellbeing Index (PWI) in measure subjective wellbeing (SWB). (\textbf{Weinberg2018?}) conduct two studies one, looking at the PWI comparing its usual general-specific format to a modified format, furthermore, the order of the domain items will stay the same, while the general items will be random in question order. In the second study, (\textbf{Weinberg2018?}) randomized the domain items while the general items will be the same to standard scale order. In (\textbf{Weinberg2018?}), study 1 showed no results between general specific format and the modified format, however in study 2, they did find that presenting the random order effects did have lower means, then fixed order effects. (\textbf{Weinberg2018?}) present many different reasons for this outcomes, which could be those in the random order effect group had more participant experiencing high levels of wellbeing, and the other explanation is that changing order of items of PWI could affect the score. (\textbf{Weinberg2018?}) conducted a multiple regression analysis which showed that random order group account for 9\% more variance in GLS than the fixed order group and conducted a confirmatory factor analysis showing that the fixed order groups was not a good model fit.
 
-\begin{itemize}
-\tightlist
-\item
-  \ldots feel energized (\textbf{Vigor})
-\item
-  \ldots are enthusiastic about the content of their work and the things they do (\textbf{Dedication})
-\item
-  \ldots are so immersed in their work activities that time seems compressed (\textbf{Absorption})
-\end{itemize}
+(\textbf{serico2021?}) looked at item order effects in self-report measures of aggression perpetration and victimization. (\textbf{serico2021?}) provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. \# citation from other articles (Dietz \& Jasinski, 2007; Shorey, Woods, \& Cornelius, 2016). \#\#\#\#\#\#\#\#\# In (\textbf{serico2021?}), the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
 
 This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other (Kulikowski, 2017).
-
-\begin{quote}
-need more on criticisms of model
-\end{quote}
 
 The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
 
 Existing measures include Soane et al. (2012)
 
+Our conceptualization of work engagement is a mental state wherein employees\ldots{}
+- \ldots feel energized (\textbf{Vigor})
+- \ldots are enthusiastic about the content of their work and the things they do (\textbf{Dedication})
+- \ldots are so immersed in their work activities that time seems compressed (\textbf{Absorption})
+
+We further decompose each of these facets into three attitudinal components: 1) feeling (e.g., affect), thought (e.g., cognition), and action (e.g., behavior). Development and construct validation of our 18-item measure of engagement is described elsewhere, the current study focuses on administrative response cues in the form of order of item presentation, with the expectation that either model (attitudinal or substantive) will exhibit stronger factorial validity when item administration parallels latent structure.
+
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
-
-Choice of focus on BIC versus AIC discussed in Dziak, Coffman, Lanza, Li, and Jermiin (2020).
-
-\begin{table}[tbp]
-
-\begin{center}
-\begin{threeparttable}
-
-\caption{\label{tab:condition 1}Scale intercorrelations (students low-stakes).}
-
-\begin{tabular}{llllllll}
-\toprule
-V1 & \multicolumn{1}{c}{V2} & \multicolumn{1}{c}{V3} & \multicolumn{1}{c}{V4} & \multicolumn{1}{c}{V5} & \multicolumn{1}{c}{V6} & \multicolumn{1}{c}{V7} & \multicolumn{1}{c}{V8}\\
-\midrule
-300.86 & 132.00 & 0.00 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\\
-290.33 & 132.00 & 0.00 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\\
-\bottomrule
-\addlinespace
-\end{tabular}
-
-\begin{tablenotes}[para]
-\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
-\end{tablenotes}
-
-\end{threeparttable}
-\end{center}
-
-\end{table}
 
 \#Condition 1
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
 \endhead
-3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\tabularnewline
-3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\tabularnewline
+3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88 \\
+3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35 \\
 \bottomrule
 \end{longtable}
 
@@ -295,11 +260,11 @@ Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
 \endhead
-3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45\tabularnewline
-3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96\tabularnewline
+3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45 \\
+3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96 \\
 \bottomrule
 \end{longtable}
 
@@ -307,11 +272,11 @@ Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
 \endhead
-3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32\tabularnewline
-3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534\tabularnewline
+3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32 \\
+3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534 \\
 \bottomrule
 \end{longtable}
 
@@ -319,83 +284,72 @@ Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
-Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
 \endhead
-3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64\tabularnewline
-3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66\tabularnewline
+3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64 \\
+3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66 \\
 \bottomrule
 \end{longtable}
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-330 individuals provided ratings across 36 candidate items. These participants were gathered via snowball sampling, with an initial population of undergraduate and graduate students, as well as professional acquaintances of faculty members.
+Data was obtained from two sources. In the first sampling, 282 individuals responded to a snowball sampling initiated by Industrial and Organizational Psychology faculty and graduate students. There were four counterbalanced orderings of item presentations within this administration. In the second data collection initiative, Qualtrics panels were solicited, yielding 343 working adults who responded to attitudinally clustered items and 404 working adults who responded to substantively clustered items.
 
 \hypertarget{material}{%
 \subsection{Material}\label{material}}
 
-Our survey was administered on Qualtrics.
+Our 18-item engagement measure was crafted to be intentionally complex (each item loads on two constructs). This complexity, however, derives from a crossing of the attitudinal components of affect, cognition, and behavior with the substantive engagement components of vigor, dedication, and absorption. Within the current investigation, we realized \(\alpha\)'s of 0.81 (Absorption), 0.91 (Dedication), 0.78 (Vigor), 0.78 (Affect), 0.89 (Cognition), and 0.83 (Behavior).
 
-\hypertarget{item-generation}{%
-\subsubsection{Item generation}\label{item-generation}}
+\begin{lltable}
 
-We generated a set of 36 items for our engagement measure, with the ultimate goal of reducing them to a final set of 18. These items were generated according to a review of extant tripartite engagement measures, as well as \emph{WHAT RESEARCH DID WE USE FOR ATTITUDINAL WORDING? WAS IT LITERALLY JUST \enquote{I THINK}, \enquote{I FEEL}, \enquote{I DO}?} Each item was worded to reflect both a substantive dimension as well as an attitudinal dimension. For example, the item \enquote{My job makes me feel like I'm part of something meaningful} reflects the affective dimension with \enquote{feel} and the dedication dimension with \enquote{I'm part of something meaningful.}
+\begin{TableNotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{TableNotes}
 
-Our 3x3 bifactor model produced nine pairs of dimensions (e.g., Vigor-Cognitive, Vigor-Affective, Vigor-Behavioral, etc.). With 36 initial items, this left four items per pair of substantive and attitudinal dimensions.
+\begin{longtable}{llllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:unnamed-chunk-1}Unit-weighted scale intercorrelations (all conditions).}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:unnamed-chunk-1} continued}}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endhead
+1. Absorption & - &  &  &  &  & 4.00 & 1.02\\
+2. Vigor & .76*** & - &  &  &  & 4.23 & 0.90\\
+3. Dedication & .76*** & .80*** & - &  &  & 4.41 & 1.12\\
+4. Affect & .81*** & .84*** & .85*** & - &  & 4.09 & 0.95\\
+5. Cognition & .87*** & .86*** & .89*** & .79*** & - & 4.16 & 1.12\\
+6. Behavior & .84*** & .83*** & .84*** & .71*** & .81*** & 4.39 & 0.96\\
+\bottomrule
+\addlinespace
+\insertTableNotes
+\end{longtable}
 
-The substantive scale definitions provided for ratings were:
-
-\begin{itemize}
-\item
-  \emph{Absorption}: Being fully immersed in one's work, where time passes quickly and one has difficulty detaching from work tasks
-\item
-  \emph{Vigor}: Experiencing persistent levels of energy, effort, and enthusiasm while working
-\item
-  \emph{Dedication}: Experiencing pride and challenge in ones work, as well as strong feelings of support from and loyalty toward the organization
-\end{itemize}
-
-The attitudinal scale definitions were:
-
-\begin{itemize}
-\item
-  \emph{Cognitive}: Pertaining to thoughts or general mental processes (for example what someone thinks)
-\item
-  \emph{Affective}: Pertaining to feelings or emotions (for example, how someone feels)
-\item
-  \emph{Behavioral}: Pertaining to acts or actions (for example, what someone does)
-\end{itemize}
-
-See table \emph{X} for a full list of items and their respective dimensions.
+\end{lltable}
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
-\begin{quote}
-Looking into the specification of polychoric covariances (Jöreskog, 1994). This seems to be not very commonly leveraged (only package that seems to estimate these is \texttt{semPlot}).
-\end{quote}
+\hypertarget{item-order-effects}{%
+\subsubsection{Item-Order Effects}\label{item-order-effects}}
 
-The effective result of this was two divergent quasi-experimental approaches: 1) focus on corrected item-total correlations, and 2) focus on CFA modification indices.
-
-\hypertarget{corrected-item-total-correlations}{%
-\subsubsection{Corrected item-total correlations}\label{corrected-item-total-correlations}}
-
-\begin{quote}
-To Casey: document your process here
-\end{quote}
-
-We conduct a correct item-total correlation on our original 36-items set. Base off, the r. drops that the corrected item-total correlations provide us we narrowed it down by selecting that items that had the best r. drops off removing one item at a time. For example, each cell division contain 4 items, therefore, we remove one of the four items creating 6 potential 3 item corrected item correlations, and from there we choose the items with the best r. drops. We continue the same process when narrowing our three items down to two items. An example is shown below:
+In our survey, we randomized our 36 items for our engagement measures, to control for item-order effects. We created four conditions: 1) grouping items by substantive then attitudinal, 2) grouping items by attitudinal then substantive, 3) grouping items by substantive then a control randomization of the attitudinal items, and 4) grouping items by attitudinal, and then control randomization of the substantive items.
 
 \hypertarget{cfa-modification-indices}{%
 \subsubsection{CFA Modification Indices}\label{cfa-modification-indices}}
 
 We followed two parallel stepwise item-reduction processes centered around eliminating items in decreasing order of modification indices. Looking at the 36-item substantive and attitudinal models independently, we requested modification indices from each, with the intent of retaining indicators whose fixed shared residual covariances were associated with high modification indices (indicating better model fit if the paths were freed). The item pair with the highest modification index was scrutinized, with a subjective group judgment made on wording/semantics content domain coverage. The less preferred item was removed from the model. In cases where the highest modification index was between the only two remaining items in a substantive-attitudinal pair, these items were passed over for scrutiny in favor of the items with the next-highest index. This process was repeated until 18 items remained (i.e., 2 items for each of the 9 substantive-attitudinal pairs)
 
-For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of \enquote{Absorption} and \enquote{Cognition}. One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, \enquote{I find it difficult to mentally disconnect from work} over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.\footnote{Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association). Look at \enquote{modincides1}}
+For example, the path with the highest modification index across both CFAs was between item 2 and item 4, which are both indicators of ``Absorption'' and ``Cognition.'' One of these items was therefore a candidate for deletion, and semantic preference was given to item 4, ``I find it difficult to mentally disconnect from work'' over item 2. After item 2 was excluded from both scale definitions (substantive and attitudinal), the CFAs were re-run and modification indices re-checked for bi-factor structure optimizing modifications.\footnote{Probably put a table in here highlighting certain modification indices (with a key to intended factor-item association). Look at ``modincides1''}
 
 The end result was two separate final scale definitions (one optimized for the substantive model and one for the attitudinal).
 
-We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same \enquote{cell}. The choice of item to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
+We prioritized item deletions such that an item was implicated for deletion if: 1) modification index was high (relative to others) and 2) error residual was within same ``cell.'' The choice of item to delete was based on author preference for wording/semantics as well as construct element coverage (considering the possible consequences for construct deficiency). Item variance was also consulted (retention more likely with greater item variance).
 
 \hypertarget{single-factor-versus-bifactor-approaches}{%
 \subsubsection{Single factor versus bifactor approaches}\label{single-factor-versus-bifactor-approaches}}
@@ -405,7 +359,7 @@ We conducted correct-item total correlations using
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used R (Version 4.0.3; R Core Team, 2021) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.0.2; Wickham et al., 2021), \emph{DT} (Version 0.16; Xie, Cheng, \& Tan, 2021), \emph{forcats} (Version 0.5.0; Wickham, 2021a), \emph{ggplot2} (Version 3.3.2; Wickham, 2016), \emph{kableExtra} (Version 1.3.1; Zhu, 2021), \emph{labourR} (Version 1.0.0; Kouretsis, Bampouris, Morfiris, \& Papageorgiou, 2020), \emph{lavaan} (Version 0.6.8; Rosseel, 2012), \emph{magrittr} (Version 2.0.1; Bache \& Wickham, 2020), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 1.4.0; Wickham \& Hester, 2020), \emph{sem} (Version 3.1.11; Fox, Nie, \& Byrnes, 2020; Epskamp, 2019), \emph{semPlot} (Version 1.1.2; Epskamp, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.0; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.1.2; Wickham, 2021b), and \emph{tidyverse} (Version 1.3.0; Wickham, Averick, et al., 2019) for all our analyses.
+We used R {[}Version 4.1.1; R Core Team (2021){]} and the R-packages \emph{apaTables} {[}Version 2.0.8; Stanley (2021){]}, \emph{dplyr} {[}Version 1.0.7; Wickham, François, Henry, and Müller (2021){]}, \emph{DT} {[}Version 0.19; Xie, Cheng, and Tan (2021){]}, \emph{forcats} {[}Version 0.5.1; Wickham (2021a){]}, \emph{ggplot2} {[}Version 3.3.5; Wickham (2016){]}, \emph{kableExtra} {[}Version 1.3.4; Zhu (2021){]}, \emph{labourR} {[}Version 1.0.0; Kouretsis, Bampouris, Morfiris, and Papageorgiou (2020){]}, \emph{lavaan} {[}Version 0.6.9; Rosseel (2012){]}, \emph{magrittr} {[}Version 2.0.1; Bache and Wickham (2020){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{purrr} {[}Version 0.3.4; Henry and Wickham (2020){]}, \emph{readr} {[}Version 2.0.1; Wickham and Hester (2020){]}, \emph{sem} {[}Version 3.1.11; Fox, Nie, and Byrnes (2020); Epskamp (2019){]}, \emph{semPlot} {[}Version 1.1.2; Epskamp (2019){]}, \emph{stringr} {[}Version 1.4.0; Wickham (2019){]}, \emph{tibble} {[}Version 3.1.4; Müller and Wickham (2021){]}, \emph{tidyr} {[}Version 1.1.3; Wickham (2021b){]}, and \emph{tidyverse} {[}Version 1.3.1; Wickham et al. (2019){]} for all our analyses.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -430,11 +384,12 @@ Construct validation was acccomplished via administration of the 17-item UWES as
 \setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
 \leavevmode\hypertarget{ref-ackerman1989comparison}{}%
 Ackerman, T. A., Spray, J. A., Reckase, M. D., \& Carlson, J. E. (1989). \emph{A comparison of the effects of random versus fixed order of item presentation via the computer}. AMERICAN COLL TESTING PROGRAM IOWA CITY IA.
 
 \leavevmode\hypertarget{ref-R-papaja}{}%
-Aust, F., \& Barth, M. (2020). \emph{papaja: Create APA manuscripts with R Markdown}. Retrieved from \url{https://github.com/crsh/papaja}
+Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
 
 \leavevmode\hypertarget{ref-R-magrittr}{}%
 Bache, S. M., \& Wickham, H. (2020). \emph{Magrittr: A forward-pipe operator for r}. Retrieved from \url{https://CRAN.R-project.org/package=magrittr}
@@ -454,14 +409,11 @@ Csikszentmihalyi, M. (1990). \emph{Flow: The psychology of optimal experience} (
 \leavevmode\hypertarget{ref-dean1980presentation}{}%
 Dean, M. L. (1980). Presentation order effects in product taste tests. \emph{The Journal of Psychology}, \emph{105}(1), 107--110.
 
-\leavevmode\hypertarget{ref-dziak2020sensitivity}{}%
-Dziak, J. J., Coffman, D. L., Lanza, S. T., Li, R., \& Jermiin, L. S. (2020). Sensitivity and specificity of information criteria. \emph{Briefings in Bioinformatics}, \emph{21}(2), 553--565.
-
 \leavevmode\hypertarget{ref-elloy_examination_1991}{}%
 Elloy, D. F., Everett, J. E., \& Flynn, W. R. (1991). An examination of the correlates of job involvement. \emph{Group \& Organization Studies}, \emph{16}(2), 160--177. \url{https://doi.org/10.1177/105960119101600204}
 
 \leavevmode\hypertarget{ref-R-semPlot}{}%
-Epskamp, S. (2019). \emph{SemPlot: Path diagrams and visual analysis of various sem packages' output}. Retrieved from \url{https://CRAN.R-project.org/package=semPlot}
+Epskamp, S. (2019). \emph{semPlot: Path diagrams and visual analysis of various SEM packages' output}. Retrieved from \url{https://CRAN.R-project.org/package=semPlot}
 
 \leavevmode\hypertarget{ref-ferris_added_1984}{}%
 Ferris, R., \& Hellier, P. (1984). Added value productivity schemes and employee participation. \emph{Asia Pacific Journal of Human Resources}, \emph{22}(4), 35--44. \url{https://doi.org/10.1177/103841118402200406}
@@ -476,31 +428,28 @@ Goering, D. D., Shimazu, A., Zhou, F., Wada, T., \& Sakai, R. (2017). Not if, bu
 Hamilton, J. C., \& Shuminsky, T. R. (1990). Self-awareness mediates the relationship between serial position and item reliability. \emph{Journal of Personality and Social Psychology}, \emph{59}(6), 1301.
 
 \leavevmode\hypertarget{ref-harter_business-unit-level_2002}{}%
-Harter, J. K., Schmidt, F., \& Hayes, T. (2002). Business-unit-level relationship between employee satisfaction, employee engagement, and business outcomes: A meta-analysis. \emph{The Journal of Applied Psychology}. \url{https://doi.org/10.1037/0021-9010.87.2.268}
+Harter, J. K., Schmidt, F. L., \& Hayes, T. L. (2002). Business-unit-level relationship between employee satisfaction, employee engagement, and business outcomes: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{87}(2), 268.
 
 \leavevmode\hypertarget{ref-R-purrr}{}%
 Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. Retrieved from \url{https://CRAN.R-project.org/package=purrr}
 
-\leavevmode\hypertarget{ref-joreskog1994estimation}{}%
-Jöreskog, K. G. (1994). On the estimation of polychoric correlations and their asymptotic covariance matrix. \emph{Psychometrika}, \emph{59}(3), 381--389.
+\leavevmode\hypertarget{ref-kahn1990psychological}{}%
+Kahn, William A. (1990b). Psychological conditions of personal engagement and disengagement at work. \emph{Academy of Management Journal}, \emph{33}(4), 692--724.
 
 \leavevmode\hypertarget{ref-kahn_psychological_1990}{}%
-Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work. \emph{Academy of Management Journal}, \emph{33}(4), 692--724.
-
-\leavevmode\hypertarget{ref-kahn1990psychological}{}%
-Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work. \emph{Academy of Management Journal}, \emph{33}(4), 692--724.
+Kahn, William A. (1990a). Psychological conditions of personal engagement and disengagement at work. \emph{Academy of Management Journal}, \emph{33}(4), 692--724.
 
 \leavevmode\hypertarget{ref-kaiser_campbell_2019}{}%
-Kaiser, F. G., \& Wilson, M. (2019). The Campbell Paradigm as a Behavior-Predictive Reinterpretation of the Classical Tripartite Model of Attitudes. \emph{European Psychologist}, \emph{24}(4), 359--374. \url{https://doi.org/10.1027/1016-9040/a000364}
+Kaiser, F. G., \& Wilson, M. (2019). The {Campbell} {Paradigm} as a {Behavior}-{Predictive} {Reinterpretation} of the {Classical} {Tripartite} {Model} of {Attitudes}. \emph{European Psychologist}, \emph{24}(4), 359--374. \url{https://doi.org/10.1027/1016-9040/a000364}
 
 \leavevmode\hypertarget{ref-kim_burnout_2009}{}%
-Kim, H. J., Shin, K. H., \& Swanger, N. (2009). Burnout and engagement: A comparative analysis using the Big Five personality dimensions. \emph{International Journal of Hospitality Management}, \emph{28}(1), 96--104. \url{https://doi.org/10.1016/j.ijhm.2008.06.001}
+Kim, H. J., Shin, K. H., \& Swanger, N. (2009). Burnout and engagement: {A} comparative analysis using the {Big} {Five} personality dimensions. \emph{International Journal of Hospitality Management}, \emph{28}(1), 96--104. \url{https://doi.org/10.1016/j.ijhm.2008.06.001}
 
 \leavevmode\hypertarget{ref-knowles1988item}{}%
 Knowles, E. S. (1988). Item context effects on personality scales: Measuring changes the measure. \emph{Journal of Personality and Social Psychology}, \emph{55}(2), 312.
 
 \leavevmode\hypertarget{ref-R-labourR}{}%
-Kouretsis, A., Bampouris, A., Morfiris, P., \& Papageorgiou, K. (2020). \emph{LabourR: Classify multilingual labour market free-text to standardized hierarchical occupations}. Retrieved from \url{https://CRAN.R-project.org/package=labourR}
+Kouretsis, A., Bampouris, A., Morfiris, P., \& Papageorgiou, K. (2020). \emph{labourR: Classify multilingual labour market free-text to standardized hierarchical occupations}. Retrieved from \url{https://CRAN.R-project.org/package=labourR}
 
 \leavevmode\hypertarget{ref-krosnick1987evaluation}{}%
 Krosnick, J. A., \& Alwin, D. F. (1987). An evaluation of a cognitive theory of response-order effects in survey measurement. \emph{Public Opinion Quarterly}, \emph{51}(2), 201--219.
@@ -518,10 +467,10 @@ Leone, D. R. (1995). \emph{The relation of work climate, higher order need satis
 Mashburn, A. J., Meyer, J. P., Allen, J. P., \& Pianta, R. C. (2014). The effect of observation length and presentation order on the reliability and validity of an observational measure of teaching quality. \emph{Educational and Psychological Measurement}, \emph{74}(3), 400--422.
 
 \leavevmode\hypertarget{ref-maslach1997causes}{}%
-Maslach, C., \& Leiter, M. (1997). What causes burnout. \emph{Maslach C, Leiter MP. The Truth About Burnout: How Organizations Cause Personal Stress and What to Do About It. San Francisco, CA: Josey-Bass Publishers}, 38--60.
+Maslach, C., \& Leiter, M. (1997). What causes burnout. \emph{Maslach C, Leiter MP. The Truth About Burnout: How Organizations Cause Personal Stress and What to Do about It. San Francisco, CA: Josey-Bass Publishers}, 38--60.
 
 \leavevmode\hypertarget{ref-maslach_early_2008}{}%
-Maslach, C., \& Leiter, M. P. (2008). Early predictors of job burnout and engagement. \emph{Journal of Applied Psychology}, \emph{93}(3), 498--512.
+Maslach, Christina, \& Leiter, M. P. (2008). Early predictors of job burnout and engagement. \emph{Journal of Applied Psychology}, \emph{93}(3), 498--512.
 
 \leavevmode\hypertarget{ref-meyer_three-component_1991}{}%
 Meyer, J. P., \& Allen, N. J. (1991). A three-component conceptualization of organizational commitment. \emph{Human Resource Management Review}, \emph{1}(1), 61--89.
@@ -536,31 +485,31 @@ R Core Team. (2021). \emph{R: A language and environment for statistical computi
 Rosenberg, M. J. (1960). \emph{Cognitive, affective, and behavioral components of attitudes}. \emph{Attitude organization and change}.
 
 \leavevmode\hypertarget{ref-R-lavaan}{}%
-Rosseel, Y. (2012). lavaan: An R package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{https://www.jstatsoft.org/v48/i02/}
+Rosseel, Y. (2012). {lavaan}: An {R} package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{https://www.jstatsoft.org/v48/i02/}
 
 \leavevmode\hypertarget{ref-saks2006antecedents}{}%
 Saks, A. M. (2006). Antecedents and consequences of employee engagement. \emph{Journal of Managerial Psychology}, \emph{21}(7), 600--619.
 
-\leavevmode\hypertarget{ref-schaufeli_conceptualization_2010}{}%
-Schaufeli, W., \& Bakker, A. (2010). The conceptualization and measurement of work engagement. In W. Schaufeli, A. Bakker, \& M. Leiter (Eds.), \emph{Work engagement: A handbook of essential theory and research} (pp. 10--24). New York: Psychology Press.
-
 \leavevmode\hypertarget{ref-schaufeli_uwesutrecht_2003}{}%
-Schaufeli, W. B., \& Bakker, A. B. (2003). UWES--utrecht work engagement scale: Test manual. \emph{Unpublished Manuscript: Department of Psychology, Utrecht University}, \emph{8}.
+Schaufeli, W. B., \& Bakker, A. B. (2003). {UWES}--utrecht work engagement scale: Test manual. \emph{Unpublished Manuscript: Department of Psychology, Utrecht University}, \emph{8}.
 
 \leavevmode\hypertarget{ref-schaufeli_measurement_2002}{}%
-Schaufeli, W. B., Salanova, M., González-Romá, V., \& Bakker, A. B. (2002). The measurement of engagement and burnout: A two sample confirmatory factor analytic approach. \emph{Journal of Happiness Studies}, \emph{3}(1), 71--92.
+Schaufeli, Wilmar B., Salanova, M., González-Romá, V., \& Bakker, A. B. (2002). The measurement of engagement and burnout: A two sample confirmatory factor analytic approach. \emph{Journal of Happiness Studies}, \emph{3}(1), 71--92.
 
 \leavevmode\hypertarget{ref-schaufeli2008workaholism}{}%
-Schaufeli, W. B., Taris, T. W., \& Van Rhenen, W. (2008). Workaholism, burnout, and work engagement: Three of a kind or three different kinds of employee well-being? \emph{Applied Psychology}, \emph{57}(2), 173--203.
+Schaufeli, Wilmar B., Taris, T. W., \& Van Rhenen, W. (2008). Workaholism, burnout, and work engagement: Three of a kind or three different kinds of employee well-being? \emph{Applied Psychology}, \emph{57}(2), 173--203.
+
+\leavevmode\hypertarget{ref-schaufeli_conceptualization_2010}{}%
+Schaufeli, W., \& Bakker, A. (2010). The conceptualization and measurement of work engagement. In W. Schaufeli, A. Bakker, \& M. Leiter (Eds.), \emph{Work engagement: A handbook of essential theory and research} (pp. 10--24). New York: Psychology Press.
 
 \leavevmode\hypertarget{ref-shaw2005engagement}{}%
 Shaw, K. (2005). An engagement strategy process for communicators. \emph{Strategic Communication Management}, \emph{9}(3), 26.
 
 \leavevmode\hypertarget{ref-soane2012development}{}%
-Soane, E., Truss, C., Alfes, K., Shantz, A., Rees, C., \& Gatenby, M. (2012). Development and application of a new measure of employee engagement: The isa engagement scale. \emph{Human Resource Development International}, \emph{15}(5), 529--547.
+Soane, E., Truss, C., Alfes, K., Shantz, A., Rees, C., \& Gatenby, M. (2012). Development and application of a new measure of employee engagement: The ISA engagement scale. \emph{Human Resource Development International}, \emph{15}(5), 529--547.
 
 \leavevmode\hypertarget{ref-R-apaTables}{}%
-Stanley, D. (2021). \emph{ApaTables: Create american psychological association (apa) style tables}. Retrieved from \url{https://CRAN.R-project.org/package=apaTables}
+Stanley, D. (2021). \emph{apaTables: Create american psychological association (APA) style tables}. Retrieved from \url{https://CRAN.R-project.org/package=apaTables}
 
 \leavevmode\hypertarget{ref-staw_employee_1994}{}%
 Staw, B. M., Sutton, R. I., \& Pelled, L. H. (1994). Employee positive emotion and favorable outcomes at the workplace. \emph{Organization Science}, \emph{5}(1), 51--71.
@@ -575,7 +524,7 @@ Taris, T. W., Ybema, J. F., \& Beek, I. van. (2017). Burnout and engagement: Ide
 Timms, C., Brough, P., \& Graham, D. (2012). Burnt-out but engaged: The co-existence of psychological burnout and engagement. \emph{Journal of Educational Administration}, \emph{50}(3), 327--345.
 
 \leavevmode\hypertarget{ref-R-ggplot2}{}%
-Wickham, H. (2016). \emph{Ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
 
 \leavevmode\hypertarget{ref-R-stringr}{}%
 Wickham, H. (2019). \emph{Stringr: Simple, consistent wrappers for common string operations}. Retrieved from \url{https://CRAN.R-project.org/package=stringr}
@@ -587,7 +536,7 @@ Wickham, H. (2021a). \emph{Forcats: Tools for working with categorical variables
 Wickham, H. (2021b). \emph{Tidyr: Tidy messy data}. Retrieved from \url{https://CRAN.R-project.org/package=tidyr}
 
 \leavevmode\hypertarget{ref-R-tidyverse}{}%
-Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the tidyverse. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-R-dplyr}{}%
 Wickham, H., François, R., Henry, L., \& Müller, K. (2021). \emph{Dplyr: A grammar of data manipulation}. Retrieved from \url{https://CRAN.R-project.org/package=dplyr}
@@ -596,10 +545,12 @@ Wickham, H., François, R., Henry, L., \& Müller, K. (2021). \emph{Dplyr: A gra
 Wickham, H., \& Hester, J. (2020). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
 
 \leavevmode\hypertarget{ref-R-DT}{}%
-Xie, Y., Cheng, J., \& Tan, X. (2021). \emph{DT: A wrapper of the javascript library 'datatables'}. Retrieved from \url{https://CRAN.R-project.org/package=DT}
+Xie, Y., Cheng, J., \& Tan, X. (2021). \emph{DT: A wrapper of the JavaScript library 'DataTables'}. Retrieved from \url{https://CRAN.R-project.org/package=DT}
 
 \leavevmode\hypertarget{ref-R-kableExtra}{}%
-Zhu, H. (2021). \emph{KableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}
+Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}
+
+\end{CSLReferences}
 
 \endgroup
 
