@@ -2,34 +2,18 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/tenure-1.pdf}
-\caption{\label{fig:tenure}Distribution of organizational tenure (years)}
+\includegraphics{SIOPpapaja_files/figure-latex/semplotsub-1.pdf}
+\caption{\label{fig:semplotsub}Omnibus Confirmatory Factor Analysis substantive structure.}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{SIOPpapaja_files/figure-latex/hours-1.pdf}
-\caption{\label{fig:hours}Distribution of mean hours worked per week}
+\includegraphics{SIOPpapaja_files/figure-latex/semplotatt-1.pdf}
+\caption{\label{fig:semplotatt}Omnibus Confirmatory Factor Analysis attitudinal structure.}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
-\centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.att1-1.pdf}
-\caption{(\#fig:CFA.att1)Substantive factor structure CFA}
-\end{figure*}
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.att2-1.pdf}
-\caption{(\#fig:CFA.att2)Attitudinal factor structure CFA}
-\end{figure*}
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
-\includegraphics{SIOPpapaja_files/figure-latex/CFA.att3-1.pdf}
-\caption{(\#fig:CFA.att3)Bifactor structure}
+\includegraphics[width=4.71in]{steps} \caption{Steps for measurement invariance (as recommended by Xu, 2012).}\label{fig:figure1}
 \end{figure*}
