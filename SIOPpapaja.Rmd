@@ -46,7 +46,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_word
 ---
 
 ```{r setup, include = FALSE}
@@ -422,6 +422,8 @@ aff <- psych::alpha(siop[c(1:2,7:8,13:14)])
 cog <- psych::alpha(siop[c(3:4,9:10,15:16)])
 beh <- psych::alpha(siop[c(5:6,11:12,17:18)])
 
+## Looks like Casey recoded in raw data, but this is "together" object that isn't really used. Old data looks fine (snowball sample) - new data actually looks crappy (no attention to recoded items)
+
 ```
 
 ## Participants
@@ -581,8 +583,8 @@ cond6att$rounded <- round(cond6att$`fitMeasures(cond6att)`,2)
 |            | 3-factor attitudinal     |`r cond5att[3,2]`   |`r cond5att[4,2]`     |`r cond5att[23,2]`  |`r cond5att[29,2]`  |`r cond5att[9,2]`  |`r cond5att[10,2]`  |`r cond5att[19,2]`  |
 |Condition 6 | 3-factor substantive     |`r cond6sub[3,2]`   |`r cond6sub[4,2]`     |`r cond6sub[23,2]`  |`r cond6sub[29,2]`  |`r cond6sub[9,2]`  |`r cond6sub[10,2]`  |`r cond6sub[19,2]`  |
 |            | 3-factor attitudinal     |`r cond6att[3,2]`   |`r cond6att[4,2]`     |`r cond6att[23,2]`  |`r cond6att[29,2]`  |`r cond6att[9,2]`  |`r cond6att[10,2]`  |`r cond6att[19,2]`  |
-|Overall     | 3-factor substantive     |`r cond6sub[3,2]`   |`r cond6sub[4,2]`     |`r cond6sub[23,2]`  |`r cond6sub[29,2]`  |`r cond6sub[9,2]`  |`r cond6sub[10,2]`  |`r cond6sub[19,2]`  |
-|            | 3-factor attitudinal     |`r cond6att[3,2]`   |`r cond6att[4,2]`     |`r cond6att[23,2]`  |`r cond6att[29,2]`  |`r cond6att[9,2]`  |`r cond6att[10,2]`  |`r cond6att[19,2]`  |
+|Overall     | 3-factor substantive     |`r fullsub[3,2]`   |`r fullsub[4,2]`     |`r fullsub[23,2]`  |`r fullsub[29,2]`  |`r fullsub[9,2]`  |`r fullsub[10,2]`  |`r fullsub[19,2]`  |
+|            | 3-factor attitudinal     |`r fullatt[3,2]`   |`r fullatt[4,2]`     |`r fullatt[23,2]`  |`r fullatt[29,2]`  |`r fullatt[9,2]`  |`r fullatt[10,2]`  |`r fullatt[19,2]`  |
 
 ```{r}
 
