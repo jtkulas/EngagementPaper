@@ -6,10 +6,10 @@ newdata.sub <- read.csv("Engagement+(Substantive)_October+12,+2021_08.01.csv")#[
 newdata.att <- newdata.att[-c(1:2),]                      ## peskies
 newdata.sub <- newdata.sub[-c(1:2),]
 
-write.csv(newdata.att, "changingnumeric.csv")
-newdata.att <- read.csv("changingnumeric.csv")            ## that worked!! 
-write.csv(newdata.sub, "changingnumeric.csv")
-newdata.sub <- read.csv("changingnumeric.csv") 
+write.csv(newdata.att, "changingnumerica.csv")
+newdata.att <- read.csv("changingnumerica.csv")            ## that worked!! 
+write.csv(newdata.sub, "changingnumerics.csv")
+newdata.sub <- read.csv("changingnumerics.csv") 
 
 library(careless)
 newdata.att$careless_long <- longstring(newdata.att[20:83])
@@ -75,3 +75,39 @@ cor(qualtrics[93:98], use="complete.obs")
 ########################################### Intent to quit
 
 intent.quit.alpha <- psych::alpha(qualtrics[c(80:83)])
+qualtrics$intentquit <- rowMeans(qualtrics[c(80:83)], na.rm=TRUE)
+
+########################################### Pets
+
+pets <- psych::alpha(qualtrics[c(75:79)])
+qualtrics$pets <- rowMeans(qualtrics[c(75:79)], na.rm=TRUE)
+
+########################################### Household Chores
+
+household <- psych::alpha(qualtrics[c(68:74)])
+qualtrics$household <- rowMeans(qualtrics[c(68:74)], na.rm=TRUE)
+
+########################################### Saks
+
+saks.job <- psych::alpha(qualtrics[c(20:24)])
+
+qualtrics$Q8 <- 6 - qualtrics$Q8
+saks.work <- psych::alpha(qualtrics[c(25:30)])
+
+qualtrics$saks.job <- rowMeans(qualtrics[c(20:24)], na.rm=TRUE)
+qualtrics$saks.work <- rowMeans(qualtrics[c(25:30)], na.rm=TRUE)
+
+########################################### UWES
+
+UWES.vigor      <- psych::alpha(qualtrics[c(31,34,38,42,45,47)])
+UWES.dedication <- psych::alpha(qualtrics[c(32,35,37,40,43)])
+UWES.absorption <- psych::alpha(qualtrics[c(33,36,39,41,44,46)])
+
+
+qualtrics$UWES.vigor      <- rowMeans(qualtrics[c(31,34,38,42,45,47)], na.rm=TRUE)
+qualtrics$UWES.dedication <- rowMeans(qualtrics[c(32,35,37,40,43)], na.rm=TRUE)
+qualtrics$UWES.absorption <- rowMeans(qualtrics[c(33,36,39,41,44,46)], na.rm=TRUE)
+
+
+cor(qualtrics[93:106], use="complete.obs")
+
