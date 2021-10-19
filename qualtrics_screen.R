@@ -111,3 +111,44 @@ qualtrics$UWES.absorption <- rowMeans(qualtrics[c(33,36,39,41,44,46)], na.rm=TRU
 
 cor(qualtrics[93:106], use="complete.obs")
 
+r <- corx::corx(qualtrics[,93:100],                     ## can extend if needed
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
+                  caption = "Unit-weighted scale intercorrelations (all conditions).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = TRUE,
+                  escape = F)
+
+################################################################################
+################################################################################
+################################################################################
+library(lavaan)
+
+bifactor <-'
+Absorption = ~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
+Vigor      = ~Item_14 + Item_16 + Item_17 + Item_19 + Item_21 + Item_22
+Dedication = ~ Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
+Cognitive  = ~Item_1  + Item_3  + Item_14 + Item_16 + Item_26 + Item_28
+Affective  = ~Item_5 +  Item_8  + Item_17 + Item_19 + Item_31 + Item_32
+Behavioral = ~Item_10 + Item_11 + Item_21 + Item_22 + Item_34 + Item_35
+Absorption ~~ 0*Affective
+Absorption ~~ 0*Behavioral
+Absorption ~~ 0*Cognitive
+Vigor      ~~ 0*Affective
+Vigor      ~~ 0*Behavioral
+Vigor      ~~ 0*Cognitive
+Dedication ~~ 0*Affective
+Dedication ~~ 0*Behavioral
+Dedication ~~ 0*Cognitive
+'
+
+Fit.mod2 <- lavaan::cfa(bifactor, data = qualtrics, missing = "ML", estimator = 'MLR')
+
+semPlot::semPaths(Fit.mod2, bifactor = c("Cognitive", "Affective", "Behavioral"), style="lisrel", "std", layout = "tree3", sizeLat=10, rotation = 2, sizeMan=4.5,edge.label.cex=0.75, edge.color="black", asize=2)
+
+
+
+
