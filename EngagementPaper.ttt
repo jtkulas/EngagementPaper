@@ -1,0 +1,266 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:itemtable}Focal items and their scale associations}
+
+\begin{tabular}{lll}
+\toprule
+Substantive & \multicolumn{1}{c}{Attitudinal} & \multicolumn{1}{c}{Item}\\
+\midrule
+Absorption & Cognitive & Item 1. I'm able to concentrate on my work without distractions\\
+Absorption & Cognitive & Item 3. Time passes quickly while I'm working\\
+Absorption & Affective & Item 5. I enjoy thinking about work even when I'm not at work\\
+Absorption & Affective & Item 8. I love starting my workday\\
+Absorption & Behavioral & Item 10. I have to be reminded to take breaks while I'm at work\\
+Absorption & Behavioral & Item 11. I never miss a work deadline\\
+Vigor & Cognitive & Item 14. Thinking about work saps my energy\\
+Vigor & Cognitive & Item 16. I'm able to maintain good levels of energy throughout the workday\\
+Vigor & Affective & Item 17. I enjoy spending time completing my job tasks\\
+Vigor & Affective & Item 19. I feel motivated to go beyond what is asked of me at work\\
+Vigor & Behavioral & Item 21. When work is slow I find ways to be productive\\
+Vigor & Behavioral & Item 22. I express enthusiasm for my job while at work\\
+Dedication & Cognitive & Item 26. I believe this company cares about my career goals\\
+Dedication & Cognitive & Item 28. This organization challenges me to work at my full potential\\
+Dedication & Affective & Item 31. I feel proud of my accomplishments within this organization\\
+Dedication & Affective & Item 32. My job makes me feel like I'm part of something meaningful\\
+Dedication & Behavioral & Item 34. I embrace challenging situations at work\\
+Dedication & Behavioral & Item 35. I speak positively about this organization to others\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{longtable}[]{@{}lllllllll@{}}
+\toprule
+Condition & Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+\midrule
+\endhead
+Condition 1 & 3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\tabularnewline
+& 3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\tabularnewline
+Condition 2 & 3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45\tabularnewline
+& 3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96\tabularnewline
+Condition 3 & 3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32\tabularnewline
+& 3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534\tabularnewline
+Condition 4 & 3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64\tabularnewline
+& 3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66\tabularnewline
+Condition 5 & 3-factor substantive & 549.80 & 132 & 0.10 & 0.05 & 0.90 & 0.89 & 14,932.57\tabularnewline
+& 3-factor attitudinal & 497.90 & 132 & 0.10 & 0.04 & 0.92 & 0.90 & 14,880.67\tabularnewline
+Condition 6 & 3-factor substantive & 468.02 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 17,953.02\tabularnewline
+& 3-factor attitudinal & 610.60 & 132 & 0.10 & 0.06 & 0.88 & 0.86 & 18,095.61\tabularnewline
+Overall & 3-factor substantive & 995.34 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 46,915.05\tabularnewline
+& 3-factor attitudinal & 1,103.47 & 132 & 0.09 & 0.05 & 0.90 & 0.88 & 47,023.18\tabularnewline
+\bottomrule
+\end{longtable}
+\efloatseparator
+ 
+\begin{lltable}
+
+\begin{TableNotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{TableNotes}
+
+\begin{longtable}{llllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:unnamed-chunk-1}Unit-weighted scale intercorrelations (all conditions).}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:unnamed-chunk-1} continued}}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endhead
+1. Absorption & - &  &  &  &  & 4.00 & 1.02\\
+2. Vigor & .76*** & - &  &  &  & 4.23 & 0.90\\
+3. Dedication & .76*** & .80*** & - &  &  & 4.41 & 1.12\\
+4. Affect & .81*** & .84*** & .85*** & - &  & 4.09 & 0.95\\
+5. Cognition & .87*** & .86*** & .89*** & .79*** & - & 4.16 & 1.12\\
+6. Behavior & .84*** & .83*** & .84*** & .71*** & .81*** & 4.39 & 0.96\\
+\bottomrule
+\addlinespace
+\insertTableNotes
+\end{longtable}
+
+\end{lltable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.pilot.att}Measurement invariance summary statistics (attitudinal structure).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.a & 528 & 13,645.98 & 14,453.38 & 1,117.59 & NA & NA & NA\\
+weak.a & 573 & 13,614.45 & 14,262.50 & 1,176.06 & 58.48 & 45 & 0.09\\
+strong.a & 618 & 13,569.48 & 14,058.18 & 1,221.09 & 45.03 & 45 & 0.47\\
+strict.a & 672 & 13,538.35 & 13,835.82 & 1,297.96 & 76.87 & 54 & 0.02\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.pilot.sub}Measurement invariance summary statistics (substantive structure).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.s & 528 & 13,616.29 & 14,423.69 & 1,087.90 & NA & NA & NA\\
+weak.s & 573 & 13,588.39 & 14,236.44 & 1,150.00 & 62.10 & 45 & 0.05\\
+strong.s & 618 & 13,546.51 & 14,035.20 & 1,198.12 & 48.12 & 45 & 0.35\\
+strict.s & 672 & 13,521.28 & 13,818.74 & 1,280.89 & 82.77 & 54 & 0.01\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.siop2.att}Measurement invariance summary statistics (attitudinal structure [6 conditions]).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.a2 & 792 & 46,694.26 & 48,335.92 & 2,226.09 & NA & NA & NA\\
+weak.a2 & 867 & 46,739.78 & 48,021.43 & 2,421.61 & 195.52 & 75 & 0.00\\
+strong.a2 & 942 & 46,937.41 & 47,859.05 & 2,769.24 & 347.63 & 75 & 0.00\\
+strict.a2 & 1032 & 46,976.26 & 47,465.88 & 2,988.09 & 218.85 & 90 & 0.00\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.siop2.sub}Measurement invariance summary statistics (substantive structure [6 conditions]).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.s2 & 792 & 46,573.88 & 48,215.54 & 2,105.71 & NA & NA & NA\\
+weak.s2 & 867 & 46,623.18 & 47,904.83 & 2,305.01 & 199.30 & 75 & 0.00\\
+strong.s2 & 942 & 46,773.49 & 47,695.13 & 2,605.32 & 300.31 & 75 & 0.00\\
+strict.s2 & 1032 & 46,818.51 & 47,308.13 & 2,830.34 & 225.01 & 90 & 0.00\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.siop3.att}Measurement invariance summary statistics (attitudinal structure [Qualtrics only]).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.a2 & 264 & 33,048.28 & 33,557.42 & 1,108.50 & NA & NA & NA\\
+weak.a2 & 279 & 33,046.22 & 33,488.37 & 1,136.44 & 27.94 & 15 & 0.02\\
+strong.a2 & 294 & 33,085.13 & 33,460.29 & 1,205.35 & 68.91 & 15 & 0.00\\
+strict.a2 & 312 & 33,100.74 & 33,395.51 & 1,256.96 & 51.61 & 18 & 0.00\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:measinv.siop3.sub}Measurement invariance summary statistics (substantive structure [Qualtrics only]).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+\midrule
+configural.s2 & 264 & 32,957.60 & 33,466.74 & 1,017.81 & NA & NA & NA\\
+weak.s2 & 279 & 32,941.43 & 33,383.58 & 1,031.65 & 13.84 & 15 & 0.54\\
+strong.s2 & 294 & 32,969.93 & 33,345.09 & 1,090.15 & 58.50 & 15 & 0.00\\
+strict.s2 & 312 & 32,956.32 & 33,251.08 & 1,112.54 & 22.39 & 18 & 0.22\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} * p < 0.05; ** p < 0.01; *** p < 0.001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

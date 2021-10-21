@@ -1,0 +1,14 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{EngagementPaper_files/figure-latex/semplotsub-1.pdf}
+\caption{\label{fig:semplotsub}Omnibus Confirmatory Factor Analysis substantive structure.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{EngagementPaper_files/figure-latex/semplotatt-1.pdf}
+\caption{\label{fig:semplotatt}Omnibus Confirmatory Factor Analysis attitudinal structure.}
+\end{figure*}
