@@ -87,7 +87,7 @@ library(lavaan)
 bifactor <-'
 Absorption = ~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
 Vigor      = ~Item_14 + Item_16 + Item_17 + Item_19 + Item_21 + Item_22
-Dedication = ~ Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
+Dedication = ~ NA*Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
 Cognitive  = ~Item_1  + Item_3  + Item_14 + Item_16 + Item_26 + Item_28
 Affective  = ~Item_5 +  Item_8  + Item_17 + Item_19 + Item_31 + Item_32
 Behavioral = ~Item_10 + Item_11 + Item_21 + Item_22 + Item_34 + Item_35
@@ -100,6 +100,7 @@ Vigor      ~~ 0*Cognitive
 Dedication ~~ 0*Affective
 Dedication ~~ 0*Behavioral
 Dedication ~~ 0*Cognitive
+Dedication ~~ 1*Dedication
 '
 
 Fit.mod <- lavaan::cfa(bifactor, data = data, missing = "ML", estimator = 'MLR')
@@ -107,12 +108,13 @@ Fit.mod <- lavaan::cfa(bifactor, data = data, missing = "ML", estimator = 'MLR')
 # semPlot::semPaths(Fit.mod2, bifactor = c("Cognitive", "Affective", "Behavioral"), "std", layout = "tree3",
 #                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0, pastel=FALSE)
 
-semPlot::semPaths(Fit.mod, bifactor = c("Cognitive", "Affective", "Behavioral"), style="lisrel", "std", layout = "tree3", sizeLat=10, rotation = 2, sizeMan=4.5,edge.label.cex=0.75, edge.color="black", asize=2)
+semPlot::semPaths(Fit.mod, bifactor = c("Cognitive", "Affective", "Behavioral"), style="lisrel", "std", layout = "tree3", rainbowStart=.5,sizeLat=10, rotation = 2, sizeMan=4.5,edge.label.cex=0.75, asize=2)
 
+standardizedSolution(Fit.mod)
 
 # into data frames
 fit1.1 <- as.data.frame(fitMeasures(Fit.mod))
-fit1.1$`fitMeasures(Fit.mod)` <- round(fit1.1$`fitMeasures(Fit1.1)`, 2)
+fit1.1$`fitMeasures(fit.mod)` <- round(fit1.1$`fitMeasures(fit.mod)`, 2)
 
 fit1.2 <- as.data.frame(fitMeasures(Fit1.2))
 fit1.2$`fitMeasures(Fit1.2)` <- round(fit1.2$`fitMeasures(Fit1.2)`, 2)
