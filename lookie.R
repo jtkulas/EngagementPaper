@@ -1,6 +1,9 @@
+## Snowball sample (Montclair State sampling initiated 11/2/21)
+
 ## checking out geographic demography
 
-demo <- read.csv("lookie.csv")[-c(1:2),]
+# demo <- read.csv("lookie.csv")[-c(1:2),]
+demo <- read.csv("lookie.12.2.csv")[-c(1:2),]
 
 library(leaflet)
 
@@ -14,3 +17,12 @@ leaflet() %>%
           zoom = 4) %>%
   addTiles() %>%
   addCircles(data=demo, lng = ~`LocationLongitude`, lat = ~`LocationLatitude`, weight = 10)
+
+
+demo$date <- substr(demo$`RecordedDate`, 1,10)
+demo$date <- as.Date(demo$date)
+
+library(ggplot2)
+
+ggplot(demo, aes(x=date)) + geom_histogram(binwidth=1) +
+  xlab("") + scale_x_date(breaks = scales::breaks_pretty(10))
