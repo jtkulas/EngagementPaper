@@ -26,3 +26,16 @@ library(ggplot2)
 
 ggplot(demo, aes(x=date)) + geom_histogram(binwidth=1) +
   xlab("") + scale_x_date(breaks = scales::breaks_pretty(10))
+
+
+########################################################## scales
+##########################################################
+
+data <- as.data.frame(lapply(demo, as.numeric))
+
+## UWES (Q14:Q28)
+
+psych::alpha(data[c(30,33,37,41,46)])      ## Vigor
+
+
+demo$uwes.vigor <- rowMeans(demo[c(30,33,37,41,46)])
