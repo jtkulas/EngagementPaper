@@ -3,16 +3,16 @@ title             : "Engagement vs. Attitude: Measurement Invariance across Item
 shorttitle        : "BiFactor Engagement"
 
 author: 
-  - name          : "Casey Osorio-Duffoo"
-    affiliation   : "2"
+  - name          : "John Kulas"
+    affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
     address       : "1 Normal Ave, Montclair, NJ 07043"
-    email         : "caseyosorio@gmail.com"
+    email         : "kulasj@montclair.edu"
   - name          : "Renata Garcia Prieto Palacios Roji"
     affiliation   : "1"
+  - name          : "Casey Osorio-Duffoo"
+    affiliation   : "2"
   - name          : "Morgan Russell"
-    affiliation   : "1"
-  - name          : "John Kulas"
     affiliation   : "1"
 
 affiliation:
@@ -606,6 +606,8 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
                   escape = F)
 
 ```
+
+>Note. Also look at scale intercorrelations when the shared items have been removed (for example, items that define both dedication and cognition when looking at the correlation between dedication and cognition) - 12/2/21
 
 ### Condition effects
 
