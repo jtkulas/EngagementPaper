@@ -38,4 +38,4 @@ data <- as.data.frame(lapply(demo, as.numeric))
 psych::alpha(data[c(30,33,37,41,46)])      ## Vigor
 
 
-demo$uwes.vigor <- rowMeans(demo[c(30,33,37,41,46)])
+demo$uwes.vigor <- rowMeans(data[c(30,33,37,41,46)], na.rm=TRUE)
