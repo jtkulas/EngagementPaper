@@ -41,10 +41,36 @@ UWES <- Data2 %>%
 
 
 
-
-
 Engagement <- Data2 %>% 
-  select(Response.ID,I.am.able.to.concentrate.on.my.work.without.getting.distracted:I.express.enthusiasm.for.my.job.while.at.work.1)
+  select(Response.ID,I.am.able.to.concentrate.on.my.work.without.getting.distracted:I.express.enthusiasm.for.my.job.while.at.work.1) %>% 
+  unite(.,Item_1,I.am.able.to.concentrate.on.my.work.without.getting.distracted, I.am.able.to.concentrate.on.my.work.without.getting.distracted.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_2,Time.passes.quickly.while.I.m.working,Time.passes.quickly.while.I.m.working.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_3,I.find.it.difficult.to.mentally.disconnect.from.work, I.find.it.difficult.to.mentally.disconnect.from.work.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_4,Thinking.about.work.saps.my.energy, Thinking.about.work.saps.my.energy.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_5,I.m.able.to.maintain.good.levels.of.energy.throughout.the.workday,I.m.able.to.maintain.good.levels.of.energy.throughout.the.workday.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_6,I.plan.to.stay.with.this.company.as.my.career.advances, I.plan.to.stay.with.this.company.as.my.career.advances.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_7,I.believe.this.company.cares.about.my.career.goals, I.believe.this.company.cares.about.my.career.goals.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_8,This.organization.challenges.me.to.work.at.my.full.potential,This.organization.challenges.me.to.work.at.my.full.potential.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_9,I.enjoy.thinking.about.work.even.when.I.m.not.at.work, I.enjoy.thinking.about.work.even.when.I.m.not.at.work.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_10,I.love.starting.my.workday, I.love.starting.my.workday.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_11,I.enjoy.spending.time.completing.my.job.tasks,I.enjoy.spending.time.completing.my.job.tasks.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_12,I.feel.motivated.to.go.beyond.what.is.asked.of.me.at.work, I.feel.motivated.to.go.beyond.what.is.asked.of.me.at.work.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_13,I.feel.proud.of.my.accomplishments.within.this.organization, I.feel.proud.of.my.accomplishments.within.this.organization.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_14,My.job.makes.me.feel.like.I.m.part.of.something.meaningful,My.job.makes.me.feel.like.I.m.part.of.something.meaningful.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_15,I.have.to.be.reminded.to.take.breaks.while.I.m.at.work, I.have.to.be.reminded.to.take.breaks.while.I.m.at.work.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_16,I.never.miss.a.work.deadline, I.never.miss.a.work.deadline.1,sep = "",na.rm = T) %>% 
+  unite(.,Item_17,When.work.is.slow.I.find.ways.to.be.productive,When.work.is.slow.I.find.ways.to.be.productive.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_18,I.express.enthusiasm.for.my.job.while.at.work, I.express.enthusiasm.for.my.job.while.at.work.1, sep = "", na.rm = T) %>% 
+  unite(.,Item_19,I.embrace.challenging.situations.at.work,I.embrace.challenging.situations.at.work.1,sep = "", na.rm = T) %>% 
+  unite(.,Item_20,I.speak.positively.about.this.organization.to.others, I.speak.positively.about.this.organization.to.others.1, sep = "", na.rm = T) %>% 
+  mutate(across(c("Item_1":"Item_20"),~case_when(str_detect(.,regex("Strongly Disagree"))~"1",
+                                                 str_detect(.,regex("Strongle Agree"))~"6",
+                                                 str_detect(.,regex("Somewhat Disagree"))~"3",
+                                                 str_detect(.,regex("Somewhat Agree"))~"4",
+                                                 str_detect(.,regex("Disagree"))~"2",
+                                                 str_detect(.,regex("Agree"))~"5"))) %>% 
+  mutate(across(c("Item_3","Item_4"),~recode(.,"6"="1","5"="2","4"="3","4"="4","2"="5","1"="6"))) %>% 
+  mutate(across(c("Item_1":"Item_20"),~as.numeric(.))) 
 
 Game <- Data2 %>% 
   select(Response.ID,Washed.dishes:Knitted..quilted..sewed..or.crocheted)
