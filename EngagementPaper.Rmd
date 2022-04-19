@@ -32,7 +32,7 @@ abstract: |
 keywords          : "Engagement, engagement"
 wordcount         : "X"
 
-bibliography      : ["r-references.bib", "engage.bib", "siopadds.bib", "bifactor.bib", "book.bib", "renata.bib"]
+bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib"]
 
 floatsintext      : no #change to yes if we want all tables to be put in-line rather than pushed to end of paper
 figurelist        : no
@@ -49,7 +49,7 @@ output            : papaja::apa6_pdf
 
 ```{r setup, include = FALSE}
 library("papaja")
-r_refs("r-references.bib")
+r_refs("bibs/r-references.bib")
 ```
 
 ```{r analysis-preferences}
