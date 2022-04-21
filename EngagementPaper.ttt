@@ -11,24 +11,24 @@
 \toprule
 Substantive & \multicolumn{1}{c}{Attitudinal} & \multicolumn{1}{c}{Item}\\
 \midrule
-Absorption & Cognitive & Item 1. I'm able to concentrate on my work without distractions\\
-Absorption & Cognitive & Item 3. Time passes quickly while I'm working\\
-Absorption & Affective & Item 5. I enjoy thinking about work even when I'm not at work\\
-Absorption & Affective & Item 8. I love starting my workday\\
-Absorption & Behavioral & Item 10. I have to be reminded to take breaks while I'm at work\\
-Absorption & Behavioral & Item 11. I never miss a work deadline\\
-Vigor & Cognitive & Item 14. Thinking about work saps my energy\\
-Vigor & Cognitive & Item 16. I'm able to maintain good levels of energy throughout the workday\\
-Vigor & Affective & Item 17. I enjoy spending time completing my job tasks\\
-Vigor & Affective & Item 19. I feel motivated to go beyond what is asked of me at work\\
-Vigor & Behavioral & Item 21. When work is slow I find ways to be productive\\
-Vigor & Behavioral & Item 22. I express enthusiasm for my job while at work\\
-Dedication & Cognitive & Item 26. I believe this company cares about my career goals\\
-Dedication & Cognitive & Item 28. This organization challenges me to work at my full potential\\
-Dedication & Affective & Item 31. I feel proud of my accomplishments within this organization\\
-Dedication & Affective & Item 32. My job makes me feel like I'm part of something meaningful\\
-Dedication & Behavioral & Item 34. I embrace challenging situations at work\\
-Dedication & Behavioral & Item 35. I speak positively about this organization to others\\
+Absorption & Cognitive &   Item 1. I'm able to concentrate on my work without distractions\\
+Absorption & Cognitive &   Item 3. Time passes quickly while I'm working\\
+Absorption & Affective &   Item 5. I enjoy thinking about work even when I'm not at work\\
+Absorption & Affective &   Item 8. I love starting my workday\\
+Absorption & Behavioral &   Item 10. I have to be reminded to take breaks while I'm at work\\
+Absorption & Behavioral &   Item 11. I never miss a work deadline\\
+Vigor & Cognitive &   Item 14. Thinking about work saps my energy\\
+Vigor & Cognitive &   Item 16. I'm able to maintain good levels of energy throughout the workday\\
+Vigor & Affective &   Item 17. I enjoy spending time completing my job tasks\\
+Vigor & Affective &   Item 19. I feel motivated to go beyond what is asked of me at work\\
+Vigor & Behavioral &   Item 21. When work is slow I find ways to be productive\\
+Vigor & Behavioral &   Item 22. I express enthusiasm for my job while at work\\
+Dedication & Cognitive &   Item 26. I believe this company cares about my career goals\\
+Dedication & Cognitive &   Item 28. This organization challenges me to work at my full potential\\
+Dedication & Affective &   Item 31. I feel proud of my accomplishments within this organization\\
+Dedication & Affective &   Item 32. My job makes me feel like I'm part of something meaningful\\
+Dedication & Behavioral &   Item 34. I embrace challenging situations at work\\
+Dedication & Behavioral &   Item 35. I speak positively about this organization to others\\
 \bottomrule
 \end{tabular}
 
@@ -40,23 +40,23 @@ Dedication & Behavioral & Item 35. I speak positively about this organization to
  
 \begin{longtable}[]{@{}lllllllll@{}}
 \toprule
-Condition & Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC\tabularnewline
+Condition & Model & \(\chi^2\) & \emph{df} & RMSEA & SRMR & CFI & TLI & AIC \\
 \midrule
 \endhead
-Condition 1 & 3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88\tabularnewline
-& 3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35\tabularnewline
-Condition 2 & 3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45\tabularnewline
-& 3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96\tabularnewline
-Condition 3 & 3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32\tabularnewline
-& 3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534\tabularnewline
-Condition 4 & 3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64\tabularnewline
-& 3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66\tabularnewline
-Condition 5 & 3-factor substantive & 549.80 & 132 & 0.10 & 0.05 & 0.90 & 0.89 & 14,932.57\tabularnewline
-& 3-factor attitudinal & 497.90 & 132 & 0.10 & 0.04 & 0.92 & 0.90 & 14,880.67\tabularnewline
-Condition 6 & 3-factor substantive & 468.02 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 17,953.02\tabularnewline
-& 3-factor attitudinal & 610.60 & 132 & 0.10 & 0.06 & 0.88 & 0.86 & 18,095.61\tabularnewline
-Overall & 3-factor substantive & 995.34 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 46,915.05\tabularnewline
-& 3-factor attitudinal & 1,103.47 & 132 & 0.09 & 0.05 & 0.90 & 0.88 & 47,023.18\tabularnewline
+Condition 1 & 3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88 \\
+& 3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35 \\
+Condition 2 & 3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45 \\
+& 3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96 \\
+Condition 3 & 3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32 \\
+& 3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534 \\
+Condition 4 & 3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64 \\
+& 3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66 \\
+Condition 5 & 3-factor substantive & 549.80 & 132 & 0.10 & 0.05 & 0.90 & 0.89 & 14,932.57 \\
+& 3-factor attitudinal & 497.90 & 132 & 0.10 & 0.04 & 0.92 & 0.90 & 14,880.67 \\
+Condition 6 & 3-factor substantive & 468.02 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 17,953.02 \\
+& 3-factor attitudinal & 610.60 & 132 & 0.10 & 0.06 & 0.88 & 0.86 & 18,095.61 \\
+Overall & 3-factor substantive & 995.34 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 46,915.05 \\
+& 3-factor attitudinal & 1,103.47 & 132 & 0.09 & 0.05 & 0.90 & 0.88 & 47,023.18 \\
 \bottomrule
 \end{longtable}
 \efloatseparator
