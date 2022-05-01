@@ -32,7 +32,7 @@ abstract: |
 keywords          : "Engagement, engagement"
 wordcount         : "X"
 
-bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib"]
+bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "bibs/siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib"]
 
 floatsintext      : no #change to yes if we want all tables to be put in-line rather than pushed to end of paper
 figurelist        : no
