@@ -443,7 +443,6 @@ Our 18-item engagement measure was crafted to be intentionally complex (each ite
 
 ```{r itemtable}
 
-
 papaja::apa_table(read.csv("items.csv"), # apa contains the data.frame needed for apa_table
                   caption = "Focal items and their scale associations",
                   landscape = FALSE,
@@ -647,7 +646,7 @@ strict.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal=c("loadi
 ## changed above to only adults
 
 fittab <- lavTestLRT(configural.a,weak.a,strong.a, strict.a)
-write.csv(fittab, "groupindicesatt.csv")
+write.csv(fittab, "Tables/groupindicesatt.csv")
 #semPlot::semPaths(model1, "std", layout = "tree3", 
 #                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
 
@@ -672,7 +671,7 @@ strict.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal=c("load
 ## changed above to only adults
 
 fittab2 <- lavTestLRT(configural.s,weak.s,strong.s, strict.s)
-write.csv(fittab2, "groupindicessub.csv")
+write.csv(fittab2, "Tables/groupindicessub.csv")
 #semPlot::semPaths(model1, "std", layout = "tree3", 
 #                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
 
@@ -698,7 +697,7 @@ strict.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal=c("load
 ## changed above to only adults
 
 fittab3 <- lavTestLRT(configural.a2,weak.a2,strong.a2, strict.a2)
-write.csv(fittab3, "groupindicesatt2.csv")
+write.csv(fittab3, "Tables/groupindicesatt2.csv")
 #semPlot::semPaths(model1, "std", layout = "tree3", 
 #                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
 
@@ -723,7 +722,7 @@ strict.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal=c("loa
 ## changed above to only adults
 
 fittab4 <- lavTestLRT(configural.s2,weak.s2,strong.s2, strict.s2)
-write.csv(fittab4, "groupindicessub2.csv")
+write.csv(fittab4, "Tables/groupindicessub2.csv")
 #semPlot::semPaths(model1, "std", layout = "tree3", 
 #                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
 
