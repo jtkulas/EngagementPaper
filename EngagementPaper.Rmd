@@ -116,7 +116,7 @@ Our contributions:
 library(tidyverse)
 
 # Importing Data from Qualtrics 
-temp <- read.csv("qualtrics_pilot_data.csv", header=FALSE, na.strings="")
+temp <- read.csv("Qualtrics/qualtrics_pilot_data.csv", header=FALSE, na.strings="")
 
 # Creating Header Columns
 x <- temp[2,] # Takes row 2 and places it into an object
@@ -378,8 +378,8 @@ SIOPmi <- as.data.frame(rbind(Cond1_Model,Cond2_Model,Cond3_Model,Cond4_Model))
 ######################################################################
 ####################### New data 10/12
 
-newdata.att <- read.csv("Engagement+(Attitudinal)_October+12,+2021_08.02.csv")[47:66]
-newdata.sub <- read.csv("Engagement+(Substantive)_October+12,+2021_08.01.csv")[47:66]
+newdata.att <- read.csv("Qualtrics/Engagement+(Attitudinal)_October+12,+2021_08.02.csv")[47:66]
+newdata.sub <- read.csv("Qualtrics/Engagement+(Substantive)_October+12,+2021_08.01.csv")[47:66]
 
 newdata.att <- newdata.att[-c(1:2),]
 newdata.sub <- newdata.sub[-c(1:2),]
