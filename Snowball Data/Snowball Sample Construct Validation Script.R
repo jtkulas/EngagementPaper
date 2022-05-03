@@ -1,25 +1,22 @@
-## This is the script that grabbed the original snowball sample (n=168; file = "Engagement Data_2021-12-06.csv")
 ## The sample was expanded via further snowball sampling with Eagle newbies on/about March 2022, with the additional sample (n=232; "Engagement(post-Qualtrics)April1920221118.csv")
-
-
+## The current sample has 234 using choice text from Engagement_Pos Qual_2022-05-01_Choic Text.csv. Was pulled on May 1, 2022. 
 
 library(tidyverse)
 library(readxl)
 
-## Engage <- read.csv("Engagement Data_2021-12-06.csv",skip=1) %>% 
-Engage <- read.csv("Engagement(post-Qualtrics)April1920221118.csv",skip=1) %>% 
-  slice(-1) %>% 
+Engage <- read.csv("Snowball Data/Engagement_Pos Qual_2022-05-01_Choice Text.csv", skip = 1) %>% # Skipped first row cause it was duplicate header 
+  slice(-1) %>% # Slice removes rows, removed the first row because it was messy qualtrics info
   select(-IRB.FY21.22.2359.We.are.asking.you.to.take.part.in.a.research.study.being.done.by.Dr..Kulas.a.faculty.member.at.Montclair.State.University..Being.in.this.study.is.optional...If.you.choose.to.be.in.the.study..you.will.complete.a.brief.survey.consisting.of.5.short.measures.of.work.engagement.as.well.as.free.time.activities..spending.time.either.with.pets.or.game.playing...This.survey.will.help.us.learn.more.about.measurement.properties.of.scales.purported.to.assess.workers..work.attitudes.and.free.time.activities..You.have.been.offered.the.opportunity.to.participate.in.this.study.since.you.are.18.years.or.older..and.are.employed.part.time.or.full.time.in.the.U.S..The.survey.will.take.about.10.minutes.to.complete....The.survey.is.anonymous..and.no.one.will.be.able.to.link.your.answers.back.to.you...Employment.questions.or.sensitive.questions..We.strongly.advise.that.you.do.not.use.an.employer.issued.electronic.device..laptop..phone.or.WIFI.to.respond.to.this.survey..as.many.employers.monitor.use.of.all.devices...Questions.about.the.study..Please.contact.Dr..John.Kulas..Professor.of.Psychology.in.the.College.of.Humanities.and.Social.Sciences.at.kulasj.montclair.edu...If.you.have.questions.or.concerns.about.your.rights.as.a.research.participant..you.can.call.the.MSU.Institutional.Review.Board.at.973.655.7583.or.email.reviewboard.montclair.edu..This.study.has.been.approved.by.the.Montclair.St.University.Institutional.Review.Board..If.you.want.to.participate.in.this.study..please.select.the..Accept..option.to.start.the.survey.) %>%
-  select(-Start.Date:-Progress,-Recorded.Date,-Recipient.Last.Name:-External.Data.Reference,-Distribution.Channel,-User.Language)
+  select(-Start.Date:-Progress,-Recorded.Date,-Recipient.Last.Name:-External.Data.Reference,-Distribution.Channel,-User.Language) # Removed usless items
 
-Demographics <- Data %>% 
+Demographics <- Engage %>% 
   select(Response.ID,Duration..in.seconds.,Finished,Location.Latitude,Location.Longitude,Emploment.Status=Which.of.the.following.categories.best.describes.your.employment.status.,
          Industry=Which.of.the.following.categories.best.describes.the.industry.you.work.in.,Size.of.Organization=What.is.the.size.of.the.organization.you.work.for.,
          Work.Arrangement=Which.of.the.following.categories.best.describes.your.current.work.arrangement.,Job.Title=What.is.your.job.title.,
          Job.Managerial.Responsibilities=What.is.the.best.description.of.your.job.s.managerial.responsibilities., Age=Please.indicate.your.age, Education=Please.indicate.your.education.level,
          Gender=To.which.gender.identity.do.you.most.identify.)
 
-Data2 <- Data %>% 
+Data2 <- Engage %>% 
   select(-Duration..in.seconds.,-Finished,-Location.Latitude,-Location.Longitude,-Which.of.the.following.categories.best.describes.your.employment.status.:-To.which.gender.identity.do.you.most.identify.)
 
 Saks <- Data2 %>% 
