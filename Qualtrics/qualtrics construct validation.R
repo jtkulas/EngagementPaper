@@ -151,4 +151,21 @@ semPlot::semPaths(Fit.mod2, bifactor = c("Cognitive", "Affective", "Behavioral")
 
 
 
+#####################################################################################
+#####################################################################################
+#####################################################################################
+##################### Trying to figure out whether to combine datafiles or not - 7/19/22
+
+## Why not for SIOP at least
+
+## focal engagement is 48:67
+
+hist(qualtrics$C1)
+
+library(tidyr)
+long <- gather(qualtrics, item, response, C1:B35, factor_key=TRUE)
+
+library(ggplot2)
+ggplot(long, aes(x = response)) + geom_histogram() + facet_wrap(~item) ## once get snowball sample, swap w/ https://stackoverflow.com/questions/43415709/how-to-use-facet-grid-with-geom-histogram
+
 
