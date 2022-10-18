@@ -1,0 +1,76 @@
+---
+title             : "Measurement invariance across panel samples: Flagged and unflagged"
+shorttitle        : "Measurement Invariance"
+
+author: 
+  - name          : "John Kulas"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "1 Normal Ave, Montclair, NJ 07043"
+    email         : "kulasj@montclair.edu"
+  - name          : "Casey Osorio-Duffoo"
+    affiliation   : "2"
+  - name          : "Morgan Russell"
+    affiliation   : "3"
+  - name          : "Mike DeFabiis"
+    affiliation   : "4"
+
+affiliation:
+  - id            : "1"
+    institution   : "eRg"
+  - id            : "2"
+    institution   : "Harver"
+  - id            : "3"
+    institution   : "Montclair State University"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+  Looking at measurement invariance across five different samples.  
+
+keywords          : "Engagement, engagement"
+wordcount         : "X"
+
+bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "bibs/siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib"]
+
+floatsintext      : no #change to yes if we want all tables to be put in-line rather than pushed to end of paper
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("bibs/r-references.bib")
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+
+\newpage
+
+# References
+
+```{=tex}
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+```
+::: {#refs custom-style="Bibliography"}
+:::
+
+\endgroup

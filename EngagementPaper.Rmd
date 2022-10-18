@@ -9,17 +9,23 @@ author:
     address       : "1 Normal Ave, Montclair, NJ 07043"
     email         : "kulasj@montclair.edu"
   - name          : "Renata Garcia Prieto Palacios Roji"
-    affiliation   : "1"
-  - name          : "Casey Osorio-Duffoo"
     affiliation   : "2"
+  - name          : "Casey Osorio-Duffoo"
+    affiliation   : "3"
   - name          : "Morgan Russell"
-    affiliation   : "1"
+    affiliation   : "4"
+  - name          : "Mike DeFabiis"
+    affiliation   : "4"
 
 affiliation:
   - id            : "1"
-    institution   : "Montclair State University"
+    institution   : "eRg"
   - id            : "2"
+    institution   : "PepsiCo"
+  - id            : "3"
     institution   : "Harver"
+  - id            : "4"
+    institution   : "Montclair State University"
 
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
