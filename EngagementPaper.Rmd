@@ -187,22 +187,22 @@ together$`I often think about finding another job.` <- 7 - together$`I often thi
 Cond1_Model<-cond1.red[,2:37]
 
 Cond1_Model<-Cond1_Model%>%rename(
-  Item_1=`Iâ€™m able to concentrate on my work without distractions.`,
+  Item_1=`I’m able to concentrate on my work without distractions.`,
   Item_2=`I have a hard time detaching mentally from my work.`,
-  Item_3=`Time passes quickly while Iâ€™m working.`,
+  Item_3=`Time passes quickly while I’m working.`,
   Item_4=`I find it difficult to mentally disconnect from work.`,
-  Item_5=`I enjoy thinking about work even when Iâ€™m not at work.`,
+  Item_5=`I enjoy thinking about work even when I’m not at work.`,
   Item_6=`Most days, I feel happiest when the workday is soon to be complete.`,
   Item_7=`I am happiest when I am immersed in a project.`,
   Item_8=`I love starting my workday.`,
   Item_9=`I devote more time than is expected of me.`,
-  Item_10=`I have to be reminded to take breaks while Iâ€™m at work.`,
+  Item_10=`I have to be reminded to take breaks while I’m at work.`,
   Item_11=`I never miss a work deadline.`,
   Item_12=`I never allow distractions to interfere with my work.`,
   Item_13=`I devote my full attention to my work tasks throughout the day.`,
   Item_14=`Thinking about work saps my energy.`,
   Item_15=`I would rather direct my focus toward a work task than a personal task.`,
-  Item_16=`Iâ€™m able to maintain good levels of energy throughout the workday.`,
+  Item_16=`I’m able to maintain good levels of energy throughout the workday.`,
   Item_17=`I enjoy spending time completing my job tasks.`,
   Item_18=`Most days I feel enthusiastic about starting my work day.`,
   Item_19=`I feel motivated to go beyond what is asked of me.`,
@@ -218,7 +218,7 @@ Cond1_Model<-Cond1_Model%>%rename(
   Item_29=`I am proud to be a member of this organization.`,
   Item_30=`I feel supported by my supervisor when I fail at a task.`,
   Item_31=`I feel proud of my accomplishments within this organization.`,
-  Item_32=`My job makes me feel like Iâ€™m part of something meaningful.`,
+  Item_32=`My job makes me feel like I’m part of something meaningful.`,
   Item_33=`I make valued contributions to the organization.`,
   Item_34=`I embrace challenging situations at work.`,
   Item_35=`I speak positively about this organization to others.`,
@@ -235,22 +235,22 @@ Cond1_Model<-Cond1_Model%>%rename(
 Cond2_Model<-cond2.red[,2:37]
 
 Cond2_Model<-Cond2_Model%>%rename(
-  Item_1=`Iâ€™m able to concentrate on my work without distractions.`,
+  Item_1=`I’m able to concentrate on my work without distractions.`,
   Item_2=`I have a hard time detaching mentally from my work.`,
-  Item_3=`Time passes quickly while Iâ€™m working.`,
+  Item_3=`Time passes quickly while I’m working.`,
   Item_4=`I find it difficult to mentally disconnect from work.`,
-  Item_5=`I enjoy thinking about work even when Iâ€™m not at work.`,
+  Item_5=`I enjoy thinking about work even when I’m not at work.`,
   Item_6=`Most days, I feel happiest when the workday is soon to be complete.`,
   Item_7=`I am happiest when I am immersed in a project.`,
   Item_8=`I love starting my workday.`,
   Item_9=`I devote more time than is expected of me.`,
-  Item_10=`I have to be reminded to take breaks while Iâ€™m at work.`,
+  Item_10=`I have to be reminded to take breaks while I’m at work.`,
   Item_11=`I never miss a work deadline.`,
   Item_12=`I never allow distractions to interfere with my work.`,
   Item_13=`I devote my full attention to my work tasks throughout the day.`,
   Item_14=`Thinking about work saps my energy.`,
   Item_15=`I would rather direct my focus toward a work task than a personal task.`,
-  Item_16=`Iâ€™m able to maintain good levels of energy throughout the workday.`,
+  Item_16=`I’m able to maintain good levels of energy throughout the workday.`,
   Item_17=`I enjoy spending time completing my job tasks.`,
   Item_18=`Most days I feel enthusiastic about starting my work day.`,
   Item_19=`I feel motivated to go beyond what is asked of me.`,
@@ -266,7 +266,7 @@ Cond2_Model<-Cond2_Model%>%rename(
   Item_29=`I am proud to be a member of this organization.`,
   Item_30=`I feel supported by my supervisor when I fail at a task.`,
   Item_31=`I feel proud of my accomplishments within this organization.`,
-  Item_32=`My job makes me feel like Iâ€™m part of something meaningful.`,
+  Item_32=`My job makes me feel like I’m part of something meaningful.`,
   Item_33=`I make valued contributions to the organization.`,
   Item_34=`I embrace challenging situations at work.`,
   Item_35=`I speak positively about this organization to others.`,
@@ -281,22 +281,22 @@ Cond2_Model<-Cond2_Model%>%rename(
 Cond3_Model<-cond3.red[,2:37]
 
 Cond3_Model<-Cond3_Model%>%rename(
-  Item_1=`Iâ€™m able to concentrate on my work without distractions.`,
+  Item_1=`I’m able to concentrate on my work without distractions.`,
   Item_2=`I have a hard time detaching mentally from my work.`,
-  Item_3=`Time passes quickly while Iâ€™m working.`,
+  Item_3=`Time passes quickly while I’m working.`,
   Item_4=`I find it difficult to mentally disconnect from work.`,
-  Item_5=`I enjoy thinking about work even when Iâ€™m not at work.`,
+  Item_5=`I enjoy thinking about work even when I’m not at work.`,
   Item_6=`Most days, I feel happiest when the workday is soon to be complete.`,
   Item_7=`I am happiest when I am immersed in a project.`,
   Item_8=`I love starting my workday.`,
   Item_9=`I devote more time than is expected of me.`,
-  Item_10=`I have to be reminded to take breaks while Iâ€™m at work.`,
+  Item_10=`I have to be reminded to take breaks while I’m at work.`,
   Item_11=`I never miss a work deadline.`,
   Item_12=`I never allow distractions to interfere with my work.`,
   Item_13=`I devote my full attention to my work tasks throughout the day.`,
   Item_14=`Thinking about work saps my energy.`,
   Item_15=`I would rather direct my focus toward a work task than a personal task.`,
-  Item_16=`Iâ€™m able to maintain good levels of energy throughout the workday.`,
+  Item_16=`I’m able to maintain good levels of energy throughout the workday.`,
   Item_17=`I enjoy spending time completing my job tasks.`,
   Item_18=`Most days I feel enthusiastic about starting my work day.`,
   Item_19=`I feel motivated to go beyond what is asked of me.`,
@@ -312,7 +312,7 @@ Cond3_Model<-Cond3_Model%>%rename(
   Item_29=`I am proud to be a member of this organization.`,
   Item_30=`I feel supported by my supervisor when I fail at a task.`,
   Item_31=`I feel proud of my accomplishments within this organization.`,
-  Item_32=`My job makes me feel like Iâ€™m part of something meaningful.`,
+  Item_32=`My job makes me feel like I’m part of something meaningful.`,
   Item_33=`I make valued contributions to the organization.`,
   Item_34=`I embrace challenging situations at work.`,
   Item_35=`I speak positively about this organization to others.`,
@@ -327,22 +327,22 @@ Cond3_Model<-Cond3_Model%>%rename(
 Cond4_Model<-cond4.red[,2:37]
 
 Cond4_Model<-Cond4_Model%>%rename(
-  Item_1=`Iâ€™m able to concentrate on my work without distractions.`,
+  Item_1=`I’m able to concentrate on my work without distractions.`,
   Item_2=`I have a hard time detaching mentally from my work.`,
-  Item_3=`Time passes quickly while Iâ€™m working.`,
+  Item_3=`Time passes quickly while I’m working.`,
   Item_4=`I find it difficult to mentally disconnect from work.`,
-  Item_5=`I enjoy thinking about work even when Iâ€™m not at work.`,
+  Item_5=`I enjoy thinking about work even when I’m not at work.`,
   Item_6=`Most days, I feel happiest when the workday is soon to be complete.`,
   Item_7=`I am happiest when I am immersed in a project.`,
   Item_8=`I love starting my workday.`,
   Item_9=`I devote more time than is expected of me.`,
-  Item_10=`I have to be reminded to take breaks while Iâ€™m at work.`,
+  Item_10=`I have to be reminded to take breaks while I’m at work.`,
   Item_11=`I never miss a work deadline.`,
   Item_12=`I never allow distractions to interfere with my work.`,
   Item_13=`I devote my full attention to my work tasks throughout the day.`,
   Item_14=`Thinking about work saps my energy.`,
   Item_15=`I would rather direct my focus toward a work task than a personal task.`,
-  Item_16=`Iâ€™m able to maintain good levels of energy throughout the workday.`,
+  Item_16=`I’m able to maintain good levels of energy throughout the workday.`,
   Item_17=`I enjoy spending time completing my job tasks.`,
   Item_18=`Most days I feel enthusiastic about starting my work day.`,
   Item_19=`I feel motivated to go beyond what is asked of me.`,
@@ -358,7 +358,7 @@ Cond4_Model<-Cond4_Model%>%rename(
   Item_29=`I am proud to be a member of this organization.`,
   Item_30=`I feel supported by my supervisor when I fail at a task.`,
   Item_31=`I feel proud of my accomplishments within this organization.`,
-  Item_32=`My job makes me feel like Iâ€™m part of something meaningful.`,
+  Item_32=`My job makes me feel like I’m part of something meaningful.`,
   Item_33=`I make valued contributions to the organization.`,
   Item_34=`I embrace challenging situations at work.`,
   Item_35=`I speak positively about this organization to others.`,
@@ -447,7 +447,7 @@ Data was obtained from two sources. In the first sampling, 282 individuals respo
 
 Our 18-item engagement measure was crafted to be intentionally complex (each item is intended to load on two constructs). This complexity, however, derives from a crossing of the attitudinal components of affect, cognition, and behavior with the substantive engagement components of vigor, dedication, and absorption. Within the current investigation, we realized $\alpha$'s of `r round(abs$total$raw_alpha,2)` (Absorption), `r round(ded$total$raw_alpha,2)` (Dedication), `r round(vig$total$raw_alpha,2)` (Vigor), `r round(aff$total$raw_alpha,2)` (Affect), `r round(cog$total$raw_alpha,2)` (Cognition), and `r round(beh$total$raw_alpha,2)` (Behavior). The 6-point response scale is: Strongly Disagree, Disagree, Somewhat Disagree, Somewhat Agree, Agree, Strongly Agree. The item stems as well as their scale assocation are presented in Table XX. 
 
-```{r itemtable}
+```{r itemtable, eval=FALSE}
 
 papaja::apa_table(read.csv("items.csv"), # apa contains the data.frame needed for apa_table
                   caption = "Focal items and their scale associations",
@@ -715,7 +715,7 @@ papaja::apa_table(fittab3, # apa contains the data.frame needed for apa_table
 
 ```
 
-```{r measinv.siop2.sub}
+```{r measinv.siop2.sub, eval=FALSE}
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
@@ -740,7 +740,7 @@ papaja::apa_table(fittab4, # apa contains the data.frame needed for apa_table
 
 ```
 
-```{r measinv.siop3.att}
+```{r measinv.siop3.att, eval=FALSE}
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
@@ -763,7 +763,7 @@ papaja::apa_table(fittab5, # apa contains the data.frame needed for apa_table
 
 ```
 
-```{r measinv.siop3.sub}
+```{r measinv.siop3.sub, eval=FALSE}
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
