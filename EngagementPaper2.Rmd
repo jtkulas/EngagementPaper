@@ -1,0 +1,671 @@
+---
+title             : "Engagement as attitude: Development and initial validation of an intentional bi-factor measure of employee engagement"
+shorttitle        : "BiFactor Engagement"
+
+author: 
+  - name          : "John Kulas"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "1 Normal Ave, Montclair, NJ 07043"
+    email         : "kulasj@montclair.edu"
+  - name          : "Renata Garcia Prieto Palacios Roji"
+    affiliation   : "2"
+  - name          : "Casey Osorio-Duffoo"
+    affiliation   : "3"
+  - name          : "Morgan Russell"
+    affiliation   : "4"
+  - name          : "Mike DeFabiis"
+    affiliation   : "4"
+
+affiliation:
+  - id            : "1"
+    institution   : "eRg"
+  - id            : "2"
+    institution   : "PepsiCo"
+  - id            : "3"
+    institution   : "Harver"
+  - id            : "4"
+    institution   : "Montclair State University"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+  The most commonly referenced definition of attitudinal engagement implicates sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes specifies cognitive, behavioral, and affective components. The current study documents the development and initial validation of a new measure of engagement that intentionally crosses the substantive and attitudinal elements.  
+
+keywords          : "Engagement, engagement"
+wordcount         : "X"
+
+bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "bibs/siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib"]
+
+floatsintext      : no #change to yes if we want all tables to be put in-line rather than pushed to end of paper
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("bibs/r-references.bib")
+
+# Loading packages
+library(tidyverse)
+library(knitr)
+library(strex)
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. The 1990's saw focused development and refinement [for example, a dissertation; @leone_relation_1995 or actual semantic reference; @kahn_psychological_1990]. @staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
+
+Clear in this history is the specification of engagement as a work *attitude*.
+
+Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
+
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
+
+Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements.
+
+## Attitudes 
+
+> TRIPARTITE MODEL--work here
+
+The first, to our knowledge, use of the word "engagement" as a construct came in @kahn1990psychological, defining it as: "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances." Although this definition was quickly bypassed by subsequent papers (see, for example, [@baumruk2004missing] and [@shaw2005engagement], who framed it in terms of one's cognitive and affective *commitment* to one's organization), @kahn1990psychological's definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by @rosenberg_cognitive_1960. This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
+
+Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019,
+
+## Item order as a multidimensional assessment response cues
+
+Response cues in general and order effects in particular have their root in Cognitive Psychology, with the bulk of studies occurring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response [e.g., @krosnick1987evaluation]. This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test [see, for example, @dean1980presentation]. @ackerman1989comparison found only small differences in response patterns when presenting *test* items in a fixed versus random ordering. @mashburn2014effect experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
+
+@knowles1988item and @hamilton1990self both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) *later* in the assessment, regardless of actual item content. @steinberg1994context provides a description of this effect: "...literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct." (p. 341) This statement could be rephrased as: location serves as a response cue. "This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item" [@steinberg1994context, p. 341]. 
+
+@steinberg1994context looked at order effects in personality measurement, 
+
+>Weinberg, M. K., Seton, C., & Cameron, N. (2018). The Measurement of Subjective Wellbeing: Item-Order Effects in the Personal Wellbeing Index—Adult. Journal of Happiness Studies, 19(1), 315–332. https://doi-org.ezproxy.montclair.edu/10.1007/s10902-016-9822-1
+
+@weinberg2018measurement examine the effects of randomized items and domains in the Personal Wellbeing Index (PWI) in measure subjective wellbeing (SWB). @weinberg2018measurement conduct two studies one, looking at the PWI comparing its usual general-specific format to a modified format, furthermore, the order of the domain items will stay the same, while the general items will be random in question order. In the second study, @weinberg2018measurement randomized the domain items while the general items will be the same to standard scale order. In @weinberg2018measurement, study 1 showed no results between general specific format and the modified format, however in study 2, they did find that presenting the random order effects did have lower means, then fixed order effects. @weinberg2018measurement present many different reasons for this outcomes, which could be those in the random order effect group had more participant experiencing high levels of wellbeing, and the other explanation is that changing order of items of PWI could affect the score. @weinberg2018measurement conducted a multiple regression analysis which showed that random order group account for 9% more variance in GLS than the fixed order group and conducted a confirmatory factor analysis showing that the fixed order groups was not a good model fit. 
+
+@serico2021methodological looked at item order effects in self-report measures of aggression perpetration and victimization. @serico2021methodological provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. # citation from other articles (Dietz & Jasinski, 2007; Shorey, Woods, & Cornelius, 2016). ######### In @serico2021methodological, the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
+
+This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other [@kulikowski2017we].
+
+The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+
+Existing measures include @soane2012development
+
+Our conceptualization of work engagement is a mental state wherein employees: a) feel energized (*Vigor*), b) are enthusiastic about the content of their work and the things they do (*Dedication*), and c) are so immersed in their work activities that time seems compressed (*Absorption*). We further decompose each of these facets into three attitudinal components: d) feeling (e.g., affect), e) thought (e.g., cognition), and f) action (e.g., behavior). Development and construct validation of the focal 18-item measure of engagement is described in @engage_2022 whereas the current study on administrative response cues in the form of order of item presentation. The expectation is that either model (attitudinal or substantive) will exhibit stronger factorial validity when item administration parallels latent structure.
+
+Our contributions:
+
+1. Methodological
+  + Intentional bi-factor structure
+2. Practical
+  + A new public domain measure of engagement
+  + Scalable to two aggregations (research [DAC] and actionable [ABC])
+3. Theoretical
+  + Possibly help explain some of the high inter-scale correlations reported with other measures 
+
+# Methods
+```{r getData, echo=FALSE, warning=FALSE}
+# Importing Data from Qualtrics.
+
+temp <- read.csv("Qualtrics/qualtrics_pilot_data.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+################ Cleaning up data and combining the four condition into one ################
+data <- temp %>% 
+  mutate(Cond1 = rowSums(is.na(temp[18:53])), # Counts how many na's occur between columns 18 to 53. Fix columns if any columns are removed during cleaning process. 
+         Cond2 = rowSums(is.na(temp[54:89])),
+         Cond3 = rowSums(is.na(temp[90:125])),
+         Cond4 = rowSums(is.na(temp[126:161]))) %>% 
+  mutate(Condition = case_when(Cond1 < 36 ~ 1, # Determing what is the condition, if they have less than 36 NA, then that is there condition. 
+                               Cond2 < 36 ~ 2,
+                               Cond3 < 36 ~ 3,
+                               Cond4 < 36 ~ 4))
+
+# Splitting the Conditions
+split.data <- split(data, f = data$Condition)
+
+cond1 <- split.data[["1"]] %>% 
+  select(duration_in_seconds, 
+         matches("c1"), # select columns that only have c1 in the name
+         what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, 
+         Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), # removes the first six characters a text
+              starts_with("c", ignore.case = FALSE)) # only looks at columns that have a lower case c
+
+cond2 <- split.data[["2"]] %>% 
+  select(duration_in_seconds, matches("c2"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+cond3 <- split.data[["3"]] %>% 
+  select(duration_in_seconds, matches("c3"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+cond4 <- split.data[["4"]] %>% 
+  select(duration_in_seconds, matches("c4"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+
+# Reranging all columns to be in the same order. Using condition 1 ordering. 
+
+col_order <- c("duration_in_seconds", "i_enjoy_thinking_about_work_even_when_i_m_not_at_work", "most_days_i_feel_happiest_when_the_workday_is_soon_to_be_complete", "i_am_happiest_when_i_am_immersed_in_a_project", "i_love_starting_my_workday", "i_enjoy_spending_time_completing_my_job_tasks", "most_days_i_feel_enthusiastic_about_starting_my_work_day", "i_feel_motivated_to_go_beyond_what_is_asked_of_me", "this_job_drains_my_energy", "i_am_proud_to_be_a_member_of_this_organization", "i_feel_supported_by_my_supervisor_when_i_fail_at_a_task", "i_feel_proud_of_my_accomplishments_within_this_organization", "my_job_makes_me_feel_like_i_m_part_of_something_meaningful", "i_devote_more_time_than_is_expected_of_me", "i_have_to_be_reminded_to_take_breaks_while_i_m_at_work", "i_never_miss_a_work_deadline", "i_never_allow_distractions_to_interfere_with_my_work", "when_work_is_slow_i_find_ways_to_be_productive", "i_express_enthusiasm_for_my_job_while_at_work", "i_try_my_best_to_perform_well_at_work", "if_i_notice_my_energy_level_is_low_i_take_corrective_steps_to_re_energize", "i_make_valued_contributions_to_the_organization", "i_embrace_challenging_situations_at_work", "i_speak_positively_about_this_organization_to_others", "this_organization_provides_the_resources_necessary_for_me_to_successfully_perform_my_job", "i_devote_my_full_attention_to_my_work_tasks_throughout_the_day", "thinking_about_work_saps_my_energy", "i_would_rather_direct_my_focus_toward_a_work_task_than_a_personal_task", "i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday", "i_plan_my_future_with_this_company", "i_believe_this_company_cares_about_my_career_goals", "i_often_think_about_finding_another_job", "this_organization_challenges_me_to_work_at_my_full_potential", "i_m_able_to_concentrate_on_my_work_without_distractions", "i_have_a_hard_time_detaching_mentally_from_my_work", "time_passes_quickly_while_i_m_working", "i_find_it_difficult_to_mentally_disconnect_from_work", "what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey", "how_many_hours_do_you_typically_work_per_week_in_this_job", "how_long_have_you_been_with_this_organization", "any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team", "Condition")
+
+cond1.red <- cond1[, col_order] # rearrange columns in order to follow condition 1
+cond2.red <- cond2[, col_order]
+cond3.red <- cond3[, col_order]
+cond4.red <- cond4[, col_order]
+
+together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red) %>% 
+  mutate(across(c("most_days_i_feel_happiest_when_the_workday_is_soon_to_be_complete","this_job_drains_my_energy","thinking_about_work_saps_my_energy","i_often_think_about_finding_another_job"), 
+                ~case_when(. == 6 ~ 1, # Recoding items
+                           . == 5 ~ 2,
+                           . == 4 ~ 3,
+                           . == 3 ~ 4,
+                           . == 2 ~ 5,
+                           . == 1 ~ 6)))
+
+i <- c(1:37)
+together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
+                        function(x) as.numeric(as.character(x)))
+
+#write.csv(together, "together.csv")
+
+############## SIOPmi - Creating data frame that only has the items & Condition #########################
+SIOPmi <- together %>% 
+  select(i_enjoy_thinking_about_work_even_when_i_m_not_at_work:i_find_it_difficult_to_mentally_disconnect_from_work,Condition) %>% rename(
+  Item_1 = i_m_able_to_concentrate_on_my_work_without_distractions,
+  Item_2 = i_have_a_hard_time_detaching_mentally_from_my_work,
+  Item_3 = time_passes_quickly_while_i_m_working,
+  Item_4 = i_find_it_difficult_to_mentally_disconnect_from_work,
+  Item_5 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+  Item_6 = most_days_i_feel_happiest_when_the_workday_is_soon_to_be_complete,
+  Item_7 = i_am_happiest_when_i_am_immersed_in_a_project,
+  Item_8 = i_love_starting_my_workday,
+  Item_9 = i_devote_more_time_than_is_expected_of_me,
+  Item_10 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+  Item_11 = i_never_miss_a_work_deadline,
+  Item_12 = i_never_allow_distractions_to_interfere_with_my_work,
+  Item_13 = i_devote_my_full_attention_to_my_work_tasks_throughout_the_day,
+  Item_14 = thinking_about_work_saps_my_energy,
+  Item_15 = i_would_rather_direct_my_focus_toward_a_work_task_than_a_personal_task,
+  Item_16 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,
+  Item_17 = i_enjoy_spending_time_completing_my_job_tasks,
+  Item_18 = most_days_i_feel_enthusiastic_about_starting_my_work_day,
+  Item_19 = i_feel_motivated_to_go_beyond_what_is_asked_of_me,
+  Item_20 = this_job_drains_my_energy,
+  Item_21 = when_work_is_slow_i_find_ways_to_be_productive,
+  Item_22 = i_express_enthusiasm_for_my_job_while_at_work,
+  Item_23 = i_try_my_best_to_perform_well_at_work,
+  Item_24 = if_i_notice_my_energy_level_is_low_i_take_corrective_steps_to_re_energize,
+  Item_25 = i_plan_my_future_with_this_company,
+  Item_26 = i_believe_this_company_cares_about_my_career_goals,
+  Item_27 = i_often_think_about_finding_another_job,
+  Item_28 = this_organization_challenges_me_to_work_at_my_full_potential,
+  Item_29 = i_am_proud_to_be_a_member_of_this_organization,
+  Item_30 = i_feel_supported_by_my_supervisor_when_i_fail_at_a_task,
+  Item_31 = i_feel_proud_of_my_accomplishments_within_this_organization,
+  Item_32 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+  Item_33 = i_make_valued_contributions_to_the_organization,
+  Item_34 = i_embrace_challenging_situations_at_work,
+  Item_35 = i_speak_positively_about_this_organization_to_others,
+  Item_36 = this_organization_provides_the_resources_necessary_for_me_to_successfully_perform_my_job
+) %>% 
+  select(Item_1,Item_2,Item_3,Item_4,Item_5,Item_6,Item_7,Item_8,Item_9,Item_10,Item_11,Item_12,Item_13,Item_14,Item_15,Item_16,Item_17,
+         Item_18,Item_19,Item_20,Item_21,Item_22,Item_23,Item_24,Item_25,Item_26,Item_27,Item_28,Item_29,Item_30,Item_31,Item_32,Item_33,
+         Item_34,Item_35,Item_36,Condition) %>% 
+  mutate(across(c("Item_1":"Item_36"),~as.numeric(.)))
+
+
+# Reneta's 18-Items______________________________________________________
+
+
+######################################################################
+######################################################################
+####################### New data 10/12
+
+new.att <- read.csv("Qualtrics/Engagement+(Attitudinal)_October+12,+2021_08.02.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% # Removing the first row 
+  janitor::clean_names() # Cleaning column names
+
+new.sub <- read.csv("Qualtrics/Engagement+(Substantive)_October+12,+2021_08.01.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+newdata.att <- new.att %>% 
+  select(i_am_able_to_concentrate_on_my_work_without_getting_distracted:i_speak_positively_about_this_organization_to_others)
+
+newdata.sub <- new.sub %>% 
+  select(i_am_able_to_concentrate_on_my_work_without_getting_distracted:i_speak_positively_about_this_organization_to_others)
+
+
+names(newdata.att) <- c("Item_1","Item_3","Item_4","Item_14","Item_16","Item_25","Item_26","Item_28","Item_5","Item_8","Item_17","Item_19","Item_31","Item_32","Item_10","Item_11","Item_21","Item_22","Item_34","Item_35") # creating new names for columns
+
+names(newdata.sub) <- c("Item_1","Item_3","Item_4","Item_5","Item_8","Item_10","Item_11","Item_14","Item_16","Item_17","Item_19","Item_21","Item_22","Item_25","Item_26","Item_28","Item_31","Item_32","Item_34","Item_35")
+
+use.att <- newdata.att[,c(1,2,9,10,15,16,4,5,11,12,17,18,7,8,13,14,19,20)]
+use.sub <- newdata.sub[,-c(3,14)]
+use.att$Condition <- "Cond5"
+use.sub$Condition <- "Cond6"
+
+siop.pilot <- SIOPmi[,c(1,3,5,8,10,11,14,16,17,19,21,22,26,28,31,32,34,35,37)] # selecting items that are related to the 18 items from Reneta's survey
+
+siop <- as.data.frame(rbind(siop.pilot,use.att,use.sub)) %>% 
+  mutate(across(c("Item_1":"Item_35"),~as.numeric(.))) %>% # Change items to numeric value
+  mutate(Item_14 = 7 - Item_14) # Recoding variables 
+```
+
+```{r alphas}
+
+abs <- psych::alpha(siop[c(1:6)])
+vig <- psych::alpha(siop[c(7:12)])
+ded <- psych::alpha(siop[c(13:18)])
+aff <- psych::alpha(siop[c(1:2,7:8,13:14)])
+cog <- psych::alpha(siop[c(3:4,9:10,15:16)])
+beh <- psych::alpha(siop[c(5:6,11:12,17:18)])
+
+## Looks like Casey recoded in raw data, but this is "together" object that isn't really used. Old data looks fine (snowball sample) - new data actually looks crappy (no attention to recoded items)
+
+```
+
+## Participants
+
+Data was obtained from two sources. In the first sampling, 282 individuals responded to a snowball sampling initiated by Industrial and Organizational Psychology faculty and graduate students. There were four counterbalanced orderings of item presentations within this administration, as well as an additional 18 contextual items - this sample constituted the original scale development sample, and at the time of administration the additional contextual items were candidates for item retention. In the second data collection initiative, Qualtrics panels were solicited along with 2 additional contextual items. These respondents included 343 working adults who responded to attitudinally clustered items and 404 working adults who responded to substantively clustered items.
+
+## Materials
+
+Our 18-item engagement measure was crafted to be intentionally complex (each item is intended to load on two constructs). This complexity, however, derives from a crossing of the attitudinal components of affect, cognition, and behavior with the substantive engagement components of vigor, dedication, and absorption. Within the current investigation, we realized $\alpha$'s of `r round(abs$total$raw_alpha,2)` (Absorption), `r round(ded$total$raw_alpha,2)` (Dedication), `r round(vig$total$raw_alpha,2)` (Vigor), `r round(aff$total$raw_alpha,2)` (Affect), `r round(cog$total$raw_alpha,2)` (Cognition), and `r round(beh$total$raw_alpha,2)` (Behavior). The 6-point response scale is: Strongly Disagree, Disagree, Somewhat Disagree, Somewhat Agree, Agree, Strongly Agree. The item stems as well as their scale assocation are presented in Table XX. 
+
+```{r itemtable, eval=FALSE}
+
+papaja::apa_table(read.csv("items.csv"), # apa contains the data.frame needed for apa_table
+                  caption = "Focal items and their scale associations",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r newdata}
+library(lavaan)
+substantive <-'
+Absorption=~Item_1 + Item_3  + Item_5  + Item_8  + Item_10 + Item_11
+Vigor=~Item_14 + Item_16 + Item_17 + Item_19 + Item_21 + Item_22
+Dedication=~Item_26 + Item_28 + Item_31 + Item_32 + Item_34 + Item_35
+'
+fullsub <- lavaan::cfa(substantive, data = siop); plotfullsub <- fullsub
+fullsub <- as.data.frame(fitMeasures(fullsub))
+fullsub$rounded <- round(fullsub$`fitMeasures(fullsub)`,2)
+t.fullsub <- fullsub %>% 
+  select(Substantive=rounded) 
+t.fullsub <- as.data.frame(t(t.fullsub[c(3,4,5,23,29,9,10,19),]))        ## Chi-sq, df, RMSEA, SRMR, CFI, TLI, AIC
+
+attiduinal <-'
+Cognitive=~Item_1+Item_3+ Item_14 + Item_16 + Item_26 + Item_28
+Affective=~Item_5+Item_8+ Item_17 + Item_19 + Item_31 + Item_32
+Behavioral=~Item_10+Item_11 + Item_21 + Item_22 + Item_34 + Item_35
+'
+fullatt <- lavaan::cfa(attiduinal, data = siop); plotfullatt <- fullatt
+fullatt <- as.data.frame(fitMeasures(fullatt))
+fullatt$rounded <- round(fullatt$`fitMeasures(fullatt)`,2)
+
+```
+
+
+# Results
+
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+The omnibus CFA's, regardless of item ordering, across `r nrow(siop)` respondents showed fair fit for both the substantive ($\chi^2_{substantive}$=`r t.fullsub[1]`, *df*=`r fullsub[4,2]`, *RMSEA*=`r fullsub[23,2]`) as well as attitudinal structures ($\chi^2_{attitudinal}$=`r fullatt[3,2]`, *df*=`r fullatt[4,2]`, *RMSEA*=`r fullatt[23,2]`). Additional fit indices for the two models are presented in Table XX. Figures 1 and 2 present the omnibus models visually (standardized coefficients displayed). Note that the primary source of misfit for both models within the omnibus analysis is item 14, which is the lone reverse-coded item within the inventory, "Thinking about work saps my energy".
+
+```{r semplotsub, fig.cap="Omnibus Confirmatory Factor Analysis substantive structure."}
+
+semPlot::semPaths(plotfullsub,what="std", sizeLat=10, style="lisrel",
+              sizeMan=4.5,edge.label.cex=0.75, edge.color="black", asize=2, rotation=2)
+
+```
+
+```{r semplotatt, fig.cap="Omnibus Confirmatory Factor Analysis attitudinal structure."}
+
+semPlot::semPaths(plotfullatt,what="std", sizeLat=10, style="lisrel",
+              sizeMan=4.5,edge.label.cex=0.75, edge.color="black", asize=2, rotation=2)
+
+```
+
+```{r condition 1, warning=FALSE}
+
+cond1sub <- lavaan::cfa(substantive, data = Cond1_Model)
+cond1sub <- as.data.frame(fitMeasures(cond1sub))
+cond1sub$rounded <- round(cond1sub$`fitMeasures(cond1sub)`,2)
+
+t.cond1sub <- cond1sub %>% 
+  select(Substantive=rounded) 
+t.cond1sub <- as.data.frame(t(t.cond1sub[c(3,4,5,23,29,9,10,19),]))
+
+
+cond1att <- lavaan::cfa(attiduinal, data = Cond1_Model)
+cond1att <- as.data.frame(fitMeasures(cond1att))
+cond1att$rounded <- round(cond1att$`fitMeasures(cond1att)`,2)
+
+
+```
+
+```{r condition 2, warning=FALSE}
+
+cond2sub <- lavaan::cfa(substantive, data = Cond2_Model)
+cond2sub <- as.data.frame(fitMeasures(cond2sub))
+cond2sub$rounded <- round(cond2sub$`fitMeasures(cond2sub)`,2)
+
+cond2att <- lavaan::cfa(attiduinal, data = Cond2_Model)
+cond2att <- as.data.frame(fitMeasures(cond2att))
+cond2att$rounded <- round(cond2att$`fitMeasures(cond2att)`,2)
+```
+
+```{r condition 3, warning=FALSE}
+
+cond3sub <- lavaan::cfa(substantive, data = Cond3_Model)
+cond3sub <- as.data.frame(fitMeasures(cond3sub))
+cond3sub$rounded <- round(cond3sub$`fitMeasures(cond3sub)`,2)
+
+cond3att <- lavaan::cfa(attiduinal, data = Cond3_Model)
+cond3att <- as.data.frame(fitMeasures(cond3att))
+cond3att$rounded <- round(cond3att$`fitMeasures(cond3att)`,2)
+```
+
+```{r condition 4, warning=FALSE}
+
+cond4sub <- lavaan::cfa(substantive, data = Cond4_Model)
+cond4sub <- as.data.frame(fitMeasures(cond4sub))
+cond4sub$rounded <- round(cond4sub$`fitMeasures(cond4sub)`,2)
+
+cond4att <- lavaan::cfa(attiduinal, data = Cond4_Model)
+cond4att <- as.data.frame(fitMeasures(cond4att))
+cond4att$rounded <- round(cond4att$`fitMeasures(cond4att)`,2)
+```
+
+```{r condition5, warning=FALSE}
+
+cond5 <- siop[ which(siop$Cond=='Cond5'), ]
+
+cond5sub <- lavaan::cfa(substantive, data = cond5)
+cond5sub <- as.data.frame(fitMeasures(cond5sub))
+cond5sub$rounded <- round(cond5sub$`fitMeasures(cond5sub)`,2)
+
+cond5att <- lavaan::cfa(attiduinal, data = cond5)
+cond5att <- as.data.frame(fitMeasures(cond5att))
+cond5att$rounded <- round(cond5att$`fitMeasures(cond5att)`,2)
+
+```
+
+```{r condition6, warning=FALSE}
+
+cond6 <- siop[ which(siop$Cond=='Cond6'), ]
+
+cond6sub <- lavaan::cfa(substantive, data = cond6)
+cond6sub <- as.data.frame(fitMeasures(cond6sub))
+cond6sub$rounded <- round(cond6sub$`fitMeasures(cond6sub)`,2)
+
+cond6att <- lavaan::cfa(attiduinal, data = cond6)
+cond6att <- as.data.frame(fitMeasures(cond6att))
+cond6att$rounded <- round(cond6att$`fitMeasures(cond6att)`,2)
+
+```
+
+|Condition   | Model                    | $\chi^2$           | *df*                 | RMSEA              | SRMR               | CFI               | TLI                | AIC                | 
+|------------|--------------------------|--------------------|----------------------|--------------------|--------------------|-------------------|--------------------|--------------------|
+|Condition 1 | 3-factor substantive     |`r cond1sub[3,2]`   |`r cond1sub[4,2]`     |`r cond1sub[23,2]`  |`r cond1sub[29,2]`  |`r cond1sub[9,2]`  |`r cond1sub[10,2]`  |`r cond1sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond1att[3,2]`   |`r cond1att[4,2]`     |`r cond1att[23,2]`  |`r cond1att[29,2]`  |`r cond1att[9,2]`  |`r cond1att[10,2]`  |`r cond1att[19,2]`  |
+|Condition 2 | 3-factor substantive     |`r cond2sub[3,2]`   |`r cond2sub[4,2]`     |`r cond2sub[23,2]`  |`r cond2sub[29,2]`  |`r cond2sub[9,2]`  |`r cond2sub[10,2]`  |`r cond2sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond2att[3,2]`   |`r cond2att[4,2]`     |`r cond2att[23,2]`  |`r cond2att[29,2]`  |`r cond2att[9,2]`  |`r cond2att[10,2]`  |`r cond2att[19,2]`  |
+|Condition 3 | 3-factor substantive     |`r cond3sub[3,2]`   |`r cond3sub[4,2]`     |`r cond3sub[23,2]`  |`r cond3sub[29,2]`  |`r cond3sub[9,2]`  |`r cond3sub[10,2]`  |`r cond3sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond3att[3,2]`   |`r cond3att[4,2]`     |`r cond3att[23,2]`  |`r cond3att[29,2]`  |`r cond3att[9,2]`  |`r cond3att[10,2]`  |`r cond3att[19,2]`  |
+|Condition 4 | 3-factor substantive     |`r cond4sub[3,2]`   |`r cond4sub[4,2]`     |`r cond4sub[23,2]`  |`r cond4sub[29,2]`  |`r cond4sub[9,2]`  |`r cond4sub[10,2]`  |`r cond4sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond4att[3,2]`   |`r cond4att[4,2]`     |`r cond4att[23,2]`  |`r cond4att[29,2]`  |`r cond4att[9,2]`  |`r cond4att[10,2]`  |`r cond4att[19,2]`  |
+|Condition 5 | 3-factor substantive     |`r cond5sub[3,2]`   |`r cond5sub[4,2]`     |`r cond5sub[23,2]`  |`r cond5sub[29,2]`  |`r cond5sub[9,2]`  |`r cond5sub[10,2]`  |`r cond5sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond5att[3,2]`   |`r cond5att[4,2]`     |`r cond5att[23,2]`  |`r cond5att[29,2]`  |`r cond5att[9,2]`  |`r cond5att[10,2]`  |`r cond5att[19,2]`  |
+|Condition 6 | 3-factor substantive     |`r cond6sub[3,2]`   |`r cond6sub[4,2]`     |`r cond6sub[23,2]`  |`r cond6sub[29,2]`  |`r cond6sub[9,2]`  |`r cond6sub[10,2]`  |`r cond6sub[19,2]`  |
+|            | 3-factor attitudinal     |`r cond6att[3,2]`   |`r cond6att[4,2]`     |`r cond6att[23,2]`  |`r cond6att[29,2]`  |`r cond6att[9,2]`  |`r cond6att[10,2]`  |`r cond6att[19,2]`  |
+|Overall     | 3-factor substantive     |`r fullsub[3,2]`   |`r fullsub[4,2]`     |`r fullsub[23,2]`  |`r fullsub[29,2]`  |`r fullsub[9,2]`  |`r fullsub[10,2]`  |`r fullsub[19,2]`  |
+|            | 3-factor attitudinal     |`r fullatt[3,2]`   |`r fullatt[4,2]`     |`r fullatt[23,2]`  |`r fullatt[29,2]`  |`r fullatt[9,2]`  |`r fullatt[10,2]`  |`r fullatt[19,2]`  |
+
+```{r}
+
+siop$Absorption <- rowMeans(siop[c(1:6)], na.rm=TRUE)
+siop$Vigor <- rowMeans(siop[c(7:12)], na.rm=TRUE)
+siop$Dedication <- rowMeans(siop[c(13:18)], na.rm=TRUE)
+siop$Affect <- rowMeans(siop[c(1:2,7:8,13:14)], na.rm=TRUE)
+siop$Cognition <- rowMeans(siop[c(3:4,9:10,15:16)], na.rm=TRUE)
+siop$Behavior <- rowMeans(siop[c(5:6,11:12,17:18)], na.rm=TRUE)
+
+
+r <- corx::corx(siop[,20:25],                     ## can extend if needed
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
+                  caption = "Unit-weighted scale intercorrelations (all conditions).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = TRUE,
+                  escape = F)
+
+```
+
+>Note. Also look at scale intercorrelations when the shared items have been removed (for example, items that define both dedication and cognition when looking at the correlation between dedication and cognition) - 12/2/21
+
+### Condition effects
+
+The order of item presentation was: 1) random within substantive dimension, 2) random within attitudinal dimension, 3) parcels of substantive within attitudinal (36-item attitudinal context), 4) parcels of attitudinal within substantive (36-item substantive context), 5) parcels of substantive within attitudinal (20-item attitudinal context), and 6) parcels of attitudinal within substantive (20-item substantive context). For example, in condition 1, the first items presented were all associated with one attitudinal dimension (for example, "Affect"). Once the Affect item list was fully exhausted, the respondent was then administered the full set of Behavioral items, and once these were completed the respondent was then administered the Cognitive item set[^yaddup].  We view these orderings as cues regarding factor structure, and anticipated empirical factor structures to reflect these cues. The effects did emerge, but were quite moderate (for example, $\Delta{\chi^2_{Cond1}}$ = 9.55, $\Delta{AIC_{Cond1}}$ = 10.53). Given the variety of item orderings administered, this should be considered somewhat comforting regarding the effect of contextual embeddedness within multidimensional inventories. To further explore degree of similarity, we applied explicit tests of measurement invariance. 
+
+[^yaddup]: Across conditions, the order of presentation of item "blocks" was also randomized. For example, not all respondents in Condition 1 was administered the Affect item block first - roughly 1/3 was presented the Behavioral block first and roughly 1/3 was presented the Cognitive block first.
+
+#### Measurement invariance
+
+Because our six conditions were obtained across two different sampling procedures, we apply our analyses of measurement invariance twice - first investigating the four conditions administered within our initial snowball sampling and then secondly also extending to the follow-up Qualtrics panel respondents. 
+
+We looked at structural invariance as well as latent means [@steinmetz2009testing; @meredith1993measurement]. 
+
+
+```{r measinv.pilot.att}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+
+pilot <- siop[ which(siop$Cond == 'Cond1' | siop$Cond == 'Cond2' | siop$Cond == 'Cond3' | siop$Cond == 'Cond4'), ]
+pilot <- pilot[,c(1:19)]
+
+configural.a <- cfa(model=attiduinal, data=pilot, group="Cond") # configural invariance
+weak.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal="loadings") # weak invariance
+strong.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+## changed above to only adults
+
+fittab <- lavTestLRT(configural.a,weak.a,strong.a, strict.a)
+write.csv(fittab, "Tables/groupindicesatt.csv")
+#semPlot::semPaths(model1, "std", layout = "tree3", 
+#                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
+
+papaja::apa_table(fittab, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (attitudinal structure).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r measinv.pilot.sub}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+
+configural.s <- cfa(model=substantive, data=pilot, group="Cond") # configural invariance
+weak.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal="loadings") # weak invariance
+strong.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+## changed above to only adults
+
+fittab2 <- lavTestLRT(configural.s,weak.s,strong.s, strict.s)
+write.csv(fittab2, "Tables/groupindicessub.csv")
+#semPlot::semPaths(model1, "std", layout = "tree3", 
+#                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
+
+papaja::apa_table(fittab2, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (substantive structure).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r measinv.siop2.att}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+siop2 <- siop[1:19]
+
+configural.a2 <- cfa(model=attiduinal, data=siop2, group="Cond") # configural invariance
+weak.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal="loadings") # weak invariance
+strong.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+## changed above to only adults
+
+fittab3 <- lavTestLRT(configural.a2,weak.a2,strong.a2, strict.a2)
+write.csv(fittab3, "Tables/groupindicesatt2.csv")
+#semPlot::semPaths(model1, "std", layout = "tree3", 
+#                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
+
+papaja::apa_table(fittab3, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (attitudinal structure [6 conditions]).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r measinv.siop2.sub, eval=FALSE}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+
+configural.s2 <- cfa(model=substantive, data=siop2, group="Cond") # configural invariance
+weak.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal="loadings") # weak invariance
+strong.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+## changed above to only adults
+
+fittab4 <- lavTestLRT(configural.s2,weak.s2,strong.s2, strict.s2)
+write.csv(fittab4, "Tables/groupindicessub2.csv")
+#semPlot::semPaths(model1, "std", layout = "tree3", 
+#                  rotation = 2, curvePivot=TRUE, style="lisrel", nCharNodes = 0)
+
+papaja::apa_table(fittab4, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (substantive structure [6 conditions]).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r measinv.siop3.att, eval=FALSE}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+
+siop3 <- siop2[ which(siop$Cond == "Cond5" | siop$Cond == "Cond6"), ]
+
+configural.a2 <- cfa(model=attiduinal, data=siop3, group="Cond") # configural invariance
+weak.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal="loadings") # weak invariance
+strong.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+
+fittab5 <- lavTestLRT(configural.a2,weak.a2,strong.a2, strict.a2)
+
+papaja::apa_table(fittab5, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (attitudinal structure [Qualtrics only]).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+```{r measinv.siop3.sub, eval=FALSE}
+
+## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
+
+configural.s2 <- cfa(model=substantive, data=siop3, group="Cond") # configural invariance
+weak.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal="loadings") # weak invariance
+strong.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+# summary(configural, fit.measures=TRUE)
+
+fittab6 <- lavTestLRT(configural.s2,weak.s2,strong.s2, strict.s2)
+
+papaja::apa_table(fittab6, # apa contains the data.frame needed for apa_table
+                  caption = "Measurement invariance summary statistics (substantive structure [Qualtrics only]).",
+                  note = "* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  landscape = FALSE,
+                  escape = F)
+
+```
+
+# Discussion
+
+The item cues did provide slight response cues (attending to individual model fit indices), however, the effect was quite small. Measurement invariance is plausible within our initial four administration conditions, although it is not attained across all six conditions. This is possibly attributable to differences in sampled population (in addition to the possibility that this difference is attributable to item orderings).
+
+
+```{r Datasets, echo=FALSE}
+# Creating tables to show description for each csv sheet we pulled from qualtrics. 
+
+t_1 <- data.frame(name_of_sheet = "qualtrics_pilot_data.csv",
+                  num = temp %>% nrow(),
+                  oldest_response = min(temp$end_date),
+                  latest_response = max(temp$end_date),
+                  Sample = "Snowball sample from first go round using 2020 Eagle I.O cohort")
+
+t_2 <- data.frame(name_of_sheet = "Engagement+(Attitudinal)_October+12,+2021_08.02.csv",
+                  num = new.att %>% nrow(),
+                  oldest_response = min(new.att$end_date),
+                  latest_response = max(new.att$end_date),
+                  Sample = "Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the attitudinal construct")
+
+t_3 <- data.frame(name_of_sheet = "Engagement+(Substantive)_October+12,+2021_08.01.csv",
+                  num = new.sub %>% nrow(),
+                  oldest_response = min(new.sub$end_date),
+                  latest_response = max(new.sub$end_date),
+                  Sample = "Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the substantive construct")
+
+table <- rbind(t_1, t_2, t_3)
+```
+
+\newpage
+
+# References
+
+```{=tex}
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+```
+::: {#refs custom-style="Bibliography"}
+:::
+
+\endgroup
+
+
+
