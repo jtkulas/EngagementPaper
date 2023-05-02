@@ -228,6 +228,12 @@ SIOPmi <- together %>%
          Item_34,Item_35,Item_36,Condition) %>% 
   mutate(across(c("Item_1":"Item_36"),~as.numeric(.)))
 
+##### split data into four conditions #####
+split_data <- split(SIOPmi, f = SIOPmi$Condition)
+Cond1_Model <- split_data[["1"]]
+Cond2_Model <- split_data[["2"]]
+Cond3_Model <- split_data[["3"]]
+Cond4_Model <- split_data[["4"]]
 
 # Reneta's 18-Items______________________________________________________
 
@@ -481,13 +487,13 @@ We looked at structural invariance as well as latent means [@steinmetz2009testin
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-pilot <- siop[ which(siop$Cond == 'Cond1' | siop$Cond == 'Cond2' | siop$Cond == 'Cond3' | siop$Cond == 'Cond4'), ]
+pilot <- siop[ which(siop$Condition == 'Cond1' | siop$Condition == 'Cond2' | siop$Condition == 'Cond3' | siop$Condition == 'Cond4'), ]
 pilot <- pilot[,c(1:19)]
 
-configural.a <- cfa(model=attiduinal, data=pilot, group="Cond") # configural invariance
-weak.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal="loadings") # weak invariance
-strong.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.a <- cfa(model=attiduinal, data=pilot, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.a <- cfa(model=attiduinal, data=pilot, group="Condition") # configural invariance
+weak.a <- cfa(model=attiduinal, data=pilot, group="Condition", group.equal="loadings") # weak invariance
+strong.a <- cfa(model=attiduinal, data=pilot, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a <- cfa(model=attiduinal, data=pilot, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 ## changed above to only adults
@@ -631,7 +637,6 @@ The item cues did provide slight response cues (attending to individual model fi
 
 ```{r Datasets, echo=FALSE}
 # Creating tables to show description for each csv sheet we pulled from qualtrics. 
-
 t_1 <- data.frame(name_of_sheet = "qualtrics_pilot_data.csv",
                   num = temp %>% nrow(),
                   oldest_response = min(temp$end_date),
@@ -650,7 +655,41 @@ t_3 <- data.frame(name_of_sheet = "Engagement+(Substantive)_October+12,+2021_08.
                   latest_response = max(new.sub$end_date),
                   Sample = "Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the substantive construct")
 
-table <- rbind(t_1, t_2, t_3)
+inital <- read.csv("prolific data/initial_data_screen.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+
+t_4 <- data.frame(name_of_sheet = "inital_data_screen.csv",
+                  num = inital %>% nrow(),
+                  oldest_response = min(inital$end_date),
+                  latest_response = max(inital$end_date),
+                  Sample = "Sample comes from proflic data it is the inital sample. Everyone finish the survey in this sample.")
+
+inprogress <- read.csv("prolific data/inprogress.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+t_5 <- data.frame(name_of_sheet = "inprogress.csv",
+                  num = inprogress %>% nrow(),
+                  oldest_response = min(inprogress$end_date),
+                  latest_response = max(inprogress$end_date),
+                  Sample = "Sample comes from proflic data it is the in progress sample. People did not finish the survey in this sample.")
+
+Engage_04_2022 <- read.csv("Snowball Data/Engagement(post-Qualtrics)April1920221118.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+
+t_6 <- data.frame(name_of_sheet = "Engagement(post-Qualtrics)April1920221118.csv",
+                  num = Engage_04_2022 %>% nrow(),
+                  oldest_response = min(Engage_04_2022$end_date),
+                  latest_response = max(Engage_04_2022$end_date),
+                  Sample = "Sample qualtrics after we remove 16 items. We also have the convergent and discriminant scaler on this survey")
+
+table <- rbind(t_1, t_2, t_3, t_4, t_5, t_6)
+
+
 ```
 
 \newpage

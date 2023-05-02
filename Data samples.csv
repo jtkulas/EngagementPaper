@@ -1,0 +1,7 @@
+"","name_of_sheet","num","oldest_response","latest_response","Sample"
+"1","qualtrics_pilot_data.csv",330,"2020-11-15 09:43:31","2021-03-19 10:04:29","Snowball sample from first go round using 2020 Eagle I.O cohort"
+"2","Engagement+(Attitudinal)_October+12,+2021_08.02.csv",341,"2021-10-08 17:03:31","2021-10-12 07:40:25","Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the attitudinal construct"
+"3","Engagement+(Substantive)_October+12,+2021_08.01.csv",402,"2021-10-08 16:55:26","2021-10-11 17:10:21","Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the substantive construct"
+"4","inital_data_screen.csv",281,"2021-10-07 08:55:30","2021-10-07 15:40:41","Sample comes from proflic data it is the inital sample. Everyone finish the survey in this sample."
+"5","inprogress.csv",503,"2021-10-07 08:46:48","2021-10-08 09:37:32","Sample comes from proflic data it is the in progress sample. People did not finish the survey in this sample."
+"6","Engagement(post-Qualtrics)April1920221118.csv",232,"2021-10-27 10:27:49","2022-03-20 11:43:29","Sample qualtrics after we remove 16 items. We also have the convergent and discriminant scaler on this survey"
