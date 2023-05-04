@@ -487,7 +487,7 @@ We looked at structural invariance as well as latent means [@steinmetz2009testin
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-pilot <- siop[ which(siop$Condition == 'Cond1' | siop$Condition == 'Cond2' | siop$Condition == 'Cond3' | siop$Condition == 'Cond4'), ]
+pilot <- siop[ which(siop$Condition == '1' | siop$Condition == '2' | siop$Condition == '3' | siop$Condition == '4'), ]
 pilot <- pilot[,c(1:19)]
 
 configural.a <- cfa(model=attiduinal, data=pilot, group="Condition") # configural invariance
@@ -515,10 +515,10 @@ papaja::apa_table(fittab, # apa contains the data.frame needed for apa_table
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-configural.s <- cfa(model=substantive, data=pilot, group="Cond") # configural invariance
-weak.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal="loadings") # weak invariance
-strong.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.s <- cfa(model=substantive, data=pilot, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.s <- cfa(model=substantive, data=pilot, group="Condition") # configural invariance
+weak.s <- cfa(model=substantive, data=pilot, group="Condition", group.equal="loadings") # weak invariance
+strong.s <- cfa(model=substantive, data=pilot, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s <- cfa(model=substantive, data=pilot, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 ## changed above to only adults
@@ -541,10 +541,10 @@ papaja::apa_table(fittab2, # apa contains the data.frame needed for apa_table
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 siop2 <- siop[1:19]
 
-configural.a2 <- cfa(model=attiduinal, data=siop2, group="Cond") # configural invariance
-weak.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal="loadings") # weak invariance
-strong.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.a2 <- cfa(model=attiduinal, data=siop2, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.a2 <- cfa(model=attiduinal, data=siop2, group="Condition") # configural invariance
+weak.a2 <- cfa(model=attiduinal, data=siop2, group="Condition", group.equal="loadings") # weak invariance
+strong.a2 <- cfa(model=attiduinal, data=siop2, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a2 <- cfa(model=attiduinal, data=siop2, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 ## changed above to only adults
@@ -566,10 +566,10 @@ papaja::apa_table(fittab3, # apa contains the data.frame needed for apa_table
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-configural.s2 <- cfa(model=substantive, data=siop2, group="Cond") # configural invariance
-weak.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal="loadings") # weak invariance
-strong.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.s2 <- cfa(model=substantive, data=siop2, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.s2 <- cfa(model=substantive, data=siop2, group="Condition") # configural invariance
+weak.s2 <- cfa(model=substantive, data=siop2, group="Condition", group.equal="loadings") # weak invariance
+strong.s2 <- cfa(model=substantive, data=siop2, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s2 <- cfa(model=substantive, data=siop2, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 ## changed above to only adults
@@ -591,12 +591,12 @@ papaja::apa_table(fittab4, # apa contains the data.frame needed for apa_table
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-siop3 <- siop2[ which(siop$Cond == "Cond5" | siop$Cond == "Cond6"), ]
+siop3 <- siop2[ which(siop$Condition == "Cond5" | siop$Condition == "Cond6"), ]
 
-configural.a2 <- cfa(model=attiduinal, data=siop3, group="Cond") # configural invariance
-weak.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal="loadings") # weak invariance
-strong.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.a2 <- cfa(model=attiduinal, data=siop3, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.a2 <- cfa(model=attiduinal, data=siop3, group="Condition") # configural invariance
+weak.a2 <- cfa(model=attiduinal, data=siop3, group="Condition", group.equal="loadings") # weak invariance
+strong.a2 <- cfa(model=attiduinal, data=siop3, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.a2 <- cfa(model=attiduinal, data=siop3, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 
@@ -614,10 +614,10 @@ papaja::apa_table(fittab5, # apa contains the data.frame needed for apa_table
 
 ## https://users.ugent.be/~yrosseel/lavaan/multiplegroup6Dec2012.pdf
 
-configural.s2 <- cfa(model=substantive, data=siop3, group="Cond") # configural invariance
-weak.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal="loadings") # weak invariance
-strong.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal=c("intercepts", "loadings")) # strong invariance
-strict.s2 <- cfa(model=substantive, data=siop3, group="Cond", group.equal=c("loadings", "intercepts", "residuals"))
+configural.s2 <- cfa(model=substantive, data=siop3, group="Condition") # configural invariance
+weak.s2 <- cfa(model=substantive, data=siop3, group="Condition", group.equal="loadings") # weak invariance
+strong.s2 <- cfa(model=substantive, data=siop3, group="Condition", group.equal=c("intercepts", "loadings")) # strong invariance
+strict.s2 <- cfa(model=substantive, data=siop3, group="Condition", group.equal=c("loadings", "intercepts", "residuals"))
 # summary(configural, fit.measures=TRUE)
 
 fittab6 <- lavTestLRT(configural.s2,weak.s2,strong.s2, strict.s2)
