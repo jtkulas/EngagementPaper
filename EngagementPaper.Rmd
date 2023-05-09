@@ -789,6 +789,64 @@ The item cues did provide slight response cues (attending to individual model fi
 
 \newpage
 
+```{r Datasets, echo=FALSE}
+# Creating tables to show description for each csv sheet we pulled from qualtrics. 
+t_1 <- data.frame(name_of_sheet = "qualtrics_pilot_data.csv",
+                  num = temp %>% nrow(),
+                  oldest_response = min(temp$end_date),
+                  latest_response = max(temp$end_date),
+                  Sample = "Snowball sample from first go round using 2020 Eagle I.O cohort")
+
+t_2 <- data.frame(name_of_sheet = "Engagement+(Attitudinal)_October+12,+2021_08.02.csv",
+                  num = new.att %>% nrow(),
+                  oldest_response = min(new.att$end_date),
+                  latest_response = max(new.att$end_date),
+                  Sample = "Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the attitudinal construct")
+
+t_3 <- data.frame(name_of_sheet = "Engagement+(Substantive)_October+12,+2021_08.01.csv",
+                  num = new.sub %>% nrow(),
+                  oldest_response = min(new.sub$end_date),
+                  latest_response = max(new.sub$end_date),
+                  Sample = "Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the substantive construct")
+
+inital <- read.csv("prolific data/initial_data_screen.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+
+t_4 <- data.frame(name_of_sheet = "inital_data_screen.csv",
+                  num = inital %>% nrow(),
+                  oldest_response = min(inital$end_date),
+                  latest_response = max(inital$end_date),
+                  Sample = "Sample comes from proflic data it is the inital sample. Everyone finish the survey in this sample.")
+
+inprogress <- read.csv("prolific data/inprogress.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+t_5 <- data.frame(name_of_sheet = "inprogress.csv",
+                  num = inprogress %>% nrow(),
+                  oldest_response = min(inprogress$end_date),
+                  latest_response = max(inprogress$end_date),
+                  Sample = "Sample comes from proflic data it is the in progress sample. People did not finish the survey in this sample.")
+
+Engage_04_2022 <- read.csv("Snowball Data/Engagement(post-Qualtrics)April1920221118.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+
+t_6 <- data.frame(name_of_sheet = "Engagement(post-Qualtrics)April1920221118.csv",
+                  num = Engage_04_2022 %>% nrow(),
+                  oldest_response = min(Engage_04_2022$end_date),
+                  latest_response = max(Engage_04_2022$end_date),
+                  Sample = "Sample qualtrics after we remove 16 items. We also have the convergent and discriminant scaler on this survey")
+
+table <- rbind(t_1, t_2, t_3, t_4, t_5, t_6)
+
+write.csv(table, file = "Data samples.csv")
+```
+
+
 # References
 
 ```{=tex}
