@@ -692,6 +692,7 @@ table <- rbind(t_1, t_2, t_3, t_4, t_5, t_6)
 write.csv(table, file = "Data samples.csv")
 ```
 
+
 \newpage
 
 # References

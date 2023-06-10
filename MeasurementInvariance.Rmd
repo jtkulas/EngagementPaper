@@ -60,6 +60,238 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
+```{r Surveys Combined}
+temp <- read.csv("Qualtrics/qualtrics_pilot_data.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+################ Cleaning up data and combining the four condition into one ################
+data <- temp %>% 
+  mutate(Cond1 = rowSums(is.na(temp[18:53])), # Counts how many na's occur between columns 18 to 53. Fix columns if any columns are removed during cleaning process. 
+         Cond2 = rowSums(is.na(temp[54:89])),
+         Cond3 = rowSums(is.na(temp[90:125])),
+         Cond4 = rowSums(is.na(temp[126:161]))) %>% 
+  mutate(Condition = case_when(Cond1 < 36 ~ 1, # Determing what is the condition, if they have less than 36 NA, then that is there condition. 
+                               Cond2 < 36 ~ 2,
+                               Cond3 < 36 ~ 3,
+                               Cond4 < 36 ~ 4))
+
+# Splitting the Conditions
+split.data <- split(data, f = data$Condition)
+
+cond1 <- split.data[["1"]] %>% 
+  select(duration_in_seconds, 
+         matches("c1"), # select columns that only have c1 in the name
+         what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, 
+         Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), # removes the first six characters a text
+              starts_with("c", ignore.case = FALSE)) # only looks at columns that have a lower case c
+
+cond2 <- split.data[["2"]] %>% 
+  select(duration_in_seconds, matches("c2"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+cond3 <- split.data[["3"]] %>% 
+  select(duration_in_seconds, matches("c3"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+cond4 <- split.data[["4"]] %>% 
+  select(duration_in_seconds, matches("c4"), what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey:any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team, Condition) %>% 
+  rename_with(~substr(.,6, nchar(.)), starts_with("c", ignore.case = FALSE))
+
+# Reranging all columns to be in the same order. Using condition 1 ordering. 
+
+col_order <- c("duration_in_seconds", "i_enjoy_thinking_about_work_even_when_i_m_not_at_work", "most_days_i_feel_happiest_when_the_workday_is_soon_to_be_complete", "i_am_happiest_when_i_am_immersed_in_a_project", "i_love_starting_my_workday", "i_enjoy_spending_time_completing_my_job_tasks", "most_days_i_feel_enthusiastic_about_starting_my_work_day", "i_feel_motivated_to_go_beyond_what_is_asked_of_me", "this_job_drains_my_energy", "i_am_proud_to_be_a_member_of_this_organization", "i_feel_supported_by_my_supervisor_when_i_fail_at_a_task", "i_feel_proud_of_my_accomplishments_within_this_organization", "my_job_makes_me_feel_like_i_m_part_of_something_meaningful", "i_devote_more_time_than_is_expected_of_me", "i_have_to_be_reminded_to_take_breaks_while_i_m_at_work", "i_never_miss_a_work_deadline", "i_never_allow_distractions_to_interfere_with_my_work", "when_work_is_slow_i_find_ways_to_be_productive", "i_express_enthusiasm_for_my_job_while_at_work", "i_try_my_best_to_perform_well_at_work", "if_i_notice_my_energy_level_is_low_i_take_corrective_steps_to_re_energize", "i_make_valued_contributions_to_the_organization", "i_embrace_challenging_situations_at_work", "i_speak_positively_about_this_organization_to_others", "this_organization_provides_the_resources_necessary_for_me_to_successfully_perform_my_job", "i_devote_my_full_attention_to_my_work_tasks_throughout_the_day", "thinking_about_work_saps_my_energy", "i_would_rather_direct_my_focus_toward_a_work_task_than_a_personal_task", "i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday", "i_plan_my_future_with_this_company", "i_believe_this_company_cares_about_my_career_goals", "i_often_think_about_finding_another_job", "this_organization_challenges_me_to_work_at_my_full_potential", "i_m_able_to_concentrate_on_my_work_without_distractions", "i_have_a_hard_time_detaching_mentally_from_my_work", "time_passes_quickly_while_i_m_working", "i_find_it_difficult_to_mentally_disconnect_from_work", "what_is_the_title_of_the_job_you_were_thinking_about_while_responding_to_this_survey", "how_many_hours_do_you_typically_work_per_week_in_this_job", "how_long_have_you_been_with_this_organization", "any_general_comments_or_reactions_you_d_care_to_share_with_the_scale_development_team", "Condition")
+
+cond1.red <- cond1[, col_order] # rearrange columns in order to follow condition 1
+cond2.red <- cond2[, col_order]
+cond3.red <- cond3[, col_order]
+cond4.red <- cond4[, col_order]
+
+together <- rbind(cond1.red, cond2.red, cond3.red, cond4.red) %>% 
+  mutate(across(c("most_days_i_feel_happiest_when_the_workday_is_soon_to_be_complete","this_job_drains_my_energy","thinking_about_work_saps_my_energy","i_often_think_about_finding_another_job"), 
+                ~case_when(. == 6 ~ 1, # Recoding items
+                           . == 5 ~ 2,
+                           . == 4 ~ 3,
+                           . == 3 ~ 4,
+                           . == 2 ~ 5,
+                           . == 1 ~ 6)))
+
+i <- c(1:37)
+together[ , i] <- apply(together[ , i], 2,            # Specify own function within apply
+                        function(x) as.numeric(as.character(x)))
+
+new.att <- read.csv("Qualtrics/Engagement+(Attitudinal)_October+12,+2021_08.02.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% # Removing the first row 
+  janitor::clean_names() # Cleaning column names
+
+new.sub <- read.csv("Qualtrics/Engagement+(Substantive)_October+12,+2021_08.01.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+inital <- read.csv("prolific data/initial_data_screen.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+inprogress <- read.csv("prolific data/inprogress.csv", header=TRUE, na.strings="", skip = 1) %>% 
+  dplyr::slice(-1) %>% 
+  janitor::clean_names()
+
+Engage_04_2022 <- read.csv("Snowball Data/Engagement(post-Qualtrics)April1920221118.csv", header=TRUE, na.strings="", skip = 1) %>%
+  dplyr::slice(-1) %>%
+  janitor::clean_names()
+
+
+
+df1 <- together %>% 
+  select(Item_1 = i_m_able_to_concentrate_on_my_work_without_distractions,
+         Item_2 = time_passes_quickly_while_i_m_working, 
+         Item_3 = i_find_it_difficult_to_mentally_disconnect_from_work, 
+         Item_4 = thinking_about_work_saps_my_energy, 
+         Item_5 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday, 
+         Item_6 = i_plan_my_future_with_this_company , 
+         Item_7 = i_believe_this_company_cares_about_my_career_goals,
+         Item_8 = this_organization_challenges_me_to_work_at_my_full_potential,
+         Item_9 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+         Item_10 = i_love_starting_my_workday,
+         Item_11 = i_enjoy_spending_time_completing_my_job_tasks,
+         Item_12 = i_feel_motivated_to_go_beyond_what_is_asked_of_me,
+         Item_13 = i_feel_proud_of_my_accomplishments_within_this_organization,
+         Item_14 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+         Item_15 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+         Item_16 = i_never_miss_a_work_deadline,
+         Item_17 = when_work_is_slow_i_find_ways_to_be_productive,
+         Item_18 = i_express_enthusiasm_for_my_job_while_at_work,
+         Item_19 = i_embrace_challenging_situations_at_work,
+         Item_20 = i_speak_positively_about_this_organization_to_others) %>%  # please take a look at Item_6, "i_plan_my_future_with _this_company" is different from "i_plan_to_stay_with_this_company_as_my_career_advances". take a look at item_12 compared this "i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work"
+  mutate(Condition = "Survey 1")
+
+att <- new.att %>% 
+  select(Item_1 = i_am_able_to_concentrate_on_my_work_without_getting_distracted,
+         Item_2 = time_passes_quickly_while_i_m_working,
+         Item_3 = i_find_it_difficult_to_mentally_disconnect_from_work,
+         Item_4 = thinking_about_work_saps_my_energy,
+         Item_5 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,
+         Item_6 = i_plan_to_stay_with_this_company_as_my_career_advances,
+         Item_7 = i_believe_this_company_cares_about_my_career_goals,
+         Item_8 = this_organization_challenges_me_to_work_at_my_full_potential,
+         Item_9 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+         Item_10 = i_love_starting_my_workday,
+         Item_11 = i_enjoy_spending_time_completing_my_job_tasks,
+         Item_12 = i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work,
+         Item_13 = i_feel_proud_of_my_accomplishments_within_this_organization,
+         Item_14 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+         Item_15 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+         Item_16 = i_never_miss_a_work_deadline,
+         Item_17 = when_work_is_slow_i_find_ways_to_be_productive,
+         Item_18 = i_express_enthusiasm_for_my_job_while_at_work,
+         Item_19 = i_embrace_challenging_situations_at_work,
+         Item_20 = i_speak_positively_about_this_organization_to_others) %>% 
+  mutate(Condition = "Survey 2")
+        
+sub <- new.sub%>% 
+  select(Item_1 = i_am_able_to_concentrate_on_my_work_without_getting_distracted,
+         Item_2 = time_passes_quickly_while_i_m_working,
+         Item_3 = i_find_it_difficult_to_mentally_disconnect_from_work,
+         Item_4 = thinking_about_work_saps_my_energy,
+         Item_5 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,
+         Item_6 = i_plan_to_stay_with_this_company_as_my_career_advances,
+         Item_7 = i_believe_this_company_cares_about_my_career_goals,
+         Item_8 = this_organization_challenges_me_to_work_at_my_full_potential,
+         Item_9 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+         Item_10 = i_love_starting_my_workday,
+         Item_11 = i_enjoy_spending_time_completing_my_job_tasks,
+         Item_12 = i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work,
+         Item_13 = i_feel_proud_of_my_accomplishments_within_this_organization,
+         Item_14 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+         Item_15 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+         Item_16 = i_never_miss_a_work_deadline,
+         Item_17 = when_work_is_slow_i_find_ways_to_be_productive,
+         Item_18 = i_express_enthusiasm_for_my_job_while_at_work,
+         Item_19 = i_embrace_challenging_situations_at_work,
+         Item_20 = i_speak_positively_about_this_organization_to_others) %>% 
+  mutate(Condition = "Survey 2")
+
+inital2 <- inital %>% 
+  select(Item_1 = i_am_able_to_concentrate_on_my_work_without_getting_distracted,
+         Item_2 = time_passes_quickly_while_i_m_working, 
+         Item_3 = i_find_it_difficult_to_mentally_disconnect_from_work,
+         Item_4 = thinking_about_work_saps_my_energy,
+         Item_5 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,
+         Item_6 = i_plan_to_stay_with_this_company_as_my_career_advances,
+         Item_7 = i_believe_this_company_cares_about_my_career_goals,
+         Item_8 = this_organization_challenges_me_to_work_at_my_full_potential,
+         Item_9 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+         Item_10 = i_love_starting_my_workday,
+         Item_11 = i_enjoy_spending_time_completing_my_job_tasks,
+         Item_12 = i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work,
+         Item_13 = i_feel_proud_of_my_accomplishments_within_this_organization,
+         Item_14 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+         Item_15 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+         Item_16 = i_never_miss_a_work_deadline,
+         Item_17 = when_work_is_slow_i_find_ways_to_be_productive,
+         Item_18 = i_express_enthusiasm_for_my_job_while_at_work,
+         Item_19 = i_embrace_challenging_situations_at_work,
+         Item_20 = i_speak_positively_about_this_organization_to_others) %>% 
+  mutate(Condition = "Survey 3")
+
+inprogress2 <- inprogress %>% 
+  select(Item_1 = i_am_able_to_concentrate_on_my_work_without_getting_distracted,
+         Item_2 = time_passes_quickly_while_i_m_working, 
+         Item_3 = i_find_it_difficult_to_mentally_disconnect_from_work,
+         Item_4 = thinking_about_work_saps_my_energy,
+         Item_5 = i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,
+         Item_6 = i_plan_to_stay_with_this_company_as_my_career_advances,
+         Item_7 = i_believe_this_company_cares_about_my_career_goals,
+         Item_8 = this_organization_challenges_me_to_work_at_my_full_potential,
+         Item_9 = i_enjoy_thinking_about_work_even_when_i_m_not_at_work,
+         Item_10 = i_love_starting_my_workday,
+         Item_11 = i_enjoy_spending_time_completing_my_job_tasks,
+         Item_12 = i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work,
+         Item_13 = i_feel_proud_of_my_accomplishments_within_this_organization,
+         Item_14 = my_job_makes_me_feel_like_i_m_part_of_something_meaningful,
+         Item_15 = i_have_to_be_reminded_to_take_breaks_while_i_m_at_work,
+         Item_16 = i_never_miss_a_work_deadline,
+         Item_17 = when_work_is_slow_i_find_ways_to_be_productive,
+         Item_18 = i_express_enthusiasm_for_my_job_while_at_work,
+         Item_19 = i_embrace_challenging_situations_at_work,
+         Item_20 = i_speak_positively_about_this_organization_to_others) %>% 
+  mutate(Condition = "Survey 3")
+
+
+engage <-Engage_04_2022 %>% 
+  select(i_am_able_to_concentrate_on_my_work_without_getting_distracted:i_express_enthusiasm_for_my_job_while_at_work_1) %>% 
+  unite(.,Item_1,i_am_able_to_concentrate_on_my_work_without_getting_distracted, i_am_able_to_concentrate_on_my_work_without_getting_distracted_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_2,time_passes_quickly_while_i_m_working,time_passes_quickly_while_i_m_working_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_3,i_find_it_difficult_to_mentally_disconnect_from_work, i_find_it_difficult_to_mentally_disconnect_from_work_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_4,thinking_about_work_saps_my_energy, thinking_about_work_saps_my_energy_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_5,i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday,i_m_able_to_maintain_good_levels_of_energy_throughout_the_workday_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_6,i_plan_to_stay_with_this_company_as_my_career_advances, i_plan_to_stay_with_this_company_as_my_career_advances_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_7,i_believe_this_company_cares_about_my_career_goals, i_believe_this_company_cares_about_my_career_goals_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_8,this_organization_challenges_me_to_work_at_my_full_potential,this_organization_challenges_me_to_work_at_my_full_potential_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_9,i_enjoy_thinking_about_work_even_when_i_m_not_at_work, i_enjoy_thinking_about_work_even_when_i_m_not_at_work_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_10,i_love_starting_my_workday, i_love_starting_my_workday_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_11,i_enjoy_spending_time_completing_my_job_tasks,i_enjoy_spending_time_completing_my_job_tasks_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_12,i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work, i_feel_motivated_to_go_beyond_what_is_asked_of_me_at_work_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_13,i_feel_proud_of_my_accomplishments_within_this_organization, i_feel_proud_of_my_accomplishments_within_this_organization_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_14,my_job_makes_me_feel_like_i_m_part_of_something_meaningful,my_job_makes_me_feel_like_i_m_part_of_something_meaningful_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_15,i_have_to_be_reminded_to_take_breaks_while_i_m_at_work, i_have_to_be_reminded_to_take_breaks_while_i_m_at_work_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_16,i_never_miss_a_work_deadline, i_never_miss_a_work_deadline_1,sep = "",na.rm = T) %>% 
+  unite(.,Item_17,when_work_is_slow_i_find_ways_to_be_productive,when_work_is_slow_i_find_ways_to_be_productive_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_18,i_express_enthusiasm_for_my_job_while_at_work, i_express_enthusiasm_for_my_job_while_at_work_1, sep = "", na.rm = T) %>% 
+  unite(.,Item_19,i_embrace_challenging_situations_at_work,i_embrace_challenging_situations_at_work_1,sep = "", na.rm = T) %>% 
+  unite(.,Item_20,i_speak_positively_about_this_organization_to_others, i_speak_positively_about_this_organization_to_others_1, sep = "", na.rm = T) %>% 
+  mutate(across(c("Item_1":"Item_20"),~case_when(str_detect(.,regex("Strongly Disagree"))~"1",
+                                                 str_detect(.,regex("Strongle Agree"))~"6",
+                                                 str_detect(.,regex("Somewhat Disagree"))~"3",
+                                                 str_detect(.,regex("Somewhat Agree"))~"4",
+                                                 str_detect(.,regex("Disagree"))~"2",
+                                                 str_detect(.,regex("Agree"))~"5"))) %>% 
+  mutate(across(c("Item_3","Item_4"),~recode(.,"6"="1","5"="2","4"="3","4"="4","2"="5","1"="6"))) %>% 
+  mutate(across(c("Item_1":"Item_20"),~as.numeric(.)))  %>% 
+  mutate(Condition = "Survey 4")
+
+final <- rbind(df1,att,sub,inital2,inprogress2,engage)
+```
+
 
 \newpage
 
