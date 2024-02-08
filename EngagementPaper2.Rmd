@@ -690,6 +690,8 @@ t_6 <- data.frame(name_of_sheet = "Engagement(post-Qualtrics)April1920221118.csv
 table <- rbind(t_1, t_2, t_3, t_4, t_5, t_6)
 
 write.csv(table, file = "Data samples.csv")
+
+kable(table)
 ```
 
 

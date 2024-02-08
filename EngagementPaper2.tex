@@ -5,16 +5,19 @@
 \documentclass[
   man]{apa6}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -178,7 +181,7 @@
 \fi
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Engagement as attitude: Development and initial validation of an intentional bi-factor measure of employee engagement},
   pdfauthor={John Kulas1, Renata Garcia Prieto Palacios Roji2, Casey Osorio-Duffoo3, Morgan Russell4, \& Mike DeFabiis4},
@@ -343,10 +346,14 @@ Data was obtained from two sources. In the first sampling, 282 individuals respo
 
 Our 18-item engagement measure was crafted to be intentionally complex (each item is intended to load on two constructs). This complexity, however, derives from a crossing of the attitudinal components of affect, cognition, and behavior with the substantive engagement components of vigor, dedication, and absorption. Within the current investigation, we realized \(\alpha\)'s of 0.81 (Absorption), 0.91 (Dedication), 0.73 (Vigor), 0.73 (Affect), 0.89 (Cognition), and 0.83 (Behavior). The 6-point response scale is: Strongly Disagree, Disagree, Somewhat Disagree, Somewhat Agree, Agree, Strongly Agree. The item stems as well as their scale assocation are presented in Table XX.
 
+\begin{verbatim}
+## Warning: package 'lavaan' was built under R version 4.2.3
+\end{verbatim}
+
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-We used R {[}Version 4.2.0; R Core Team (2021){]} for all our analyses.
+We used R {[}Version 4.2.2; R Core Team (2021){]} for all our analyses.
 
 The omnibus CFA's, regardless of item ordering, across 1025 respondents showed fair fit for both the substantive (\(\chi^2_{substantive}\)=930.38, \emph{df}=132, \emph{RMSEA}=0.08) as well as attitudinal structures (\(\chi^2_{attitudinal}\)=1,042.75, \emph{df}=132, \emph{RMSEA}=0.09). Additional fit indices for the two models are presented in Table XX. Figures 1 and 2 present the omnibus models visually (standardized coefficients displayed). Note that the primary source of misfit for both models within the omnibus analysis is item 14, which is the lone reverse-coded item within the inventory, ``Thinking about work saps my energy''.
 
@@ -372,7 +379,7 @@ The omnibus CFA's, regardless of item ordering, across 1025 respondents showed f
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1061}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1117}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1117}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Condition
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -392,23 +399,24 @@ TLI
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 AIC
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
-Condition 1 & 3-factor substantive & 300.86 & 132 & 0.14 & 0.11 & 0.68 & 0.63 & 3,282.88 \\
-& 3-factor attitudinal & 290.33 & 132 & 0.14 & 0.11 & 0.70 & 0.65 & 3,272.35 \\
-Condition 2 & 3-factor substantive & 310.01 & 132 & 0.15 & 0.10 & 0.71 & 0.66 & 3,257.45 \\
-& 3-factor attitudinal & 322.52 & 132 & 0.15 & 0.10 & 0.69 & 0.64 & 3,269.96 \\
-Condition 3 & 3-factor substantive & 252.07 & 132 & 0.12 & 0.10 & 0.78 & 0.74 & 3,510.32 \\
-& 3-factor attitudinal & 275.74 & 132 & 0.13 & 0.10 & 0.73 & 0.69 & 3534 \\
-Condition 4 & 3-factor substantive & 224.96 & 132 & 0.10 & 0.09 & 0.82 & 0.79 & 3,421.64 \\
-& 3-factor attitudinal & 228.99 & 132 & 0.10 & 0.09 & 0.81 & 0.78 & 3,425.66 \\
-Condition 5 & 3-factor substantive & 549.80 & 132 & 0.10 & 0.05 & 0.90 & 0.89 & 14,932.57 \\
-& 3-factor attitudinal & 497.90 & 132 & 0.10 & 0.04 & 0.92 & 0.90 & 14,880.67 \\
-Condition 6 & 3-factor substantive & 468.02 & 132 & 0.09 & 0.05 & 0.91 & 0.90 & 17,953.02 \\
-& 3-factor attitudinal & 610.60 & 132 & 0.10 & 0.06 & 0.88 & 0.86 & 18,095.61 \\
-Overall & 3-factor substantive & 930.38 & 132 & 0.08 & 0.04 & 0.92 & 0.90 & 46,884.02 \\
-& 3-factor attitudinal & 1,042.75 & 132 & 0.09 & 0.05 & 0.91 & 0.89 & 46,996.40 \\
-\bottomrule()
+\bottomrule\noalign{}
+\endlastfoot
+Condition 1 & 3-factor substantive & 300.86 & 132 & 0.14 & 1 & 0.68 & 0.63 & 3,282.88 \\
+& 3-factor attitudinal & 290.33 & 132 & 0.14 & 1 & 0.70 & 0.65 & 3,272.35 \\
+Condition 2 & 3-factor substantive & 310.01 & 132 & 0.15 & 1 & 0.71 & 0.66 & 3,257.45 \\
+& 3-factor attitudinal & 322.52 & 132 & 0.15 & 1 & 0.69 & 0.64 & 3,269.96 \\
+Condition 3 & 3-factor substantive & 252.07 & 132 & 0.12 & 1 & 0.78 & 0.74 & 3,510.32 \\
+& 3-factor attitudinal & 275.74 & 132 & 0.13 & 1 & 0.73 & 0.69 & 3534 \\
+Condition 4 & 3-factor substantive & 224.96 & 132 & 0.10 & 0.94 & 0.82 & 0.79 & 3,421.64 \\
+& 3-factor attitudinal & 228.99 & 132 & 0.10 & 0.96 & 0.81 & 0.78 & 3,425.66 \\
+Condition 5 & 3-factor substantive & 549.80 & 132 & 0.10 & 1 & 0.90 & 0.89 & 14,932.57 \\
+& 3-factor attitudinal & 497.90 & 132 & 0.10 & 1 & 0.92 & 0.90 & 14,880.67 \\
+Condition 6 & 3-factor substantive & 468.02 & 132 & 0.09 & 0.87 & 0.91 & 0.90 & 17,953.02 \\
+& 3-factor attitudinal & 610.60 & 132 & 0.10 & 1 & 0.88 & 0.86 & 18,095.61 \\
+Overall & 3-factor substantive & 930.38 & 132 & 0.08 & 0.76 & 0.92 & 0.90 & 46,884.02 \\
+& 3-factor attitudinal & 1,042.75 & 132 & 0.09 & 0.99 & 0.91 & 0.89 & 46,996.40 \\
 \end{longtable}
 
 \begin{lltable}
@@ -500,14 +508,14 @@ We looked at structural invariance as well as latent means (Meredith, 1993; Stei
 
 \caption{\label{tab:measinv.pilot.att}Measurement invariance summary statistics (attitudinal structure).}
 
-\begin{tabular}{llllllll}
+\begin{tabular}{lllllllll}
 \toprule
- & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{RMSEA} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
 \midrule
-configural.a & 528 & 13,645.98 & 14,453.38 & 1,117.59 & NA & NA & NA\\
-weak.a & 573 & 13,614.45 & 14,262.50 & 1,176.06 & 58.48 & 45 & 0.09\\
-strong.a & 618 & 13,569.48 & 14,058.18 & 1,221.09 & 45.03 & 45 & 0.47\\
-strict.a & 672 & 13,538.35 & 13,835.82 & 1,297.96 & 76.87 & 54 & 0.02\\
+configural.a & 528 & 13,645.98 & 14,453.38 & 1,117.59 & NA & NA & NA & NA\\
+weak.a & 573 & 13,614.45 & 14,262.50 & 1,176.06 & 58.48 & 0.07 & 45 & 0.09\\
+strong.a & 618 & 13,569.48 & 14,058.18 & 1,221.09 & 45.03 & 0.00 & 45 & 0.47\\
+strict.a & 672 & 13,538.35 & 13,835.82 & 1,297.96 & 76.87 & 0.08 & 54 & 0.02\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -576,14 +584,14 @@ strict.a & 672 & 13,538.35 & 13,835.82 & 1,297.96 & 76.87 & 54 & 0.02\\
 
 \caption{\label{tab:measinv.pilot.sub}Measurement invariance summary statistics (substantive structure).}
 
-\begin{tabular}{llllllll}
+\begin{tabular}{lllllllll}
 \toprule
- & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{RMSEA} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
 \midrule
-configural.s & 528 & 13,616.29 & 14,423.69 & 1,087.90 & NA & NA & NA\\
-weak.s & 573 & 13,588.39 & 14,236.44 & 1,150.00 & 62.10 & 45 & 0.05\\
-strong.s & 618 & 13,546.51 & 14,035.20 & 1,198.12 & 48.12 & 45 & 0.35\\
-strict.s & 672 & 13,521.28 & 13,818.74 & 1,280.89 & 82.77 & 54 & 0.01\\
+configural.s & 528 & 13,616.29 & 14,423.69 & 1,087.90 & NA & NA & NA & NA\\
+weak.s & 573 & 13,588.39 & 14,236.44 & 1,150.00 & 62.10 & 0.08 & 45 & 0.05\\
+strong.s & 618 & 13,546.51 & 14,035.20 & 1,198.12 & 48.12 & 0.03 & 45 & 0.35\\
+strict.s & 672 & 13,521.28 & 13,818.74 & 1,280.89 & 82.77 & 0.09 & 54 & 0.01\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -640,14 +648,14 @@ strict.s & 672 & 13,521.28 & 13,818.74 & 1,280.89 & 82.77 & 54 & 0.01\\
 
 \caption{\label{tab:measinv.siop2.att}Measurement invariance summary statistics (attitudinal structure [6 conditions]).}
 
-\begin{tabular}{llllllll}
+\begin{tabular}{lllllllll}
 \toprule
- & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
+ & \multicolumn{1}{c}{Df} & \multicolumn{1}{c}{AIC} & \multicolumn{1}{c}{BIC} & \multicolumn{1}{c}{Chisq} & \multicolumn{1}{c}{Chisq diff} & \multicolumn{1}{c}{RMSEA} & \multicolumn{1}{c}{Df diff} & \multicolumn{1}{c}{Pr(>Chisq)}\\
 \midrule
-configural.a2 & 792 & 46,694.26 & 48,335.92 & 2,226.09 & NA & NA & NA\\
-weak.a2 & 867 & 46,713.85 & 47,995.49 & 2,395.68 & 169.59 & 75 & 0.00\\
-strong.a2 & 942 & 46,905.27 & 47,826.90 & 2,737.10 & 341.42 & 75 & 0.00\\
-strict.a2 & 1032 & 46,946.38 & 47,436.00 & 2,958.21 & 221.11 & 90 & 0.00\\
+configural.a2 & 792 & 46,694.26 & 48,335.92 & 2,226.09 & NA & NA & NA & NA\\
+weak.a2 & 867 & 46,713.85 & 47,995.49 & 2,395.68 & 169.59 & 0.09 & 75 & 0.00\\
+strong.a2 & 942 & 46,905.27 & 47,826.90 & 2,737.10 & 341.42 & 0.15 & 75 & 0.00\\
+strict.a2 & 1032 & 46,946.38 & 47,436.00 & 2,958.21 & 221.11 & 0.10 & 90 & 0.00\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -665,6 +673,24 @@ strict.a2 & 1032 & 46,946.38 & 47,436.00 & 2,958.21 & 221.11 & 90 & 0.00\\
 \section{Discussion}\label{discussion}}
 
 The item cues did provide slight response cues (attending to individual model fit indices), however, the effect was quite small. Measurement invariance is plausible within our initial four administration conditions, although it is not attained across all six conditions. This is possibly attributable to differences in sampled population (in addition to the possibility that this difference is attributable to item orderings).
+
+\begin{tabular}{l|r|l|l|l}
+\hline
+name\_of\_sheet & num & oldest\_response & latest\_response & Sample\\
+\hline
+qualtrics\_pilot\_data.csv & 330 & 2020-11-15 09:43:31 & 2021-03-19 10:04:29 & Snowball sample from first go round using 2020 Eagle I.O cohort\\
+\hline
+Engagement+(Attitudinal)\_October+12,+2021\_08.02.csv & 341 & 2021-10-08 17:03:31 & 2021-10-12 07:40:25 & Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the attitudinal construct\\
+\hline
+Engagement+(Substantive)\_October+12,+2021\_08.01.csv & 402 & 2021-10-08 16:55:26 & 2021-10-11 17:10:21 & Samples comes from Renata's survey using 5 short measures of work engagement as well as free-time activities (spending time either with pets or game-playing). Ordering our measure using the substantive construct\\
+\hline
+inital\_data\_screen.csv & 281 & 2021-10-07 08:55:30 & 2021-10-07 15:40:41 & Sample comes from proflic data it is the inital sample. Everyone finish the survey in this sample.\\
+\hline
+inprogress.csv & 503 & 2021-10-07 08:46:48 & 2021-10-08 09:37:32 & Sample comes from proflic data it is the in progress sample. People did not finish the survey in this sample.\\
+\hline
+Engagement(post-Qualtrics)April1920221118.csv & 232 & 2021-10-27 10:27:49 & 2022-03-20 11:43:29 & Sample qualtrics after we remove 16 items. We also have the convergent and discriminant scaler on this survey\\
+\hline
+\end{tabular}
 
 \newpage
 
