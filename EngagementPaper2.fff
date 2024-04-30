@@ -5,6 +5,8 @@
 \includegraphics{EngagementPaper2_files/figure-latex/semplotsub-1.pdf}
 \caption{\label{fig:semplotsub}Omnibus Confirmatory Factor Analysis substantive structure.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 

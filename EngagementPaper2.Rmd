@@ -1,5 +1,5 @@
 ---
-title             : "Engagement as attitude: Development and initial validation of an intentional bi-factor measure of employee engagement"
+title             : "Development and validation of an prescriptive bi-factor measure of employee engagement"
 shorttitle        : "BiFactor Engagement"
 
 author: 
@@ -28,15 +28,12 @@ affiliation:
     institution   : "Montclair State University"
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-
-  Enter author note here.
 
 abstract: |
-  The most popular conceptual attitudinal specification employee engagement implicates sub-dimensions of vigor, dedication, and absorption. The more general tripartite model of attitudes isolates cognitive, behavioral, and affective components. The current investigation documents the development and validation of an intentionally complex engagement measure - one that intentionally crosses the conceptually substantive and elemental attitude components. An initial item set of 72 were culled to 36 via content validation. The 36 candidate items were piloted with a snowball sample of 330 and reduced to 20. The final 18 items were identified via further administration to 743 Prolific respondents. Construct validation was accomplished via 
+  Conceptual specifications of employee engagement often implicate sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes isolates cognitive, behavioral, and affective components. The current investigation documents the development and validation of an explicitly complex engagement measure - one that intentionally crosses the conceptually substantive and elemental attitude components. An initial item set of 72 were culled to 36 via content validation. These 36 candidate items were piloted with a snowball sample of 330 respondents and reduced to 20. The final 18 items were identified via further administration to 743 Prolific respondents. We finalize the scale definitions for a bifactor engagement measure that is comprised of intentionally complex items. This complexity crosses attitudinal and substantive components. The final scale definition exhibited moderately good bifactor fit, and the final version of the instrument allows aggregations that should be desirable for both researchers (substantive) as well as practitioners (attitude). Construct validation was accomplished via 
   Criterion-related validation included documented associations with intent to quit, satisfaction, and    . 
 
-keywords          : "Engagement, engagement"
+keywords          : "employee engagement, scale validation, bifactor structure, organizational surveying"
 wordcount         : "X"
 
 bibliography      : ["bibs/r-references.bib", "bibs/engage.bib", "bibs/siopadds.bib", "bibs/bifactor.bib", "bibs/book.bib", "bibs/renata.bib", "bibs/siop.bib"]
@@ -45,11 +42,11 @@ floatsintext      : no #change to yes if we want all tables to be put in-line ra
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : no
+linenumbers       : yes
 mask              : no
 draft             : no
 
-documentclass     : "apa6"
+documentclass     : "apa7"
 classoption       : "man"
 output            : papaja::apa6_pdf
 ---
@@ -74,61 +71,35 @@ Incorporated:
 
 + `...Engagement-Survey-Projects/Construct Validation`
 
-The roots of employee [aka work; e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. The 1990's saw focused development and refinement [for example, a dissertation; @leone_relation_1995 or actual semantic reference; @kahn_psychological_1990]. @staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct.
+The roots of employee [aka work, e.g., @schaufeli_conceptualization_2010] engagement research likely started with theoretical expansions of forms of employee participation [see, for example, @ferris_added_1984] and job involvement [e.g., @elloy_examination_1991]. This exploration extended into broader considerations of attitudes and emotions [@staw_employee_1994] and were informed by further exploration of the dimensionality of constructs such as organizational commitment [@meyer_three-component_1991]. @staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and although they do not use the word, "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct. The 1990's as a whole can be reasonably characterized as notable regarding the construct's development and refinement [for example, a dissertation, @leone_relation_1995 or actual semantic reference, @kahn_psychological_1990]. 
 
-@kahn_psychological_1990 described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. @goering2017not explore nomological networks, concluding that these two constructs have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
+@kahn_psychological_1990 described engaged employees as being physically involved, cognitively vigilant, and emotionally connected. Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. @goering2017not conclude that these two constructs have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
 
-Clear in this history is the specification of engagement as a work *attitude*.
-
-Although occasionally referred to as residing on the opposing pole to *burnout* [@maslach_early_2008], these two constructs are currently most commonly conceptualized as being distinct [@timms2012burnt; @kim_burnout_2009; @goering2017not; @schaufeli2008workaholism], although certainly not universally [@cole2012job; @taris2017burnout]. Comparing the two, @goering2017not concluded that they have a moderate (negative) association, but also distinct nomological networks. @schaufeli2008workaholism investigated both internal and external association indicators, concluding that engagement and burnout (as well as *workaholism*) should be considered three distinct constructs. 
-
-Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @schaufeli_uwesutrecht_2003 further specify a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
-
-Burnout is a psychological syndrome consisting of exhaustion, cynicism, and inefficacy [see, for example, @leiter_areas_2004].
-
-Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements.
+Burnout can be defined as a psychological syndrome characterized by exhaustion (low energy), cynicism (low involvement), and inefficacy (low self-efficacy), which is experienced in response to chronic job stressors [e.g., @leiter_areas_2004; @maslach1997causes]. Alternatively, engagement refers to an individual worker's involvement and satisfaction as well as enthusiasm for work [@harter_business-unit-level_2002]. @kahn_psychological_1990 defines engagement as "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances" (p. 692). 
 
 ## Engagement as an attitude 
 
-@staw_employee_1994 investigated the relationships between *positive emotions* and favorable work outcomes, and, although they do not explicitly mention the word "engagement", their distinction between felt and expressed emotion likely held influence upon the burgeoning interest in the engagement construct. Clear in this history is the conceptualization of engagement as a work *attitude*. @kahn_psychological_1990 defines engagement as "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances" (p. 692). This definition of engagement as an attitude was also heavily influenced by @rosenberg_cognitive_1960's tripartite model of attitudes, which was popular in the 1990's. According to @rosenberg_cognitive_1960, attitudes are a molar construct with cognitive, affective, and behavioral dimensions. Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019. The attitudinal perspectives of engagement eventually blended into perspectives that focused on exploring the engagement construct through the lens of other conceptually similar constructs [see, for example, @baumruk2004missing and @shaw2005engagement, who framed engagement in terms of one's cognitive and affective *commitment* to one's organization]. 
+Clear in its history is the conceptualization of engagement as a work *attitude*. This conceptualization of engagement as an attitude was also heavily influenced by @rosenberg_cognitive_1960's tripartite model of attitudes, which was popular in the 1990's. According to @rosenberg_cognitive_1960, attitudes are a molar construct with cognitive, affective, and behavioral dimensions. Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019. It is perhaps currently most prominently embedded within contemporary perspectives on personality (e.g., patterns of thinking, feeling, and behaving). The attitudinal perspectives of engagement eventually blended into perspectives that focused on exploring the engagement construct through the lens of other conceptually similar constructs [see, for example, @baumruk2004missing and @shaw2005engagement, who framed engagement in terms of one's cognitive and affective *commitment* to one's organization]. 
 
 The first, to our knowledge, use of the word "engagement" as a construct came in @kahn1990psychological, defining it as: "the harnessing of organization members' selves to their work roles; in engagement, people employ and express themselves physically, cognitively, and emotionally during role performances." Although this definition was quickly bypassed by subsequent papers (see, for example, [@baumruk2004missing] and [@shaw2005engagement], who framed it in terms of one's cognitive and affective *commitment* to one's organization), @kahn1990psychological's definition is notable in that it conforms to the then-ascendant tripartite model of attitudes proposed by @rosenberg_cognitive_1960. This model frames attitudes as latent variables that manifest cognitively, affectively and behaviorally.
 
-Although falling out of favor in the decades following its construction, interest in the tripartite model was revived by @kaiser_campbell_2019,
+## Engagement's substantive elements
 
-## Item order as a multidimensional assessment response cues
-
-Response cues in general and order effects in particular have their root in Cognitive Psychology, with the bulk of studies occurring in the early days of Cognitive Psychology (e.g., the 1960's on). Primacy and recency (whether an item is presented at the beginning or end of a list) are known to elicit differences in response [e.g., @krosnick1987evaluation]. This effect has also been noted in methodological contexts in the form of differential carryover effects. For example, the order of presentation of samples in a product taste test [see, for example, @dean1980presentation]. @ackerman1989comparison found only small differences in response patterns when presenting *test* items in a fixed versus random ordering. @mashburn2014effect experimentally controlled the presentation of rated material, finding higher indices of reliability and validity of ratings when content was administered randomly (e.g., order effects were controlled for).
-
-@knowles1988item and @hamilton1990self both administered exhaustively crossed orderings of items, noting better item discrimination (e.g., corrected item-total correlations) *later* in the assessment, regardless of actual item content. @steinberg1994context provides a description of this effect: "...literature converges on the view that responding repeatedly to items representing a single, unidimensional psychological construct increases the accessibility of relevant beliefs or feelings, which in turn, increases the relation between the item resopnse and the underlying construct." (p. 341) This statement could be rephrased as: location serves as a response cue. "This attentional focus influences item responses through such processes as item interpretation and ease of retrieval of relevant feelings that are applied to the item" [@steinberg1994context, p. 341]. 
-
-@steinberg1994context looked at order effects in personality measurement, 
-
->Weinberg, M. K., Seton, C., & Cameron, N. (2018). The Measurement of Subjective Wellbeing: Item-Order Effects in the Personal Wellbeing Index—Adult. Journal of Happiness Studies, 19(1), 315–332. https://doi-org.ezproxy.montclair.edu/10.1007/s10902-016-9822-1
-
-@weinberg2018measurement examine the effects of randomized items and domains in the Personal Wellbeing Index (PWI) in measure subjective wellbeing (SWB). @weinberg2018measurement conduct two studies one, looking at the PWI comparing its usual general-specific format to a modified format, furthermore, the order of the domain items will stay the same, while the general items will be random in question order. In the second study, @weinberg2018measurement randomized the domain items while the general items will be the same to standard scale order. In @weinberg2018measurement, study 1 showed no results between general specific format and the modified format, however in study 2, they did find that presenting the random order effects did have lower means, then fixed order effects. @weinberg2018measurement present many different reasons for this outcomes, which could be those in the random order effect group had more participant experiencing high levels of wellbeing, and the other explanation is that changing order of items of PWI could affect the score. @weinberg2018measurement conducted a multiple regression analysis which showed that random order group account for 9% more variance in GLS than the fixed order group and conducted a confirmatory factor analysis showing that the fixed order groups was not a good model fit. 
-
-@serico2021methodological looked at item order effects in self-report measures of aggression perpetration and victimization. @serico2021methodological provides a descriptions of two general biases in self-report measures, which are the subject's biases, and bias in wording, order, or format of items in the measure. In previous studies, there was an item order effect and item group effect in the measure that shows participants' response and psychometric properties of an aggression measure. # citation from other articles (Dietz & Jasinski, 2007; Shorey, Woods, & Cornelius, 2016). ######### In @serico2021methodological, the findings shows that there is an item order affect in the reported frequency of aggression perpetration. It shows that item order can influence a person self-report in aggression perpetration and victimization, showing that there are methodological issue that have to be consider when developing and utilizing measure of aggression and victimization. This methodological issues can still be applicable to other measure such as workplace engagement, since we also look at people's behaviors, cognitive, and emotions.
-
-This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other [@kulikowski2017we].
-
-The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+@schaufeli_uwesutrecht_2003's elemental description of engagement is perhaps the most contemporarily popular, likely at least partially a function of the popularity of their widely-available (in many different languages) measure, the Utrecht Work Engagement Scale (UWES). schaufeli_uwesutrecht_2003 define engagement as a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their specification, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one's work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. The dimension of absorption has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow".
 
 ## Existing Measures of Engagement
 
-Our review of existing instruments non-exhaustively presents measures that are commonly viewed as *either* predominantly academic or applied, although please note that this is an imposed subjective distinction.  
+Regarding measurement, Gallup is widely acknowledged as an early pioneer in the measurement of the construct [see, for example, @coffman_hard_1999]. The Utrecht Work Engagement Scale (UWES) is another self-report questionnaire developed by @schaufeli_uwesutrecht_2003 that directly assesses the vigor, dedication, and absorption elements. Our review of existing instruments non-exhaustively presents measures that are commonly viewed as *either* predominantly academic or applied, although please note that this is an imposed subjective distinction.  
 
 ### Research measures (e.g., freely available).
 
-Existing measures include @soane2012development
-
-@schaufeli_uwesutrecht_2003 characterize engagement as a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). Via their conceptualization, vigor is described as high levels of energy and mental resilience while working. Dedication refers to being strongly involved in one’s work and experiencing a sense of significance, enthusiasm, inspiration, pride, and challenge. Absorption is characterized by being fully concentrated and happily engrossed in one’s work, whereby time passes quickly and one has difficulties with detaching oneself from work [@schaufeli_measurement_2002]. This absorption element has been noted as being influenced in conceptual specification by [@csikszentmihalyi1990flow]'s concept of "flow". @schaufeli_uwesutrecht_2003 use this tripartite framework to measure engagement via the Utrecht Work Engagement Scale (UWES).
+@schaufeli_uwesutrecht_2003 characterize engagement as a "positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption" (p. 74). @schaufeli_uwesutrecht_2003 use this tripartite framework to measure engagement via the Utrecht Work Engagement Scale (UWES).
 
 The Intellectual, Social, Affective (ISA) Engagement Scale [@soane2012development] is another option for researchers. This 9-item measure draws inspiration from @kahn_psychological_1990's theory of engagement and can aggregate to three 3-item scales (Intellectual Engagement, Social Engagement, and Affective Engagement) or one 9-item summary aggregate (Overall Engagement). Intellectual engagement refers to the degree of intellectual absorption one has in their work and the degree they think about improving work [@soane2012development]. Social engagement primarily concerns social connections in a workplace context as well as having shared values with colleagues [@soane2012development]. According to @soane2012development, affective engagement refers to a positive emotional state relating to one's work role.  This measure has been explicitly validated at both the subscale and overall aggregate level  [@soane2012development]. 
 
 Another example of an engagement measure comes from @saks2006antecedents, who splits engagement into two distinct entities: job engagement and organization engagement. This dichotomy largely results from @kahn_psychological_1990’s theory that an individual’s role is central to engagement. @saks2006antecedents further posits that employees typically have more than one role, with the most important being their work role and their role as a member of an organization. The former role is specific to the employee’s job, while the latter is more broad and refers to the organization as a whole. Antecedents and consequences of this measure have been tested, with findings suggesting that perceived organizational support precedes both job and organizational engagement and that job satisfaction, organizational commitment, intent to quit, and organizational citizenship behaviors (OCBs) are consequences [@saks2006antecedents]. Recently the broader theoretical model underpinning the measure was revisited and revised to include several new antecedents (e.g. leadership, job demands, dispositional characteristics, etc.) leading to engagement as well as consequences (e.g. burnout, stress, health and well-being, etc.) resulting from high or low levels of engagement [@saks2019antecedents].
 
-### Commercial measures (e.g., typically fee-based).
+### Commercial measures 
 
 Gallup’s Q12 is a popular commercial measure for engagement. The Q12 is a 12-item measure that originated from a push to use “soft” metrics as opposed to “hard” ones for future action planning [@coffman_hard_1999]. In this interpretation “soft” metrics tend to be metrics that are more abstract and difficult to measure (e.g. engagement, brand loyalty), while “hard” metrics are easily-measured and typically deal with concrete numbers (e.g. turnover, profitability). In the original creation of the survey, each of the 12 items were found to relate to important organizational outcomes including productivity, profitability, turnover, and customer satisfaction [@coffman_hard_1999]. A recent meta-analysis of 456 studies revealed that the Q12 also relates to additional performance measures such as absenteeism, wellbeing, and organizational citizenship [@harter_relationship_2013]. While this engagement measure is one of the most popular, some scholars disagree with its conceptualization as “engagement”; some feel that this measure is better described as (or no different than) a measure of overall satisfaction, as the two concepts are highly correlated, *r* = .91 [@sirota2013enthusiastic]. 
 
@@ -142,17 +113,37 @@ The last commercial example discussed here[^vendors] is the Towers Perrin-ISR, w
 
 ## Our Measure of Engagement
 
-Our theoretical conceptualization of work engagement is primarily informed by @schaufeli_uwesutrecht_2003 and @rosenberg_cognitive_1960. Through the lens of our framework, engagement is a mental state wherein employees: a) feel energized (*Vigor*), b) are enthusiastic about the content of their work and the things they do (*Dedication*), and c) are so immersed in their work activities that time seems compressed (*Absorption*). We further decompose each of these facets into three attitudinal components: d) feeling (e.g., affect), e) thought (e.g., cognition), and f) action (e.g., behavior). 
+Our theoretical conceptualization of work engagement is primarily informed by @schaufeli_uwesutrecht_2003 and @rosenberg_cognitive_1960. Through the lens of our framework, engagement is a mental state wherein employees: a) feel energized (*Vigor*), b) are enthusiastic about the content of their work and the things they do (*Dedication*), and c) are so immersed in their work activities that time seems compressed (*Absorption*)[^critics]. 
+ We further decompose each of these facets into three attitudinal components: d) feeling (e.g., affect), e) thought (e.g., cognition), and f) action (e.g., behavior). 
+ 
+[^critics]: This model is not without criticism, however. Some critics question its structural validity by pointing out that vigor, dedication and absorption all correlate highly with each other [@kulikowski2017we].
 
 @schaufeli2013engagement stated a preference for the label "work engagement" rather than referring to the construct as "employee engagement", arguing that the "employee" referrent perhaps invites a blurring of definitions with other conceptually similar constructs such as commitment or organizational citizenship. Regarding this distinction between "the job" and "the organization", our measure scatters indicators of both throughout, although we did not intentionally balance the measure with regard to the referent, as do others, such as @saks2006antecedents.  
 
-The current study's focus is on exploring external variable associations with our measure, focusing on indicies of construct and criterion-related validity via retention of two alternative measures of engagement (the Saks scale and the UWES), two measures of theoretically orthogonal constructs (activity regarding household chores and tending to pets), and one measure of a theoretically relevant outcome (intentions to quit). 
-
 Our conceptualization of work engagement is a mental state wherein employees: a) feel energized (*Vigor*), b) are enthusiastic about the content of their work and the things they do (*Dedication*), and c) are so immersed in their work activities that time seems compressed (*Absorption*). We further decompose each of these facets into three attitudinal components: d) feeling (e.g., affect), e) thought (e.g., cognition), and f) action (e.g., behavior). Development and construct validation of the focal 18-item measure of engagement is described in @engage_2022 whereas the current study on administrative response cues in the form of order of item presentation. The expectation is that either model (attitudinal or substantive) will exhibit stronger factorial validity when item administration parallels latent structure.
+
+### Bifactor structures.
+
+Methodologically, we have chosen to empirically model our measure via confirmatory factor analysis of a bifactor structure (aka bifactor analysis). Typically, bifactor analyses are utilized when exploring common method variance [@biderman2011ubiquity; @gade2017disentangling; @reise_rediscovery_2012], and the "bi" construct is a unidimensional specification (e.g., "one" construct/factor commonly interpreted as common method oriented). The current study extends this tradition, as two multi-dimensional factor structures specified *a priori* are simultaneously imposed. 
+
+# Study 1: Content Validation
+
+# Study 2: Empirical Scale Reduction
+
+# Study 3: Construct and Criterion-validation
 
 # Methods
 
+We solicited three different samples for purposes of winnowing from 20 to 18 final scale items. One sample was a Prolific panel, one was a Qualtrics panel, and one was a "snowball" sample whereby friends and colleagues of the paper authors were invited to participate. In the snowball sample, invited individuals were also asked to further forward the survey along to friends and colleagues of theirs, with the "forwarding along" component being requested *ad infinitum*. 
+
+
+# Methods
+
+The present article explores two methods for constructing a scale that incorporates both the substantive and attitudinal models into one, a more classical one based on corrected item-total correlations and one based on modification indices.
+
 # Construct validation
+
+The current study's focus is on exploring external variable associations with our measure, focusing on indices of construct and criterion-related validity via retention of two alternative measures of engagement (the Saks scale and the UWES), two measures of theoretically orthogonal constructs (activity regarding household chores and tending to pets), and one measure of a theoretically relevant outcome (intentions to quit). 
 
 We purchased Qualtrics panels of working adults and administered a standard Qualtrics survey via online delivery, however, as noted below, very cautious screening for indicators of careless responding resulted in our exclusion of many of these Qualtrics respondents from our presented analyses. The total survey was comprised of 74 items across 6 constructs of interest as well as several demographic items that are not the focus of this current presentation.
 
@@ -275,7 +266,7 @@ Of the `r (nrow(newdata.att)+nrow(newdata.sub))` total Qualtrics panel responden
 
 ## Data analysis
 
-We used `r cite_r("r-references.bib")` for all our analyses. As a straightforward validation study, our analyses consisted predominantly of Pearsons product-moment correlations. 
+We used `r cite_r("bibs/r-references.bib")` for all our analyses. As a straightforward validation study, our analyses consisted predominantly of Pearsons product-moment correlations. 
 
 # Results
 
@@ -563,7 +554,7 @@ fullatt$rounded <- round(fullatt$`fitMeasures(fullatt)`,2)
 
 # Results
 
-We used `r cite_r("r-references.bib")` for all our analyses.
+We used `r cite_r("bibs/r-references.bib")` for all our analyses.
 
 The omnibus CFA's, regardless of item ordering, across `r nrow(siop)` respondents showed fair fit for both the substantive ($\chi^2_{substantive}$=`r t.fullsub[1]`, *df*=`r fullsub[4,2]`, *RMSEA*=`r fullsub[23,2]`) as well as attitudinal structures ($\chi^2_{attitudinal}$=`r fullatt[3,2]`, *df*=`r fullatt[4,2]`, *RMSEA*=`r fullatt[23,2]`). Additional fit indices for the two models are presented in Table XX. Figures 1 and 2 present the omnibus models visually (standardized coefficients displayed). Note that the primary source of misfit for both models within the omnibus analysis is item 14, which is the lone reverse-coded item within the inventory, "Thinking about work saps my energy".
 

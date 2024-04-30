@@ -191,6 +191,8 @@ Overall & 3-factor substantive & 930.38 & 132 & 0.08 & 0.76 & 0.92 & 0.90 & 46,8
 \end{longtable}
 
 \end{lltable}
+\efloatseparator
+ 
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
 [tbp]
@@ -220,6 +222,8 @@ strict.a & 672 & 13,538.35 & 13,835.82 & 1,297.96 & 76.87 & 0.08 & 54 & 0.02\\
 \end{center}
 
 \end{table*}
+\efloatseparator
+ 
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
 [tbp]
@@ -249,6 +253,8 @@ strict.s & 672 & 13,521.28 & 13,818.74 & 1,280.89 & 82.77 & 0.09 & 54 & 0.01\\
 \end{center}
 
 \end{table*}
+\efloatseparator
+ 
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
 [tbp]
